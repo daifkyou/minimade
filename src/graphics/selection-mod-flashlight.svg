@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="64"
+   height="64"
+   viewBox="0 0 64 64"
+   id="svg4"
+   sodipodi:docname="selection-mod-flashlight.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter2179"
+       x="-0.089999999"
+       y="-0.12857143"
+       width="1.18"
+       height="1.2571429">
+      <feGaussianBlur
+         stdDeviation="2 2"
+         result="blur"
+         id="feGaussianBlur2177" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.3239838"
+     inkscape:cx="-3.021185"
+     inkscape:cy="118.58151"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g15193"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-page="true" />
+  <path
+     d="M 24,13.333334 A 18.666667,18.666667 0 0 0 5.333333,32 18.666667,18.666667 0 0 0 24,50.666667 c 2.773334,0 5.493334,-0.64 8,-1.813333 2.506667,1.173333 5.226667,1.813333 8,1.813333 A 18.666667,18.666667 0 0 0 58.666667,32 18.666667,18.666667 0 0 0 40,13.333334 c -2.773333,0 -5.493333,0.64 -8,1.813333 -2.506666,-1.173333 -5.226666,-1.813333 -8,-1.813333 m 0,5.333333 c 0.906667,0 1.786667,0.08 2.666667,0.266667 C 23.253334,22.426667 21.333334,27.12 21.333334,32 c 0,4.88 1.92,9.573334 5.333333,13.040001 -0.88,0.186666 -1.76,0.293333 -2.666667,0.293333 A 13.333334,13.333334 0 0 1 10.666667,32 13.333334,13.333334 0 0 1 24,18.666667 m 16,0 A 13.333334,13.333334 0 0 1 53.333334,32 13.333334,13.333334 0 0 1 40,45.333334 c -0.906666,0 -1.786666,-0.08 -2.666666,-0.266667 C 40.746667,41.573334 42.666667,36.88 42.666667,32 c 0,-4.88 -1.92,-9.573333 -5.333333,-13.04 0.88,-0.186666 1.76,-0.293333 2.666666,-0.293333 z"
+     id="path2-3"
+     style="fill:#ffffff;fill-opacity:1;stroke-width:1;filter:url(#filter2179)" />
+  <path
+     d="M 24,13.333334 A 18.666667,18.666667 0 0 0 5.3333334,32 18.666667,18.666667 0 0 0 24,50.666667 c 2.773334,0 5.493334,-0.64 8,-1.813333 2.506667,1.173333 5.226667,1.813333 8,1.813333 A 18.666667,18.666667 0 0 0 58.666667,32 18.666667,18.666667 0 0 0 40,13.333334 c -2.773333,0 -5.493333,0.64 -8,1.813333 -2.506666,-1.173333 -5.226666,-1.813333 -8,-1.813333 m 0,5.333333 c 0.906667,0 1.786667,0.08 2.666667,0.266667 C 23.253334,22.426667 21.333334,27.12 21.333334,32 c 0,4.88 1.92,9.573334 5.333333,13.040001 -0.88,0.186666 -1.76,0.293333 -2.666667,0.293333 A 13.333334,13.333334 0 0 1 10.666667,32 13.333334,13.333334 0 0 1 24,18.666667 m 16,0 A 13.333334,13.333334 0 0 1 53.333334,32 13.333334,13.333334 0 0 1 40,45.333334 c -0.906666,0 -1.786666,-0.08 -2.666666,-0.266667 C 40.746667,41.573334 42.666667,36.88 42.666667,32 c 0,-4.88 -1.92,-9.573333 -5.333333,-13.04 0.88,-0.186666 1.76,-0.293333 2.666666,-0.293333 z"
+     id="path2"
+     style="fill:#ffffff;fill-opacity:1;stroke-width:1" />
+  <g
+     id="g830">
+    <g
+       id="g15193"
+       transform="translate(-0.61643983)">
+      <text
+         xml:space="preserve"
+         style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+         x="-3.1020844"
+         y="-0.93699408"
+         id="text6689"><tspan
+           sodipodi:role="line"
+           x="-3.1020844"
+           y="-0.93699408"
+           style="stroke-width:0.50906"
+           id="tspan11469">MODDED: resized, recolored, glow</tspan></text>
+    </g>
+  </g>
+</svg>

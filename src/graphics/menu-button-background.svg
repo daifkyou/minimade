@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="690"
+   height="85"
+   viewBox="0 0 182.56249 22.489582"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="menu-button-background.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="118px"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="1.4142135"
+     inkscape:cx="393.8585"
+     inkscape:cy="16.970564"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-bbox-edge-midpoints="true" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient826">
+      <stop
+         style="stop-color:#303030;stop-opacity:0.00086186"
+         offset="0"
+         id="stop822" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.30000001"
+         offset="1"
+         id="stop824" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient826"
+       id="radialGradient986"
+       cx="9"
+       cy="11.244792"
+       fx="9"
+       fy="11.244792"
+       r="86.78125"
+       gradientTransform="matrix(1.9951456,5.0439016e-6,0,0.82471492,-10.77506,1.9709983)"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter828"
+       x="-0.027655744"
+       y="-0.0010671607"
+       width="1.0553115"
+       height="1.0021343">
+      <feGaussianBlur
+         stdDeviation="2 0.01"
+         result="blur"
+         id="feGaussianBlur826" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:url(#radialGradient986);fill-opacity:1;stroke:none;stroke-width:5.29167;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter828)"
+       id="rect847"
+       width="173.5625"
+       height="22.489584"
+       x="7.1812501"
+       y="-6.357829e-07"
+       transform="matrix(1.0309059,0,0,0.99953115,-0.07896034,0.00527208)" />
+  </g>
+</svg>

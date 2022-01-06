@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="64"
+   height="64"
+   viewBox="0 0 64 64"
+   id="svg4"
+   sodipodi:docname="selection-mod-nofail.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter5243"
+       x="-0.09"
+       y="-0.09"
+       width="1.18"
+       height="1.18">
+      <feGaussianBlur
+         stdDeviation="2 2"
+         result="blur"
+         id="feGaussianBlur5241" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="1.8723958"
+     inkscape:cx="84.917943"
+     inkscape:cy="129.24618"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="M 26.666667,10.666667 V 21.333334 H 37.333334 V 10.666667 H 26.666667 m 16,0 V 21.333334 H 53.333334 V 10.666667 H 42.666667 m 0,16 V 37.333334 H 53.333334 V 26.666667 H 42.666667 m 0,16 V 53.333334 H 53.333334 V 42.666667 H 42.666667 M 37.333334,53.333334 V 42.666667 H 26.666667 v 10.666667 h 10.666667 m -16,0 V 42.666667 H 10.666667 v 10.666667 h 10.666667 m 0,-16 V 26.666667 H 10.666667 v 10.666667 h 10.666667 m 0,-16 V 10.666667 H 10.666667 v 10.666667 h 10.666667 m 5.333333,16 H 37.333334 V 26.666667 H 26.666667 v 10.666667 m -16,-32.0000006 h 42.666667 a 5.3333334,5.3333334 0 0 1 5.333333,5.3333336 v 42.666667 a 5.3333334,5.3333334 0 0 1 -5.333333,5.333333 H 10.666667 c -2.8800002,0 -5.3333336,-2.4 -5.3333336,-5.333333 V 10.666667 A 5.3333334,5.3333334 0 0 1 10.666667,5.3333334 Z"
+     id="path5239"
+     style="stroke-width:0.999999;fill-opacity:1;fill:#ffffff;filter:url(#filter5243)" />
+  <path
+     d="M 26.666667,10.666667 V 21.333334 H 37.333334 V 10.666667 H 26.666667 m 16,0 V 21.333334 H 53.333334 V 10.666667 H 42.666667 m 0,16 V 37.333334 H 53.333334 V 26.666667 H 42.666667 m 0,16 V 53.333334 H 53.333334 V 42.666667 H 42.666667 M 37.333334,53.333334 V 42.666667 H 26.666667 v 10.666667 h 10.666667 m -16,0 V 42.666667 H 10.666667 v 10.666667 h 10.666667 m 0,-16 V 26.666667 H 10.666667 v 10.666667 h 10.666667 m 0,-16 V 10.666667 H 10.666667 v 10.666667 h 10.666667 m 5.333333,16 H 37.333334 V 26.666667 H 26.666667 v 10.666667 m -16,-32.0000006 h 42.666667 a 5.3333334,5.3333334 0 0 1 5.333333,5.3333336 v 42.666667 a 5.3333334,5.3333334 0 0 1 -5.333333,5.333333 H 10.666667 c -2.8800002,0 -5.3333336,-2.4 -5.3333336,-5.333333 V 10.666667 A 5.3333334,5.3333334 0 0 1 10.666667,5.3333334 Z"
+     id="path2"
+     style="stroke-width:0.999999;fill-opacity:1;fill:#ffffff" />
+  <g
+     id="g830">
+    <g
+       id="g15193"
+       transform="translate(-0.61643983)">
+      <text
+         xml:space="preserve"
+         style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+         x="-3.1020844"
+         y="-0.93699408"
+         id="text6689"><tspan
+           sodipodi:role="line"
+           x="-3.1020844"
+           y="-0.93699408"
+           style="stroke-width:0.50906"
+           id="tspan11469">MODDED: resized, recolored, glow</tspan></text>
+    </g>
+  </g>
+</svg>

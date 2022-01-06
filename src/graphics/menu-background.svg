@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1366"
+   height="768"
+   viewBox="0 0 361.42082 203.2"
+   version="1.1"
+   id="svg827"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="menu-background.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview829"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="602.45498"
+     inkscape:cy="393.15137"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-bbox="true"
+     inkscape:object-paths="true"
+     inkscape:snap-page="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-midpoints="true" />
+  <defs
+     id="defs824">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter1053"
+       x="-0.052421717"
+       y="-0.37902682"
+       width="1.1048434"
+       height="1.7580536">
+      <feGaussianBlur
+         stdDeviation="4 4"
+         result="blur"
+         id="feGaussianBlur1051" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter1057"
+       x="-0.052421717"
+       y="-0.37902682"
+       width="1.1048434"
+       height="1.7580536">
+      <feGaussianBlur
+         stdDeviation="4 4"
+         result="blur"
+         id="feGaussianBlur1055" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:26.3175px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
+       x="128.67767"
+       y="173.61343"
+       id="text2881"><tspan
+         sodipodi:role="line"
+         id="tspan2879"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
+         x="128.67767"
+         y="173.61343">minimade glow</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:26.3175px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
+       x="-232.74316"
+       y="-29.586567"
+       id="text2881-3"
+       transform="scale(-1)"><tspan
+         sodipodi:role="line"
+         id="tspan2879-6"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
+         x="-232.74316"
+         y="-29.586567">minimade glow</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:26.3175px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.858405;filter:url(#filter1057)"
+       x="128.67767"
+       y="173.61343"
+       id="text1045"><tspan
+         sodipodi:role="line"
+         id="tspan1043"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
+         x="128.67767"
+         y="173.61343">minimade glow</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:26.3175px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.858405;filter:url(#filter1053)"
+       x="-232.74316"
+       y="-29.586567"
+       id="text1049"
+       transform="scale(-1)"><tspan
+         sodipodi:role="line"
+         id="tspan1047"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
+         x="-232.74316"
+         y="-29.586567">minimade glow</tspan></text>
+  </g>
+</svg>

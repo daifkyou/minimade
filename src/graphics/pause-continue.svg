@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="275.51227"
+   height="56.000019"
+   viewBox="0 0 72.895955 14.81667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="pause-continue.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="32px"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="101.46982"
+     inkscape:cy="51.618795"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-bbox-edge-midpoints="false"
+     fit-margin-top="10"
+     fit-margin-left="10"
+     fit-margin-right="10"
+     fit-margin-bottom="10"
+     inkscape:snap-object-midpoints="true"
+     lock-margins="true" />
+  <defs
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter864"
+       x="-0.31656343"
+       y="-0.44985532"
+       width="1.633122"
+       height="1.8997106">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur862" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(2.6458337,2.6458338)">
+    <g
+       id="g860"
+       style="filter:url(#filter864)">
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 0.99218964,0.99218969 5.3578213,4.7625018 0.99218964,8.5328139"
+         id="path856"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 7.3422286,0.99218954 11.707862,4.7625016 7.3422286,8.5328139"
+         id="path858"
+         sodipodi:nodetypes="ccc" />
+    </g>
+    <g
+       id="g853">
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 0.99218964,0.99218969 5.3578213,4.7625018 0.99218964,8.5328139"
+         id="path855"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 7.3422286,0.99218954 11.707862,4.7625016 7.3422286,8.5328139"
+         id="path855-3"
+         sodipodi:nodetypes="ccc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:12.876px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+       x="12.994454"
+       y="9.5250044"
+       id="text5998"><tspan
+         sodipodi:role="line"
+         id="tspan5996"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+         x="12.994454"
+         y="9.5250044">Continue</tspan></text>
+  </g>
+</svg>

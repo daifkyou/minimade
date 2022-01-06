@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="274"
+   height="136.52554"
+   viewBox="0 0 72.495828 36.12238"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="play-skip.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="32px"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="2"
+     inkscape:cx="139"
+     inkscape:cy="81.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-bbox-edge-midpoints="false"
+     fit-margin-top="10"
+     fit-margin-left="10"
+     fit-margin-right="64"
+     fit-margin-bottom="64" />
+  <defs
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter837"
+       x="-0.26036091"
+       y="-0.36998831"
+       width="1.5207169"
+       height="1.7399766">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur835" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(2.64584,2.6458405)">
+    <g
+       id="g833"
+       style="filter:url(#filter837)">
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:2.64914;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.3245633,1.3245631 7.1526788,6.3579248 1.3245633,11.391286"
+         id="path829"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:2.64914;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 9.8018596,1.3245628 15.629975,6.3579244 9.8018596,11.391286"
+         id="path831"
+         sodipodi:nodetypes="ccc" />
+    </g>
+    <g
+       id="g827">
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:2.64914;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.3245633,1.3245631 7.1526788,6.3579248 1.3245633,11.391286"
+         id="path855"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:2.64914;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 9.8018596,1.3245628 15.629975,6.3579244 9.8018596,11.391286"
+         id="path855-3"
+         sodipodi:nodetypes="ccc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:17.1895px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.429739"
+       x="16.523264"
+       y="12.715861"
+       id="text6655"><tspan
+         sodipodi:role="line"
+         id="tspan6653"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.429739"
+         x="16.523264"
+         y="12.715861">Skip</tspan></text>
+  </g>
+</svg>

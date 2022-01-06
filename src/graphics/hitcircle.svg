@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128"
+   height="128"
+   viewBox="0 0 33.866664 33.866664"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="hitcircle.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="32px"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="3.9999998"
+     inkscape:cx="47.250003"
+     inkscape:cy="73.750005"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-bbox-edge-midpoints="false" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path913"
+       style="fill:#ffffff;fill-opacity:0.5;stroke-width:5.00001;stroke-linecap:round"
+       d="M 64 5 A 58.999999 58.999999 0 0 0 5 64 A 58.999999 58.999999 0 0 0 64 123 A 58.999999 58.999999 0 0 0 123 64 A 58.999999 58.999999 0 0 0 64 5 z M 64 24 A 39.999999 39.999999 0 0 1 104 64 A 39.999999 39.999999 0 0 1 64 104 A 39.999999 39.999999 0 0 1 24 64 A 39.999999 39.999999 0 0 1 64 24 z "
+       transform="scale(0.26458333)" />
+  </g>
+</svg>
