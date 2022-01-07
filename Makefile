@@ -43,8 +43,8 @@ unscaled-elements = ranking-panel
 images-unscaled = $(addsuffix .png,$(addprefix build/,$(unscaled-elements)))
 
 # empty elements
+none-elements = sliderendcircle sliderendcircleoverlay cursortrail hit300 hit300g hit300k score-percent score-x spinner-background spinner-spin spinner-clear ranking-title ranking-accuracy ranking-maxcombo star2 count1 count2 count3 go ready scorebar-ki scorebar-kidanger scorebar-kidanger2 inputoverlay-background pause-overlay fail-background comboburst menu-snow
 
-none-elements = sliderendcircle sliderendoverlay cursortrail hit300 hit300g hit300k score-percent score-x spinner-background spinner-spin spinner-clear ranking-title ranking-accuracy ranking-maxcombo star2 count1 count2 count3 go ready scorebar-ki scorebar-kidanger scorebar-kidanger2 inputoverlay-background pause-overlay fail-background comboburst menu-snow
 images-none = $(addsuffix .png,$(addprefix build/,$(none-elements)))
 
 # fonts
@@ -67,13 +67,22 @@ font-scoreentry@1x = $(addsuffix .png,$(scoreentry-basenames))
 font-scoreentry@2x = $(addsuffix @2x.png,$(scoreentry-basenames))
 scoreentry-size = 1
 
+
+
+# sounds
+silent = heartbeat seeya welcome key-delete key-movement key-press-1 key-press-2 key-press-3 key-press-4 back-button-click shutter back-button-hover click-short menuclick menu-back-hover menu-charts-hover menu-direct-hover menu-edit-hover menu-exit-hover menu-freeplay-hover menu-multiplayer-hover menu-options-hover menu-play-hover pause-hover pause-back-hover pause-continue-hover pause-retry-hover count1s count2s count3s gos readys comboburst failsound sectionpass sectionfail applause pause-loop
+# basically all of the silent sounds should serve no practical purpose (imo), if you want any to be skinned open an issue and explain why they shouldnt be silent
+sounds-silent = $(addsuffix .wav,$(addprefix build/,$(silent)))
+
+audio = $(sounds-silent)
+
 # targets
 
 both: 1x 2x
 
-1x: unscaled special $(images@1x) $(images-ranking-small) build/hit100k.png $(modes-scaled@1x) $(font-default@1x) $(font-score@1x) $(font-scoreentry@1x)
+1x: unscaled special $(images@1x) $(images-ranking-small) build/hit100k.png $(modes-scaled@1x) $(font-default@1x) $(font-score@1x) $(font-scoreentry@1x) $(audio)
 
-2x: unscaled special $(images@2x) $(images-ranking-small@2x) build/hit100k@2x.png $(modes-scaled@2x) $(font-default@2x) $(font-score@2x) $(font-scoreentry@2x)
+2x: unscaled special $(images@2x) $(images-ranking-small@2x) build/hit100k@2x.png $(modes-scaled@2x) $(font-default@2x) $(font-score@2x) $(font-scoreentry@2x) $(audio)
 
 unscaled: $(images-unscaled) $(images-none) $(images-ranking)
 
@@ -151,7 +160,10 @@ $(font-scoreentry@1x): build/scoreentry-%.png: src/graphics/font/%.svg | build
 $(font-scoreentry@2x): build/scoreentry-%@2x.png: src/graphics/font/%.svg | build
 	rsvg-convert -z $(shell expr $(scoreentry-size) \* 2) $< -o $@
 
-# generic
+# audio rules
+
+$(sounds-silent): build/%.wav: src/silent.wav
+	cp $< $@
 
 clean:
 	rm build/* || :
