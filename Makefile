@@ -43,8 +43,8 @@ unscaled-elements = ranking-panel
 images-unscaled = $(addsuffix .png,$(addprefix build/,$(unscaled-elements)))
 
 # empty elements
-none-elements = sliderendcircle sliderendcircleoverlay cursortrail hit300 hit300g hit300k score-percent score-x spinner-background spinner-spin spinner-clear ranking-title ranking-accuracy ranking-maxcombo star2 count1 count2 count3 go ready scorebar-ki scorebar-kidanger scorebar-kidanger2 inputoverlay-background pause-overlay fail-background comboburst menu-snow
 
+none-elements = sliderendcircle sliderendcircleoverlay cursortrail hit300 hit300g hit300k score-percent score-x spinner-background spinner-spin spinner-clear ranking-title ranking-accuracy ranking-maxcombo star2 count1 count2 count3 go ready scorebar-ki scorebar-kidanger scorebar-kidanger2 inputoverlay-background pause-overlay fail-background comboburst menu-snow
 images-none = $(addsuffix .png,$(addprefix build/,$(none-elements)))
 
 # fonts
@@ -164,6 +164,8 @@ $(font-scoreentry@2x): build/scoreentry-%@2x.png: src/graphics/font/%.svg | buil
 
 $(sounds-silent): build/%.wav: src/silent.wav
 	cp $< $@
+
+
 
 clean:
 	rm build/* || :
