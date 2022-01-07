@@ -5,12 +5,14 @@ SKINNAME = minimade-glow
 # ASPECTRATIO = 16:9 # unused
 
 # ranking elements
+
 rankings = XH X SH S A B C D
 ranking-basenames = $(addprefix build/ranking-,$(rankings))
 images-ranking-small = $(addsuffix -small.png,$(ranking-basenames))
 images-ranking-small@2x = $(addsuffix -small@2x.png,$(ranking-basenames))
 
 # mode elements
+
 mode-elements = osu
 mode-basenames = $(addprefix build/mode-,$(mode-elements))
 mode-med-basenames = $(addsuffix -med,$(mode-basenames))
@@ -24,24 +26,29 @@ modes-scaled@1x = $(mode-med@1x) $(mode-small@1x)
 modes-scaled@2x = $(mode-med@2x) $(mode-small@2x)
 
 # mods
+
 mods = autoplay cinema doubletime easy flashlight halftime hardrock hidden nightcore nofail perfect relax relax2 scorev2 spunout suddendeath target
 mods-basenames = $(addprefix build/selection-mod-,$(mods))
 
 # 1x/2x elements
+
 scaled-elements = cursor cursor-smoke approachcircle hitcircle hitcircleoverlay hitcircleselect lighting reversearrow sliderfollowcircle sliderb followpoint hit100 hit50 hit0 spinner-approachcircle spinner-circle spinner-metre spinner-rpm sliderscorepoint menu-button-background menu-back button-left button-middle button-right ranking-graph ranking-perfect star play-skip play-unranked play-warningarrow section-fail section-pass multi-skipped scorebar-bg scorebar-colour inputoverlay-key pause-back pause-continue pause-replay pause-retry selection-mode selection-mode-over selection-mods selection-mods-over selection-random selection-random-over selection-options selection-options-over selection-tab options-offset-tick ranking-winner
 scaled-basenames = $(addprefix build/,$(scaled-elements)) $(ranking-basenames) $(mods-basenames) $(mode-basenames)
 images@1x = $(addsuffix .png,$(scaled-basenames))
 images@2x = $(addsuffix @2x.png,$(scaled-basenames))
 
 # sd only elements
+
 unscaled-elements = ranking-panel
 images-unscaled = $(addsuffix .png,$(addprefix build/,$(unscaled-elements)))
 
 # empty elements
+
 none-elements = sliderendcircle sliderendoverlay cursortrail hit300 hit300g hit300k score-percent score-x spinner-background spinner-spin spinner-clear ranking-title ranking-accuracy ranking-maxcombo star2 count1 count2 count3 go ready scorebar-ki scorebar-kidanger scorebar-kidanger2 inputoverlay-background pause-overlay fail-background comboburst menu-snow
 images-none = $(addsuffix .png,$(addprefix build/,$(none-elements)))
 
 # fonts
+
 default = 0 1 2 3 4 5 6 7 8 9
 default-basenames = $(addprefix build/default-,$(default))
 font-default@1x = $(addsuffix .png,$(default-basenames))
@@ -144,8 +151,9 @@ $(font-scoreentry@1x): build/scoreentry-%.png: src/graphics/font/%.svg | build
 $(font-scoreentry@2x): build/scoreentry-%@2x.png: src/graphics/font/%.svg | build
 	rsvg-convert -z $(shell expr $(scoreentry-size) \* 2) $< -o $@
 
+# generic
+
 clean:
 	rm build/* || :
 veryclean: clean
 	rm -r build
-	# remove symlink in skins folder
