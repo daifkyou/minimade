@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="2.svg"
+   sodipodi:docname="5.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="22.627416"
-     inkscape:cx="7.2036507"
-     inkscape:cy="13.96536"
+     inkscape:zoom="15.999999"
+     inkscape:cx="9.6875006"
+     inkscape:cy="15.375001"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -55,13 +55,13 @@
     <text
        xml:space="preserve"
        style="font-size:4.30623px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
-       x="-0.0071857474"
-       y="3.4395852"
+       x="-0.098651081"
+       y="3.4395869"
        id="text9176"><tspan
          sodipodi:role="line"
          id="tspan9174"
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
-         x="-0.0071857474"
-         y="3.4395852">2</tspan></text>
+         x="-0.098651081"
+         y="3.4395869">5</tspan></text>
   </g>
 </svg>

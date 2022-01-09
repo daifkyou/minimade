@@ -31,8 +31,8 @@ mods = autoplay cinema doubletime easy flashlight halftime hardrock hidden night
 mods-basenames = $(addprefix build/selection-mod-,$(mods))
 
 # 1x/2x elements
-
-scaled-elements = cursor cursor-smoke approachcircle hitcircle hitcircleoverlay hitcircleselect lighting reversearrow sliderfollowcircle sliderb followpoint hit100 hit50 hit0 spinner-approachcircle spinner-circle spinner-metre spinner-rpm sliderscorepoint menu-button-background menu-back button-left button-middle button-right ranking-graph ranking-perfect star play-skip play-unranked play-warningarrow section-fail section-pass multi-skipped scorebar-bg scorebar-colour inputoverlay-key pause-back pause-continue pause-replay pause-retry selection-mode selection-mode-over selection-mods selection-mods-over selection-random selection-random-over selection-options selection-options-over selection-tab options-offset-tick ranking-winner
+# hit100-0 is the ingame frame while hit100 is for the ranking screen (empty), and the 100 is in the ranking background (same for hit50 and hit100k)
+scaled-elements = cursor cursor-smoke approachcircle hitcircle hitcircleoverlay hitcircleselect lighting reversearrow sliderfollowcircle sliderb followpoint hit100-0 hit50-0 hit0 spinner-approachcircle spinner-circle spinner-metre spinner-rpm sliderscorepoint menu-button-background menu-back button-left button-middle button-right ranking-graph ranking-perfect star play-skip play-unranked play-warningarrow section-fail section-pass multi-skipped scorebar-bg scorebar-colour inputoverlay-key pause-back pause-continue pause-replay pause-retry arrow-pause selection-mode selection-mode-over selection-mods selection-mods-over selection-random selection-random-over selection-options selection-options-over selection-tab options-offset-tick ranking-winner
 scaled-basenames = $(addprefix build/,$(scaled-elements)) $(ranking-basenames) $(mods-basenames) $(mode-basenames)
 images@1x = $(addsuffix .png,$(scaled-basenames))
 images@2x = $(addsuffix @2x.png,$(scaled-basenames))
@@ -44,7 +44,7 @@ images-unscaled = $(addsuffix .png,$(addprefix build/,$(unscaled-elements)))
 
 # empty elements
 
-none-elements = sliderendcircle sliderendcircleoverlay cursortrail hit300 hit300g hit300k score-percent score-x spinner-background spinner-spin spinner-clear ranking-title ranking-accuracy ranking-maxcombo star2 count1 count2 count3 go ready scorebar-ki scorebar-kidanger scorebar-kidanger2 inputoverlay-background pause-overlay fail-background comboburst menu-snow
+none-elements = sliderendcircle sliderendcircleoverlay cursortrail hit300 hit300g hit300k score-percent score-x spinner-background spinner-spin spinner-clear ranking-title ranking-accuracy ranking-maxcombo star2 count1 count2 count3 go ready inputoverlay-background pause-overlay fail-background comboburst menu-snow scorebar-ki scorebar-kidanger scorebar-kidanger2 hit100 hit100k hit50
 images-none = $(addsuffix .png,$(addprefix build/,$(none-elements)))
 
 # fonts
@@ -59,7 +59,7 @@ score = 0 1 2 3 4 5 6 7 8 9 dot comma
 score-basenames = $(addprefix build/score-,$(score))
 font-score@1x = $(addsuffix .png,$(score-basenames))
 font-score@2x = $(addsuffix @2x.png,$(score-basenames))
-score-size = 4
+score-size = 3
 
 scoreentry = 0 1 2 3 4 5 6 7 8 9 dot comma percent x
 scoreentry-basenames = $(addprefix build/scoreentry-,$(scoreentry))
@@ -80,13 +80,12 @@ audio = $(sounds-silent)
 
 both: 1x 2x
 
-1x: unscaled special $(images@1x) $(images-ranking-small) build/hit100k.png $(modes-scaled@1x) $(font-default@1x) $(font-score@1x) $(font-scoreentry@1x) $(audio)
+1x: unscaled special@1x $(images@1x)
+2x: unscaled special@2x $(images@2x)
 
-2x: unscaled special $(images@2x) $(images-ranking-small@2x) build/hit100k@2x.png $(modes-scaled@2x) $(font-default@2x) $(font-score@2x) $(font-scoreentry@2x) $(audio)
-
+special@1x: build/skin.ini build/menu-background.jpg $(images-ranking-small) build/hit100k-0.png $(modes-scaled@1x) $(font-default@1x) $(font-score@1x) $(font-scoreentry@1x) $(audio)
+special@2x: build/skin.ini build/menu-background.jpg $(images-ranking-small@2x) build/hit100k-0@2x.png $(modes-scaled@2x) $(font-default@2x) $(font-score@2x) $(font-scoreentry@2x) $(audio)
 unscaled: $(images-unscaled) $(images-none) $(images-ranking)
-
-special: build/skin.ini build/menu-background.jpg
 
 export: | build
 	zip -jr $(SKINNAME).osk build
@@ -110,14 +109,14 @@ build/LICENSE: LICENSE | build
 build/skin.ini: src/skin.ini | build
 	cp $< $@
 
-build/hit100k.png: build/hit100.png | build
-	cp $< $@
-
-build/hit100k@2x.png: build/hit100@2x.png | build
-	cp $< $@
-
 build/menu-background.jpg: src/graphics/menu-background.svg | build
 	rsvg-convert -b black $< -o $@ # format can be png but must be named jpg lol
+
+build/hit100k-0.png: build/hit100-0.png
+	cp $< $@
+
+build/hit100k-0@2x.png: build/hit100-0@2x.png
+	cp $< $@
 
 $(images-ranking-small): build/%-small.png: src/graphics/%.svg | build
 	rsvg-convert -w 34 $< -o $@
@@ -142,22 +141,22 @@ $(mode-small@2x): build/%-small@2x.png: src/graphics/%.svg | build
 
 # font rules
 
-$(font-default@1x): build/default-%.png: src/graphics/font/%.svg | build
+$(font-default@1x): build/default-%.png: src/graphics/font/default/%.svg | build
 	rsvg-convert -z $(default-size) $< -o $@
 
-$(font-default@2x): build/default-%@2x.png: src/graphics/font/%.svg | build
+$(font-default@2x): build/default-%@2x.png: src/graphics/font/default/%.svg | build
 	rsvg-convert -z $(shell expr $(default-size) \* 2) $< -o $@
 
-$(font-score@1x): build/score-%.png: src/graphics/font/%.svg | build
+$(font-score@1x): build/score-%.png: src/graphics/font/score/%.svg | build
 	rsvg-convert -z $(score-size) $< -o $@
 
-$(font-score@2x): build/score-%@2x.png: src/graphics/font/%.svg | build
+$(font-score@2x): build/score-%@2x.png: src/graphics/font/score/%.svg | build
 	rsvg-convert -z $(shell expr $(score-size) \* 2) $< -o $@
 
-$(font-scoreentry@1x): build/scoreentry-%.png: src/graphics/font/%.svg | build
+$(font-scoreentry@1x): build/scoreentry-%.png: src/graphics/font/scoreentry/%.svg | build
 	rsvg-convert -z $(score-size) $< -o $@
 
-$(font-scoreentry@2x): build/scoreentry-%@2x.png: src/graphics/font/%.svg | build
+$(font-scoreentry@2x): build/scoreentry-%@2x.png: src/graphics/font/scoreentry/%.svg | build
 	rsvg-convert -z $(shell expr $(scoreentry-size) \* 2) $< -o $@
 
 # audio rules

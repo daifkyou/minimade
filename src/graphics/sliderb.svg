@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="sliderfollowcircle.svg"
+   sodipodi:docname="sliderb.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,11 +27,11 @@
      width="118px"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
-     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-bbox-midpoints="false"
      inkscape:snap-page="true"
-     inkscape:zoom="1.9999999"
-     inkscape:cx="57.500003"
-     inkscape:cy="170.50001"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="-7.7781746"
+     inkscape:cy="122.32947"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -46,19 +46,15 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g825"
-       transform="scale(0.46093751)"
-       style="stroke-width:2.16949">
-      <path
-         id="path913"
-         style="fill:#ffffff;fill-opacity:0.5;stroke-width:2.87006;stroke-linecap:round"
-         d="M 33.866665,0 A 33.866665,33.866665 0 0 0 0,33.866665 33.866665,33.866665 0 0 0 33.866665,67.733332 33.866665,33.866665 0 0 0 67.733332,33.866665 33.866665,33.866665 0 0 0 33.866665,0 Z m 0,10.906214 A 22.960451,22.960451 0 0 1 56.827118,33.866665 22.960451,22.960451 0 0 1 33.866665,56.827118 22.960451,22.960451 0 0 1 10.906214,33.866665 22.960451,22.960451 0 0 1 33.866665,10.906214 Z" />
+       id="g1826"
+       transform="translate(-1.322919,-1.322919)"
+       style="stroke-width:5.29166;stroke-miterlimit:4;stroke-dasharray:none">
       <circle
-         style="fill:#ffffff;fill-opacity:0.3;stroke:none;stroke-width:5.74011;stroke-linecap:round;stroke-linejoin:round"
-         id="path1143"
-         cx="33.866665"
-         cy="33.866665"
-         r="33.866665" />
+         style="fill:none;stroke:#ffffff;stroke-width:5.29166;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.5"
+         id="path1368"
+         cx="16.933334"
+         cy="16.933334"
+         r="12.964582" />
     </g>
   </g>
 </svg>

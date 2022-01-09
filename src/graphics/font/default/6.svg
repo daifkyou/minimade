@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="5"
-   height="14"
-   viewBox="0 0 1.3229166 3.7041662"
+   width="5.9841127"
+   height="12.000013"
+   viewBox="0 0 1.5832964 3.1750031"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="dot.svg"
+   sodipodi:docname="6.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="31.999999"
-     inkscape:cx="0.18750001"
-     inkscape:cy="11.09375"
+     inkscape:zoom="16"
+     inkscape:cx="-13.625"
+     inkscape:cy="9.375"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -51,28 +51,18 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-0.66356005,-0.26458159)">
     <text
        xml:space="preserve"
        style="font-size:4.30623px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
-       x="0.22620948"
-       y="3.4395795"
-       id="text9176-3"><tspan
+       x="-0.013493702"
+       y="3.4395852"
+       id="text9176"><tspan
          sodipodi:role="line"
-         id="tspan9174-6"
+         id="tspan9174"
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
-         x="0.22620948"
-         y="3.4395795">.</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:10.5833px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.264583"
-       x="2.4060547"
-       y="2.1927345"
-       id="text15627"><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="2.4060547"
-         y="2.1927345"
-         id="tspan15715" /></text>
+         x="-0.013493702"
+         y="3.4395852">6</tspan></text>
   </g>
 </svg>

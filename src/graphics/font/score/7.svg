@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="128"
-   height="128"
-   viewBox="0 0 33.866664 33.866664"
+   width="11"
+   height="14"
+   viewBox="0 0 2.9104164 3.7041662"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="hitcircleoverlay.svg"
+   sodipodi:docname="7.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -29,27 +29,39 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="4"
-     inkscape:cx="53.25"
-     inkscape:cy="67.75"
+     inkscape:zoom="16"
+     inkscape:cx="14.5"
+     inkscape:cy="4.75"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="false" />
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:object-paths="true"
+     inkscape:bbox-paths="true" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <circle
-       style="fill:none;fill-opacity:0.75;stroke:#f0f0f0;stroke-width:2.6458298;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path1328"
-       cx="16.933332"
-       cy="16.933332"
-       r="14.287494" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.30623px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
+       x="0.026456675"
+       y="3.4395869"
+       id="text9176"><tspan
+         sodipodi:role="line"
+         id="tspan9174"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
+         x="0.026456675"
+         y="3.4395869">7</tspan></text>
   </g>
 </svg>

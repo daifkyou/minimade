@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="11"
-   height="14"
-   viewBox="0 0 2.9104164 3.7041662"
+   width="6.0000067"
+   height="12.000013"
+   viewBox="0 0 1.5875016 3.1750031"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="7.svg"
+   sodipodi:docname="2.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="16"
-     inkscape:cx="14.5"
-     inkscape:cy="4.7500001"
+     inkscape:zoom="22.627416"
+     inkscape:cx="4.6845826"
+     inkscape:cy="12.948894"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -51,17 +51,18 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-0.6614574,-0.26458159)">
     <text
        xml:space="preserve"
        style="font-size:4.30623px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
-       x="0.026456675"
+       x="-0.0071857474"
        y="3.4395852"
        id="text9176"><tspan
          sodipodi:role="line"
          id="tspan9174"
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
-         x="0.026456675"
-         y="3.4395852">7</tspan></text>
+         x="-0.0071857474"
+         y="3.4395852">2</tspan></text>
   </g>
 </svg>

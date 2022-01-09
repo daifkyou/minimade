@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="521.28351"
-   height="64.283463"
-   viewBox="0 0 137.92292 17.008332"
+   width="494.07501"
+   height="37.070999"
+   viewBox="0 0 130.724 9.808368"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,31 +30,32 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.0000001"
-     inkscape:cx="235.49999"
-     inkscape:cy="87.499998"
+     inkscape:cx="240.99999"
+     inkscape:cy="-11.749999"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="960"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      inkscape:snap-bbox-edge-midpoints="false"
      fit-margin-top="16"
      fit-margin-left="5"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     height="36.71px" />
   <defs
      id="defs2">
     <filter
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1010"
-       x="-0.037795276"
-       y="-1.511811"
-       width="1.0755906"
-       height="4.0236221">
+       x="-0.018897638"
+       y="-0.75590552"
+       width="1.0377953"
+       height="2.511811">
       <feGaussianBlur
-         stdDeviation="2 2"
+         stdDeviation="1 1"
          result="blur"
          id="feGaussianBlur1008" />
     </filter>
@@ -63,23 +64,24 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(6.1229204,9.0333332)">
+     transform="translate(6.1229202,9.033333)">
     <rect
        style="fill:#ffffff;fill-opacity:0.5;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1010)"
        id="rect1000"
        width="127"
        height="3.175"
-       x="-3.7848949e-06"
-       y="0"
-       ry="1.5875"
-       rx="1.5874999" />
+       x="-4.8000035"
+       y="-4.7999997"
+       ry="1.5874858"
+       rx="1.5874857"
+       transform="matrix(1.0000089,0,0,1.0000089,6.4074153e-5,6.4074118e-5)" />
     <rect
        style="fill:#ffffff;fill-opacity:0.3;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:round"
        id="rect937"
        width="127"
        height="3.175"
-       x="0"
-       y="0"
+       x="-4.8000035"
+       y="-4.7999997"
        ry="1.5875"
        rx="1.5874999" />
   </g>

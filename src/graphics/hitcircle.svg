@@ -29,26 +29,28 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="3.9999998"
-     inkscape:cx="47.250003"
-     inkscape:cy="73.750005"
+     inkscape:zoom="2.828427"
+     inkscape:cx="59.396973"
+     inkscape:cy="81.670837"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="false" />
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:bbox-paths="true" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       id="path913"
-       style="fill:#ffffff;fill-opacity:0.5;stroke-width:5.00001;stroke-linecap:round"
-       d="M 64 5 A 58.999999 58.999999 0 0 0 5 64 A 58.999999 58.999999 0 0 0 64 123 A 58.999999 58.999999 0 0 0 123 64 A 58.999999 58.999999 0 0 0 64 5 z M 64 24 A 39.999999 39.999999 0 0 1 104 64 A 39.999999 39.999999 0 0 1 64 104 A 39.999999 39.999999 0 0 1 24 64 A 39.999999 39.999999 0 0 1 64 24 z "
-       transform="scale(0.26458333)" />
+    <circle
+       style="fill:none;stroke:#ffffff;stroke-width:5.29167;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.5"
+       id="path1368"
+       cx="16.933334"
+       cy="16.933334"
+       r="12.964582" />
   </g>
 </svg>

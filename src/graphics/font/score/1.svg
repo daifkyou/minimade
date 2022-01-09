@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="9.svg"
+   sodipodi:docname="1.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="15.999999"
-     inkscape:cx="8.5625005"
-     inkscape:cy="12.187501"
+     inkscape:zoom="22.627416"
+     inkscape:cx="9.3249711"
+     inkscape:cy="9.7227187"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -45,7 +45,8 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:object-paths="true"
-     inkscape:bbox-paths="true" />
+     inkscape:bbox-paths="true"
+     inkscape:snap-object-midpoints="true" />
   <defs
      id="defs2" />
   <g
@@ -54,14 +55,14 @@
      id="layer1">
     <text
        xml:space="preserve"
-       style="font-size:4.30622px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
-       x="-0.03767072"
-       y="3.4395814"
+       style="font-size:4.32053px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
+       x="0.25482669"
+       y="3.4501302"
        id="text9176"><tspan
          sodipodi:role="line"
          id="tspan9174"
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
-         x="-0.03767072"
-         y="3.4395814">9</tspan></text>
+         x="0.25482669"
+         y="3.4501302">1</tspan></text>
   </g>
 </svg>

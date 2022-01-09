@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="11"
-   height="14"
-   viewBox="0 0 2.9104164 3.7041662"
+   width="5.9920597"
+   height="12.000013"
+   viewBox="0 0 1.585399 3.1750031"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="8.svg"
+   sodipodi:docname="3.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="22.627416"
-     inkscape:cx="8.3526992"
-     inkscape:cy="10.208855"
+     inkscape:cx="6.8059031"
+     inkscape:cy="13.96536"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -51,17 +51,18 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-0.66250873,-0.2645814)">
     <text
        xml:space="preserve"
-       style="font-size:4.30338px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
-       x="0.022149136"
-       y="3.4479902"
+       style="font-size:4.30623px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+       x="0.048534516"
+       y="3.4500983"
        id="text9176"><tspan
          sodipodi:role="line"
          id="tspan9174"
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
-         x="0.022149136"
-         y="3.4479902">8</tspan></text>
+         x="0.048534516"
+         y="3.4500983">3</tspan></text>
   </g>
 </svg>
