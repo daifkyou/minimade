@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="8"
-     inkscape:cx="20.125"
-     inkscape:cy="32"
+     inkscape:zoom="4"
+     inkscape:cx="24"
+     inkscape:cy="33.25"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -40,21 +40,48 @@
      inkscape:current-layer="layer1"
      inkscape:snap-bbox-edge-midpoints="false" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter832"
+       x="-0.4972692"
+       y="-0.4972692"
+       width="1.9945384"
+       height="1.9945384">
+      <feGaussianBlur
+         stdDeviation="2 2"
+         result="blur"
+         id="feGaussianBlur830" />
+    </filter>
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g1745"
-       transform="matrix(0.84375012,0,0,0.84375012,1.3229166,1.3229166)"
-       style="stroke-width:1.18518">
+       id="g828"
+       transform="matrix(0.36540369,0,0,0.36540369,5.3729163,5.3729163)"
+       style="stroke-width:2.73669;filter:url(#filter832)">
       <path
-         style="fill:none;stroke:#ff6496;stroke-width:3.1358;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;stroke:#ff6496;stroke-width:7.24085;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 0,0 16.933333,16.933333"
+         id="path824" />
+      <path
+         style="fill:none;stroke:#ff6496;stroke-width:7.24085;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 16.933333,0 0,16.933333"
+         id="path826" />
+    </g>
+    <g
+       id="g1745"
+       transform="matrix(0.36540369,0,0,0.36540369,5.3729163,5.3729163)"
+       style="stroke-width:2.73669">
+      <path
+         style="fill:none;stroke:#ff6496;stroke-width:7.24085;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 0,0 16.933333,16.933333"
          id="path943" />
       <path
-         style="fill:none;stroke:#ff6496;stroke-width:3.1358;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;stroke:#ff6496;stroke-width:7.24085;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 16.933333,0 0,16.933333"
          id="path945" />
     </g>

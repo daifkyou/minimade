@@ -7,8 +7,16 @@ glows still look nice so i added those
 The mod and selection button icons are from mdi (https://materialdesignicons.com/).
 Text is in osifont.
 
+## Compatibility
+### Skin
+Tested on stable (wine on Arch Linux - i think thepoon's version, 1920x1080) and works on McOsu with some differences (steam on Arch Linux, Linux)
+
+### Building
+Tested on Arch Linux (bash, gmake)
+
 ## Building
 All svgs are in SD size since they can be upscaled.
+
 ### Dependencies
  - git
  - make (e.g. gmake)
