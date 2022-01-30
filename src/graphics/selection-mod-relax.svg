@@ -43,15 +43,15 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="1.3239838"
-     inkscape:cx="242.4501"
-     inkscape:cy="175.22873"
+     inkscape:zoom="3.7447917"
+     inkscape:cx="153.81363"
+     inkscape:cy="50.470097"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4" />
+     inkscape:current-layer="g15193" />
   <path
      d="m 32,46.160147 16.480001,9.946667 -4.373334,-18.746667 14.56,-12.613334 L 39.493334,23.09348 32,5.4401468 24.506667,23.09348 5.3333334,24.746813 19.866667,37.360147 15.52,56.106814 Z"
      id="path3113"
@@ -75,7 +75,7 @@
            x="-3.1020844"
            y="-0.93699408"
            style="stroke-width:0.50906"
-           id="tspan11469">MODDED: resized, recolored, glow</tspan></text>
+           id="tspan11469">modified: resized, recolored, glow</tspan></text>
     </g>
   </g>
 </svg>

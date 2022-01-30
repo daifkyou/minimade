@@ -30,9 +30,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="1.4142135"
-     inkscape:cx="393.8585"
-     inkscape:cy="16.970564"
+     inkscape:zoom="0.70710675"
+     inkscape:cx="363.4529"
+     inkscape:cy="-2.8284272"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -70,11 +70,11 @@
        inkscape:label="Blur"
        id="filter828"
        x="-0.027655744"
-       y="-0.0010671607"
+       y="-0.10671607"
        width="1.0553115"
-       height="1.0021343">
+       height="1.2134321">
       <feGaussianBlur
-         stdDeviation="2 0.01"
+         stdDeviation="2 1"
          result="blur"
          id="feGaussianBlur826" />
     </filter>
@@ -84,12 +84,12 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:url(#radialGradient986);fill-opacity:1;stroke:none;stroke-width:5.29167;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter828)"
+       style="fill:url(#radialGradient986);fill-opacity:1;stroke:none;stroke-width:5.96287;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter828)"
        id="rect847"
        width="173.5625"
        height="22.489584"
        x="7.1812501"
        y="-6.357829e-07"
-       transform="matrix(1.0309059,0,0,0.99953115,-0.07896034,0.00527208)" />
+       transform="matrix(1.0309059,0,0,0.78717815,-2.3051758,2.3931381)" />
   </g>
 </svg>

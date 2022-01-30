@@ -22,7 +22,8 @@ SOFTWARE.
 
 
 
-for mdi icons used in selection-mod-* and selection-mode, -mods, -options, and -over:
+for mdi icons, used in selection-mod-*, selection buttons and in the custom selection menu (everything in selection-mode):
+(this does not apply to the modified icons, i.e. all of them)
 
 Apache License
 Version 2.0, January 2004

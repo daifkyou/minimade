@@ -39,15 +39,15 @@
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
      inkscape:snap-page="true"
-     inkscape:zoom="1.3239838"
-     inkscape:cx="148.79336"
-     inkscape:cy="141.9957"
+     inkscape:zoom="2.6479676"
+     inkscape:cx="115.18268"
+     inkscape:cy="65.333126"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4" />
+     inkscape:current-layer="g15193" />
   <path
      d="m 32,2.6666667 c -13.333333,0 -23.9999999,10.6666673 -23.9999999,24.0000003 v 18.666667 a 8.0000001,8.0000001 0 0 0 7.9999999,8 h 8 V 32 H 13.333334 V 26.666667 A 18.666667,18.666667 0 0 1 32,8.0000001 18.666667,18.666667 0 0 1 50.666667,26.666667 V 32 H 40 v 21.333334 h 8.000001 a 8.0000001,8.0000001 0 0 0 8,-8 V 26.666667 C 56.000001,13.333334 45.253334,2.6666667 32,2.6666667 Z"
      id="path2"
@@ -67,7 +67,7 @@
            x="-3.1020844"
            y="-0.93699408"
            style="stroke-width:0.50906"
-           id="tspan11469">MODDED: resized, recolored, glow</tspan></text>
+           id="tspan11469">modified: resized, recolored, glow</tspan></text>
     </g>
   </g>
   <path

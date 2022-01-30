@@ -93,10 +93,11 @@ export: | build
 # converting
 
 $(images@1x) $(images-unscaled) $(images-ranking): build/%.png: src/graphics/%.svg | build
-	rsvg-convert $< -o $@
+	rsvg-convert -o $@ $<
 
 $(images@2x): build/%@2x.png: src/graphics/%.svg | build
-	rsvg-convert -z 2 $< -o $@
+	touch $@
+	rsvg-convert -z 2 -o $@ $<
 
 # special
 

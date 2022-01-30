@@ -34,7 +34,21 @@
        y1="90"
        x2="46"
        y2="0"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(5.0399997,4.8)" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter827"
+       x="-0.054782606"
+       y="-0.053333333"
+       width="1.1095652"
+       height="1.1066667">
+      <feGaussianBlur
+         stdDeviation="2.1 2"
+         result="blur"
+         id="feGaussianBlur825" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="namedview6"
@@ -45,9 +59,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="2.6479675"
-     inkscape:cx="40.785999"
-     inkscape:cy="88.369665"
+     inkscape:zoom="1.8723958"
+     inkscape:cx="101.47427"
+     inkscape:cy="135.12101"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -62,14 +76,16 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:snap-bbox-edge-midpoints="true" />
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:bbox-nodes="true" />
   <rect
-     style="fill:url(#linearGradient827);fill-opacity:1;stroke-width:3.27921;stroke-linecap:round;stroke-linejoin:round"
+     style="fill:url(#linearGradient827);fill-opacity:1;stroke-width:3.67671;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter827)"
      id="rect848"
      width="92"
      height="90"
-     x="0"
-     y="0"
+     x="5.04"
+     y="4.8000002"
      rx="0"
-     ry="0" />
+     ry="0"
+     transform="matrix(0.89072329,0,0,0.8930516,0.53748164,0.52602976)" />
 </svg>

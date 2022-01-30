@@ -35,6 +35,19 @@
          offset="1"
          id="stop823" />
     </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter828"
+       x="-0.052173913"
+       y="-0.053333333"
+       width="1.1043478"
+       height="1.1066667">
+      <feGaussianBlur
+         stdDeviation="2 2"
+         result="blur"
+         id="feGaussianBlur826" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="namedview6"
@@ -61,18 +74,20 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:bbox-nodes="true" />
   <g
      id="g1830"
-     transform="scale(0.83695652,1)">
+     transform="matrix(0.74876543,0,0,0.89429338,4.0567901,4.7567974)"
+     style="stroke-width:1.11799;filter:url(#filter828)">
     <rect
-       style="fill:url(#linearGradient827);fill-opacity:1;stroke-width:3.27921;stroke-linecap:round;stroke-linejoin:round"
+       style="fill:url(#linearGradient827);fill-opacity:1;stroke-width:3.66613;stroke-linecap:round;stroke-linejoin:round"
        id="rect848"
        width="92"
        height="90"
        x="0"
        y="0"
-       rx="0"
-       ry="1.110223e-16" />
+       rx="1.2409873e-16"
+       ry="1.2414528e-16" />
   </g>
 </svg>

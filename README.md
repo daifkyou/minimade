@@ -4,7 +4,7 @@ A minimaler skin for osu!standard, because - YUGEN - was more than enough.
 
 glows still look nice so i added those
 
-The mod and selection button icons are from mdi (https://materialdesignicons.com/).
+The mod, selection button, search, sort by, and web access icons are from mdi (https://materialdesignicons.com/).
 Text is in osifont.
 
 ## Compatibility
@@ -36,4 +36,4 @@ Open to contributions of any kind but I'm really not that active and I'm not ver
 I suggest forking it as "minimaid" and replacing things with maid waifus (this is outside my field of "expertise")
 
 ## License
-See LICENSE. I doubt that any of my original graphics pass the threshold of originality though.
+See LICENSE.

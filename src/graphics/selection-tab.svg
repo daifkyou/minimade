@@ -43,9 +43,11 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-intersection-paths="true"
      inkscape:snap-smooth-nodes="true" />
-  <path
-     id="rect9153"
-     style="fill:#ffffff;fill-opacity:0.5;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:round"
-     d="M 1.5,25.07442 V 13.302623 C 1.5,6.7810473 7.075,1.5308257 14,1.5308257 h 114 c 6.925,0 12.5,5.2502216 12.5,11.7717973 V 25.07442"
-     sodipodi:nodetypes="cssssc" />
+  <rect
+     style="fill:#17ff55;stroke-width:2.64567;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1"
+     id="rect1128"
+     width="142"
+     height="25"
+     x="0"
+     y="0" />
 </svg>
