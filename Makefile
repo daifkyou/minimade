@@ -19,8 +19,6 @@ mode-med-basenames = $(addsuffix -med,$(mode-basenames))
 mode-small-basenames = $(addsuffix -small,$(mode-basenames))
 mode-med@1x = $(addsuffix .png,$(mode-med-basenames))
 mode-med@2x = $(addsuffix @2x.png,$(mode-med-basenames))
-mode-small@1x = $(addsuffix .png,$(mode-small-basenames))
-mode-small@2x = $(addsuffix @2x.png,$(mode-small-basenames))
 
 modes-scaled@1x = $(mode-med@1x) $(mode-small@1x)
 modes-scaled@2x = $(mode-med@2x) $(mode-small@2x)
@@ -32,7 +30,7 @@ mods-basenames = $(addprefix build/selection-mod-,$(mods))
 
 # 1x/2x elements
 # hit100-0 is the ingame frame while hit100 is for the ranking screen (empty), and the 100 is in the ranking background (same for hit50 and hit100k)
-scaled-elements = cursor cursor-smoke approachcircle hitcircle hitcircleoverlay hitcircleselect lighting reversearrow sliderfollowcircle sliderb followpoint hit100-0 hit50-0 hit0 spinner-approachcircle spinner-circle spinner-metre spinner-rpm sliderscorepoint menu-button-background menu-back button-left button-middle button-right ranking-graph ranking-perfect star play-skip play-unranked play-warningarrow section-fail section-pass multi-skipped scorebar-bg scorebar-colour inputoverlay-key pause-back pause-continue pause-replay pause-retry arrow-pause selection-mode selection-mode-over selection-mods selection-mods-over selection-random selection-random-over selection-options selection-options-over selection-tab options-offset-tick ranking-winner
+scaled-elements = cursor cursor-smoke approachcircle hitcircle hitcircleoverlay hitcircleselect lighting reversearrow sliderfollowcircle sliderb followpoint hit100-0 hit50-0 hit0 spinner-approachcircle spinner-circle spinner-metre spinner-rpm sliderscorepoint menu-button-background menu-back button-left button-middle button-right ranking-graph ranking-perfect star play-skip play-unranked play-warningarrow section-fail section-pass multi-skipped scorebar-bg scorebar-colour inputoverlay-key pause-back pause-continue pause-replay pause-retry arrow-pause selection-mode selection-mode-over selection-mods selection-mods-over selection-random selection-random-over selection-options selection-options-over selection-tab options-offset-tick ranking-winner mode-osu-small
 scaled-basenames = $(addprefix build/,$(scaled-elements)) $(ranking-basenames) $(mods-basenames) $(mode-basenames)
 images@1x = $(addsuffix .png,$(scaled-basenames))
 images@2x = $(addsuffix @2x.png,$(scaled-basenames))
@@ -80,8 +78,8 @@ audio = $(sounds-silent)
 
 both: 1x 2x
 
-1x: unscaled special@1x $(images@1x)
-2x: unscaled special@2x $(images@2x)
+1x: unscaled special@1x $(images@1x) build/LICENSE
+2x: unscaled special@2x $(images@2x) build/LICENSE
 
 special@1x: build/skin.ini build/menu-background.jpg $(images-ranking-small) build/hit100k-0.png $(modes-scaled@1x) $(font-default@1x) $(font-score@1x) $(font-scoreentry@1x) $(audio)
 special@2x: build/skin.ini build/menu-background.jpg $(images-ranking-small@2x) build/hit100k-0@2x.png $(modes-scaled@2x) $(font-default@2x) $(font-score@2x) $(font-scoreentry@2x) $(audio)
@@ -135,9 +133,6 @@ $(mode-med@2x): build/%-med@2x.png: src/graphics/%.svg | build
 
 $(mode-small@1x): build/%-small.png: src/graphics/%.svg | build
 	rsvg-convert -z 0.25 $< -o $@
-
-$(mode-small@2x): build/%-small@2x.png: src/graphics/%.svg | build
-	rsvg-convert -z 0.5 $< -o $@
 
 # font rules
 

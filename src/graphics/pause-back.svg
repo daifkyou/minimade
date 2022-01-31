@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="279.51227"
-   height="75.070885"
-   viewBox="0 0 73.954283 19.862502"
+   width="252.77211"
+   height="46.141739"
+   viewBox="0 0 66.879285 12.208333"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -24,14 +24,14 @@
      inkscape:document-units="mm"
      showgrid="false"
      units="px"
-     width="32px"
+     width="252.77211px"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
-     inkscape:snap-bbox-midpoints="false"
+     inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="131.87541"
-     inkscape:cy="28.637825"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="38.714097"
+     inkscape:cy="17.854446"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -39,10 +39,10 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      inkscape:snap-bbox-edge-midpoints="false"
-     fit-margin-top="10"
-     fit-margin-left="10"
-     fit-margin-right="10"
-     fit-margin-bottom="10"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
      inkscape:snap-object-midpoints="false"
      inkscape:object-nodes="false"
      inkscape:snap-center="false"
@@ -66,10 +66,10 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter856-3"
-       x="-0.45788874"
-       y="-0.44985532"
-       width="1.9157775"
-       height="1.8997106">
+       x="-0.45788875"
+       y="-0.44985533"
+       width="1.9157774"
+       height="1.8997107">
       <feGaussianBlur
          stdDeviation="1 1"
          result="blur"
@@ -80,59 +80,107 @@
        inkscape:label="Blur"
        id="filter864"
        x="-0.31656343"
-       y="-0.44985532"
+       y="-0.44985533"
        width="1.633122"
-       height="1.8997106">
+       height="1.8997107">
       <feGaussianBlur
          stdDeviation="1 1"
          result="blur"
          id="feGaussianBlur862" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter1134"
+       x="-0.41231221"
+       y="-0.32395947"
+       width="1.8246244"
+       height="1.6479191">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur1132" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter1307"
+       x="-0.28346455"
+       y="-0.32395943"
+       width="1.5669291"
+       height="1.6479189">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur1305" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter1134-3"
+       x="-0.41231221"
+       y="-0.32395947"
+       width="1.8246244"
+       height="1.6479191">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur1132-6" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter1134-36"
+       x="-0.41231222"
+       y="-0.32395948"
+       width="1.8246244"
+       height="1.647919">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur1132-7" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter1134-367"
+       x="-0.41231222"
+       y="-0.32395948"
+       width="1.8246244"
+       height="1.647919">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur1132-5" />
     </filter>
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(2.0505207,5.0458338)">
+     transform="translate(-5.0804668,-17.054601)">
     <g
-       id="g852"
-       transform="translate(1.3416667,0.24583369)"
-       style="filter:url(#filter856-3)">
+       id="g1366"
+       transform="translate(2.0247367,18.39625)">
       <path
-         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 10.054164,0.99218969 5.6885321,4.7625018 10.054164,8.5328139"
-         id="path848"
-         sodipodi:nodetypes="ccc" />
+         d="M 14.59948,1.05835 V 8.466685 L 10.895314,4.762519 M 7.1911468,1.05835 V 8.466685 H 6.1328128 V 1.05835 m 4.7625012,0 V 8.466685 L 7.1911468,4.762519"
+         id="path1303"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582;filter:url(#filter1307)" />
       <path
-         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 2.645836,0.99218954 V 8.5328139"
-         id="path850"
-         sodipodi:nodetypes="cc" />
-    </g>
-    <g
-       id="g1276"
-       transform="translate(1.5875)">
-      <path
-         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 10.054164,0.99218969 5.6885321,4.7625018 10.054164,8.5328139"
-         id="path855"
-         sodipodi:nodetypes="ccc" />
-      <path
-         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 2.645836,0.99218954 V 8.5328139"
-         id="path855-3"
-         sodipodi:nodetypes="cc" />
+         d="M 14.59948,1.05835 V 8.466685 L 10.895314,4.762519 M 7.1911468,1.05835 V 8.466685 H 6.1328128 V 1.05835 m 4.7625012,0 V 8.466685 L 7.1911468,4.762519"
+         id="path1196"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
     </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.9187px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.322968"
-       x="14.905237"
-       y="9.5250044"
+       x="17.607056"
+       y="27.921301"
        id="text9067"><tspan
          sodipodi:role="line"
          id="tspan9065"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.322968"
-         x="14.905237"
-         y="9.5250044">Back</tspan></text>
+         x="17.607056"
+         y="27.921301">Back</tspan></text>
   </g>
 </svg>

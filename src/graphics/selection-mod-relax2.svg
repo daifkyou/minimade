@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   width="64"
-   height="64"
-   viewBox="0 0 64 64"
+   width="68.26667"
+   height="68.26667"
+   viewBox="0 0 68.26667 68.26667"
    id="svg4"
    sodipodi:docname="selection-mod-relax2.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -14,7 +14,7 @@
   <defs
      id="defs8">
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter829"
        x="-0.081818181"
@@ -43,37 +43,39 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="1.8723959"
-     inkscape:cx="135.65507"
-     inkscape:cy="91.32684"
+     inkscape:zoom="3.7447918"
+     inkscape:cx="86.520164"
+     inkscape:cy="74.770512"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g15193" />
+     inkscape:current-layer="svg4"
+     inkscape:bbox-nodes="true" />
   <path
-     d="M 8.1333334,34.666667 H 2.6666667 V 29.333334 H 8.1333334 C 9.3333335,18.213334 18.213334,9.3333335 29.333334,8.1333334 V 2.6666667 h 5.333333 v 5.4666667 c 11.12,1.2000001 20,10.0800006 21.2,21.2000006 h 5.466667 v 5.333333 h -5.466667 c -1.2,11.12 -10.08,20 -21.2,21.2 v 5.466667 h -5.333333 v -5.466667 c -11.12,-1.2 -20.0000005,-10.08 -21.2000006,-21.2 M 32,13.333334 A 18.666667,18.666667 0 0 0 13.333334,32 18.666667,18.666667 0 0 0 32,50.666667 18.666667,18.666667 0 0 0 50.666667,32 18.666667,18.666667 0 0 0 32,13.333334 Z"
+     d="M 10.266667,36.8 H 4.7999998 v -5.333333 h 5.4666672 c 1.2,-11.12 10.08,-20 21.2,-21.2 V 4.7999998 H 36.8 v 5.4666672 c 11.12,1.2 20,10.08 21.2,21.2 h 5.466667 V 36.8 H 58 C 56.8,47.92 47.92,56.8 36.8,58 v 5.466667 H 31.466667 V 58 c -11.12,-1.2 -20,-10.08 -21.2,-21.2 M 34.133333,15.466667 A 18.666667,18.666667 0 0 0 15.466667,34.133333 18.666667,18.666667 0 0 0 34.133333,52.8 18.666667,18.666667 0 0 0 52.8,34.133333 18.666667,18.666667 0 0 0 34.133333,15.466667 Z"
      id="path825"
-     style="stroke-width:1;fill:#ffffff;fill-opacity:1;filter:url(#filter829)" />
+     style="fill:#ffffff;fill-opacity:1;stroke-width:1;filter:url(#filter829)" />
   <path
-     d="M 8.1333334,34.666667 H 2.6666667 V 29.333334 H 8.1333334 C 9.3333335,18.213334 18.213334,9.3333335 29.333334,8.1333334 V 2.6666667 h 5.333333 v 5.4666667 c 11.12,1.2000001 20,10.0800006 21.2,21.2000006 h 5.466667 v 5.333333 h -5.466667 c -1.2,11.12 -10.08,20 -21.2,21.2 v 5.466667 h -5.333333 v -5.466667 c -11.12,-1.2 -20.0000005,-10.08 -21.2000006,-21.2 M 32,13.333334 A 18.666667,18.666667 0 0 0 13.333334,32 18.666667,18.666667 0 0 0 32,50.666667 18.666667,18.666667 0 0 0 50.666667,32 18.666667,18.666667 0 0 0 32,13.333334 Z"
+     d="M 10.266667,36.8 H 4.7999998 v -5.333333 h 5.4666672 c 1.2,-11.12 10.08,-20 21.2,-21.2 V 4.7999998 H 36.8 v 5.4666672 c 11.12,1.2 20,10.08 21.2,21.2 h 5.466667 V 36.8 H 58 C 56.8,47.92 47.92,56.8 36.8,58 v 5.466667 H 31.466667 V 58 c -11.12,-1.2 -20,-10.08 -21.2,-21.2 M 34.133333,15.466667 A 18.666667,18.666667 0 0 0 15.466667,34.133333 18.666667,18.666667 0 0 0 34.133333,52.8 18.666667,18.666667 0 0 0 52.8,34.133333 18.666667,18.666667 0 0 0 34.133333,15.466667 Z"
      id="path2"
-     style="stroke-width:1;fill:#ffffff;fill-opacity:1" />
+     style="fill:#ffffff;fill-opacity:1;stroke-width:1" />
   <g
-     id="g830">
+     id="g830"
+     transform="translate(2.1333331,2.1333331)">
     <g
        id="g15193"
        transform="translate(-0.61643983)">
       <text
          xml:space="preserve"
          style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
-         x="-3.1020844"
-         y="-0.93699408"
+         x="-4.8973699"
+         y="-6.6671486"
          id="text6689"><tspan
            sodipodi:role="line"
-           x="-3.1020844"
-           y="-0.93699408"
+           x="-4.8973699"
+           y="-6.6671486"
            style="stroke-width:0.50906"
            id="tspan11469">modified: resized, recolored, glow</tspan></text>
     </g>

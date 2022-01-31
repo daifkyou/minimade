@@ -2,8 +2,8 @@
 <svg
    version="1.1"
    width="77"
-   height="90"
-   viewBox="0 0 77 90"
+   height="91"
+   viewBox="0 0 77 91"
    id="svg4"
    sodipodi:docname="selection-mods.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -14,11 +14,11 @@
   <defs
      id="defs8">
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter839"
-       x="-0.094688873"
-       y="-0.2149406"
+       x="-0.09468887"
+       y="-0.21494059"
        width="1.1893777"
        height="1.4298812">
       <feGaussianBlur
@@ -27,7 +27,7 @@
          id="feGaussianBlur837" />
     </filter>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter843"
        x="-0.091428571"
@@ -50,8 +50,8 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="4"
-     inkscape:cx="91.75"
-     inkscape:cy="11.75"
+     inkscape:cx="68"
+     inkscape:cy="52.5"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -70,33 +70,15 @@
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:snap-object-midpoints="true" />
   <rect
-     style="fill:#000000;fill-opacity:1;stroke-width:2.64567;stroke-linecap:round;stroke-linejoin:round"
-     id="rect3047"
+     style="fill:#000000;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round"
+     id="rect9407"
      width="77"
-     height="90"
+     height="91"
      x="0"
      y="0" />
   <g
-     id="g830">
-    <g
-       id="g15193"
-       transform="translate(-0.61643983)">
-      <text
-         xml:space="preserve"
-         style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
-         x="-3.1020844"
-         y="-0.93699408"
-         id="text6689"><tspan
-           sodipodi:role="line"
-           x="-3.1020844"
-           y="-0.93699408"
-           style="stroke-width:0.50906"
-           id="tspan11469">modified: resized, recolored, added text</tspan></text>
-    </g>
-  </g>
-  <g
      id="g7854-3"
-     transform="translate(19.523108,7.4413628)">
+     transform="translate(19.523108,8.4413628)">
     <text
        xml:space="preserve"
        style="font-size:30.1884px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.754711"
@@ -114,7 +96,33 @@
      id="path829"
      style="fill:#ffffff;fill-opacity:1;stroke-width:3.75;filter:url(#filter843)" />
   <path
-     d="m 64.75,35.584 h -22.5 v 22.5 h -7.5 v -22.5 h -22.5 v -7.5 h 22.5 v -22.5 h 7.5 v 22.5 h 22.5 z"
+     d="m 64.75,36.584 h -22.5 v 22.5 h -7.5 v -22.5 h -22.5 v -7.5 h 22.5 v -22.5 h 7.5 v 22.5 h 22.5 z"
      id="path2"
      style="fill:#ffffff;fill-opacity:1;stroke-width:3.75" />
+  <g
+     id="g5826"
+     transform="translate(0,0.02982771)">
+    <g
+       id="g831"
+       transform="translate(0.33804766,-3.6266493)">
+      <g
+         id="g830">
+        <g
+           id="g15193"
+           transform="translate(-0.61643983)">
+          <text
+             xml:space="preserve"
+             style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+             x="-3.1020844"
+             y="-0.93699408"
+             id="text6689"><tspan
+               sodipodi:role="line"
+               x="-3.1020844"
+               y="-0.93699408"
+               style="stroke-width:0.50906"
+               id="tspan11469">modified: resized, recolored, added glow, background, text</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
 </svg>

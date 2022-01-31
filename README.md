@@ -4,7 +4,7 @@ A minimaler skin for osu!standard, because - YUGEN - was more than enough.
 
 glows still look nice so i added those
 
-The mod, selection button, search, sort by, and web access icons are from mdi (https://materialdesignicons.com/).
+Most icons are from mdi (https://materialdesignicons.com/).
 Text is in osifont.
 
 ## Compatibility

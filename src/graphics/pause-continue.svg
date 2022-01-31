@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="275.51227"
-   height="56.000019"
-   viewBox="0 0 72.895955 14.81667"
+   width="252.77211"
+   height="46.141739"
+   viewBox="0 0 66.879288 12.208334"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -24,75 +24,61 @@
      inkscape:document-units="mm"
      showgrid="false"
      units="px"
-     width="32px"
+     width="252.77211px"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="101.46982"
-     inkscape:cy="51.618795"
+     inkscape:zoom="4"
+     inkscape:cx="136.75"
+     inkscape:cy="48"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="false"
-     fit-margin-top="10"
-     fit-margin-left="10"
-     fit-margin-right="10"
-     fit-margin-bottom="10"
+     inkscape:snap-bbox-edge-midpoints="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
      inkscape:snap-object-midpoints="true"
      lock-margins="true" />
   <defs
      id="defs2">
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter864"
        x="-0.31656343"
-       y="-0.44985532"
+       y="-0.44985533"
        width="1.633122"
-       height="1.8997106">
+       height="1.8997107">
       <feGaussianBlur
          stdDeviation="1 1"
          result="blur"
          id="feGaussianBlur862" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter1134"
+       x="-0.41231222"
+       y="-0.32395948"
+       width="1.8246244"
+       height="1.647919">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur1132" />
     </filter>
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(2.6458337,2.6458338)">
-    <g
-       id="g860"
-       style="filter:url(#filter864)">
-      <path
-         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 0.99218964,0.99218969 5.3578213,4.7625018 0.99218964,8.5328139"
-         id="path856"
-         sodipodi:nodetypes="ccc" />
-      <path
-         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 7.3422286,0.99218954 11.707862,4.7625016 7.3422286,8.5328139"
-         id="path858"
-         sodipodi:nodetypes="ccc" />
-    </g>
-    <g
-       id="g853">
-      <path
-         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 0.99218964,0.99218969 5.3578213,4.7625018 0.99218964,8.5328139"
-         id="path855"
-         sodipodi:nodetypes="ccc" />
-      <path
-         style="fill:none;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 7.3422286,0.99218954 11.707862,4.7625016 7.3422286,8.5328139"
-         id="path855-3"
-         sodipodi:nodetypes="ccc" />
-    </g>
+     transform="translate(-0.72500186,1.341649)">
     <text
        xml:space="preserve"
        style="font-size:12.876px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
@@ -104,5 +90,17 @@
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
          x="12.994454"
          y="9.5250044">Continue</tspan></text>
+    <g
+       id="g1156"
+       transform="translate(-3.3796476,-17.736007)">
+      <path
+         d="m 8.5046494,18.794358 v 7.408334 l 5.8208316,-3.704166 z"
+         id="path1108"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582;filter:url(#filter1134)" />
+      <path
+         d="m 8.5046494,18.794358 v 7.408334 l 5.8208316,-3.704166 z"
+         id="path991"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
+    </g>
   </g>
 </svg>

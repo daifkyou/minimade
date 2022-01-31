@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   width="64"
-   height="64"
-   viewBox="0 0 64 64"
+   width="62.933331"
+   height="60.26667"
+   viewBox="0 0 62.933331 60.26667"
    id="svg4"
    sodipodi:docname="selection-mod-relax.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -14,11 +14,11 @@
   <defs
      id="defs8">
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter3117"
-       x="-0.09"
-       y="-0.094736841"
+       x="-0.089999999"
+       y="-0.094736842"
        width="1.18"
        height="1.1894737">
       <feGaussianBlur
@@ -44,24 +44,26 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="3.7447917"
-     inkscape:cx="153.81363"
-     inkscape:cy="50.470097"
+     inkscape:cx="86.520166"
+     inkscape:cy="31.777468"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g15193" />
+     inkscape:current-layer="svg4"
+     inkscape:bbox-nodes="true" />
   <path
-     d="m 32,46.160147 16.480001,9.946667 -4.373334,-18.746667 14.56,-12.613334 L 39.493334,23.09348 32,5.4401468 24.506667,23.09348 5.3333334,24.746813 19.866667,37.360147 15.52,56.106814 Z"
+     d="M 31.466667,45.52 47.946668,55.466667 43.573334,36.72 58.133334,24.106666 38.960001,22.453333 31.466667,4.8000002 23.973334,22.453333 4.8000002,24.106666 19.333334,36.72 14.986667,55.466667 Z"
      id="path3113"
-     style="stroke-width:0.999999;fill:#ffffff;fill-opacity:1;filter:url(#filter3117)" />
+     style="fill:#ffffff;fill-opacity:1;stroke-width:0.999999;filter:url(#filter3117)" />
   <path
-     d="m 32,46.160147 16.480001,9.946667 -4.373334,-18.746667 14.56,-12.613334 L 39.493334,23.09348 32,5.4401468 24.506667,23.09348 5.3333334,24.746813 19.866667,37.360147 15.52,56.106814 Z"
+     d="M 31.466667,45.52 47.946668,55.466667 43.573334,36.72 58.133334,24.106666 38.960001,22.453333 31.466667,4.8000002 23.973334,22.453333 4.8000002,24.106666 19.333334,36.72 14.986667,55.466667 Z"
      id="path2"
-     style="stroke-width:0.999999;fill:#ffffff;fill-opacity:1" />
+     style="fill:#ffffff;fill-opacity:1;stroke-width:0.999999" />
   <g
-     id="g830">
+     id="g830"
+     transform="translate(0.33804802,-3.5968215)">
     <g
        id="g15193"
        transform="translate(-0.61643983)">

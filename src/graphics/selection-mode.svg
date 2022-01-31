@@ -16,6 +16,15 @@
      id="defs8">
     <inkscape:path-effect
        effect="powerclip"
+       id="path-effect1381"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <inkscape:path-effect
+       effect="powerclip"
        id="path-effect6784"
        is_visible="true"
        lpeversion="1"
@@ -487,7 +496,8 @@
        y1="119.00002"
        x2="137.99663"
        y2="119.00002"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="scale(0.73188394,1)" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath1201-3">
@@ -789,35 +799,37 @@
     </clipPath>
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath6770">
+       id="clipPath1367">
       <g
-         id="g6782"
-         style="display:none">
+         id="g1379"
+         style="display:none"
+         clip-path="none">
         <path
            d="m 546.99996,47 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z"
-           id="path6772"
+           id="path1369"
            style="fill:#ffffff;fill-opacity:1" />
         <path
            d="m 664.99996,47 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z"
-           id="path6774"
+           id="path1371"
            style="display:inline;fill:#ffffff;fill-opacity:1" />
         <path
            d="m 783.99996,47 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z"
-           id="path6776"
+           id="path1373"
            style="display:inline;fill:#ffffff;fill-opacity:1" />
         <path
            d="m 902.49996,47 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z"
-           id="path6778"
+           id="path1375"
            style="display:inline;fill:#ffffff;fill-opacity:1" />
         <path
            d="m 1021.5,47 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z"
-           id="path6780"
+           id="path1377"
            style="display:inline;fill:#ffffff;fill-opacity:1" />
       </g>
       <path
-         id="lpe_path-effect6784"
+         id="lpe_path-effect1381"
+         style="display:block"
          class="powerclip"
-         d="m 241,21.000023 h 906 V 60.000025 H 241 Z M 546.99996,47 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z m 118,0 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z m 119,0 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z m 118.5,0 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z M 1021.5,47 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z" />
+         d="m 227,21.000023 h 920 v 44 H 227 Z M 546.99996,47 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z m 118,0 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z m 119,0 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z m 118.5,0 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z M 1021.5,47 c -0.831,0 -1.5,0.669 -1.5,1.5 0,0.831 0.669,1.5 1.5,1.5 h 61 c 0.831,0 1.5,-0.669 1.5,-1.5 0,-0.831 -0.669,-1.5 -1.5,-1.5 z" />
     </clipPath>
   </defs>
   <sodipodi:namedview
@@ -829,9 +841,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="2"
-     inkscape:cx="185"
-     inkscape:cy="670"
+     inkscape:zoom="1"
+     inkscape:cx="-29"
+     inkscape:cy="176"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -841,14 +853,16 @@
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
      inkscape:snap-page="true"
-     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-bbox-midpoints="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:bbox-nodes="true"
      showguides="true"
-     inkscape:snap-nodes="false" />
+     inkscape:snap-nodes="false"
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:snap-global="true" />
   <g
      inkscape:groupmode="layer"
      id="layer2"
@@ -873,7 +887,7 @@
     <rect
        style="fill:#000000;fill-opacity:1;stroke-width:2.64567;stroke-linecap:round;stroke-linejoin:round"
        id="rect847"
-       width="400"
+       width="93"
        height="91"
        x="0"
        y="650" />
@@ -889,10 +903,10 @@
          y="732.33191"
          style="stroke-width:0.720919">mode</tspan></text>
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:2.64567;stroke-linecap:round;stroke-linejoin:round"
+       style="fill:#000000;fill-opacity:1;stroke-width:2.9065;stroke-linecap:round;stroke-linejoin:round"
        id="rect16067"
-       width="37"
-       height="29"
+       width="37.000019"
+       height="35.000008"
        x="101"
        y="87.000023"
        mask="none"
@@ -920,6 +934,15 @@
        inkscape:export-filename="/home/kyle-u-/.local/share/osu-wine/OSU/Skins/build/mode-osu-small@2x.png"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
+    <rect
+       style="display:inline;fill:#000000;fill-opacity:0.998276;stroke:none;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round"
+       id="rect1563-2"
+       width="75"
+       height="42.499992"
+       x="777"
+       y="51"
+       ry="8"
+       rx="8" />
     <g
        id="g1213"
        clip-path="url(#clipPath1096)"
@@ -982,20 +1005,20 @@
          d="m 552,47 h 61 c 0.831,0 1.5,0.669 1.5,1.5 0,0.831 -0.669,1.5 -1.5,1.5 h -61 c -0.831,0 -1.5,-0.669 -1.5,-1.5 0,-0.831 0.669,-1.5 1.5,-1.5 z" />
     </g>
     <path
-       style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.98907;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.5312;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect29332-9"
-       width="896"
-       height="29.000002"
-       x="246"
+       width="910"
+       height="34"
+       x="232"
        y="26.000023"
        mask="none"
        inkscape:export-filename="/home/kyle-u-/.local/share/osu-wine/OSU/Skins/build/mode-osu-small@2x.png"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"
        sodipodi:type="rect"
-       clip-path="url(#clipPath6770)"
-       d="m 246,26.000023 h 896 V 55.000025 H 246 Z"
-       inkscape:path-effect="#path-effect6784" />
+       clip-path="url(#clipPath1367)"
+       d="m 232,26.000023 h 910 v 34 H 232 Z"
+       inkscape:path-effect="#path-effect1381" />
     <g
        id="g1213-3"
        clip-path="url(#clipath_lpe_path-effect2016)"
@@ -1074,15 +1097,6 @@
        height="26"
        x="871"
        y="2.2888184e-05" />
-    <rect
-       style="display:inline;fill:#000000;fill-opacity:0.998276;stroke:none;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round"
-       id="rect1563-2"
-       width="68"
-       height="22.999998"
-       x="789"
-       y="59"
-       ry="11.499999"
-       rx="11.499999" />
     <text
        xml:space="preserve"
        style="font-size:40px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont"
@@ -1095,7 +1109,7 @@
          y="-27.17939" /></text>
     <g
        id="g834"
-       transform="translate(-0.27839219,-3.5968216)">
+       transform="translate(-0.34799024,-2.5627934)">
       <g
          id="g830">
         <g
@@ -1105,24 +1119,20 @@
              xml:space="preserve"
              style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
              x="-3.1020844"
-             y="-0.93699408"
+             y="-1.9710222"
              id="text6689"><tspan
                sodipodi:role="line"
                x="-3.1020844"
-               y="-0.93699408"
+               y="-1.9710222"
                style="stroke-width:0.50906"
-               id="tspan11469">web and search icons: modified: resized, recolored</tspan></text>
+               id="tspan11469">web and search icons: modified: resized, recolored, added custom selection menu top and mode button background</tspan></text>
         </g>
       </g>
     </g>
-    <path
-       d="m 820.75,61.75 a 6.5,6.5 0 0 1 6.5,6.5 c 0,1.609999 -0.59,3.089999 -1.56,4.229999 l 0.27,0.27 h 0.79 l 5,5 -1.5,1.5 -5,-5 v -0.79 l -0.27,-0.27 c -1.14,0.97 -2.62,1.56 -4.23,1.56 a 6.5,6.5 0 0 1 -6.5,-6.499999 6.5,6.5 0 0 1 6.5,-6.5 m 0,2 c -2.5,0 -4.5,2 -4.5,4.5 0,2.499999 2,4.499999 4.5,4.499999 2.5,0 4.5,-2 4.5,-4.499999 0,-2.5 -2,-4.5 -4.5,-4.5 z"
-       id="path19123"
-       style="fill:#ffffff;fill-opacity:1" />
     <rect
-       style="fill:url(#linearGradient1571);fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round"
+       style="fill:url(#linearGradient1571);fill-opacity:1;stroke-width:3.42201;stroke-linecap:round;stroke-linejoin:round"
        id="rect1429"
-       width="138.00002"
+       width="101"
        height="6.0000072"
        x="0"
        y="116.00002" />
@@ -1140,8 +1150,8 @@
        id="path4052"
        style="fill:#ffffff;fill-opacity:1" />
     <path
-       d="m 814.5,28.5 a 4,4 0 0 1 4,4 4,4 0 0 1 -4,4 4,4 0 0 1 -4,-4 4,4 0 0 1 4,-4 m 0,10 c 4.42,0 8,1.79 8,4 v 2 h -16 v -2 c 0,-2.21 3.58,-4 8,-4 z"
-       id="path5266"
+       d="m 812.25,61.749996 a 6.5,6.5 0 0 1 6.5,6.5 c 0,1.609999 -0.59,3.09 -1.56,4.23 l 0.27,0.27 h 0.79 l 5,5 -1.5,1.5 -5,-5 v -0.790001 l -0.27,-0.27 c -1.14,0.97 -2.62,1.560001 -4.23,1.560001 a 6.5,6.5 0 0 1 -6.5,-6.5 6.5,6.5 0 0 1 6.5,-6.5 m 0,2 c -2.5,0 -4.5,2 -4.5,4.5 0,2.5 2,4.5 4.5,4.5 2.5,0 4.5,-2 4.5,-4.5 0,-2.5 -2,-4.5 -4.5,-4.5 z"
+       id="path19123"
        style="fill:#ffffff;fill-opacity:1" />
     <path
        d="m 934.02,26.5 v 2 c 4.39,0.54 7.5,4.53 6.96,8.92 -0.46,3.64 -3.32,6.51 -6.96,6.96 v 2 c 5.5,-0.6 9.45,-5.54 8.85,-11.03 -0.52,-4.66 -4.19,-8.35 -8.85,-8.85 m -2,0 c -1.96,0.18 -3.81,0.95 -5.33,2.2 l 1.43,1.54 c 1.12,-0.9 2.47,-1.48 3.9,-1.68 v -2 m -6.74,3.61 c -1.26,1.52 -2.02,3.37 -2.21,5.33 h 2 c 0.19,-1.42 0.75,-2.77 1.64,-3.9 l -1.43,-1.43 m -2.2,7.33 c 0.2,1.96 0.97,3.81 2.21,5.33 l 1.42,-1.43 c -0.88,-1.13 -1.45,-2.48 -1.63,-3.9 h -2 m 5,5.37 -1.39,1.37 c 1.51,1.26 3.37,2.05 5.33,2.26 v -2 c -1.42,-0.18 -2.77,-0.75 -3.9,-1.63 h -0.04 m 1.52,-1.57 0.92,-3.89 -3,-2.58 3.95,-0.37 1.55,-3.61 1.55,3.65 3.95,0.33 -3,2.58 0.92,3.89 -3.42,-2.06 -3.42,2.06"
@@ -1158,6 +1168,10 @@
     <path
        d="m 924.5,22.000023 -4,-4 h 3 v -10 h -3 l 4,-4 4,4 h -3 v 10 h 3 m -20,2 v -2 h 10 v 2 m -10,-6 v -2 h 7 v 2 m -7,-6 v -2 h 4 v 2 z"
        id="path7810"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       d="m 814.5,28.5 a 4,4 0 0 1 4,4 4,4 0 0 1 -4,4 4,4 0 0 1 -4,-4 4,4 0 0 1 4,-4 m 0,10 c 4.42,0 8,1.79 8,4 v 2 h -16 v -2 c 0,-2.21 3.58,-4 8,-4 z"
+       id="path2291"
        style="fill:#ffffff;fill-opacity:1" />
   </g>
 </svg>

@@ -61,32 +61,64 @@
          result="blur"
          id="feGaussianBlur826" />
     </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter1134"
+       x="-0.41231222"
+       y="-0.32395948"
+       width="1.8246244"
+       height="1.647919">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur1132" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter1134-3"
+       x="-0.41231222"
+       y="-0.32395948"
+       width="1.8246244"
+       height="1.647919">
+      <feGaussianBlur
+         stdDeviation="1 1"
+         result="blur"
+         id="feGaussianBlur1132-6" />
+    </filter>
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-0.529187,2.6458338)">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter828)"
-       d="M 7.3422692,0.99218922 11.707901,4.7625022 7.3422692,8.5328142 Z"
-       id="path824"
-       sodipodi:nodetypes="cccc" />
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.98438;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 7.3422692,0.99218922 11.707901,4.7625022 7.3422692,8.5328142 Z"
-       id="path855"
-       sodipodi:nodetypes="cccc" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.9098px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.322746"
-       x="15.627496"
-       y="9.5247927"
-       id="text4806"><tspan
-         sodipodi:role="line"
-         id="tspan4804"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.322746"
-         x="15.627496"
-         y="9.5247927">Replay</tspan></text>
+    <g
+       id="g838-7"
+       transform="translate(1.4896412,-1.6289982e-5)">
+      <text
+         xml:space="preserve"
+         style="font-size:12.876px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+         x="12.994454"
+         y="9.5250044"
+         id="text5998"><tspan
+           sodipodi:role="line"
+           id="tspan5996"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+           x="12.994454"
+           y="9.5250044">Replay</tspan></text>
+      <g
+         id="g1156-5"
+         transform="translate(-3.3796476,-17.736007)">
+        <path
+           d="m 8.5046494,18.794358 v 7.408334 l 5.8208316,-3.704166 z"
+           id="path1108-3"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582;filter:url(#filter1134-3)" />
+        <path
+           d="m 8.5046494,18.794358 v 7.408334 l 5.8208316,-3.704166 z"
+           id="path991-5"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
+      </g>
+    </g>
   </g>
 </svg>
