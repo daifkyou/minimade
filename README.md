@@ -9,7 +9,7 @@ Text is in osifont.
 
 ## Compatibility
 ### Skin
-Tested on stable (wine on Arch Linux - i think thepoon's version, 1920x1080) and works on McOsu with some differences (steam on Arch Linux, Linux)
+Tested on stable (wine on Arch Linux, all 16:9) and works on McOsu (steam on Arch Linux, Linux) with some differences, and the newly added mode and options buttons don't support custom song selection
 
 ### Building
 Tested on Arch Linux (bash, gmake)
