@@ -25,7 +25,7 @@ modes-scaled@2x = $(mode-med@2x) $(mode-small@2x)
 
 # mods
 
-mods = autoplay cinema doubletime easy flashlight halftime hardrock hidden nightcore nofail perfect relax relax2 scorev2 spunout suddendeath target
+mods = autoplay cinema doubletime easy flashlight halftime hardrock hidden nightcore nofail perfect relax relax2 scorev2 spunout suddendeath target touchdevice nightmare
 mods-basenames = $(addprefix build/selection-mod-,$(mods))
 
 # 1x/2x elements
@@ -80,6 +80,8 @@ both: 1x 2x
 
 1x: unscaled special@1x $(images@1x) build/LICENSE
 2x: unscaled special@2x $(images@2x) build/LICENSE
+
+mcosu:
 
 special@1x: build/skin.ini build/menu-background.jpg $(images-ranking-small) build/hit100k-0.png $(modes-scaled@1x) $(font-default@1x) $(font-score@1x) $(font-scoreentry@1x) $(audio)
 special@2x: build/skin.ini build/menu-background.jpg $(images-ranking-small@2x) build/hit100k-0@2x.png $(modes-scaled@2x) $(font-default@2x) $(font-score@2x) $(font-scoreentry@2x) $(audio)
