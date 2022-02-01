@@ -1,8 +1,6 @@
 **probably won't be active after finished release** (infrequent or maybe no updates/maintenance if i don't feel like it)
-# minimade glow
+# minimade
 A minimaler skin for osu!standard, because - YUGEN - was more than enough.
-
-glows still look nice so i added those
 
 Most icons are from mdi (https://materialdesignicons.com/).
 Text is in osifont.
@@ -26,10 +24,10 @@ All svgs are in SD size since they can be upscaled.
  - `expr`
 
 ### Steps
- 1. `git clone https://github.com/awful-coder/minimade-glow.git`
- 2. `cd minimade-glow`
+ 1. `git clone https://github.com/awful-coder/minimade.git`
+ 2. `cd minimade`
  3. `make` (target `1x` for SD, `2x` for HD, `both` for both resolutions (default))
- 4. `make export` (set SKINNAME to the base filename of your osz, default "minimade-glow")
+ 4. `make export` (set SKINNAME to the base filename of your osz, default "minimade")
 
 ## Contributing
 Open to contributions of any kind but I'm really not that active and I'm not very experienced.

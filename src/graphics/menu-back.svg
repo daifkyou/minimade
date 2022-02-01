@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2"
-     inkscape:cx="82.5"
-     inkscape:cy="68"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="350.01786"
+     inkscape:cy="-19.79899"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -93,7 +93,7 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1307-3"
-       x="-0.28346455"
+       x="-0.28346456"
        y="-0.32395943"
        width="1.5669291"
        height="1.6479189">
@@ -115,32 +115,46 @@
        height="24.077084"
        x="59.314064"
        y="8.8447876" />
+    <path
+       d="m 79.248538,17.179162 v 7.408335 l -3.704166,-3.704166 m -3.704167,-3.704169 v 7.408335 h -1.058334 v -7.408335 m 4.762501,0 v 7.408335 l -3.704167,-3.704166"
+       id="path1196"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.9187px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.322968"
+       x="80.231377"
+       y="25.645863"
+       id="text9067"><tspan
+         sodipodi:role="line"
+         id="tspan9065"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.322968"
+         x="80.231377"
+         y="25.645863">Back</tspan></text>
     <g
-       id="g850"
-       transform="translate(62.624321,-2.2754383)">
+       id="g842"
+       transform="matrix(0.26458333,0,0,0.26458333,59.314064,8.8447876)">
       <g
-         id="g1366"
-         transform="translate(2.0247367,18.39625)">
-        <path
-           d="M 14.59948,1.05835 V 8.466685 L 10.895314,4.762519 M 7.1911468,1.05835 V 8.466685 H 6.1328128 V 1.05835 m 4.7625012,0 V 8.466685 L 7.1911468,4.762519"
-           id="path1303"
-           style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582;filter:url(#filter1307-3)" />
-        <path
-           d="M 14.59948,1.05835 V 8.466685 L 10.895314,4.762519 M 7.1911468,1.05835 V 8.466685 H 6.1328128 V 1.05835 m 4.7625012,0 V 8.466685 L 7.1911468,4.762519"
-           id="path1196"
-           style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
+         id="g831"
+         transform="translate(0.33804766,-3.5968216)">
+        <g
+           id="g830">
+          <g
+             id="g15193"
+             transform="translate(-0.61643983)">
+            <text
+               xml:space="preserve"
+               style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+               x="-3.1020844"
+               y="-0.93699408"
+               id="text6689"><tspan
+                 sodipodi:role="line"
+                 x="-3.1020844"
+                 y="-0.93699408"
+                 style="stroke-width:0.50906"
+                 id="tspan11469">modified: resized, recolored, added background, text</tspan></text>
+          </g>
+        </g>
       </g>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.9187px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.322968"
-         x="17.607056"
-         y="27.921301"
-         id="text9067"><tspan
-           sodipodi:role="line"
-           id="tspan9065"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.322968"
-           x="17.607056"
-           y="27.921301">Back</tspan></text>
     </g>
   </g>
 </svg>

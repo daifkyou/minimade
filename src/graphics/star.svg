@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="5.6568545"
-     inkscape:cx="34.294677"
-     inkscape:cy="28.8146"
+     inkscape:cx="36.239221"
+     inkscape:cy="14.495688"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -64,22 +64,13 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffffff;fill-opacity:0.75;stroke:none;stroke-width:1.46648;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1181)"
-       id="rect925-3"
-       width="8.467"
-       height="3.175"
-       x="2.381083"
-       y="5.0270829"
-       rx="1.5875"
-       ry="1.5875" />
-    <rect
        style="fill:#ffffff;fill-opacity:0.5;stroke:none;stroke-width:1.46648;stroke-linecap:round;stroke-linejoin:round"
        id="rect925"
-       width="8.467"
-       height="3.175"
-       x="2.381083"
-       y="5.0270829"
-       rx="1.5875"
-       ry="1.5875" />
+       width="10.054167"
+       height="3.7041667"
+       x="1.5875001"
+       y="4.7624998"
+       rx="1.8520833"
+       ry="1.8520833" />
   </g>
 </svg>

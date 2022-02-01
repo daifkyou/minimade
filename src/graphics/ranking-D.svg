@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="202.01482"
-   height="202.01482"
-   viewBox="0 0 53.449749 53.44975"
+   width="170"
+   height="170"
+   viewBox="0 0 44.979163 44.979164"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2"
-     inkscape:cx="-5.5"
-     inkscape:cy="144"
+     inkscape:cx="-21.5"
+     inkscape:cy="128"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -63,18 +63,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(4.2352937,0.2665456)">
-    <g
-       id="g828-3"
-       style="fill:none;fill-opacity:1;stroke:#ff5067;stroke-width:1.13333;stroke-opacity:1;filter:url(#filter864)"
-       transform="matrix(0.88235282,0,0,0.88235282,2.6458362,3.1127482)">
-      <circle
-         style="fill:none;fill-opacity:1;stroke:#ff5067;stroke-width:5.99723;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-         id="path1108-6"
-         cx="22.489584"
-         cy="26.458332"
-         r="22.489584" />
-    </g>
+     transform="translate(2.2470371e-7,-3.9687478)">
     <g
        id="g828"
        style="fill:none;fill-opacity:1;stroke:#ff5067;stroke-width:1.13333;stroke-opacity:1"

@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="47.094486"
-   height="36.094486"
-   viewBox="0 0 12.460415 9.5499988"
+   width="34.999996"
+   height="24"
+   viewBox="0 0 9.260415 6.3499994"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="1.4142136"
-     inkscape:cx="247.48737"
-     inkscape:cy="127.27922"
+     inkscape:cx="236.17366"
+     inkscape:cy="83.438598"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -63,9 +63,9 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1082"
-       x="-0.17277842"
+       x="-0.17277841"
        y="-0.2519685"
-       width="1.3455568"
+       width="1.3455569"
        height="1.503937">
       <feGaussianBlur
          stdDeviation="1 1"
@@ -77,7 +77,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-1.7072381,0.80624995)">
+     transform="translate(-3.307238,-0.79375003)">
     <g
        id="g837"
        transform="matrix(0.66666666,0,0,0.66666666,5.1246466,-0.09617596)"
@@ -88,17 +88,8 @@
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.396873" />
     </g>
     <g
-       id="g1078"
-       transform="matrix(0.66666666,0,0,0.66666666,5.1246466,-0.09617596)"
-       style="stroke-width:1.5;filter:url(#filter1082)">
-      <path
-         d="m 4.4176371,1.334889 v 9.525 l 6.7468739,-4.7625 m -13.8906239,4.7625 6.746874,-4.7625 -6.746874,-4.7625 z"
-         id="path1076"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.396873" />
-    </g>
-    <g
        id="g834"
-       transform="matrix(0.26458333,0,0,0.26458333,1.5441384,-0.80624989)">
+       transform="matrix(0.26458333,0,0,0.26458333,3.1441383,0.79375009)">
       <text
          xml:space="preserve"
          style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
@@ -109,7 +100,7 @@
            x="-2.7640367"
            y="-4.5338159"
            style="stroke-width:0.50906"
-           id="tspan11469">modified: renamed, resized, recolored, glow</tspan></text>
+           id="tspan11469">modified: renamed, resized, recolored</tspan></text>
     </g>
   </g>
 </svg>

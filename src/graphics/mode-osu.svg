@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="256"
-   height="256"
-   viewBox="0 0 67.733329 67.733329"
+   width="200"
+   height="200"
+   viewBox="0 0 52.916663 52.916663"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="1.4142135"
-     inkscape:cx="84.852817"
-     inkscape:cy="160.51325"
+     inkscape:cx="56.568545"
+     inkscape:cy="132.22897"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -46,7 +46,7 @@
   <defs
      id="defs2">
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter838"
        x="-0.15993226"
@@ -62,30 +62,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <g
-       id="g834"
-       transform="translate(0.5234671,0.52346734)"
-       style="filter:url(#filter838)">
-      <g
-         id="g828"
-         transform="matrix(5.1573435,0,0,5.1573435,9.6602115,9.660209)"
-         style="fill:none;stroke:#ffffff;stroke-width:1.07627;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
-        <path
-           id="path826"
-           style="fill:none;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.07627;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="M 9.1841803,4.5920906 A 4.5920901,4.5920901 0 0 1 4.5920901,9.1841807 4.5920901,4.5920901 0 0 1 0,4.5920906 4.5920901,4.5920901 0 0 1 4.5920901,4.7683716e-7 4.5920901,4.5920901 0 0 1 9.1841803,4.5920906 Z" />
-      </g>
-      <g
-         id="g832"
-         transform="matrix(3.4025902,0,0,3.4025902,17.718197,17.718195)"
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.07627;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
-        <path
-           id="path830"
-           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.07627;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="M 9.1841803,4.5920906 A 4.5920901,4.5920901 0 0 1 4.5920901,9.1841807 4.5920901,4.5920901 0 0 1 0,4.5920906 4.5920901,4.5920901 0 0 1 4.5920901,4.7683716e-7 4.5920901,4.5920901 0 0 1 9.1841803,4.5920906 Z" />
-      </g>
-    </g>
+     id="layer1"
+     transform="translate(-7.4083316,-7.4083318)">
     <g
        id="g953"
        transform="translate(0.5234671,0.52346734)">

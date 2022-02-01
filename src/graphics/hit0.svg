@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="64"
-   height="64"
-   viewBox="0 0 16.933332 16.933332"
+   width="33.385834"
+   height="33.385834"
+   viewBox="0 0 8.8333345 8.8333345"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="4"
-     inkscape:cx="24"
-     inkscape:cy="33.25"
+     inkscape:cx="8.75"
+     inkscape:cy="18"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -42,11 +42,11 @@
   <defs
      id="defs2">
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter832"
-       x="-0.4972692"
-       y="-0.4972692"
+       x="-0.49726921"
+       y="-0.49726921"
        width="1.9945384"
        height="1.9945384">
       <feGaussianBlur
@@ -58,20 +58,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <g
-       id="g828"
-       transform="matrix(0.36540369,0,0,0.36540369,5.3729163,5.3729163)"
-       style="stroke-width:2.73669;filter:url(#filter832)">
-      <path
-         style="fill:none;stroke:#ff6496;stroke-width:7.24085;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 0,0 16.933333,16.933333"
-         id="path824" />
-      <path
-         style="fill:none;stroke:#ff6496;stroke-width:7.24085;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 16.933333,0 0,16.933333"
-         id="path826" />
-    </g>
+     id="layer1"
+     transform="translate(-4.0499997,-4.0499997)">
     <g
        id="g1745"
        transform="matrix(0.36540369,0,0,0.36540369,5.3729163,5.3729163)"

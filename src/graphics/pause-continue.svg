@@ -3,8 +3,8 @@
 
 <svg
    width="252.77211"
-   height="46.141739"
-   viewBox="0 0 66.879288 12.208334"
+   height="36"
+   viewBox="0 0 66.879288 9.5249989"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="4"
-     inkscape:cx="136.75"
-     inkscape:cy="48"
+     inkscape:zoom="2"
+     inkscape:cx="160"
+     inkscape:cy="67"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -64,10 +64,10 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1134"
-       x="-0.41231222"
-       y="-0.32395948"
-       width="1.8246244"
-       height="1.647919">
+       x="-0.41231224"
+       y="-0.32395947"
+       width="1.8246245"
+       height="1.6479191">
       <feGaussianBlur
          stdDeviation="1 1"
          result="blur"
@@ -83,24 +83,50 @@
        xml:space="preserve"
        style="font-size:12.876px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
        x="12.994454"
-       y="9.5250044"
+       y="8.183322"
        id="text5998"><tspan
          sodipodi:role="line"
          id="tspan5996"
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
          x="12.994454"
-         y="9.5250044">Continue</tspan></text>
+         y="8.183322">Continue</tspan></text>
+    <path
+       d="M 5.1250018,-0.28333138 V 7.1250026 l 5.8208312,-3.704166 z"
+       id="path991"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
     <g
-       id="g1156"
-       transform="translate(-3.3796476,-17.736007)">
-      <path
-         d="m 8.5046494,18.794358 v 7.408334 l 5.8208316,-3.704166 z"
-         id="path1108"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582;filter:url(#filter1134)" />
-      <path
-         d="m 8.5046494,18.794358 v 7.408334 l 5.8208316,-3.704166 z"
-         id="path991"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
+       id="g7547"
+       transform="translate(-4.3554651,-18.122663)">
+      <g
+         id="g845"
+         transform="translate(-54.233597,8.2098134)">
+        <g
+           id="g842"
+           transform="matrix(0.26458333,0,0,0.26458333,59.314064,8.8447876)">
+          <g
+             id="g831"
+             transform="translate(0.33804766,-3.5968216)">
+            <g
+               id="g830">
+              <g
+                 id="g15193"
+                 transform="translate(-0.61643983)">
+                <text
+                   xml:space="preserve"
+                   style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+                   x="-3.1020846"
+                   y="-1.9710237"
+                   id="text6689"><tspan
+                     sodipodi:role="line"
+                     x="-3.1020846"
+                     y="-1.9710237"
+                     style="stroke-width:0.50906"
+                     id="tspan11469">modified: resized, recolored, added text</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
     </g>
   </g>
 </svg>

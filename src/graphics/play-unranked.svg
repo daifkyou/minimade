@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="75.212593"
-   height="66.19326"
-   viewBox="0 0 19.899997 17.513632"
+   width="66.141724"
+   height="57.122395"
+   viewBox="0 0 17.499996 15.113632"
    version="1.1"
    id="svg5"
    sodipodi:docname="play-unranked.svg"
@@ -26,8 +26,8 @@
      units="px"
      width="64px"
      inkscape:zoom="2.8284272"
-     inkscape:cx="157.33125"
-     inkscape:cy="40.658639"
+     inkscape:cx="118.44038"
+     inkscape:cy="34.294678"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -64,7 +64,7 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1192"
-       x="-0.068571439"
+       x="-0.068571441"
        y="-0.079398513"
        width="1.1371429"
        height="1.158797">
@@ -78,18 +78,14 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(3.5999992,3.6000192)">
+     transform="translate(2.3999996,2.4000193)">
     <path
        d="M 7.1454528,7.1454331 H 5.5545458 V 3.168161 h 1.590907 m 0,7.15909 H 5.5545458 V 8.7363411 h 1.590907 M -2.3999996,12.713614 H 15.099998 L 6.3499988,-2.4000193 Z"
        id="path911-3"
        style="fill:#ffffff;fill-opacity:1;stroke-width:0.264583" />
-    <path
-       d="M 7.1454526,7.145433 H 5.554546 V 3.1681612 h 1.5909066 m 0,7.1590898 H 5.554546 V 8.7363412 h 1.5909066 m -9.545452,3.9772728 H 15.099998 L 6.3499993,-2.4000191 Z"
-       id="path911"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264583;filter:url(#filter1192)" />
     <g
        id="g834"
-       transform="matrix(0.26458333,0,0,0.26458333,-3.5105577,-4.5516781)">
+       transform="matrix(0.26458333,0,0,0.26458333,-2.3105578,-3.3517941)">
       <g
          id="g15193"
          transform="translate(-0.61643983)">
@@ -103,7 +99,7 @@
              x="-3.1020844"
              y="-0.93699408"
              style="stroke-width:0.50906"
-             id="tspan11469">modified: resized, recolored, glow</tspan></text>
+             id="tspan11469">modified: resized, recolored</tspan></text>
       </g>
     </g>
   </g>

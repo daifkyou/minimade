@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="494.07501"
-   height="37.070999"
-   viewBox="0 0 130.724 9.808368"
+   width="485"
+   height="28"
+   viewBox="0 0 128.3229 7.4083329"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.0000001"
-     inkscape:cx="240.99999"
-     inkscape:cy="-11.749999"
+     inkscape:cx="240.49999"
+     inkscape:cy="5.2499997"
      inkscape:window-width="1920"
      inkscape:window-height="960"
      inkscape:window-x="0"
@@ -51,7 +51,7 @@
        inkscape:label="Blur"
        id="filter1010"
        x="-0.018897638"
-       y="-0.75590552"
+       y="-0.75590551"
        width="1.0377953"
        height="2.511811">
       <feGaussianBlur
@@ -65,16 +65,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(6.1229202,9.033333)">
-    <rect
-       style="fill:#ffffff;fill-opacity:0.5;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1010)"
-       id="rect1000"
-       width="127"
-       height="3.175"
-       x="-4.8000035"
-       y="-4.7999997"
-       ry="1.5874858"
-       rx="1.5874857"
-       transform="matrix(1.0000089,0,0,1.0000089,6.4074153e-5,6.4074118e-5)" />
     <rect
        style="fill:#ffffff;fill-opacity:0.3;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:round"
        id="rect937"

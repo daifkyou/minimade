@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="57.982757"
-     inkscape:cy="42.426407"
+     inkscape:zoom="0.99999999"
+     inkscape:cx="170"
+     inkscape:cy="28"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -104,11 +104,41 @@
          y="13.411899">Skip</tspan></text>
     <path
        d="m 4.4176371,1.334889 v 9.525 l 6.7468739,-4.7625 m -13.8906239,4.7625 6.746874,-4.7625 -6.746874,-4.7625 z"
-       id="path3392"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582;filter:url(#filter3396)" />
-    <path
-       d="m 4.4176371,1.334889 v 9.525 l 6.7468739,-4.7625 m -13.8906239,4.7625 6.746874,-4.7625 -6.746874,-4.7625 z"
        id="path3280"
        style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
+    <g
+       id="g7547"
+       transform="translate(-12.852413,-21.004692)">
+      <g
+         id="g845"
+         transform="translate(-54.233597,8.2098134)">
+        <g
+           id="g842"
+           transform="matrix(0.26458333,0,0,0.26458333,59.314064,8.8447876)">
+          <g
+             id="g831"
+             transform="translate(0.33804766,-3.5968216)">
+            <g
+               id="g830">
+              <g
+                 id="g15193"
+                 transform="translate(-0.61643983)">
+                <text
+                   xml:space="preserve"
+                   style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+                   x="-3.1020844"
+                   y="-0.93699408"
+                   id="text6689"><tspan
+                     sodipodi:role="line"
+                     x="-3.1020844"
+                     y="-0.93699408"
+                     style="stroke-width:0.50906"
+                     id="tspan11469">modified: resized, recolored, added text</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
   </g>
 </svg>

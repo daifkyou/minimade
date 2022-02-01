@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   width="67.099998"
-   height="54.599995"
-   viewBox="0 0 67.099998 54.599995"
+   width="57.5"
+   height="45"
+   viewBox="0 0 57.5 45"
    id="svg4"
    sodipodi:docname="selection-mod-touchdevice.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,10 +30,10 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter3148"
-       x="-0.083478261"
+       x="-0.083478265"
        y="-0.10666667"
        width="1.1669565"
-       height="1.2133333">
+       height="1.2133332">
       <feGaussianBlur
          stdDeviation="2 2"
          result="blur"
@@ -58,8 +58,8 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="1.8723958"
-     inkscape:cx="27.771905"
-     inkscape:cy="-3.2044506"
+     inkscape:cx="117.49653"
+     inkscape:cy="-14.954103"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -79,13 +79,9 @@
        x="-3.3804765"
        y="-4.5338159"
        style="stroke-width:0.50906"
-       id="tspan11469">modified: resized, recolored, glow</tspan></text>
+       id="tspan11469">modified: resized, recolored</tspan></text>
   <path
-     d="M 9.8000004,4.8000001 H 52.3 a 5,5 0 0 1 5,5 V 14.8 h -10 V 9.8000001 H 14.8 V 39.8 h 22.5 v 5 H 9.8000004 a 5,5 0 0 1 -5.0000002,-5 V 9.8000001 a 5,5 0 0 1 5.0000002,-5 M 44.8,19.8 h 15 a 2.5,2.5 0 0 1 2.5,2.5 v 25 a 2.5,2.5 0 0 1 -2.5,2.5 h -15 a 2.5,2.5 0 0 1 -2.5,-2.5 v -25 a 2.5,2.5 0 0 1 2.5,-2.5 m 2.5,5 v 17.5 h 10 V 24.8 Z"
-     id="path828"
-     style="fill:#ffffff;fill-opacity:1;stroke-width:1;filter:url(#filter3148)" />
-  <path
-     d="M 9.8000004,4.8000001 H 52.3 a 5,5 0 0 1 5,5 V 14.8 h -10 V 9.8000001 H 14.8 V 39.8 h 22.5 v 5 H 9.8000004 a 5,5 0 0 1 -5.0000002,-5 V 9.8000001 a 5,5 0 0 1 5.0000002,-5 M 44.8,19.8 h 15 a 2.5,2.5 0 0 1 2.5,2.5 v 25 a 2.5,2.5 0 0 1 -2.5,2.5 h -15 a 2.5,2.5 0 0 1 -2.5,-2.5 v -25 a 2.5,2.5 0 0 1 2.5,-2.5 m 2.5,5 v 17.5 h 10 V 24.8 Z"
+     d="M 5.0000002,0 H 47.5 a 5,5 0 0 1 5,5 v 4.9999999 h -10 V 5 H 9.9999998 V 35 H 32.5 v 5 H 5.0000002 A 5,5 0 0 1 0,35 V 5 A 5,5 0 0 1 5.0000002,0 M 40,15 h 15 a 2.5,2.5 0 0 1 2.5,2.5 v 25 A 2.5,2.5 0 0 1 55,45 H 40 a 2.5,2.5 0 0 1 -2.5,-2.5 v -25 A 2.5,2.5 0 0 1 40,15 m 2.5,5 v 17.5 h 10 V 20 Z"
      id="path3122"
      style="fill:#ffffff;fill-opacity:1;stroke-width:1" />
 </svg>

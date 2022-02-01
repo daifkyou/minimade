@@ -49,9 +49,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="4"
-     inkscape:cx="68"
-     inkscape:cy="52.5"
+     inkscape:zoom="1"
+     inkscape:cx="114"
+     inkscape:cy="124"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -92,10 +92,6 @@
          style="stroke-width:0.754711">mod</tspan></text>
   </g>
   <path
-     d="m 64.75,35.584 h -22.5 v 22.5 h -7.5 v -22.5 h -22.5 v -7.5 h 22.5 v -22.5 h 7.5 v 22.5 h 22.5 z"
-     id="path829"
-     style="fill:#ffffff;fill-opacity:1;stroke-width:3.75;filter:url(#filter843)" />
-  <path
      d="m 64.75,36.584 h -22.5 v 22.5 h -7.5 v -22.5 h -22.5 v -7.5 h 22.5 v -22.5 h 7.5 v 22.5 h 22.5 z"
      id="path2"
      style="fill:#ffffff;fill-opacity:1;stroke-width:3.75" />
@@ -120,7 +116,7 @@
                x="-3.1020844"
                y="-0.93699408"
                style="stroke-width:0.50906"
-               id="tspan11469">modified: resized, recolored, added glow, background, text</tspan></text>
+               id="tspan11469">modified: resized, recolored, added background, text</tspan></text>
         </g>
       </g>
     </g>

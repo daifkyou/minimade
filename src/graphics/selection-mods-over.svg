@@ -2,45 +2,23 @@
 <svg
    version="1.1"
    width="77"
-   height="90"
-   viewBox="0 0 77 90"
+   height="91"
+   viewBox="0 0 77 91"
    id="svg4"
    sodipodi:docname="selection-mods-over.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs8">
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient825"
-       id="linearGradient827"
-       x1="46"
-       y1="90"
-       x2="46"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient825">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0.69999999"
-         offset="0"
-         id="stop821" />
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0;"
-         offset="1"
-         id="stop823" />
-    </linearGradient>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter828"
        x="-0.052173913"
-       y="-0.053333333"
+       y="-0.053333335"
        width="1.1043478"
        height="1.1066667">
       <feGaussianBlur
@@ -77,17 +55,15 @@
      fit-margin-bottom="0"
      inkscape:bbox-nodes="true" />
   <g
-     id="g1830"
-     transform="matrix(0.74876543,0,0,0.89429338,4.0567901,4.7567974)"
-     style="stroke-width:1.11799;filter:url(#filter828)">
+     id="g1050"
+     transform="scale(0.83695652,1)"
+     style="stroke-width:1.09307">
     <rect
-       style="fill:url(#linearGradient827);fill-opacity:1;stroke-width:3.66613;stroke-linecap:round;stroke-linejoin:round"
-       id="rect848"
+       style="fill:#ffffff;stroke:none;stroke-width:5.46536;stroke-linecap:round;stroke-linejoin:round"
+       id="rect934"
        width="92"
-       height="90"
+       height="4"
        x="0"
-       y="0"
-       rx="1.2409873e-16"
-       ry="1.2414528e-16" />
+       y="0" />
   </g>
 </svg>

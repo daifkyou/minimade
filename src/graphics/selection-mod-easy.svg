@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   width="41.599998"
-   height="57.600002"
-   viewBox="0 0 41.599998 57.600002"
+   width="32"
+   height="48"
+   viewBox="0 0 32 48"
    id="svg4"
    sodipodi:docname="selection-mod-easy.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -17,8 +17,8 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter961"
-       x="-0.15"
-       y="-0.099999998"
+       x="-0.15000001"
+       y="-0.1"
        width="1.3"
        height="1.2">
       <feGaussianBlur
@@ -39,22 +39,18 @@
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2.6479676"
-     inkscape:cx="123.11329"
-     inkscape:cy="43.051886"
+     inkscape:zoom="1.3239838"
+     inkscape:cx="91.390846"
+     inkscape:cy="50.604849"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g9514"
+     inkscape:current-layer="svg4"
      inkscape:bbox-nodes="true" />
   <path
-     d="M 20.8,4.8000002 V 32.933334 c -1.573333,-0.906667 -3.386666,-1.466667 -5.333333,-1.466667 -5.8933327,0 -10.6666667,4.773333 -10.6666667,10.666667 0,5.893333 4.773334,10.666667 10.6666667,10.666667 5.893333,0 10.666667,-4.773334 10.666667,-10.666667 V 15.466667 H 36.800001 V 4.8000002 Z"
-     id="path2-3"
-     style="fill:#ffffff;fill-opacity:1;stroke-width:1;filter:url(#filter961)" />
-  <path
-     d="M 20.8,4.8000003 V 32.933334 c -1.573333,-0.906667 -3.386666,-1.466667 -5.333333,-1.466667 -5.8933327,0 -10.6666667,4.773333 -10.6666667,10.666667 0,5.893333 4.773334,10.666667 10.6666667,10.666667 5.893333,0 10.666667,-4.773334 10.666667,-10.666667 V 15.466667 H 36.800001 V 4.8000003 Z"
+     d="M 16,0 V 28.133334 C 14.426667,27.226667 12.613334,26.666667 10.666667,26.666667 4.773334,26.666667 0,31.44 0,37.333334 c 0,5.893333 4.773334,10.666667 10.666667,10.666667 5.893333,0 10.666667,-4.773334 10.666667,-10.666667 V 10.666667 H 32.000001 V 0 Z"
      id="path2"
      style="fill:#ffffff;fill-opacity:1;stroke-width:1" />
   <g
@@ -75,7 +71,7 @@
              x="8.7143545"
              y="-1.3338158"
              style="stroke-width:0.50906"
-             id="tspan11469-6">modified: resized, recolored, glow</tspan></text>
+             id="tspan11469-6">modified: resized, recolored</tspan></text>
       </g>
     </g>
   </g>

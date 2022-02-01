@@ -30,9 +30,9 @@
      inkscape:bbox-nodes="false"
      inkscape:snap-bbox-midpoints="false"
      inkscape:snap-page="false"
-     inkscape:zoom="0.49999998"
-     inkscape:cx="802.00004"
-     inkscape:cy="388.00002"
+     inkscape:zoom="2.828427"
+     inkscape:cx="1068.0848"
+     inkscape:cy="684.83295"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -93,29 +93,6 @@
      id="layer1"
      transform="translate(281.78125,179.91667)"
      style="mix-blend-mode:normal">
-    <g
-       id="g834"
-       transform="matrix(0.25,0,0,0.25,0.13086678,0.13086685)"
-       style="filter:url(#filter838)">
-      <g
-         id="g828"
-         transform="matrix(5.1573435,0,0,5.1573435,9.6602115,9.660209)"
-         style="fill:none;stroke:#ffffff;stroke-width:1.07627;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
-        <path
-           id="path826"
-           style="fill:none;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.07627;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="M 9.1841803,4.5920906 A 4.5920901,4.5920901 0 0 1 4.5920901,9.1841807 4.5920901,4.5920901 0 0 1 0,4.5920906 4.5920901,4.5920901 0 0 1 4.5920901,4.7683716e-7 4.5920901,4.5920901 0 0 1 9.1841803,4.5920906 Z" />
-      </g>
-      <g
-         id="g832"
-         transform="matrix(3.4025902,0,0,3.4025902,17.718197,17.718195)"
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.07627;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
-        <path
-           id="path830"
-           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.07627;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="M 9.1841803,4.5920906 A 4.5920901,4.5920901 0 0 1 4.5920901,9.1841807 4.5920901,4.5920901 0 0 1 0,4.5920906 4.5920901,4.5920901 0 0 1 4.5920901,4.7683716e-7 4.5920901,4.5920901 0 0 1 9.1841803,4.5920906 Z" />
-      </g>
-    </g>
     <g
        id="g953"
        transform="matrix(0.25,0,0,0.25,0.13086678,0.13086685)">

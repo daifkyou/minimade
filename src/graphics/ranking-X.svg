@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="206.28346"
-   height="206.28346"
-   viewBox="0 0 54.579162 54.579162"
+   width="170"
+   height="170"
+   viewBox="0 0 44.979163 44.979163"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.0000001"
-     inkscape:cx="136.99999"
-     inkscape:cy="146.99999"
+     inkscape:cx="118.99999"
+     inkscape:cy="128.99999"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -59,17 +59,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(4.7999999,0.83125179)">
-    <g
-       id="g825"
-       style="fill:#ffd25d;fill-opacity:1;filter:url(#filter829)">
-      <circle
-         style="fill:#ffd25d;fill-opacity:1;stroke:none;stroke-width:5.29167;stroke-linecap:round;stroke-linejoin:round"
-         id="circle823"
-         cx="22.489584"
-         cy="26.458332"
-         r="22.489584" />
-    </g>
+     transform="translate(0,-3.9687481)">
     <g
        id="g828-3"
        style="fill:#ffd25d;fill-opacity:1">

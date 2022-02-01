@@ -3,8 +3,8 @@
 
 <svg
    width="252.77211"
-   height="46.141739"
-   viewBox="0 0 66.879285 12.208333"
+   height="35.882999"
+   viewBox="0 0 66.879285 9.494042"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="38.714097"
-     inkscape:cy="17.854446"
+     inkscape:zoom="2"
+     inkscape:cx="431"
+     inkscape:cy="11.5"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -106,7 +106,7 @@
        inkscape:label="Blur"
        id="filter1307"
        x="-0.28346455"
-       y="-0.32395943"
+       y="-0.32395944"
        width="1.5669291"
        height="1.6479189">
       <feGaussianBlur
@@ -131,10 +131,10 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1134-36"
-       x="-0.41231222"
-       y="-0.32395948"
+       x="-0.41231221"
+       y="-0.32395947"
        width="1.8246244"
-       height="1.647919">
+       height="1.6479191">
       <feGaussianBlur
          stdDeviation="1 1"
          result="blur"
@@ -144,10 +144,10 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1134-367"
-       x="-0.41231222"
-       y="-0.32395948"
+       x="-0.41231221"
+       y="-0.32395947"
        width="1.8246244"
-       height="1.647919">
+       height="1.6479191">
       <feGaussianBlur
          stdDeviation="1 1"
          result="blur"
@@ -159,28 +159,51 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-5.0804668,-17.054601)">
-    <g
-       id="g1366"
-       transform="translate(2.0247367,18.39625)">
-      <path
-         d="M 14.59948,1.05835 V 8.466685 L 10.895314,4.762519 M 7.1911468,1.05835 V 8.466685 H 6.1328128 V 1.05835 m 4.7625012,0 V 8.466685 L 7.1911468,4.762519"
-         id="path1303"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582;filter:url(#filter1307)" />
-      <path
-         d="M 14.59948,1.05835 V 8.466685 L 10.895314,4.762519 M 7.1911468,1.05835 V 8.466685 H 6.1328128 V 1.05835 m 4.7625012,0 V 8.466685 L 7.1911468,4.762519"
-         id="path1196"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
-    </g>
+    <path
+       d="m 16.624216,18.112918 v 7.408335 L 12.92005,21.817087 M 9.2158834,18.112918 v 7.408335 h -1.058334 v -7.408335 m 4.7625006,0 v 7.408335 L 9.2158834,21.817087"
+       id="path1196"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.9187px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.322968"
-       x="17.607056"
-       y="27.921301"
-       id="text9067"><tspan
+       style="font-size:12.8763px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+       x="17.350384"
+       y="26.579369"
+       id="text5998"
+       transform="scale(0.99997325,1.0000267)"><tspan
          sodipodi:role="line"
-         id="tspan9065"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.322968"
-         x="17.607056"
-         y="27.921301">Back</tspan></text>
+         id="tspan5996"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+         x="17.350384"
+         y="26.579369">Back</tspan></text>
+    <g
+       id="g845"
+       transform="translate(-54.233597,8.2098134)">
+      <g
+         id="g842"
+         transform="matrix(0.26458333,0,0,0.26458333,59.314064,8.8447876)">
+        <g
+           id="g831"
+           transform="translate(0.33804766,-3.5968216)">
+          <g
+             id="g830">
+            <g
+               id="g15193"
+               transform="translate(-0.61643983)">
+              <text
+                 xml:space="preserve"
+                 style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+                 x="-3.1020844"
+                 y="-0.93699408"
+                 id="text6689"><tspan
+                   sodipodi:role="line"
+                   x="-3.1020844"
+                   y="-0.93699408"
+                   style="stroke-width:0.50906"
+                   id="tspan11469">modified: resized, recolored, added text</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
   </g>
 </svg>

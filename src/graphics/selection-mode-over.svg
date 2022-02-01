@@ -2,47 +2,24 @@
 <svg
    version="1.1"
    width="92"
-   height="90"
-   viewBox="0 0 92 90"
+   height="91"
+   viewBox="0 0 92 91"
    id="svg4"
    sodipodi:docname="selection-mode-over.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs8">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient825">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0.69999999"
-         offset="0"
-         id="stop821" />
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0;"
-         offset="1"
-         id="stop823" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient825"
-       id="linearGradient827"
-       x1="46"
-       y1="90"
-       x2="46"
-       y2="0"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(5.0399997,4.8)" />
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter827"
-       x="-0.054782606"
-       y="-0.053333333"
-       width="1.1095652"
+       x="-0.054782607"
+       y="-0.053333335"
+       width="1.1095653"
        height="1.1066667">
       <feGaussianBlur
          stdDeviation="2.1 2"
@@ -59,9 +36,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="1.8723958"
-     inkscape:cx="101.47427"
-     inkscape:cy="135.12101"
+     inkscape:zoom="3.7447916"
+     inkscape:cx="68.89569"
+     inkscape:cy="81.446455"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -79,13 +56,10 @@
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:bbox-nodes="true" />
   <rect
-     style="fill:url(#linearGradient827);fill-opacity:1;stroke-width:3.67671;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter827)"
-     id="rect848"
+     style="fill:#ffffff;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
+     id="rect934"
      width="92"
-     height="90"
-     x="5.04"
-     y="4.8000002"
-     rx="0"
-     ry="0"
-     transform="matrix(0.89072329,0,0,0.8930516,0.53748164,0.52602976)" />
+     height="4"
+     x="0"
+     y="0" />
 </svg>

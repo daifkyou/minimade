@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="212.56691"
-   height="179.84692"
-   viewBox="0 0 56.241658 47.584495"
+   width="139.99998"
+   height="107.28"
+   viewBox="0 0 37.04166 28.384498"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.8284272"
-     inkscape:cx="142.83557"
-     inkscape:cy="97.580733"
+     inkscape:cx="106.41957"
+     inkscape:cy="61.164735"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -62,7 +62,7 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1044"
-       x="-0.25916762"
+       x="-0.25916761"
        y="-0.33821276"
        width="1.5183352"
        height="1.6764255">
@@ -76,18 +76,14 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(2.2905515,4.8177335)">
-    <path
-       d="m 44.351112,7.7667664 -25.4,25.3999996 L 7.3094481,21.5251 l 2.9845039,-2.9845 8.65716,8.636 22.415504,-22.3943336 z"
-       id="path1040"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582;filter:url(#filter1044)" />
+     transform="translate(-7.3094481,-4.7822664)">
     <path
        d="m 44.351112,7.7667664 -25.4,25.3999996 L 7.3094481,21.5251 l 2.9845039,-2.9845 8.65716,8.636 22.415504,-22.3943336 z"
        id="path905"
        style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
     <g
        id="g832"
-       transform="matrix(0.26458333,0,0,0.26458333,-2.2905515,-4.8177334)">
+       transform="matrix(0.26458333,0,0,0.26458333,7.3094481,4.7822665)">
       <text
          xml:space="preserve"
          style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"

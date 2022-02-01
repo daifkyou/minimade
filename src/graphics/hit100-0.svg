@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="46.283463"
-   height="46.283463"
-   viewBox="0 0 12.245832 12.245832"
+   width="10.000001"
+   height="10.000001"
+   viewBox="0 0 2.6458334 2.6458334"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="hit100.svg"
+   sodipodi:docname="hit100-0.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="5.6568543"
-     inkscape:cx="-15.556349"
-     inkscape:cy="24.041631"
+     inkscape:cx="-33.587572"
+     inkscape:cy="5.8336309"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -64,8 +64,8 @@
        id="filter935"
        x="-1.8141731"
        y="-1.8141731"
-       width="4.6283462"
-       height="4.6283462">
+       width="4.628346"
+       height="4.628346">
       <feGaussianBlur
          stdDeviation="2 2"
          result="blur"
@@ -76,18 +76,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(2.9479169,2.9479169)">
-    <g
-       id="g931"
-       style="fill:#32ff96;fill-opacity:1;filter:url(#filter935)"
-       transform="translate(-5.1262278,-2.3947338)">
-      <circle
-         style="fill:#32ff96;fill-opacity:1;stroke:none;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.2"
-         id="circle929"
-         cx="8.3012276"
-         cy="5.5697336"
-         r="1.3229167" />
-    </g>
+     transform="translate(-1.852083,-1.8520831)">
     <g
        id="g1000"
        style="fill:#32ff96;fill-opacity:1"

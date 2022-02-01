@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="132.28362"
-   height="109.55566"
-   viewBox="0 0 35.000037 28.986599"
+   width="96.000145"
+   height="73.272194"
+   viewBox="0 0 25.400036 19.3866"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2"
-     inkscape:cx="55"
-     inkscape:cy="102"
+     inkscape:cx="37"
+     inkscape:cy="84"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -51,7 +51,7 @@
        inkscape:label="Blur"
        id="filter864"
        x="-0.18897609"
-       y="-0.24759368"
+       y="-0.24759369"
        width="1.3779522"
        height="1.4951874">
       <feGaussianBlur
@@ -64,18 +64,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(7.1520704,7.4458556)">
-    <text
-       xml:space="preserve"
-       style="font-size:26.2591px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.656481;filter:url(#filter864)"
-       x="-7.5064445"
-       y="16.779211"
-       id="text6655-3"><tspan
-         sodipodi:role="line"
-         id="tspan6653-6"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.656481"
-         x="-7.5064445"
-         y="16.779211">FC</tspan></text>
+     transform="translate(2.3520703,2.6458556)">
     <text
        xml:space="preserve"
        style="font-size:26.2591px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.656481"

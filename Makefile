@@ -1,7 +1,7 @@
 # minimake!
 # I'm probably using make wrong but it's my first time let me have some fun
 
-SKINNAME = minimade-glow
+SKINNAME = minimade
 # ASPECTRATIO = 16:9 # unused
 
 # ranking elements

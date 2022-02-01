@@ -3,8 +3,8 @@
 
 <svg
    width="275.51227"
-   height="66.863678"
-   viewBox="0 0 72.895956 17.691013"
+   height="46.740002"
+   viewBox="0 0 72.895956 12.366624"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,15 +30,15 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.8284272"
-     inkscape:cx="121.97592"
-     inkscape:cy="42.779959"
+     inkscape:cx="155.56349"
+     inkscape:cy="12.374368"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-edge-midpoints="false"
      fit-margin-top="10"
      fit-margin-left="10"
      fit-margin-right="10"
@@ -49,11 +49,11 @@
   <defs
      id="defs2">
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter828"
-       x="-0.77702155"
-       y="-0.4498397"
+       x="-0.77702153"
+       y="-0.44983971"
        width="2.5540311"
        height="1.8996794">
       <feGaussianBlur
@@ -65,10 +65,10 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1134"
-       x="-0.41231222"
-       y="-0.32395948"
+       x="-0.41231221"
+       y="-0.32395947"
        width="1.8246244"
-       height="1.647919">
+       height="1.6479191">
       <feGaussianBlur
          stdDeviation="1 1"
          result="blur"
@@ -78,10 +78,10 @@
        style="color-interpolation-filters:sRGB"
        inkscape:label="Blur"
        id="filter1134-3"
-       x="-0.41231222"
-       y="-0.32395948"
+       x="-0.41231218"
+       y="-0.32395947"
        width="1.8246244"
-       height="1.647919">
+       height="1.6479191">
       <feGaussianBlur
          stdDeviation="1 1"
          result="blur"
@@ -93,32 +93,65 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-0.529187,2.6458338)">
+    <text
+       xml:space="preserve"
+       style="font-size:12.876px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+       x="14.484098"
+       y="6.8539886"
+       id="text5998"><tspan
+         sodipodi:role="line"
+         id="tspan5996"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+         x="14.484098"
+         y="6.8539886">Replay</tspan></text>
+    <path
+       d="M 7.4131162,-1.6189838 V 5.7893506 L 13.233947,2.0851842 Z"
+       id="path991-5"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
     <g
-       id="g838-7"
-       transform="translate(1.4896412,-1.6289982e-5)">
-      <text
-         xml:space="preserve"
-         style="font-size:12.876px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
-         x="12.994454"
-         y="9.5250044"
-         id="text5998"><tspan
-           sodipodi:role="line"
-           id="tspan5996"
-           style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
-           x="12.994454"
-           y="9.5250044">Replay</tspan></text>
+       id="g7547"
+       transform="translate(-4.55128,-19.700435)">
       <g
-         id="g1156-5"
-         transform="translate(-3.3796476,-17.736007)">
-        <path
-           d="m 8.5046494,18.794358 v 7.408334 l 5.8208316,-3.704166 z"
-           id="path1108-3"
-           style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582;filter:url(#filter1134-3)" />
-        <path
-           d="m 8.5046494,18.794358 v 7.408334 l 5.8208316,-3.704166 z"
-           id="path991-5"
-           style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
+         id="g845"
+         transform="translate(-54.233597,8.2098134)">
+        <g
+           id="g842"
+           transform="matrix(0.26458333,0,0,0.26458333,59.314064,8.8447876)">
+          <g
+             id="g831"
+             transform="translate(0.33804766,-3.5968216)">
+            <g
+               id="g830">
+              <g
+                 id="g15193"
+                 transform="translate(-0.61643983)">
+                <text
+                   xml:space="preserve"
+                   style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+                   x="-3.1020844"
+                   y="-0.93699408"
+                   id="text6689"><tspan
+                     sodipodi:role="line"
+                     x="-3.1020844"
+                     y="-0.93699408"
+                     style="stroke-width:0.50906"
+                     id="tspan11469">modified: resized, recolored, added text</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.264583"
+       x="84.662964"
+       y="5.3615584"
+       id="text8182"><tspan
+         sodipodi:role="line"
+         id="tspan8180"
+         style="stroke-width:0.264583"
+         x="84.662964"
+         y="5.3615584" /></text>
   </g>
 </svg>

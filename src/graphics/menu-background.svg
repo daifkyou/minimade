@@ -73,49 +73,26 @@
      id="layer1">
     <text
        xml:space="preserve"
-       style="font-size:26.3175px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
-       x="128.67767"
-       y="173.61343"
-       id="text2881"><tspan
+       style="font-size:21.1666px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
+       x="49.402679"
+       y="42.116241"
+       id="text10627"><tspan
          sodipodi:role="line"
-         id="tspan2879"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
-         x="128.67767"
-         y="173.61343">minimade glow</tspan></text>
+         id="tspan10625"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
+         x="49.402679"
+         y="42.116241">minimade</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:26.3175px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
-       x="-232.74316"
-       y="-29.586567"
-       id="text2881-3"
+       style="font-size:21.1666px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
+       x="-312.01807"
+       y="-161.08362"
+       id="text10627-3"
        transform="scale(-1)"><tspan
          sodipodi:role="line"
-         id="tspan2879-6"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
-         x="-232.74316"
-         y="-29.586567">minimade glow</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:26.3175px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.858405;filter:url(#filter1057)"
-       x="128.67767"
-       y="173.61343"
-       id="text1045"><tspan
-         sodipodi:role="line"
-         id="tspan1043"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
-         x="128.67767"
-         y="173.61343">minimade glow</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:26.3175px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.858405;filter:url(#filter1053)"
-       x="-232.74316"
-       y="-29.586567"
-       id="text1049"
-       transform="scale(-1)"><tspan
-         sodipodi:role="line"
-         id="tspan1047"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.858405"
-         x="-232.74316"
-         y="-29.586567">minimade glow</tspan></text>
+         id="tspan10625-6"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
+         x="-312.01807"
+         y="-161.08362">minimade</tspan></text>
   </g>
 </svg>

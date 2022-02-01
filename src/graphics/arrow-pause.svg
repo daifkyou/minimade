@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="34.141716"
-   height="42.141853"
-   viewBox="0 0 9.0333284 11.150031"
+   width="15.999984"
+   height="24.00012"
+   viewBox="0 0 4.2333288 6.3500312"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="play-warningarrow.svg"
+   sodipodi:docname="arrow-pause.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="7.9999996"
-     inkscape:cx="39.750002"
-     inkscape:cy="43.500002"
+     inkscape:cx="30.625002"
+     inkscape:cy="34.375002"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -77,9 +77,9 @@
        inkscape:label="Blur"
        id="filter1250"
        x="-1.3289948"
-       y="-0.71561958"
-       width="3.6579729"
-       height="2.4312392">
+       y="-0.71561956"
+       width="3.6579728"
+       height="2.4312391">
       <feGaussianBlur
          stdDeviation="1 1"
          result="blur"
@@ -90,12 +90,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(4.7999976,4.7999978)">
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:1.76388;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter1250)"
-       d="M -1.5180578,-1.5180578 0.95143259,0.77501808 -1.5180578,3.068094"
-       id="path1246"
-       sodipodi:nodetypes="ccc" />
+     transform="translate(2.3999978,2.3999978)">
     <path
        style="fill:none;stroke:#ffffff;stroke-width:1.76388;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M -1.5180578,-1.5180578 0.95143259,0.77501808 -1.5180578,3.068094"

@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="184.56689"
-   height="184.56696"
-   viewBox="0 0 48.83332 48.833336"
+   width="111.99998"
+   height="112.00001"
+   viewBox="0 0 29.633325 29.633333"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="1.4142136"
-     inkscape:cx="121.62237"
-     inkscape:cy="112.42998"
+     inkscape:cx="85.559918"
+     inkscape:cy="96.16652"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -63,9 +63,9 @@
        inkscape:label="Blur"
        id="filter1143"
        x="-0.32395956"
-       y="-0.32395948"
+       y="-0.32395947"
        width="1.6479191"
-       height="1.647919">
+       height="1.6479191">
       <feGaussianBlur
          stdDeviation="4 4"
          result="blur"
@@ -76,10 +76,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-44.616664,-26.095832)">
+     transform="translate(-54.216664,-35.695832)">
     <g
        id="g832"
-       transform="matrix(0.26458333,0,0,0.26458333,44.616664,26.095832)">
+       transform="matrix(0.26458333,0,0,0.26458333,54.216664,35.695832)">
       <text
          xml:space="preserve"
          style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
@@ -92,10 +92,6 @@
            style="stroke-width:0.50906"
            id="tspan11469">modified: resized, recolored, glow</tspan></text>
     </g>
-    <path
-       d="M 83.849992,38.680336 80.865496,35.695832 69.033328,47.528 57.20116,35.695832 54.216664,38.680336 66.048824,50.512496 54.216664,62.344664 57.20116,65.329168 69.033328,53.497 80.865496,65.329168 83.849992,62.344664 72.017824,50.512496 Z"
-       id="path1139"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264583;filter:url(#filter1143)" />
     <path
        d="M 83.849992,38.680336 80.865496,35.695832 69.033328,47.528 57.20116,35.695832 54.216664,38.680336 66.048824,50.512496 54.216664,62.344664 57.20116,65.329168 69.033328,53.497 80.865496,65.329168 83.849992,62.344664 72.017824,50.512496 Z"
        id="path918"
