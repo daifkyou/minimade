@@ -2,3 +2,4 @@
 *.osk
 /.vscode/*
 /node_modules/*
+cache.json
