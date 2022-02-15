@@ -1,0 +1,23 @@
+{
+  "name": "minimade",
+  "version": "0.0.0",
+  "description": "a minimalist skin for osu! (for real!)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awful-coder/minimade.git"
+  },
+  "keywords": [
+    "osu",
+    "skin"
+  ],
+  "author": "kyle zhou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awful-coder/minimade/issues"
+  },
+  "homepage": "https://github.com/awful-coder/minimade#readme",
+  "dependencies": {
+    "ktw": "^0.0.3"
+  }
+}

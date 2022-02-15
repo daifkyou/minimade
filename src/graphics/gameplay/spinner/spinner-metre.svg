@@ -11,7 +11,6 @@
    sodipodi:docname="spinner-metre.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -46,50 +45,13 @@
      showguides="true"
      inkscape:guide-bbox="true" />
   <defs
-     id="defs2">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient848">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0.30000001"
-         offset="0"
-         id="stop844" />
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0.15000001"
-         offset="1"
-         id="stop846" />
-    </linearGradient>
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient848"
-       id="radialGradient850"
-       cx="135.46666"
-       cy="92.868752"
-       fx="135.46666"
-       fy="92.868752"
-       r="92.207001"
-       gradientTransform="matrix(1,0,0,1.0000031,0,-2.9199767e-4)"
-       gradientUnits="userSpaceOnUse" />
-    <filter
-       style="color-interpolation-filters:sRGB;"
-       inkscape:label="Blur"
-       id="filter1165"
-       x="-0.026028392"
-       y="-0.026028311"
-       width="1.0520568"
-       height="1.0520566">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur1163" />
-    </filter>
-  </defs>
+     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <ellipse
-       style="fill:url(#radialGradient850);fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter1165)"
+       style="fill:#ffffff;fill-opacity:0.2;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path928"
        cx="135.46666"
        cy="92.868752"

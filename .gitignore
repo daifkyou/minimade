@@ -1,2 +1,4 @@
-/build/
+/build/*
 *.osk
+/.vscode/*
+/node_modules/*
