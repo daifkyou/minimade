@@ -7,7 +7,7 @@
    viewBox="0 0 12.699999 12.699999"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="cursor-smoke.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="8.0000001"
-     inkscape:cx="36.375"
-     inkscape:cy="19.875"
+     inkscape:cx="-1.3125"
+     inkscape:cy="19.9375"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -40,32 +40,6 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
-    <filter
-       inkscape:label="Evanescent"
-       inkscape:menu="Blurs"
-       inkscape:menu-tooltip="Blur the contents of objects, preserving the outline and adding progressive transparency at edges"
-       style="color-interpolation-filters:sRGB;"
-       id="filter988"
-       x="-0.75590552"
-       y="-0.75590558"
-       width="2.511811"
-       height="2.5118112">
-      <feGaussianBlur
-         result="result6"
-         stdDeviation="4"
-         in="SourceGraphic"
-         id="feGaussianBlur982" />
-      <feColorMatrix
-         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
-         result="result7"
-         in="SourceGraphic"
-         id="feColorMatrix984" />
-      <feComposite
-         operator="in"
-         in="result6"
-         in2="result7"
-         id="feComposite986" />
-    </filter>
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Blur"

@@ -7,7 +7,7 @@
    viewBox="0 0 9.260415 6.3499994"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="multi-skipped.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="1.4142136"
-     inkscape:cx="236.17366"
-     inkscape:cy="83.438598"
+     inkscape:cx="22.273863"
+     inkscape:cy="83.792151"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -45,34 +45,7 @@
      fit-margin-bottom="0"
      inkscape:snap-object-midpoints="true" />
   <defs
-     id="defs2">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter901"
-       x="-0.2605705"
-       y="-0.37028617"
-       width="1.521136"
-       height="1.7405723">
-      <feGaussianBlur
-         stdDeviation="0.5 0.5"
-         result="blur"
-         id="feGaussianBlur899" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1082"
-       x="-0.17277841"
-       y="-0.2519685"
-       width="1.3455569"
-       height="1.503937">
-      <feGaussianBlur
-         stdDeviation="1 1"
-         result="blur"
-         id="feGaussianBlur1080" />
-    </filter>
-  </defs>
+     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

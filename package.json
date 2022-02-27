@@ -2,7 +2,12 @@
   "name": "minimade",
   "version": "0.0.0",
   "description": "a minimalist skin for osu! (for real!)",
-  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "buildscripts": "npx tsc",
+    "build": "node scripts/index.js",
+    "clean": "node scripts/clean.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/awful-coder/minimade.git"
@@ -18,6 +23,11 @@
   },
   "homepage": "https://github.com/awful-coder/minimade#readme",
   "dependencies": {
-    "ktw": "^0.0.3"
+    "ktw": "^0.1.3",
+    "strip-json-comments": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.5.5"
   }
 }

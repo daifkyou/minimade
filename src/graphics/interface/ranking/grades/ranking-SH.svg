@@ -7,7 +7,7 @@
    viewBox="0 0 44.979163 44.979164"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="ranking-SH.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2"
-     inkscape:cx="-29"
-     inkscape:cy="79.5"
+     inkscape:cx="-179.75"
+     inkscape:cy="79.25"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -49,19 +49,6 @@
          offset="0"
          id="stop952" />
     </linearGradient>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter831"
-       x="-0.17338282"
-       y="-0.17338282"
-       width="1.3467656"
-       height="1.3467656">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur829" />
-    </filter>
   </defs>
   <g
      inkscape:label="Layer 1"

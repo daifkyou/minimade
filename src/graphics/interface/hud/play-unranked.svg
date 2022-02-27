@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    sodipodi:docname="play-unranked.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +26,8 @@
      units="px"
      width="64px"
      inkscape:zoom="2.8284272"
-     inkscape:cx="118.44038"
-     inkscape:cy="34.294678"
+     inkscape:cx="118.26361"
+     inkscape:cy="34.471455"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -46,34 +46,7 @@
      fit-margin-bottom="0"
      inkscape:snap-bbox-midpoints="true" />
   <defs
-     id="defs2">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter839"
-       x="-0.26908463"
-       y="-0.26908112"
-       width="1.5381691"
-       height="1.5381694">
-      <feGaussianBlur
-         stdDeviation="1 1"
-         result="blur"
-         id="feGaussianBlur837" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1192"
-       x="-0.068571441"
-       y="-0.079398513"
-       width="1.1371429"
-       height="1.158797">
-      <feGaussianBlur
-         stdDeviation="0.5 0.5"
-         result="blur"
-         id="feGaussianBlur1190" />
-    </filter>
-  </defs>
+     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

@@ -5,41 +5,14 @@
    height="45"
    viewBox="0 0 57.5 45"
    id="svg4"
-   sodipodi:docname="selection-mod-touchdevice.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="touchdevice.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs8">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter829"
-       x="-0.1125"
-       y="-0.081818178"
-       width="1.225"
-       height="1.1636364">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur827" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter3148"
-       x="-0.083478265"
-       y="-0.10666667"
-       width="1.1669565"
-       height="1.2133332">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur3146" />
-    </filter>
-  </defs>
+     id="defs8" />
   <sodipodi:namedview
      id="namedview6"
      pagecolor="#505050"
@@ -58,8 +31,8 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="1.8723958"
-     inkscape:cx="117.49653"
-     inkscape:cy="-14.954103"
+     inkscape:cx="117.76356"
+     inkscape:cy="-14.687066"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"

@@ -5,41 +5,14 @@
    height="52.500004"
    viewBox="0 0 52.500004 52.500004"
    id="svg4"
-   sodipodi:docname="selection-mod-nightmare.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="nightmare.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs8">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter957"
-       x="-0.085714281"
-       y="-0.085714288"
-       width="1.1714286"
-       height="1.1714286">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur955" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1019"
-       x="-0.091428563"
-       y="-0.09142857"
-       width="1.1828572"
-       height="1.1828572">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur1017" />
-    </filter>
-  </defs>
+     id="defs8" />
   <sodipodi:namedview
      id="namedview6"
      pagecolor="#505050"
@@ -53,8 +26,8 @@
      inkscape:snap-page="true"
      inkscape:bbox-paths="true"
      inkscape:zoom="1.8723959"
-     inkscape:cx="129.78025"
-     inkscape:cy="61.418635"
+     inkscape:cx="-31.243392"
+     inkscape:cy="61.685672"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"

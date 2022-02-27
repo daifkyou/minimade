@@ -6,27 +6,13 @@
    viewBox="0 0 77 91"
    id="svg4"
    sodipodi:docname="selection-random-over.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs8">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter828"
-       x="-0.052173913"
-       y="-0.053333335"
-       width="1.1043478"
-       height="1.1066667">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur826" />
-    </filter>
-  </defs>
+     id="defs8" />
   <sodipodi:namedview
      id="namedview6"
      pagecolor="#505050"
@@ -37,8 +23,8 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="5.2959351"
-     inkscape:cx="70.242553"
-     inkscape:cy="60.423701"
+     inkscape:cx="13.123273"
+     inkscape:cy="60.329289"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"

@@ -7,7 +7,7 @@
    viewBox="0 0 580.49582 376.76663"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="mode-osu-small.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -31,8 +31,8 @@
      inkscape:snap-bbox-midpoints="false"
      inkscape:snap-page="false"
      inkscape:zoom="2.828427"
-     inkscape:cx="1068.0848"
-     inkscape:cy="684.83295"
+     inkscape:cx="961.48849"
+     inkscape:cy="685.00972"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -63,19 +63,6 @@
          offset="1"
          id="stop2766" />
     </linearGradient>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter838"
-       x="-0.15993226"
-       y="-0.15993226"
-       width="1.3198645"
-       height="1.3198645">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur836" />
-    </filter>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient2768"

@@ -7,7 +7,7 @@
    viewBox="0 0 11.377083 11.377082"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="inputoverlay-key.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="5.6568542"
-     inkscape:cx="28.814602"
-     inkscape:cy="25.809398"
+     inkscape:cx="28.90299"
+     inkscape:cy="25.897786"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -44,60 +44,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0" />
   <defs
-     id="defs2">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1072"
-       x="-0.45475835"
-       y="-0.45475835"
-       width="1.9095167"
-       height="1.9095167">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur1070" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1072-6"
-       x="-0.45475835"
-       y="-0.45475835"
-       width="1.9095167"
-       height="1.9095167">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur1070-7" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1294"
-       x="-0.4936983"
-       y="-0.4936983"
-       width="1.9873966"
-       height="1.9873966">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur1292" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1250"
-       x="-1.3289948"
-       y="-0.71561956"
-       width="3.6579728"
-       height="2.4312391">
-      <feGaussianBlur
-         stdDeviation="1 1"
-         result="blur"
-         id="feGaussianBlur1248" />
-    </filter>
-  </defs>
+     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

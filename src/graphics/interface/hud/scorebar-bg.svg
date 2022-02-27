@@ -7,7 +7,7 @@
    viewBox="0 0 128.3229 7.4083329"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="scorebar-bg.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.0000001"
-     inkscape:cx="240.49999"
-     inkscape:cy="5.2499997"
+     inkscape:cx="240.74999"
+     inkscape:cy="4.9999998"
      inkscape:window-width="1920"
      inkscape:window-height="960"
      inkscape:window-x="0"
@@ -45,21 +45,7 @@
      fit-margin-bottom="0"
      height="36.71px" />
   <defs
-     id="defs2">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1010"
-       x="-0.018897638"
-       y="-0.75590551"
-       width="1.0377953"
-       height="2.511811">
-      <feGaussianBlur
-         stdDeviation="1 1"
-         result="blur"
-         id="feGaussianBlur1008" />
-    </filter>
-  </defs>
+     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

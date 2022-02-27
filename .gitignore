@@ -1,5 +1,8 @@
-/build/*
+/build
 *.osk
-/.vscode/*
-/node_modules/*
-cache.json
+
+/cache/*
+
+.vscode
+node_modules
+/scripts

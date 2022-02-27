@@ -1,0 +1,77 @@
+{
+    "outDir": "build", // output directory
+    "definition": "both", // 1x/sd emits only standard definition, 2x/hd emits only high definition, both emits both standard and high definition
+    "mods": [ // list of mods that will be included, comment out a mod if you don't want it to be included
+        "autoplay",
+        "cinema",
+        "doubletime",
+        "easy",
+        "flashlight",
+        "halftime",
+        "hardrock",
+        "hidden",
+        "nightcore",
+        "nightmare", // scary clown mod in mcosu
+        "nofail",
+        "perfect",
+        "relax",
+        "relax2", // autopilot
+        "scorev2",
+        "spunout",
+        "suddendeath",
+        "target", // target practice
+        "touchdevice" // used for touch device pp in mcosu
+    ],
+    "fonts": {
+        "default": {
+            "size": 3,
+            "glyphs": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+            ]
+        },
+        "score": {
+            "size": 3,
+            "glyphs": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "comma",
+                "dot"
+            ]
+        },
+        "scoreentry": {
+            "size": 4,
+            "glyphs": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "comma",
+                "dot",
+                "x" // combo x
+            ]
+        }
+    }
+}

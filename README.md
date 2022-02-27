@@ -17,17 +17,18 @@ All svgs are in SD size since they can be upscaled.
 
 ### Dependencies
  - git
- - make (e.g. gmake)
- - rsvg (needs `rsvg-convert` in path)
- - osifont.ttf (https://github.com/hikikomori82/osifont/blob/master/osifont.ttf) must be installed
+ - node and npm
+ - rsvg (we need `rsvg-convert` in path)
+ - osifont (https://github.com/hikikomori82/osifont/blob/master/osifont.ttf) must be installed
  - `zip`
  - `expr`
 
 ### Steps
  1. `git clone https://github.com/awful-coder/minimade.git`
  2. `cd minimade`
- 3. `make` (target `1x` for SD, `2x` for HD, `both` for both resolutions (default))
- 4. `make export` (set SKINNAME to the base filename of your osz, default "minimade")
+ 3. `npm i`
+ 4. `npm run buildscripts`
+ 5. `npm run build`
 
 ## Contributing
 Open to contributions of any kind but I'm really not that active and I'm not very experienced.

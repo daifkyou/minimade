@@ -7,7 +7,7 @@
    viewBox="0 0 29.633325 29.633333"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="section-fail.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="1.4142136"
-     inkscape:cx="85.559918"
-     inkscape:cy="96.16652"
+     inkscape:cx="85.913472"
+     inkscape:cy="96.520073"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -44,34 +44,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0" />
   <defs
-     id="defs2">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter872"
-       x="-0.4150435"
-       y="-0.4150435"
-       width="1.8300869"
-       height="1.8300869">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur870" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1143"
-       x="-0.32395956"
-       y="-0.32395947"
-       width="1.6479191"
-       height="1.6479191">
-      <feGaussianBlur
-         stdDeviation="4 4"
-         result="blur"
-         id="feGaussianBlur1141" />
-    </filter>
-  </defs>
+     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

@@ -7,7 +7,7 @@
    viewBox="0 0 44.979163 44.979165"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="ranking-A.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="false"
      inkscape:snap-page="true"
      inkscape:zoom="2.0926202"
-     inkscape:cx="57.344376"
-     inkscape:cy="72.15834"
+     inkscape:cx="-86.733369"
+     inkscape:cy="71.919405"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -49,21 +49,7 @@
      inkscape:snap-intersection-paths="true"
      inkscape:snap-object-midpoints="true" />
   <defs
-     id="defs2">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter826"
-       x="-0.18761161"
-       y="-0.18761161"
-       width="1.3752232"
-       height="1.3752232">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur824" />
-    </filter>
-  </defs>
+     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

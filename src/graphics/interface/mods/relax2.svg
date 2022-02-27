@@ -5,28 +5,14 @@
    height="58.666668"
    viewBox="0 0 58.666668 58.666668"
    id="svg4"
-   sodipodi:docname="selection-mod-relax2.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="relax2.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs8">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter829"
-       x="-0.081818178"
-       y="-0.081818178"
-       width="1.1636364"
-       height="1.1636364">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur827" />
-    </filter>
-  </defs>
+     id="defs8" />
   <sodipodi:namedview
      id="namedview6"
      pagecolor="#505050"
@@ -44,8 +30,8 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="1.8723959"
-     inkscape:cx="127.10987"
-     inkscape:cy="73.168287"
+     inkscape:cx="-33.913768"
+     inkscape:cy="73.435324"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
