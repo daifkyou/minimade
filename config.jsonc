@@ -11,16 +11,16 @@
         "hardrock",
         "hidden",
         "nightcore",
-        "nightmare", // scary clown mod in mcosu
+        "nightmare", // clown mod in mcosu
         "nofail",
         "perfect",
         "relax",
-        "relax2", // autopilot
+        "relax2", // autopilot (peppy is great with names)
         "scorev2",
         "spunout",
         "suddendeath",
         "target", // target practice
-        "touchdevice" // used for touch device pp in mcosu
+        "touchdevice" // used for touch device pp in mcosu, otherwise defined but unused in stable i think
     ],
     "fonts": {
         "default": {
