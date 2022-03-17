@@ -161,6 +161,24 @@ export class FontTask extends Task<void> {
     }
 }
 
+
+
+const letterSmallWidth = 34;
+
+export class LetterTask extends Task<void> {
+    constructor(letter: string, provides = `letter-${letter}`) {
+        super(depend => {
+            const source = `src/graphics/interface/ranking/grades/${letter}.svg`;
+            const basename = `ranking-${letter}`;
+            depend(
+                new DefaultImageTask(source, basename),
+                new ConditionalCompileTask(source, `${basename}-small.png`, InternalConfig.Compile1x, [`-w=${letterSmallWidth}`]),
+                new ConditionalCompileTask(source, `${basename}-small@2x.png`, InternalConfig.Compile2x, [`-w=${letterSmallWidth * 2}`])
+            );
+        }, provides);
+    }
+}
+
 export class CopyTask extends Task<void> {
     constructor(source: string, out: string, provides = out, dependOnSource = true) {
         super(depend => {

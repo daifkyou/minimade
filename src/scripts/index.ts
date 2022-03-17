@@ -4,7 +4,7 @@ I really suck at building things, if you can figure out a better way/know a bett
 */
 
 import { Task } from "ktw";
-import { Init, Config, DefaultImageTask, CopyTask, NoneImageTask, FontTask } from "./custom.js";
+import { Init, Config, DefaultImageTask, CopyTask, NoneImageTask, FontTask, LetterTask } from "./custom.js";
 import * as minimist from "minimist";
 
 const flags = minimist.default(process.argv.slice(2));
@@ -130,6 +130,21 @@ const selectionTab = new DefaultImageTask("src/graphics/interface/selection/tab.
 
 
 
+const rankingScreen = Task.group("rankingscreen",
+    new DefaultImageTask("src/graphics/interface/ranking/panels/panel.svg", "ranking-panel"),
+    new DefaultImageTask("src/graphics/interface/ranking/panels/graph.svg", "ranking-graph"),
+    new DefaultImageTask("src/graphics/interface/ranking/panels/winner.svg", "ranking-winner"),
+    new DefaultImageTask("src/graphics/interface/ranking/status/fc.svg", "ranking-perfect"),
+    new DefaultImageTask("src/graphics/interface/ranking/status/skipped.svg", "multi-skipped"),
+    new NoneImageTask("ranking-title.png"),
+    new NoneImageTask("ranking-maxcombo.png"),
+    new NoneImageTask("ranking-accuracy.png")
+);
+
+const letters = Task.group("letters", ...["A", "B", "C", "D", "S", "SH", "X", "XH"].map(l => new LetterTask(l)));
+
+
+
 const pause = Task.group("pause",
     new DefaultImageTask("src/graphics/interface/pause/focus.svg", "arrow-pause"),
     new DefaultImageTask("src/graphics/interface/pause/back.svg", "pause-back"),
@@ -169,8 +184,10 @@ const ui = Task.group("ui", cursor, button, menuBack, mods, fonts, pause);
 
 const selection = Task.group("selection", selectionSong, selectionFrame, selectionTab);
 
+const ranking = Task.group("ranking", rankingScreen, letters);
 
 
-const main = Task.group("main", license, ini, ui, selection, osu);
+
+const main = Task.group("main", license, ini, ui, selection, osu, ranking);
 
 Init(main, cache, config);
