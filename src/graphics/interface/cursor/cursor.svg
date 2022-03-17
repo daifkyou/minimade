@@ -2,12 +2,12 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="24"
-   height="24"
-   viewBox="0 0 6.3499999 6.3499999"
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666667 8.4666667"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    sodipodi:docname="cursor.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -25,9 +25,9 @@
      showgrid="false"
      units="px"
      width="32px"
-     inkscape:zoom="11.313708"
-     inkscape:cx="-0.57452429"
-     inkscape:cy="2.4306797"
+     inkscape:zoom="5.656854"
+     inkscape:cx="41.454137"
+     inkscape:cy="33.852739"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -54,12 +54,12 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-7.4083321,-7.4083331)">
+     transform="translate(-6.6145824,-6.6145824)">
     <circle
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.58751;stroke-linecap:round;stroke-opacity:0.50431"
+       style="fill:#ffffff;fill-opacity:1;stroke:#888888;stroke-width:1.5875;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path990"
-       cx="10.583332"
-       cy="10.583333"
-       r="3.175" />
+       cx="10.847916"
+       cy="10.847916"
+       r="3.4395833" />
   </g>
 </svg>
