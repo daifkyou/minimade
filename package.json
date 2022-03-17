@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/awful-coder/minimade#readme",
   "dependencies": {
-    "ktw": "^0.2.3",
+    "ktw": "^0.2.4",
     "minimist": "^1.2.5",
     "strip-json-comments": "^4.0.0"
   },

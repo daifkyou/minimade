@@ -1,13 +1,14 @@
-**probably won't be active after finished release** (infrequent or maybe no updates/maintenance if i don't feel like it)
+**maybe won't be active after finished release** (infrequent or maybe no updates/maintenance if i don't feel like it)
 # minimade
-A minimaler skin for osu!standard, because - YUGEN - was more than enough.
+A minimaler skin for osu!standard, because - YUGEN - was *more* than enough.
 
 Most icons are from mdi (https://materialdesignicons.com/).
 Text is in osifont.
 
 ## Compatibility
 ### Skin
-Tested on stable (wine on Arch Linux, all 16:9) and works on McOsu (steam on Arch Linux, Linux) with some differences, and the newly added mode and options buttons don't support custom song selection
+Tested on stable (wine on Arch Linux, all 16:9) and works on McOsu (steam on Arch Linux, Linux) with some differences, and the newly added mode and options buttons don't support custom song selection.
+~~also when peppy finishes lazer they should add support for hurd~~
 
 ### Building
 Tested on Arch Linux (node v16.13.2, npm 8.5.4)

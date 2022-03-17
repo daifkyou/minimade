@@ -1,4 +1,4 @@
-import { DependCallback, Task, Cache } from "ktw";
+import { DependCallback, Task, Cache, TaskDefinition } from "ktw";
 import { Path } from "ktw/lib/path";
 import * as fs from "fs";
 import * as child_process from "child_process";
@@ -42,7 +42,7 @@ class ConfigOption extends Task<any> { // woah look at my insane cleverness
     }
 }
 
-export class Config extends ConfigOption {
+export class Config extends ConfigOption { // cleverness (cont.)
     protected static Config: ConfigOption;
 
     static async load(configPath = "./config.jsonc") {
@@ -60,16 +60,6 @@ export class Config extends ConfigOption {
 
     static depended(key: string, depend: DependCallback): any {
         return this.Config.depended(key, depend);
-    }
-}
-
-
-
-export class Resources {
-    protected static tasks: { [key: string]: Path } = {};
-
-    static get(resource: string) {
-        return this.tasks[resource] ?? (this.tasks[resource] = new Path(resource));
     }
 }
 
@@ -94,6 +84,16 @@ export class InternalConfig {
 
 
 
+export class Resources {
+    protected static tasks: { [key: string]: Path } = {};
+
+    static get(resource: string) {
+        return this.tasks[resource] ?? (this.tasks[resource] = new Path(resource));
+    }
+}
+
+
+
 export function Compile(options: child_process.SpawnOptions, ...args: string[]) {
     return new Promise<void>((res, rej) => {
         const cp = child_process.spawn(compiler, args, options);
@@ -113,6 +113,7 @@ export function Compile(options: child_process.SpawnOptions, ...args: string[]) 
 }
 
 export function CompileImage(source: string, out: string, ...args: string[]) {
+    console.log(`compiling ${source} to ${out} with args: ${args}`);
     return Compile({}, "-o", out, ...args, source);
 }
 
@@ -120,8 +121,7 @@ export class ConditionalCompileTask extends Task<void> {
     constructor(source: string, out: string, condition: Task<any>, args: string[] = [], provides = out) {
         super(async depend => {
             if (await depend(condition)) {
-                depend(Resources.get(source), InternalConfig.OutDir)
-                    ;
+                await depend(Resources.get(source), InternalConfig.OutDir);
                 return deps => CompileImage(source, path.join(deps.outDir, out), ...args);
             }
             return () => { };
