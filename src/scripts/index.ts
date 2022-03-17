@@ -31,6 +31,8 @@ const cursor = Task.group("cursor",
     new NoneImageTask("star2.png")
 );
 
+const menuBack = new DefaultImageTask("src/graphics/interface/menu-back.svg", "menu-back");
+
 
 
 const hit300 = Task.group("hit300",
@@ -103,7 +105,28 @@ const osuHud = Task.group("hud",
     new DefaultImageTask("src/graphics/interface/hud/warning.svg", "arrow-warning"),
     new DefaultImageTask("src/graphics/interface/hud/fail.svg", "section-fail"),
     new DefaultImageTask("src/graphics/interface/hud/pass.svg", "section-pass")
-)
+);
+
+
+
+const selectionSong = Task.group("selectionsong",
+    new DefaultImageTask("src/graphics/interface/selection/song/background.svg", "menu-button-background"),
+    new DefaultImageTask("src/graphics/interface/selection/song/star.svg", "star")
+);
+
+const selectionFrame = Task.group("selectionbuttons",
+    new DefaultImageTask("src/graphics/interface/selection/frame/mode.svg", "selection-mode"),
+    new DefaultImageTask("src/graphics/interface/selection/frame/mods.svg", "selection-mods"),
+    new DefaultImageTask("src/graphics/interface/selection/frame/random.svg", "selection-random"),
+    new DefaultImageTask("src/graphics/interface/selection/frame/options.svg", "selection-options"),
+    new DefaultImageTask("src/graphics/interface/selection/frame/mode-over.svg", "selection-mode-over"),
+    new DefaultImageTask("src/graphics/interface/selection/frame/mods-over.svg", "selection-mods-over"),
+    new DefaultImageTask("src/graphics/interface/selection/frame/random-over.svg", "selection-random-over"),
+    new DefaultImageTask("src/graphics/interface/selection/frame/options-over.svg", "selection-options-over"),
+    new DefaultImageTask("src/graphics/interface/selection/frame/modes/osu.svg", "mode-osu-small")
+);
+
+const selectionTab = new DefaultImageTask("src/graphics/interface/selection/tab.svg", "selection-tab");
 
 
 
@@ -142,14 +165,12 @@ const fonts = new Task<void>(async depend => {
 
 const osu = Task.group("osu", circle, slider, spinner, followpoint, hitbursts, osuHud);
 
+const ui = Task.group("ui", cursor, button, menuBack, mods, fonts, pause);
+
+const selection = Task.group("selection", selectionSong, selectionFrame, selectionTab);
 
 
-const ui = Task.group("ui", cursor, button, mods, fonts, pause);
 
-
-
-const main = Task.group("main", license, ini, ui, osu);
-
-
+const main = Task.group("main", license, ini, ui, selection, osu);
 
 Init(main, cache, config);

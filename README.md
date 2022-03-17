@@ -8,7 +8,6 @@ Text is in osifont.
 ## Compatibility
 ### Skin
 Tested on stable (wine on Arch Linux, all 16:9) and works on McOsu (steam on Arch Linux, Linux) with some differences, and the newly added mode and options buttons don't support custom song selection.
-~~also when peppy finishes lazer they should add support for hurd~~
 
 ### Building
 Tested on Arch Linux (node v16.13.2, npm 8.5.4)
