@@ -17,25 +17,28 @@ class ConfigError extends Error {
 
 class ConfigOption extends Task<any> { // woah look at my insane cleverness
     protected tasks: { [key: string]: ConfigOption } = {};
-    protected object;
+    protected object?: { [key: string]: any };
 
     /**
      * Get the task to a configuration option
      */
     get(key: string) {
         if (this.tasks[key]) return this.tasks[key];
-        else if (this.object[key]) return this.tasks[key] = new ConfigOption(this.object[key], `${this.provides}_${key}`);
-        else throw new ConfigError(`configuration file did not contain ${this.provides}_${key}`);
+        else return this.tasks[key] = new ConfigOption(this, key, `${this.provides}_${key}`);
     }
 
+    /**
+     * somehow not having this function made life a pain
+     */
     async depended(key: string, depend: DependCallback) {
         return (await depend(this.get(key)))[0];
     }
 
-    protected constructor(object: { [key: string]: any }, provides: string) {
-        super(() => () => object, provides);
-
-        this.object = object;
+    protected constructor(parent: Task<{ [key: string]: any }>, key: string, provides: string) {
+        super(depend => {
+            depend(parent);
+            return deps => this.object = deps[parent.provides][key]
+        }, provides);
     }
 }
 
@@ -43,9 +46,12 @@ export class Config extends ConfigOption {
     protected static Config: ConfigOption;
 
     static async load(configPath = "./config.jsonc") {
-        const object = JSON.parse(stripJsonComments(await fs.promises.readFile(configPath, "utf8")));
-
-        this.Config = new ConfigOption(object, "config");
+        this.Config = new ConfigOption(
+            Task.static(async () => {
+                return { "": JSON.parse(stripJsonComments(await fs.promises.readFile(configPath, "utf8"))) };
+            }, "configparent"),
+            "", "config"
+        );
     }
 
     static get(key: string): any {
@@ -115,7 +121,7 @@ export class ConditionalCompileTask extends Task<void> {
         super(async depend => {
             if (await depend(condition)) {
                 depend(Resources.get(source), InternalConfig.OutDir)
-                ;
+                    ;
                 return deps => CompileImage(source, path.join(deps.outDir, out), ...args);
             }
             return () => { };
