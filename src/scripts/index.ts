@@ -19,7 +19,14 @@ const license = new CopyTask("LICENSE", "LICENSE", "license");
 
 
 
-const cursor = Task.group("cursor", new DefaultImageTask("src/graphics/interface/cursor/cursor.svg", "cursor"),
+const button = Task.group("button",
+    new DefaultImageTask("src/graphics/interface/button/left.svg", "button-left"),
+    new DefaultImageTask("src/graphics/interface/button/middle.svg", "button-middle"),
+    new DefaultImageTask("src/graphics/interface/button/right.svg", "button-right"),
+);
+
+const cursor = Task.group("cursor",
+    new DefaultImageTask("src/graphics/interface/cursor/cursor.svg", "cursor"),
     new NoneImageTask("cursortrail.png"),
     new NoneImageTask("star2.png")
 );
@@ -137,7 +144,7 @@ const osu = Task.group("osu", circle, slider, spinner, followpoint, hitbursts, o
 
 
 
-const ui = Task.group("ui", cursor, mods, fonts, pause);
+const ui = Task.group("ui", cursor, button, mods, fonts, pause);
 
 
 

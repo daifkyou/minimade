@@ -7,12 +7,6 @@ import * as path from "path";
 
 const compiler = "rsvg-convert";
 
-class ConfigError extends Error {
-    constructor(message: any) {
-        super(message);
-    }
-}
-
 
 
 class ConfigOption extends Task<any> { // woah look at my insane cleverness
