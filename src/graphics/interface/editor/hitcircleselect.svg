@@ -7,7 +7,7 @@
    viewBox="0 0 33.866664 33.866664"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    sodipodi:docname="hitcircleselect.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.8284271"
-     inkscape:cx="35.001786"
-     inkscape:cy="62.402173"
+     inkscape:cx="35.178563"
+     inkscape:cy="62.402174"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -46,7 +46,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="fill:#ffffff;fill-opacity:0.05;stroke:none;stroke-width:2.64583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:0.30000001;stroke:none;stroke-width:2.64583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1328-6"
        cx="16.933332"
        cy="16.933332"

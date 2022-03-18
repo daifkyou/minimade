@@ -7,8 +7,8 @@
    viewBox="0 0 82.814577 39.15833"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="ranking-graph.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="graph.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="1.4142136"
-     inkscape:cx="69.296465"
-     inkscape:cy="96.873629"
+     inkscape:cx="-148.13887"
+     inkscape:cy="97.22718"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -55,13 +55,12 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#303030;fill-opacity:0.4;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#000000;fill-opacity:0.3019608;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect928"
-       width="82.814583"
+       width="82.815002"
        height="39.158333"
        x="3.6863874e-09"
        y="-1.176852e-08"
-       rx="4.8947916"
-       ry="4.8947916" />
+       rx="1.8520833" />
   </g>
 </svg>

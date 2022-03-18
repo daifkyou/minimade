@@ -148,19 +148,6 @@ export class DefaultImageTask extends Task<void> {
     }
 }
 
-export class FontTask extends Task<void> {
-    constructor(name: string, glyph: string, size: number, provides = `fonts-${name}-${glyph}`) {
-        const source = `src/graphics/fonts/${name}/${glyph}.svg`;
-
-        super(depend => {
-            depend(
-                new ConditionalCompileTask(source, `${name}-${glyph}.png`, InternalConfig.Compile1x, [`-z=${size}`]),
-                new ConditionalCompileTask(source, `${name}-${glyph}@2x.png`, InternalConfig.Compile2x, [`-z=${size * 2}`])
-            );
-        }, provides);
-    }
-}
-
 
 
 const letterSmallWidth = 34;

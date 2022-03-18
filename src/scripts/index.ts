@@ -4,7 +4,7 @@ I really suck at building things, if you can figure out a better way/know a bett
 */
 
 import { Task } from "ktw";
-import { Init, Config, DefaultImageTask, CopyTask, NoneImageTask, FontTask, LetterTask } from "./custom.js";
+import { Init, Config, DefaultImageTask, CopyTask, NoneImageTask, LetterTask, ConditionalCompileTask, InternalConfig } from "./custom.js";
 import * as minimist from "minimist";
 
 const flags = minimist.default(process.argv.slice(2));
@@ -172,7 +172,14 @@ const fonts = new Task<void>(async depend => {
 
     for (const name in fonts) {
         const font = fonts[name];
-        depend(...font.glyphs.map(glyph => new FontTask(name, glyph, font.size)));
+        font.glyphs.forEach(glyph => {
+            const source = `src/graphics/fonts/${name}/${glyph}.svg`;
+
+            depend(
+                new ConditionalCompileTask(source, `${name}-${glyph}.png`, InternalConfig.Compile1x, [`-z=${font.size}`]),
+                new ConditionalCompileTask(source, `${name}-${glyph}@2x.png`, InternalConfig.Compile2x, [`-z=${font.size * 2}`])
+            );
+        });
     }
 }, "fonts");
 
