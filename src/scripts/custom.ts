@@ -112,9 +112,9 @@ export function CompileImage(source: string, out: string, ...args: string[]) {
 }
 
 export class ConditionalCompileTask extends Task<void> {
-    constructor(source: string, out: string, condition: Task<any>, args: string[] = [], provides = out) {
+    constructor(source: string, out: string, condition: Task<boolean>, args: string[] = [], provides = out) {
         super(async depend => {
-            if (await depend(condition)) {
+            if ((await depend(condition))[0]) {
                 await depend(Resources.get(source), InternalConfig.OutDir);
                 return deps => CompileImage(source, path.join(deps.outDir, out), ...args);
             }
