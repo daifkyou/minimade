@@ -1,2 +1,6 @@
-/build/
-*.osk
+/build
+/*.osk
+/node_modules
+
+/scripts
+/cache

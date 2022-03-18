@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="42.666668"
+   height="58.666668"
+   viewBox="0 0 42.666668 58.666668"
+   id="svg4"
+   sodipodi:docname="spunout.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-grids="true"
+     inkscape:snap-page="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.3239838"
+     inkscape:cx="-50.227201"
+     inkscape:cy="56.269571"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4"
+     inkscape:bbox-nodes="true" />
+  <path
+     d="m 21.333333,13.333333 v 8 L 32,10.666667 21.333333,0 V 8.0000002 A 21.333334,21.333334 0 0 0 0,29.333333 C 0,33.52 1.226666,37.413334 3.306667,40.693334 L 7.2000001,36.8 c -1.2,-2.213333 -1.866667,-4.8 -1.866667,-7.466667 a 16,16 0 0 1 15.9999999,-16 m 18.026667,4.64 -3.893333,3.893334 c 1.173333,2.24 1.866667,4.8 1.866667,7.466666 A 16,16 0 0 1 21.333333,45.333334 V 37.333333 L 10.666667,48 21.333333,58.666667 v -8 A 21.333334,21.333334 0 0 0 42.666667,29.333333 c 0,-4.186666 -1.226667,-8.08 -3.306667,-11.36 z"
+     id="path2"
+     style="fill:#ffffff;fill-opacity:1;stroke-width:1" />
+  <g
+     id="g830"
+     transform="translate(-5.8666671,2.133333)">
+    <g
+       id="g15193"
+       transform="translate(-0.61643983)">
+      <text
+         xml:space="preserve"
+         style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+         x="3.1026304"
+         y="-6.6671486"
+         id="text6689"><tspan
+           sodipodi:role="line"
+           x="3.1026304"
+           y="-6.6671486"
+           style="stroke-width:0.50906"
+           id="tspan11469">modified: resized, recolored</tspan></text>
+    </g>
+  </g>
+</svg>

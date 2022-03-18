@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="252.77211"
+   height="35.882999"
+   viewBox="0 0 66.879285 9.494042"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="pause-back.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="252.77211px"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="2"
+     inkscape:cx="138.75"
+     inkscape:cy="13.25"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-bbox-edge-midpoints="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:snap-object-midpoints="false"
+     inkscape:object-nodes="false"
+     inkscape:snap-center="false"
+     lock-margins="true" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-5.0804668,-17.054601)">
+    <path
+       d="m 16.624216,18.112918 v 7.408335 L 12.92005,21.817087 M 9.2158834,18.112918 v 7.408335 h -1.058334 v -7.408335 m 4.7625006,0 v 7.408335 L 9.2158834,21.817087"
+       id="path1196"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
+    <text
+       xml:space="preserve"
+       style="font-size:12.8763px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+       x="17.350384"
+       y="26.579369"
+       id="text5998"
+       transform="scale(0.99997325,1.0000267)"><tspan
+         sodipodi:role="line"
+         id="tspan5996"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+         x="17.350384"
+         y="26.579369">Back</tspan></text>
+    <g
+       id="g845"
+       transform="translate(-54.233597,8.2098134)">
+      <g
+         id="g842"
+         transform="matrix(0.26458333,0,0,0.26458333,59.314064,8.8447876)">
+        <g
+           id="g831"
+           transform="translate(0.33804766,-3.5968216)">
+          <g
+             id="g830">
+            <g
+               id="g15193"
+               transform="translate(-0.61643983)">
+              <text
+                 xml:space="preserve"
+                 style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
+                 x="-3.1020844"
+                 y="-0.93699408"
+                 id="text6689"><tspan
+                   sodipodi:role="line"
+                   x="-3.1020844"
+                   y="-0.93699408"
+                   style="stroke-width:0.50906"
+                   id="tspan11469">modified: resized, recolored, added text</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
