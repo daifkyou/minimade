@@ -7,11 +7,10 @@
    viewBox="0 0 580.49582 376.76663"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="mode-osu-small.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="osu.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -30,9 +29,9 @@
      inkscape:bbox-nodes="false"
      inkscape:snap-bbox-midpoints="false"
      inkscape:snap-page="false"
-     inkscape:zoom="2.828427"
-     inkscape:cx="961.48849"
-     inkscape:cy="685.00972"
+     inkscape:zoom="1.9999999"
+     inkscape:cx="1091.25"
+     inkscape:cy="198.25001"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -48,32 +47,12 @@
      inkscape:snap-nodes="true"
      inkscape:snap-object-midpoints="true"
      inkscape:bbox-paths="false"
-     inkscape:snap-others="false" />
+     inkscape:snap-others="false"
+     inkscape:object-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-intersection-paths="true" />
   <defs
-     id="defs2">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient2768">
-      <stop
-         style="stop-color:#cea112;stop-opacity:1;"
-         offset="0"
-         id="stop2764" />
-      <stop
-         style="stop-color:#cea112;stop-opacity:0;"
-         offset="1"
-         id="stop2766" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient2768"
-       id="linearGradient1678"
-       x1="-3.8364456"
-       y1="-141.28751"
-       x2="22.886471"
-       y2="-141.28751"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0)" />
-  </defs>
+     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -103,12 +82,9 @@
       </g>
     </g>
     <path
-       style="mix-blend-mode:normal;fill:none;stroke:#cea112;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -62.970821,-141.2875 H -3.8364456"
-       id="path1485-3" />
-    <path
-       style="fill:none;stroke:url(#linearGradient1678);stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -3.8364456,-141.2875 H 22.886471"
-       id="path1485" />
+       style="fill:none;fill-opacity:0.968627;stroke:#ffffff;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -62.970564,-141.02292 H 33.998958"
+       id="path865"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>

@@ -5,8 +5,8 @@
    height="25"
    viewBox="0 0 142 25"
    id="svg4"
-   sodipodi:docname="selection-tab.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="tab.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -22,9 +22,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="5.2959351"
-     inkscape:cx="60.612525"
-     inkscape:cy="38.142461"
+     inkscape:zoom="5.6568545"
+     inkscape:cx="80.168228"
+     inkscape:cy="16.705397"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -42,12 +42,20 @@
      inkscape:object-nodes="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-intersection-paths="true"
-     inkscape:snap-smooth-nodes="true" />
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true" />
+  <path
+     style="fill:none;stroke:#17ff55;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 40.5,22.5 61,2e-6"
+     id="path1337"
+     sodipodi:nodetypes="cc" />
   <rect
-     style="fill:#17ff55;stroke-width:2.64567;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1"
-     id="rect1128"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect847"
      width="142"
-     height="25"
+     height="17.5"
      x="0"
-     y="0" />
+     y="3"
+     rx="7"
+     ry="6.9999995" />
 </svg>

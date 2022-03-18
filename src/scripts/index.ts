@@ -4,7 +4,7 @@ I really suck at building things, if you can figure out a better way/know a bett
 */
 
 import { Task } from "ktw";
-import { Init, Config, DefaultImageTask, CopyTask, NoneImageTask, LetterTask, ConditionalCompileTask, InternalConfig, ModeTask, CompileTask, config } from "./custom.js";
+import { Init, DefaultImageTask, CopyTask, NoneImageTask, LetterTask, ConditionalCompileTask, ModeTask, CompileTask, config } from "./custom.js";
 import * as minimist from "minimist";
 
 const flags = minimist.default(process.argv.slice(2));
