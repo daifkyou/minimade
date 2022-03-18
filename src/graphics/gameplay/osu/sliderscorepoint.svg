@@ -7,7 +7,7 @@
    viewBox="0 0 3.1749998 3.1749998"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    sodipodi:docname="sliderscorepoint.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="22.627416"
-     inkscape:cx="4.1100583"
-     inkscape:cy="10.253049"
+     inkscape:cx="4.0879613"
+     inkscape:cy="10.275146"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -52,9 +52,9 @@
     <g
        id="g825"
        transform="scale(0.34570314)"
-       style="stroke-width:2.89265">
+       style="stroke-width:2.89265;fill:#ffffff;fill-opacity:1">
       <circle
-         style="fill:#ffffff;fill-opacity:0.8;stroke:none;stroke-width:7.65346;stroke-linecap:round;stroke-linejoin:round"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.65346;stroke-linecap:round;stroke-linejoin:round"
          id="path1143"
          cx="4.5920901"
          cy="4.5920906"
