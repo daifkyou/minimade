@@ -161,6 +161,10 @@ const editor = Task.group("editor",
 
 
 
+const offsetTick = new DefaultImageTask("src/graphics/interface/offset/tick.svg", "options-offset-tick");
+
+
+
 const modes = Task.group("modes",
     new ModeTask("osu")
 );
@@ -203,7 +207,7 @@ const background = new CompileTask("src/graphics/interface/home/background.svg",
 
 const osu = Task.group("osu", circle, slider, spinner, followpoint, hitbursts, osuHud);
 
-const ui = Task.group("ui", cursor, button, menuBack, modes, mods, fonts, pause);
+const ui = Task.group("ui", cursor, button, menuBack, modes, mods, fonts, pause, offsetTick);
 
 const selection = Task.group("selection", selectionSong, selectionFrame, selectionTab);
 
