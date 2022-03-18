@@ -37,43 +37,21 @@ class ConfigOption extends Task<any> { // woah look at my insane cleverness
 }
 
 export class Config extends ConfigOption { // cleverness (cont.)
-    protected static Config: ConfigOption;
-
-    static async load(configPath = "./config.jsonc") {
-        this.Config = new ConfigOption(
-            Task.static(async () => {
-                return { "": JSON.parse(stripJsonComments(await fs.promises.readFile(configPath, "utf8"))) };
-            }, "configparent"),
-            "", "config"
-        );
-    }
-
-    static get(key: string): any {
-        return this.Config.get(key);
-    }
-
-    static depended(key: string, depend: DependCallback): any {
-        return this.Config.depended(key, depend);
+    path?: string;
+    constructor() {
+        super(Task.static(async () => {
+            return { "": JSON.parse(stripJsonComments(await fs.promises.readFile(this.path!, "utf8"))) };
+        }, "configparent"), "", "config")
     }
 }
+
+export const config = new Config();
 
 export class InternalConfig {
     static OutDir = Task.static(async deps => {
         await fs.promises.mkdir(deps.config_outDir, { recursive: true });
         return deps.config_outDir;
-    }, "outDir", () => Config.get("outDir"));
-
-    static Compile1x = Task.static(
-        deps => deps.config_definition == "1x" || deps.config_definition.toLowerCase() == "both" || deps.config_definition.toLowerCase() == "sd",
-        "Compile1x",
-        () => Config.get("definition")
-    );
-
-    static Compile2x = Task.static(
-        deps => deps.config_definition == "2x" || deps.config_definition.toLowerCase() == "both" || deps.config_definition.toLowerCase() == "hd",
-        "Compile2x",
-        () => Config.get("definition")
-    );
+    }, "outDir", config.get("outDir"));
 }
 
 
@@ -125,13 +103,13 @@ export class ConditionalCompileTask extends Task<void> {
 
 export class CompileTask extends ConditionalCompileTask {
     constructor(source: string, out: string, args: string[] = [], provides = out) {
-        super(source, out, InternalConfig.Compile1x, args, provides);
+        super(source, out, config.get("1x"), args, provides);
     }
 }
 
 export class Compile2xTask extends ConditionalCompileTask {
     constructor(source: string, out: string, args: string[] = [], provides = out) {
-        super(source, out, InternalConfig.Compile2x, ["-z=2", ...args], provides);
+        super(source, out, config.get("2x"), ["-z=2", ...args], provides);
     }
 }
 
@@ -148,8 +126,6 @@ export class DefaultImageTask extends Task<void> {
     }
 }
 
-
-
 const letterSmallWidth = 34;
 
 export class LetterTask extends Task<void> {
@@ -159,8 +135,21 @@ export class LetterTask extends Task<void> {
             const basename = `ranking-${letter}`;
             depend(
                 new DefaultImageTask(source, basename),
-                new ConditionalCompileTask(source, `${basename}-small.png`, InternalConfig.Compile1x, [`-w=${letterSmallWidth}`]),
-                new ConditionalCompileTask(source, `${basename}-small@2x.png`, InternalConfig.Compile2x, [`-w=${letterSmallWidth * 2}`])
+                new ConditionalCompileTask(source, `${basename}-small.png`, config.get("1x"), [`-w=${letterSmallWidth}`]),
+                new ConditionalCompileTask(source, `${basename}-small@2x.png`, config.get("2x"), [`-w=${letterSmallWidth * 2}`])
+            );
+        }, provides);
+    }
+}
+
+export class ModeTask extends Task<void> {
+    constructor(name: string, provides = `${name}mode`) {
+        super(depend => {
+            const source = `src/graphics/interface/modes/${name}.svg`;
+            depend(
+                new DefaultImageTask(source, `mode-${name}-med`),
+                new ConditionalCompileTask(source, `mode-${name}.png`, config.get("1x"), [`-z=${2}`]),
+                new ConditionalCompileTask(source, `mode-${name}@2x.png`, config.get("2x"), [`-z=${4}`])
             );
         }, provides);
     }
@@ -190,9 +179,9 @@ export class NoneImageTask extends CopyTask {
 
 
 
-export async function Init(main: Task<void>, cache: string, config?: string) {
-    await Cache.Load(cache);
-    await Config.load(config);
+export async function Init(main: Task<void>, cachePath: string, configPath = "./config.jsonc") {
+    await Cache.Load(cachePath);
+    config.path = configPath;
     await main.run();
     await Cache.Save();
 }

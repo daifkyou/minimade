@@ -4,13 +4,13 @@ I really suck at building things, if you can figure out a better way/know a bett
 */
 
 import { Task } from "ktw";
-import { Init, Config, DefaultImageTask, CopyTask, NoneImageTask, LetterTask, ConditionalCompileTask, InternalConfig } from "./custom.js";
+import { Init, Config, DefaultImageTask, CopyTask, NoneImageTask, LetterTask, ConditionalCompileTask, InternalConfig, ModeTask, CompileTask, config } from "./custom.js";
 import * as minimist from "minimist";
 
 const flags = minimist.default(process.argv.slice(2));
 
-const config = flags.config as string ?? "config.jsonc";
-const cache = flags.cache as string ?? "cache/cache.json";
+const configPath = flags.config as string ?? "config.jsonc";
+const cachePath = flags.cache as string ?? "cache/cache.json";
 
 
 
@@ -155,8 +155,20 @@ const pause = Task.group("pause",
 
 
 
+const editor = Task.group("editor",
+    new DefaultImageTask("src/graphics/interface/editor/select.svg", "hitcircleselect")
+);
+
+
+
+const modes = Task.group("modes",
+    new ModeTask("osu")
+);
+
+
+
 const mods = new Task<void>(async depend => {
-    const mods = await Config.depended("mods", depend) as string[];
+    const mods = await config.depended("mods", depend) as string[];
     depend(...mods.map(mod => new DefaultImageTask(`src/graphics/interface/mods/${mod}.svg`, `selection-mod-${mod}`, `mods-${mod}`)));
 }, "mods");
 
@@ -168,7 +180,7 @@ const fonts = new Task<void>(async depend => {
         new NoneImageTask("score-percent.png")
     );
 
-    const fonts = await Config.depended("fonts", depend) as { [key: string]: { size: number, glyphs: string[] } };
+    const fonts = await config.depended("fonts", depend) as { [key: string]: { size: number, glyphs: string[] } };
 
     for (const name in fonts) {
         const font = fonts[name];
@@ -176,8 +188,8 @@ const fonts = new Task<void>(async depend => {
             const source = `src/graphics/fonts/${name}/${glyph}.svg`;
 
             depend(
-                new ConditionalCompileTask(source, `${name}-${glyph}.png`, InternalConfig.Compile1x, [`-z=${font.size}`]),
-                new ConditionalCompileTask(source, `${name}-${glyph}@2x.png`, InternalConfig.Compile2x, [`-z=${font.size * 2}`])
+                new ConditionalCompileTask(source, `${name}-${glyph}.png`, config.get("1x"), [`-z=${font.size}`]),
+                new ConditionalCompileTask(source, `${name}-${glyph}@2x.png`, config.get("2x"), [`-z=${font.size * 2}`])
             );
         });
     }
@@ -185,9 +197,13 @@ const fonts = new Task<void>(async depend => {
 
 
 
+const background = new CompileTask("src/graphics/interface/home/background.svg", "menu-background.jpg", ["-b=black"]);
+
+
+
 const osu = Task.group("osu", circle, slider, spinner, followpoint, hitbursts, osuHud);
 
-const ui = Task.group("ui", cursor, button, menuBack, mods, fonts, pause);
+const ui = Task.group("ui", cursor, button, menuBack, modes, mods, fonts, pause);
 
 const selection = Task.group("selection", selectionSong, selectionFrame, selectionTab);
 
@@ -195,6 +211,6 @@ const ranking = Task.group("ranking", rankingScreen, letters);
 
 
 
-const main = Task.group("main", license, ini, ui, selection, osu, ranking);
+const main = Task.group("main", license, ini, background, ui, selection, osu, ranking, editor);
 
-Init(main, cache, config);
+Init(main, cachePath, configPath);

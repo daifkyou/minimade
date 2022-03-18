@@ -1,6 +1,7 @@
 {
     "outDir": "build", // output directory
-    "definition": "both", // 1x/sd emits only standard definition, 2x/hd emits only high definition, both emits both standard and high definition
+    "1x": true, // whether to compile SD images
+    "2x": true, // whether to compile HD images
     "mods": [ // list of mods that will be included, comment out a mod if you don't want it to be included
         "autoplay",
         "cinema",
