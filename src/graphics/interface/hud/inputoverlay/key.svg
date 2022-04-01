@@ -7,8 +7,8 @@
    viewBox="0 0 11.377083 11.377082"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="inputoverlay-key.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="key.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="5.6568542"
-     inkscape:cx="28.90299"
+     inkscape:cx="29.079767"
      inkscape:cy="25.897786"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
@@ -50,7 +50,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="fill:#000000;fill-opacity:0.301961;stroke:#ffffff;stroke-width:0.822027;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-opacity:0.301961;stroke:#ffffff;stroke-width:0.822027;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path928"
        cx="5.6885414"
        cy="5.6885414"
