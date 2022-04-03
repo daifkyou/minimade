@@ -1,6 +1,6 @@
 **maybe won't be active after finished release** (infrequent or maybe no updates/maintenance if i don't feel like it)
 # minimade
-A minimaler skin for osu!standard, because - YUGEN - was *more* than enough.
+A hackable skin for the 21st Century ;)
 
 Most icons are from mdi (https://materialdesignicons.com/).
 Text is in osifont.

@@ -7,7 +7,7 @@
     "buildscripts": "npx tsc",
     "skin": "node --enable-source-maps scripts/index.js",
     "build": "npm run buildscripts; npm run skin",
-    "clean": "node scripts/clean.js"
+    "clean": "node --enable-source-maps scripts/clean.js"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/awful-coder/minimade#readme",
   "dependencies": {
-    "ktw": "^0.2.4",
-    "minimist": "^1.2.5",
+    "arg": "^5.0.1",
+    "ktw": "^0.2.5",
     "strip-json-comments": "^4.0.0"
   },
   "devDependencies": {

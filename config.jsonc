@@ -1,5 +1,6 @@
 {
     "outDir": "build", // output directory
+    "resolution": "any", // supported values: 16-9 (16:9, etc.), any (don't use resolution-dependent hacks, i.e. less fancy selection)
     "1x": true, // whether to compile SD images
     "2x": true, // whether to compile HD images
     "mods": [ // list of mods that will be included, comment out a mod if you don't want it to be included

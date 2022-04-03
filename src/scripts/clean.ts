@@ -3,10 +3,10 @@
 
 import * as fs from "fs";
 
-fs.rm("cache", { recursive: true }, err => {
-    if (err) throw err;
+fs.rm("build", { recursive: true }, err => {
+    if (err) console.error(err);
 });
 
-fs.rm("build", { recursive: true }, err => {
-    if (err) throw err;
+fs.rm("cache", { recursive: true }, err => {
+    if (err) console.error(err);
 });

@@ -1,11 +1,18 @@
-import { DependCallback, Task, Cache, TaskDefinition } from "ktw";
-import { Path } from "ktw/lib/path";
+import { DependCallback, Task, Cache, TaskDefinition, Payload, StaticTask } from "ktw";
 import * as fs from "fs";
 import * as child_process from "child_process";
 import stripJsonComments from 'strip-json-comments';
 import * as path from "path";
 
 const compiler = "rsvg-convert";
+
+
+let resolveDefaultCache: (value: Cache | PromiseLike<Cache>) => void;
+Cache.default = new Promise<Cache>(res => { resolveDefaultCache = res });
+
+export async function depended<T>(task: Task<T>, depend: DependCallback) {
+    return (await depend(task))[0];
+}
 
 
 
@@ -21,12 +28,6 @@ class ConfigOption extends Task<any> { // woah look at my insane cleverness
         else return this.tasks[key] = new ConfigOption(this, key, `${this.provides}_${key}`);
     }
 
-    /**
-     * somehow not having this function made life a pain
-     */
-    async depended(key: string, depend: DependCallback) {
-        return (await depend(this.get(key)))[0];
-    }
 
     protected constructor(parent: Task<{ [key: string]: any }>, key: string, provides: string) {
         super(depend => {
@@ -39,16 +40,16 @@ class ConfigOption extends Task<any> { // woah look at my insane cleverness
 export class Config extends ConfigOption { // cleverness (cont.)
     path?: string;
     constructor() {
-        super(Task.static(async () => {
+        super(new StaticTask(async () => {
             return { "": JSON.parse(stripJsonComments(await fs.promises.readFile(this.path!, "utf8"))) };
-        }, "configparent"), "", "config")
+        }, "configparent"), "", "config");
     }
 }
 
 export const config = new Config();
 
 export class InternalConfig {
-    static OutDir = Task.static(async deps => {
+    static OutDir = new StaticTask(async deps => {
         await fs.promises.mkdir(deps.config_outDir, { recursive: true });
         return deps.config_outDir;
     }, "outDir", config.get("outDir"));
@@ -57,10 +58,10 @@ export class InternalConfig {
 
 
 export class Resources {
-    protected static tasks: { [key: string]: Path } = {};
+    protected static tasks: { [key: string]: Task<number> } = {};
 
     static get(resource: string) {
-        return this.tasks[resource] ?? (this.tasks[resource] = new Path(resource));
+        return this.tasks[resource] ?? (this.tasks[resource] = new Task(() => async () => (await fs.promises.stat(resource)).ctimeMs, resource));
     }
 }
 
@@ -177,11 +178,37 @@ export class NoneImageTask extends CopyTask {
     }
 }
 
+export class ResolutionDependentSourceImageTask extends Task<void> {
+    constructor(source: (resolution: string) => string, basenames: string | string[], provides: string = "" + basenames) {
+        super(async depend => {
+            const resolution = await depended(config.get("resolution"), depend) as string;
+            depend(new DefaultImageTask(source(resolution), basenames));
+        }, provides);
+    }
+}
 
 
-export async function Init(main: Task<void>, cachePath: string, configPath = "./config.jsonc") {
-    await Cache.Load(cachePath);
+
+export async function Load(cachePath: string) {
+    let old;
+    try {
+        old = JSON.parse(await fs.promises.readFile(cachePath, "utf8"));
+    } catch (e) {
+        if ((e as any)?.code === 'ENOENT') {
+            old = {};
+        } else throw e;
+    }
+
+    resolveDefaultCache(new Cache(old));
+}
+
+export async function Save(cachePath: string) {
+    await fs.promises.mkdir(path.dirname(cachePath), { recursive: true })
+    await fs.promises.writeFile(cachePath, JSON.stringify((await Cache.default)!.current));
+}
+
+export async function Init(main: Task<unknown>, cachePath: string, configPath = "./config.jsonc") {
     config.path = configPath;
     await main.run();
-    await Cache.Save();
+    await Save(cachePath);
 }
