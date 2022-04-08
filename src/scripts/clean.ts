@@ -1,3 +1,5 @@
+#!/usr/bin/env -S node --enable-source-maps
+
 // a really ugly job
 // maybe i should make this look nicer later
 

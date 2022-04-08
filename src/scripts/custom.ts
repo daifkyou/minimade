@@ -1,4 +1,4 @@
-import { DependCallback, Task, Cache, TaskDefinition, Payload, StaticTask } from "ktw";
+import { DependCallback, Task, Cache, StaticTask } from "ktw";
 import * as fs from "fs";
 import * as child_process from "child_process";
 import stripJsonComments from 'strip-json-comments';
@@ -52,7 +52,7 @@ export class InternalConfig {
     static OutDir = new StaticTask(async deps => {
         await fs.promises.mkdir(deps.config_outDir, { recursive: true });
         return deps.config_outDir;
-    }, "outDir", config.get("outDir"));
+    }, "outDir", [config.get("outDir")]);
 }
 
 
