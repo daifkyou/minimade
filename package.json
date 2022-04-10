@@ -6,7 +6,8 @@
   "scripts": {
     "buildscripts": "npx tsc",
     "skin": "node --enable-source-maps scripts/index.js",
-    "build": "npm run buildscripts; npm run skin"
+    "build": "npm run buildscripts; npm run skin",
+    "clean": "npm run skin -- -c"
   },
   "repository": {
     "type": "git",

@@ -2,12 +2,12 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="128"
-   height="12"
-   viewBox="0 0 33.866664 3.1749996"
+   width="144"
+   height="4.0000005"
+   viewBox="0 0 38.099997 1.0583333"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    sodipodi:docname="followpoint.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -22,7 +22,7 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
      width="32px"
@@ -30,9 +30,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="5.656854"
-     inkscape:cx="93.691653"
-     inkscape:cy="30.05204"
+     inkscape:zoom="7.9999996"
+     inkscape:cx="58.437503"
+     inkscape:cy="19.437501"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -43,52 +43,43 @@
      id="defs2">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient1246">
+       id="linearGradient2245">
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.40000001"
+         style="stop-color:#ffffff;stop-opacity:0"
          offset="0"
-         id="stop1242" />
+         id="stop2241" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.25"
+         offset="0.5"
+         id="stop2716" />
       <stop
          style="stop-color:#ffffff;stop-opacity:0;"
          offset="1"
-         id="stop1244" />
+         id="stop2243" />
     </linearGradient>
-    <radialGradient
+    <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient1246"
-       id="radialGradient1248"
-       cx="12.7"
-       cy="1.5875"
-       fx="12.7"
-       fy="1.5875"
-       r="12.7"
-       gradientTransform="matrix(1,0,0,0.05608025,0.23999961,1.209306)"
-       gradientUnits="userSpaceOnUse" />
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter850"
-       x="-0.0094488192"
-       y="-0.11338582"
-       width="1.0188976"
-       height="1.2267716">
-      <feGaussianBlur
-         stdDeviation="0.1 0.1"
-         result="blur"
-         id="feGaussianBlur848" />
-    </filter>
+       xlink:href="#linearGradient2245"
+       id="linearGradient2247"
+       x1="0"
+       y1="1.5875"
+       x2="33.866665"
+       y2="1.5875"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="scale(1.1249999,0.33333334)" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <ellipse
-       style="fill:url(#radialGradient1248);fill-opacity:1;stroke:none;stroke-width:1.05098;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5;filter:url(#filter850)"
-       id="path1142"
-       cx="12.94"
-       cy="1.2983334"
-       rx="12.7"
-       ry="1.0583334"
-       transform="matrix(1.3159759,0,0,1.2040377,-0.19079051,0.03105344)" />
+    <rect
+       style="fill:url(#linearGradient2247);fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1035"
+       width="38.099995"
+       height="1.0583334"
+       x="0"
+       y="0"
+       rx="1.8319986"
+       ry="1.8319987" />
   </g>
 </svg>
