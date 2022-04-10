@@ -1,14 +1,20 @@
-#!/usr/bin/env -S node --enable-source-maps
-
 // a really ugly job
 // maybe i should make this look nicer later
 
 import fs from "fs";
 
-fs.rm("build", { recursive: true }, err => {
-    if (err) console.error(err);
-});
+import { parse } from "jsonc-parser";
+import type { ParseError } from "jsonc-parser";
 
-fs.rm("cache", { recursive: true }, err => {
-    if (err) console.error(err);
-});
+export default async (cachePath: string, configPath: string) => {
+    console.log("cleaning...");
+
+    const errors: ParseError[] = [];
+    const c = parse(await fs.promises.readFile(configPath, "utf8"), errors);
+    if (errors.length > 0) console.warn(errors);
+
+    await Promise.all([
+        fs.promises.rm(c.outputDirectory, { recursive: true }),
+        fs.promises.rm(cachePath)
+    ].map(x => x.catch(err => console.warn(err))));
+}

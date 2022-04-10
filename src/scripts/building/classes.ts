@@ -1,7 +1,7 @@
 import { DependCallback, Task, Cache, StaticTask } from "ktw";
 import fs from "fs";
 import child_process from "child_process";
-import { parse } from 'jsonc-parser';
+import { parse } from "jsonc-parser";
 import type { ParseError } from "jsonc-parser";
 import path from "path";
 
@@ -11,7 +11,7 @@ const compiler = "rsvg-convert";
 let resolveDefaultCache: (value: Cache | PromiseLike<Cache>) => void;
 Cache.default = new Promise<Cache>(res => { resolveDefaultCache = res });
 
-export async function Load(cachePath: string) {
+async function Load(cachePath: string) {
     let old;
     try {
         old = JSON.parse(await fs.promises.readFile(cachePath, "utf8"));
@@ -24,12 +24,13 @@ export async function Load(cachePath: string) {
     resolveDefaultCache(new Cache(old));
 }
 
-export async function Save(cachePath: string) {
+async function Save(cachePath: string) {
     await fs.promises.mkdir(path.dirname(cachePath), { recursive: true })
     await fs.promises.writeFile(cachePath, JSON.stringify((await Cache.default)!.current));
 }
 
 export async function Init(main: Task<unknown>, cachePath: string, configPath: string) {
+    await Load(cachePath);
     config.path = configPath;
     await main.run();
     await Save(cachePath);
