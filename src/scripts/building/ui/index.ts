@@ -1,4 +1,4 @@
-
+import { TaskGroup } from "ktw";
 import modes from "./modes.js";
 import fonts from "./fonts.js"
 import cursor from "./cursor.js";
@@ -6,7 +6,10 @@ import button from "./button.js";
 import mods from "./mods.js";
 import offsetTick from "./offsetTick.js";
 import pause from "./pause.js";
-import { TaskGroup } from "ktw";
+import background from "./background.js";
+import editor from "./editor.js";
+import selection from "./selection.js";
+import ranking from "./ranking.js";
 
-export default new TaskGroup("ui", [cursor, button, modes, mods, fonts, pause, offsetTick]);
+export default new TaskGroup("ui", [background, cursor, selection, button, modes, mods, fonts, pause, offsetTick, ranking, editor]);
 
