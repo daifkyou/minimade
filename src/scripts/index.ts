@@ -8,7 +8,12 @@ honestly im really uncomfortable with the current build thing and i feel like im
 */
 
 import { Task, TaskGroup } from "ktw";
-import { Init, DefaultImageTask, CopyTask, NoneImageTask, LetterTask, ConditionalCompileTask, ModeTask, CompileTask, config, ResolutionDependentSourceImageTask, Load, depended } from "./custom.js";
+import { Init, DefaultImageTask, CopyTask, NoneImageTask, CompileTask, config, ResolutionDependentSourceImageTask, Load, depended } from "./classes.js";
+
+import letters from "./building/letters.js";
+import modes from "./building/modes.js";
+import fonts from "./building/fonts.js"
+
 import arg from "arg";
 
 const flags = arg({
@@ -23,6 +28,11 @@ const flags = arg({
     "-a": "--cache"
 });
 
+const configPath = flags["--config"] as string ?? "config/config.jsonc";
+const cachePath = flags["--cache"] as string ?? "cache/cache.json";
+
+Load(cachePath);
+
 if (flags["--help"]) {
     console.log(`minimade build script (it builds minimade ._.)
 
@@ -31,16 +41,9 @@ Usage: [script, usually npm run skin --] [options]
 Accepted Options:
   --help    or -h: displays this help message
   --version or -v: does nothing because it's kinda hard to have a "version", if you really wanted you could check the repo
-  --config  or -o: path to config file (config.jsonc by default)
+  --config  or -o: path to config file (config/config.jsonc by default)
   --cache   or -a: path to cache file (cache/cache.json by default)`);
 } else if (!flags["--version"]) {
-    const configPath = flags["--config"] as string ?? "config.jsonc";
-    const cachePath = flags["--cache"] as string ?? "cache/cache.json";
-
-    Load(cachePath);
-
-
-
     const ini = new CopyTask("src/meta/skin.ini", "skin.ini");
     const license = new CopyTask("LICENSE", "LICENSE", "license");
 
@@ -168,8 +171,6 @@ Accepted Options:
         new NoneImageTask("ranking-accuracy.png")
     ]);
 
-    const letters = new TaskGroup("letters", ["A", "B", "C", "D", "S", "SH", "X", "XH"].map(l => new LetterTask(l)));
-
 
 
     const pause = new TaskGroup("pause", [
@@ -192,39 +193,10 @@ Accepted Options:
 
 
 
-    const modes = new TaskGroup("modes", [
-        new ModeTask("osu")
-    ]);
-
-
-
     const mods = new Task<void>(async depend => {
         const mods = await depended(config.get("mods"), depend) as string[];
         depend(...mods.map(mod => new DefaultImageTask(`src/graphics/interface/mods/${mod}.svg`, `selection-mod-${mod}`, `mods-${mod}`)));
     }, "mods");
-
-
-
-    const fonts = new Task<void>(async depend => {
-        depend(
-            new NoneImageTask("score-x.png"),
-            new NoneImageTask("score-percent.png")
-        );
-
-        const fonts = await depended(config.get("fonts"), depend) as { [key: string]: { size: number, glyphs: string[] } };
-
-        for (const name in fonts) {
-            const font = fonts[name];
-            font.glyphs.forEach(glyph => {
-                const source = `src/graphics/fonts/${name}/${glyph}.svg`;
-
-                depend(
-                    new ConditionalCompileTask(source, `${name}-${glyph}.png`, config.get("1x"), [`-z=${font.size}`]),
-                    new ConditionalCompileTask(source, `${name}-${glyph}@2x.png`, config.get("2x"), [`-z=${font.size * 2}`])
-                );
-            });
-        }
-    }, "fonts");
 
 
 

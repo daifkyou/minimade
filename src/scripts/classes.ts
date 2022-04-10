@@ -1,14 +1,41 @@
 import { DependCallback, Task, Cache, StaticTask } from "ktw";
-import * as fs from "fs";
-import * as child_process from "child_process";
-import stripJsonComments from 'strip-json-comments';
-import * as path from "path";
+import fs from "fs";
+import child_process from "child_process";
+import { parse } from 'jsonc-parser';
+import type { ParseError } from "jsonc-parser";
+import path from "path";
 
 const compiler = "rsvg-convert";
 
 
 let resolveDefaultCache: (value: Cache | PromiseLike<Cache>) => void;
 Cache.default = new Promise<Cache>(res => { resolveDefaultCache = res });
+
+export async function Load(cachePath: string) {
+    let old;
+    try {
+        old = JSON.parse(await fs.promises.readFile(cachePath, "utf8"));
+    } catch (e) {
+        if ((e as any)?.code === 'ENOENT') {
+            old = {};
+        } else throw e;
+    }
+
+    resolveDefaultCache(new Cache(old));
+}
+
+export async function Save(cachePath: string) {
+    await fs.promises.mkdir(path.dirname(cachePath), { recursive: true })
+    await fs.promises.writeFile(cachePath, JSON.stringify((await Cache.default)!.current));
+}
+
+export async function Init(main: Task<unknown>, cachePath: string, configPath: string) {
+    config.path = configPath;
+    await main.run();
+    await Save(cachePath);
+}
+
+
 
 export async function depended<T>(task: Task<T>, depend: DependCallback) {
     return (await depend(task))[0];
@@ -28,7 +55,6 @@ class ConfigOption extends Task<any> { // woah look at my insane cleverness
         else return this.tasks[key] = new ConfigOption(this, key, `${this.provides}_${key}`);
     }
 
-
     protected constructor(parent: Task<{ [key: string]: any }>, key: string, provides: string) {
         super(depend => {
             depend(parent);
@@ -41,19 +67,21 @@ export class Config extends ConfigOption { // cleverness (cont.)
     path?: string;
     constructor() {
         super(new StaticTask(async () => {
-            return { "": JSON.parse(stripJsonComments(await fs.promises.readFile(this.path!, "utf8"))) };
+            const errors: ParseError[] = [];
+            const c = parse(await fs.promises.readFile(this.path!, "utf8"), errors);
+            if (errors.length > 0) console.warn(errors);
+
+            return { "": c };
         }, "configparent"), "", "config");
     }
 }
 
 export const config = new Config();
 
-export class InternalConfig {
-    static OutDir = new StaticTask(async deps => {
-        await fs.promises.mkdir(deps.config_outDir, { recursive: true });
-        return deps.config_outDir;
-    }, "outDir", [config.get("outDir")]);
-}
+export const outputDirectory = new StaticTask(async deps => {
+    await fs.promises.mkdir(deps.config_outputDirectory, { recursive: true });
+    return deps.config_outputDirectory;
+}, "outputDirectory", [config.get("outputDirectory")]);
 
 
 
@@ -67,7 +95,7 @@ export class Resources {
 
 
 
-export function Compile(options: child_process.SpawnOptions, ...args: string[]) {
+export function Compile(options: child_process.SpawnOptions, out?: WritableStream, ...args: string[]) {
     return new Promise<void>((res, rej) => {
         const cp = child_process.spawn(compiler, args, options);
 
@@ -75,6 +103,7 @@ export function Compile(options: child_process.SpawnOptions, ...args: string[]) 
         cp.on("error", err => {
             rej(err);
         });
+
         if (cp.stderr) cp.stderr.on("data", chunk => errorOutput += chunk);
 
         cp.once("close", async (code, signal) => {
@@ -87,15 +116,15 @@ export function Compile(options: child_process.SpawnOptions, ...args: string[]) 
 
 export function CompileImage(source: string, out: string, ...args: string[]) {
     console.log(`compiling ${source} to ${out} with args: ${args}`);
-    return Compile({}, "-o", out, ...args, source);
+    return Compile({}, undefined, "-o", out, ...args, source);
 }
 
 export class ConditionalCompileTask extends Task<void> {
     constructor(source: string, out: string, condition: Task<boolean>, args: string[] = [], provides = out) {
         super(async depend => {
-            if ((await depend(condition))[0]) {
-                await depend(Resources.get(source), InternalConfig.OutDir);
-                return deps => CompileImage(source, path.join(deps.outDir, out), ...args);
+            if (await depended(condition, depend)) {
+                await depend(Resources.get(source), outputDirectory);
+                return deps => CompileImage(source, path.join(deps.outputDirectory, out), ...args);
             }
             return () => { };
         }, provides);
@@ -127,43 +156,14 @@ export class DefaultImageTask extends Task<void> {
     }
 }
 
-const letterSmallWidth = 34;
-
-export class LetterTask extends Task<void> {
-    constructor(letter: string, provides = `letter-${letter}`) {
-        super(depend => {
-            const source = `src/graphics/interface/ranking/grades/${letter}.svg`;
-            const basename = `ranking-${letter}`;
-            depend(
-                new DefaultImageTask(source, basename),
-                new ConditionalCompileTask(source, `${basename}-small.png`, config.get("1x"), [`-w=${letterSmallWidth}`]),
-                new ConditionalCompileTask(source, `${basename}-small@2x.png`, config.get("2x"), [`-w=${letterSmallWidth * 2}`])
-            );
-        }, provides);
-    }
-}
-
-export class ModeTask extends Task<void> {
-    constructor(name: string, provides = `${name}mode`) {
-        super(depend => {
-            const source = `src/graphics/interface/modes/${name}.svg`;
-            depend(
-                new DefaultImageTask(source, `mode-${name}-med`),
-                new ConditionalCompileTask(source, `mode-${name}.png`, config.get("1x"), [`-z=${2}`]),
-                new ConditionalCompileTask(source, `mode-${name}@2x.png`, config.get("2x"), [`-z=${4}`])
-            );
-        }, provides);
-    }
-}
-
 export class CopyTask extends Task<void> {
     constructor(source: string, out: string, provides = out, dependOnSource = true) {
         super(depend => {
-            depend(InternalConfig.OutDir);
+            depend(outputDirectory);
             if (dependOnSource) depend(Resources.get(source));
 
             return deps => new Promise(
-                (res, rej) => fs.copyFile(source, path.join(deps.outDir, out), err => {
+                (res, rej) => fs.copyFile(source, path.join(deps.outputDirectory, out), err => {
                     if (err) rej(err);
                     res();
                 })
@@ -185,30 +185,4 @@ export class ResolutionDependentSourceImageTask extends Task<void> {
             depend(new DefaultImageTask(source(resolution), basenames));
         }, provides);
     }
-}
-
-
-
-export async function Load(cachePath: string) {
-    let old;
-    try {
-        old = JSON.parse(await fs.promises.readFile(cachePath, "utf8"));
-    } catch (e) {
-        if ((e as any)?.code === 'ENOENT') {
-            old = {};
-        } else throw e;
-    }
-
-    resolveDefaultCache(new Cache(old));
-}
-
-export async function Save(cachePath: string) {
-    await fs.promises.mkdir(path.dirname(cachePath), { recursive: true })
-    await fs.promises.writeFile(cachePath, JSON.stringify((await Cache.default)!.current));
-}
-
-export async function Init(main: Task<unknown>, cachePath: string, configPath = "./config.jsonc") {
-    config.path = configPath;
-    await main.run();
-    await Save(cachePath);
 }

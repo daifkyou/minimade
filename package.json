@@ -25,9 +25,9 @@
   "homepage": "https://github.com/awful-coder/minimade#readme",
   "dependencies": {
     "arg": "^5.0.1",
-    "ktw": "^0.3.1-b",
-    "sharp": "^0.30.3",
-    "strip-json-comments": "^4.0.0"
+    "jsonc-parser": "^3.0.0",
+    "ktw": "^0.3.2",
+    "sharp": "^0.30.3"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.2",
