@@ -12,4 +12,3 @@ import selection from "./selection.js";
 import ranking from "./ranking.js";
 
 export default new TaskGroup("ui", [background, cursor, selection, button, modes, mods, fonts, pause, offsetTick, ranking, editor]);
-

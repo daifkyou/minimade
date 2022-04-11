@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="144"
+   width="144.00002"
    height="4.0000005"
-   viewBox="0 0 38.099997 1.0583333"
+   viewBox="0 0 38.100001 1.0583333"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
@@ -30,9 +30,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="7.9999996"
-     inkscape:cx="58.437503"
-     inkscape:cy="19.437501"
+     inkscape:zoom="16"
+     inkscape:cx="50.09375"
+     inkscape:cy="8.40625"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -50,8 +50,12 @@
          id="stop2241" />
       <stop
          style="stop-color:#ffffff;stop-opacity:0.25"
-         offset="0.5"
+         offset="0.2"
          id="stop2716" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.24705882;"
+         offset="0.80000001"
+         id="stop1368" />
       <stop
          style="stop-color:#ffffff;stop-opacity:0;"
          offset="1"
@@ -66,7 +70,7 @@
        x2="33.866665"
        y2="1.5875"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="scale(1.1249999,0.33333334)" />
+       gradientTransform="scale(1.1250001,0.33333334)" />
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -75,11 +79,11 @@
     <rect
        style="fill:url(#linearGradient2247);fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1035"
-       width="38.099995"
+       width="38.099998"
        height="1.0583334"
        x="0"
        y="0"
-       rx="1.8319986"
+       rx="1.8319987"
        ry="1.8319987" />
   </g>
 </svg>

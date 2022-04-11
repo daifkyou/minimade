@@ -5,8 +5,8 @@
    height="91"
    viewBox="0 0 77 91"
    id="svg4"
-   sodipodi:docname="selection-mods-over.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="mods-over.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -22,9 +22,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="5.2959351"
-     inkscape:cx="13.123273"
-     inkscape:cy="60.329289"
+     inkscape:zoom="7.4895832"
+     inkscape:cx="31.443672"
+     inkscape:cy="42.392212"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -41,15 +41,15 @@
      fit-margin-bottom="0"
      inkscape:bbox-nodes="true" />
   <g
-     id="g1050"
-     transform="scale(0.83695652,1)"
-     style="stroke-width:1.09307">
-    <rect
-       style="fill:#ffffff;stroke:none;stroke-width:5.46536;stroke-linecap:round;stroke-linejoin:round"
-       id="rect934"
-       width="92"
-       height="4"
-       x="0"
-       y="0" />
+     id="g1057">
+    <g
+       id="g1330-3"
+       transform="matrix(0.82795696,0,0,0.82795696,0,0.3440861)"
+       style="stroke-width:1.20779">
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:4.83117;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 0,2.0000001 H 93.000003"
+         id="path873-6" />
+    </g>
   </g>
 </svg>

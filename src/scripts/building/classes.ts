@@ -1,11 +1,10 @@
-import { DependCallback, Task, Cache, StaticTask } from "ktw";
+import { DependCallback, Task, Cache, StaticTask, TaskDefinition } from "ktw";
 import fs from "fs";
 import child_process from "child_process";
 import { parse } from "jsonc-parser";
 import type { ParseError } from "jsonc-parser";
 import path from "path";
 
-const compiler = "rsvg-convert";
 
 
 let resolveDefaultCache: (value: Cache | PromiseLike<Cache>) => void;
@@ -96,9 +95,13 @@ export class Resources {
 
 
 
-export function Compile(options: child_process.SpawnOptions, out?: WritableStream, ...args: string[]) {
+const compiler = "rsvg-convert";
+
+export function Compile(options: child_process.SpawnOptions, out?: NodeJS.WritableStream, ...args: string[]) {
     return new Promise<void>((res, rej) => {
         const cp = child_process.spawn(compiler, args, options);
+
+        if (out && cp.stdout) cp.stdout.pipe(out);
 
         let errorOutput = "";
         cp.on("error", err => {
@@ -116,7 +119,6 @@ export function Compile(options: child_process.SpawnOptions, out?: WritableStrea
 }
 
 export function CompileImage(source: string, out: string, ...args: string[]) {
-    console.log(`compiling ${source} to ${out} with args: ${args}`);
     return Compile({}, undefined, "-o", out, ...args, source);
 }
 
@@ -132,7 +134,7 @@ export class ConditionalCompileTask extends Task<void> {
     }
 }
 
-export class CompileTask extends ConditionalCompileTask {
+export class Compile1xTask extends ConditionalCompileTask {
     constructor(source: string, out: string, args: string[] = [], provides = out) {
         super(source, out, config.get("1x"), args, provides);
     }
@@ -149,7 +151,7 @@ export class DefaultImageTask extends Task<void> {
         if (typeof basenames == "string") basenames = [basenames] as string[];
         super(depend => {
             depend(
-                ...(<string[]>basenames).map(basename => new CompileTask(source, basename + ".png")),
+                ...(<string[]>basenames).map(basename => new Compile1xTask(source, basename + ".png")),
                 ...(<string[]>basenames).map(basename => new Compile2xTask(source, basename + "@2x.png"))
             );
             return () => { };
