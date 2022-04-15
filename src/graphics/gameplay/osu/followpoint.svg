@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="144.00002"
-   height="4.0000005"
-   viewBox="0 0 38.100001 1.0583333"
+   width="120"
+   height="4.000001"
+   viewBox="0 0 31.749997 1.0583334"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
@@ -30,9 +30,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="16"
-     inkscape:cx="50.09375"
-     inkscape:cy="8.40625"
+     inkscape:zoom="7.9999999"
+     inkscape:cx="58.937501"
+     inkscape:cy="-8.0625001"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -43,47 +43,40 @@
      id="defs2">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient2245">
+       id="linearGradient1819">
       <stop
          style="stop-color:#ffffff;stop-opacity:0"
          offset="0"
-         id="stop2241" />
+         id="stop1815" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.25"
-         offset="0.2"
-         id="stop2716" />
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0.24705882;"
-         offset="0.80000001"
-         id="stop1368" />
+         style="stop-color:#ffffff;stop-opacity:0.40000001"
+         offset="0.49792102"
+         id="stop2015" />
       <stop
          style="stop-color:#ffffff;stop-opacity:0;"
          offset="1"
-         id="stop2243" />
+         id="stop1817" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient2245"
-       id="linearGradient2247"
+       xlink:href="#linearGradient1819"
+       id="linearGradient1821"
        x1="0"
-       y1="1.5875"
-       x2="33.866665"
-       y2="1.5875"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="scale(1.1250001,0.33333334)" />
+       y1="0.5291667"
+       x2="31.749996"
+       y2="0.5291667"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:url(#linearGradient2247);fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1035"
-       width="38.099998"
+       style="fill:url(#linearGradient1821);fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect930"
+       width="31.749996"
        height="1.0583334"
        x="0"
-       y="0"
-       rx="1.8319987"
-       ry="1.8319987" />
+       y="0" />
   </g>
 </svg>
