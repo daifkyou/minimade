@@ -1,8 +1,7 @@
-import { TaskGroup } from "ktw";
-import { DefaultImageTask } from "../classes.js";
+import { DefaultCompileImage } from "../classes.js";
 
-export default new TaskGroup("circle", [
-    new DefaultImageTask("src/graphics/gameplay/osu/approachcircle.svg", "approachcircle"),
-    new DefaultImageTask("src/graphics/gameplay/osu/circle.svg", "hitcircle"),
-    new DefaultImageTask("src/graphics/gameplay/osu/overlay.svg", "hitcircleoverlay")
-]);
+export default [
+    DefaultCompileImage("src/graphics/gameplay/osu/approachcircle.svg", "approachcircle"),
+    DefaultCompileImage("src/graphics/gameplay/osu/circle.svg", "hitcircle"),
+    DefaultCompileImage("src/graphics/gameplay/osu/overlay.svg", "hitcircleoverlay")
+];

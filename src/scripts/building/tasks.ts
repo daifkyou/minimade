@@ -4,7 +4,7 @@ export interface TaskEvents<T> { // maybe inspired by https://stackoverflow.com/
     "update": (value?: T) => void;
 }
 
-export default interface Task<T> extends EventEmitter {
+export interface Task<T> extends EventEmitter {
     value?: T;
 
     on<E extends keyof TaskEvents<T>>(

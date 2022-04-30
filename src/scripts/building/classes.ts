@@ -1,10 +1,16 @@
 import fs from "fs";
 import child_process from "child_process";
 import EventEmitter from "events";
-import Task from "./tasks.js";
+import { Task } from "./tasks.js";
 import Config from "./config.js";
-import { Cache, CachedTask } from "./cache.js";
+import { Cache } from "./cache.js";
 import Resource from "./resource.js";
+import shit from "../shit.js";
+import path from "path";
+
+
+
+export type Constructor<T, Args extends unknown[] = unknown[]> = new (...args: Args) => T;
 
 
 
@@ -18,12 +24,14 @@ export async function Init(main: () => unknown, cachePath: string, configPath: s
 
 
 class OutputDirectory extends EventEmitter implements Task<string> {
+    value?: string;
+
     constructor() {
         super({ captureRejections: true });
 
         Config.config.get("outputDirectory").on("update", async value => {
             await fs.promises.mkdir(value, { recursive: true });
-            this.emit("update", value);
+            this.emit("update", this.value = value);
         });
     }
 }
@@ -62,23 +70,26 @@ export function CompileImage(source: string, out: string, ...args: string[]) {
 export class CompileTask extends EventEmitter implements Task<void> {
     args;
 
-    constructor(public source: string, public out: string, ...args: string[]) {
+    constructor(public source: string, public out: string, args: string[]) {
         super({ captureRejections: true });
 
         this.args = args;
 
         Resource.get(source).on("update", this.update);
+        outputDirectory.on("update", this.update);
     }
 
     update() {
-        CompileImage(this.source, this.out, ...this.args);
+        CompileImage(path.join(outputDirectory.value!, this.source), this.out, ...this.args);
         this.emit("update");
     }
 }
 
-export class Compile1xTask extends CompileTask {
-    constructor(source: string, out: string, ...args: string[]) {
-        super(source, out, ...args);
+export type CompileTaskConstructor = Constructor<CompileTask, [string, string, ...string[]]>;
+
+export class Compile1xTask extends CompileTask implements CompileTask {
+    constructor(source: string, out: string, args: string[] = []) {
+        super(source, out, args);
 
         Config.config.get("1x").on("update", this.update);
     }
@@ -88,9 +99,9 @@ export class Compile1xTask extends CompileTask {
     }
 }
 
-export class Compile2xTask extends CompileTask {
-    constructor(source: string, out: string, ...args: string[]) {
-        super(source, out, ...args);
+export class Compile2xTask extends CompileTask implements CompileTask {
+    constructor(source: string, out: string, args: string[] = ["-z=2"]) {
+        super(source, out, args);
 
         Config.config.get("2x").on("update", this.update);
     }
@@ -100,37 +111,60 @@ export class Compile2xTask extends CompileTask {
     }
 }
 
-export function DefaultImageTask(source: string, names: string[]) {
+export function DefaultCompileImage(source: string, names: string[] | string) {
+    if (typeof names === "string") names = [names];
     return names.map(name => [
         new Compile1xTask(source, name + ".png"),
         new Compile2xTask(source, name + "@2x.png")
     ]);
 }
 
+export function resolutionDependentSource(Base: CompileTaskConstructor) {
+    return class extends Base {
+        constructor(public sourceCallback: (resolution: string) => string, out: string, ...args: string[]) {
+            super(shit("stuff ran out of order, maybe?"), out, ...args);
+
+            Config.config.get("resolution").on("update", this.update);
+        }
+
+        update() {
+            this.source = this.sourceCallback(Config.config.get("resolution").value);
+            super.update();
+        }
+    };
+}
+
+export const ResolutionDependentSourceCompile1xTask = resolutionDependentSource(Compile1xTask);
+export const ResolutionDependentSourceCompile2xTask = resolutionDependentSource(Compile2xTask);
+
+export function ResolutionDependentSourceCompileTask(source: (resolution: string) => string, names: string[] | string) {
+    if (typeof names === "string") names = [names];
+    return names.map(name => [
+        new ResolutionDependentSourceCompile1xTask(source, name + ".png"),
+        new ResolutionDependentSourceCompile2xTask(source, name + "@2x.png")
+    ]);
+}
+
+export class CopyTask extends EventEmitter implements Task<void> {
+    constructor(public source: string, public out: string, public provides = out) {
+        super({ captureRejections: true });
+
+        outputDirectory.on("update", this.update);
+        Resource.get(source).on("update", this.update);
+    }
+
+    async update() {
+        fs.promises.copyFile(this.source, path.join(outputDirectory.value!, this.out));
+    }
+}
+
+export class NoneImageTask extends CopyTask {
+    constructor(out: string, provides = out) {
+        super("src/graphics/special/none.png", out, provides);
+    }
+}
+
 /*
-export class ConditionalTask<X> extends Task<X | null> {
-    constructor(td: TaskDefinition<X | null>, condition: Task<any>, provides: string, cache?: Cache | Promise<Cache>) {
-        super(async depend => {
-            if (await depended(condition, depend)) {
-                return await td(depend);
-            }
-            // return async () => null;
-        }, provides, cache);
-    }
-}
-
-export class ConditionalCompileTask extends Task<void> {
-    constructor(source: string, out: string, condition: Task<boolean>, args: string[] = [], provides = out) {
-        super(async depend => {
-            if (await depended(condition, depend)) {
-                await depend(Resource.get(source), outputDirectory);
-                return deps => CompileImage(source, path.join(deps.outputDirectory, out), ...args);
-            }
-            return () => { };
-        }, provides);
-    }
-}
-
 export class Compile1xTask extends ConditionalCompileTask {
     constructor(source: string, out: string, args: string[] = [], provides = out) {
         super(source, out, config.get("1x"), args, provides);
@@ -152,37 +186,6 @@ export class DefaultImageTask extends Task<void> {
                 ...(<string[]>basenames).map(basename => new Compile2xTask(source, basename + "@2x.png"))
             );
             return () => { };
-        }, provides);
-    }
-}
-
-export class CopyTask extends Task<void> {
-    constructor(source: string, out: string, provides = out, dependOnSource = true) {
-        super(depend => {
-            depend(outputDirectory);
-            if (dependOnSource) depend(Resource.get(source));
-
-            return deps => new Promise(
-                (res, rej) => fs.copyFile(source, path.join(deps.outputDirectory, out), err => {
-                    if (err) rej(err);
-                    res();
-                })
-            )
-        }, provides);
-    }
-}
-
-export class NoneImageTask extends CopyTask {
-    constructor(out: string, provides = out) {
-        super("src/graphics/special/none.png", out, provides, false);
-    }
-}
-
-export class ResolutionDependentSourceImageTask extends Task<void> {
-    constructor(source: (resolution: string) => string, basenames: string | string[], provides: string = "" + basenames) {
-        super(async depend => {
-            const resolution = await depended(config.get("resolution"), depend) as string;
-            depend(new DefaultImageTask(source(resolution), basenames));
         }, provides);
     }
 }*/

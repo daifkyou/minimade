@@ -1,3 +1,3 @@
-import { DefaultImageTask } from "../classes.js";
+import { DefaultCompileImage } from "../classes.js";
 
-export default new DefaultImageTask("src/graphics/gameplay/osu/followpoint.svg", "followpoint")
+export default DefaultCompileImage("src/graphics/gameplay/osu/followpoint.svg", "followpoint");

@@ -11,6 +11,7 @@
   "rules": {
     "semi": "warn",
     "quote-props": ["warn", "as-needed"],
-    "quotes": ["warn", "double"]
+    "quotes": ["warn", "double"],
+    "@typescript-eslint/no-non-null-assertion": "off"
   }
 }

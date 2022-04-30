@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import EventEmitter from "events";
-import Task from "./tasks.js";
+import { Task } from "./tasks.js";
 
 export interface CacheEvents {
     "load": () => void,
@@ -31,7 +31,7 @@ export class Cache extends EventEmitter {
         try {
             old = JSON.parse(await fs.promises.readFile(cachePath, "utf8"));
         } catch (e) {
-            if ((e as any)?.code === 'ENOENT') {
+            if ((e as any)?.code === "ENOENT") {
                 old = {};
             } else throw e;
         }

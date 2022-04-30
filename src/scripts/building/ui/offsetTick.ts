@@ -1,3 +1,3 @@
-import { DefaultImageTask } from "../classes.js";
+import { DefaultCompileImage } from "../classes.js";
 
-export default new DefaultImageTask("src/graphics/interface/offset/tick.svg", "options-offset-tick");
+export default new DefaultCompileImage("src/graphics/interface/offset/tick.svg", "options-offset-tick");
