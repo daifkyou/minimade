@@ -26,7 +26,8 @@
   "dependencies": {
     "arg": "^5.0.1",
     "jsonc-parser": "^3.0.0",
-    "sharp": "^0.30.3"
+    "sharp": "^0.30.3",
+    "tiny-typed-emitter": "^2.1.0"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.2",

@@ -1,70 +1,27 @@
 import fs from "fs";
 import child_process from "child_process";
-import path from "path";
 import EventEmitter from "events";
 import Task from "./tasks.js";
 import Config from "./config.js";
+import { Cache, CachedTask } from "./cache.js";
+import Resource from "./resource.js";
 
 
-
-export class Cache {
-    private static resolve: (value: {
-        [provides: string]: any;
-    } | PromiseLike<{
-        [provides: string]: any;
-    }>) => void;
-    static current: Promise<{ [provides: string]: any }> = new Promise(res => this.resolve = res);
-
-    static async Load(cachePath: string) {
-        let old;
-        try {
-            old = JSON.parse(await fs.promises.readFile(cachePath, "utf8"));
-        } catch (e) {
-            if ((e as any)?.code === 'ENOENT') {
-                old = {};
-            } else throw e;
-        }
-
-        this.resolve(old);
-    }
-
-    static async Save(cachePath: string) {
-        await fs.promises.mkdir(path.dirname(cachePath), { recursive: true })
-        await fs.promises.writeFile(cachePath, JSON.stringify(await this.current));
-    }
-}
-
-export class Resource extends EventEmitter implements Task<number> {
-    protected static tasks: { [path: string]: Resource } = {};
-
-    static get(path: string) {
-        return this.tasks[path] ?? (this.tasks[path] = new Resource(path));
-    }
-
-    readonly path;
-
-    protected constructor(path: string) {
-        super({ captureRejections: true });
-        this.path = path;
-
-        fs.watch(path).on("change", () => {
-            this.emit("update", Date.now());
-        });
-    }
-}
 
 export async function Init(main: () => unknown, cachePath: string, configPath: string) {
-    await Cache.Load(cachePath);
-    Config.Load(configPath);
+    await Cache.load(cachePath);
+    await Config.load(configPath);
     await main();
-    await Cache.Save(cachePath);
+    await Cache.save(cachePath);
 }
+
+
 
 class OutputDirectory extends EventEmitter implements Task<string> {
     constructor() {
-        super({ "captureRejections": true });
+        super({ captureRejections: true });
 
-        Config.Config.get("outputDirectory").on("update", async value => {
+        Config.config.get("outputDirectory").on("update", async value => {
             await fs.promises.mkdir(value, { recursive: true });
             this.emit("update", value);
         });
@@ -100,6 +57,54 @@ export function Compile(options: child_process.SpawnOptions, out?: NodeJS.Writab
 
 export function CompileImage(source: string, out: string, ...args: string[]) {
     return Compile({}, undefined, "-o", out, ...args, source);
+}
+
+export class CompileTask extends EventEmitter implements Task<void> {
+    args;
+
+    constructor(public source: string, public out: string, ...args: string[]) {
+        super({ captureRejections: true });
+
+        this.args = args;
+
+        Resource.get(source).on("update", this.update);
+    }
+
+    update() {
+        CompileImage(this.source, this.out, ...this.args);
+        this.emit("update");
+    }
+}
+
+export class Compile1xTask extends CompileTask {
+    constructor(source: string, out: string, ...args: string[]) {
+        super(source, out, ...args);
+
+        Config.config.get("1x").on("update", this.update);
+    }
+
+    update() {
+        if (Config.config.get("1x").value) super.update();
+    }
+}
+
+export class Compile2xTask extends CompileTask {
+    constructor(source: string, out: string, ...args: string[]) {
+        super(source, out, ...args);
+
+        Config.config.get("2x").on("update", this.update);
+    }
+
+    update() {
+        if (Config.config.get("2x").value) super.update();
+    }
+}
+
+export function DefaultImageTask(source: string, names: string[]) {
+    return names.map(name => [
+        new Compile1xTask(source, name + ".png"),
+        new Compile2xTask(source, name + "@2x.png")
+    ]);
 }
 
 /*

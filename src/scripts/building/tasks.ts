@@ -1,7 +1,7 @@
 import type EventEmitter from "events";
 
-export interface TaskEvents<T> {
-    "update": (value: T) => void;
+export interface TaskEvents<T> { // maybe inspired by https://stackoverflow.com/a/61609010
+    "update": (value?: T) => void;
 }
 
 export default interface Task<T> extends EventEmitter {
