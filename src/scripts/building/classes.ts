@@ -1,97 +1,77 @@
-import { DependCallback, Task, Cache, StaticTask, TaskDefinition } from "ktw";
 import fs from "fs";
 import child_process from "child_process";
-import { parse } from "jsonc-parser";
-import type { ParseError } from "jsonc-parser";
 import path from "path";
+import EventEmitter from "events";
+import Task from "./tasks.js";
+import Config from "./config.js";
 
 
 
-let resolveDefaultCache: (value: Cache | PromiseLike<Cache>) => void;
-Cache.default = new Promise<Cache>(res => { resolveDefaultCache = res });
+export class Cache {
+    private static resolve: (value: {
+        [provides: string]: any;
+    } | PromiseLike<{
+        [provides: string]: any;
+    }>) => void;
+    static current: Promise<{ [provides: string]: any }> = new Promise(res => this.resolve = res);
 
-async function Load(cachePath: string) {
-    let old;
-    try {
-        old = JSON.parse(await fs.promises.readFile(cachePath, "utf8"));
-    } catch (e) {
-        if ((e as any)?.code === 'ENOENT') {
-            old = {};
-        } else throw e;
+    static async Load(cachePath: string) {
+        let old;
+        try {
+            old = JSON.parse(await fs.promises.readFile(cachePath, "utf8"));
+        } catch (e) {
+            if ((e as any)?.code === 'ENOENT') {
+                old = {};
+            } else throw e;
+        }
+
+        this.resolve(old);
     }
 
-    resolveDefaultCache(new Cache(old));
-}
-
-async function Save(cachePath: string) {
-    await fs.promises.mkdir(path.dirname(cachePath), { recursive: true })
-    await fs.promises.writeFile(cachePath, JSON.stringify((await Cache.default)!.current));
-}
-
-export async function Init(main: Task<unknown>, cachePath: string, configPath: string) {
-    await Load(cachePath);
-    config.path = configPath;
-    await main.run();
-    await Save(cachePath);
-}
-
-
-
-export async function depended<T>(task: Task<T>, depend: DependCallback) {
-    return (await depend(task))[0];
-}
-
-
-
-class ConfigOption extends Task<any> { // woah look at my insane cleverness
-    protected tasks: { [key: string]: ConfigOption } = {};
-    protected object?: { [key: string]: any };
-
-    /**
-     * Get the task to a configuration option
-     */
-    get(key: string) {
-        if (this.tasks[key]) return this.tasks[key];
-        else return this.tasks[key] = new ConfigOption(this, key, `${this.provides}_${key}`);
-    }
-
-    protected constructor(parent: Task<{ [key: string]: any }>, key: string, provides: string) {
-        super(depend => {
-            depend(parent);
-            return deps => this.object = deps[parent.provides][key]
-        }, provides);
+    static async Save(cachePath: string) {
+        await fs.promises.mkdir(path.dirname(cachePath), { recursive: true })
+        await fs.promises.writeFile(cachePath, JSON.stringify(await this.current));
     }
 }
 
-export class Config extends ConfigOption { // cleverness (cont.)
-    path?: string;
+export class Resource extends EventEmitter implements Task<number> {
+    protected static tasks: { [path: string]: Resource } = {};
+
+    static get(path: string) {
+        return this.tasks[path] ?? (this.tasks[path] = new Resource(path));
+    }
+
+    readonly path;
+
+    protected constructor(path: string) {
+        super({ captureRejections: true });
+        this.path = path;
+
+        fs.watch(path).on("change", () => {
+            this.emit("update", Date.now());
+        });
+    }
+}
+
+export async function Init(main: () => unknown, cachePath: string, configPath: string) {
+    await Cache.Load(cachePath);
+    Config.Load(configPath);
+    await main();
+    await Cache.Save(cachePath);
+}
+
+class OutputDirectory extends EventEmitter implements Task<string> {
     constructor() {
-        super(new StaticTask(async () => {
-            const errors: ParseError[] = [];
-            const c = parse(await fs.promises.readFile(this.path!, "utf8"), errors);
-            if (errors.length > 0) console.warn(errors);
+        super({ "captureRejections": true });
 
-            return { "": c };
-        }, "configparent"), "", "config");
+        Config.Config.get("outputDirectory").on("update", async value => {
+            await fs.promises.mkdir(value, { recursive: true });
+            this.emit("update", value);
+        });
     }
 }
 
-export const config = new Config();
-
-export const outputDirectory = new StaticTask(async deps => {
-    await fs.promises.mkdir(deps.config_outputDirectory, { recursive: true });
-    return deps.config_outputDirectory;
-}, "outputDirectory", [config.get("outputDirectory")]);
-
-
-
-export class Resources {
-    protected static tasks: { [key: string]: Task<number> } = {};
-
-    static get(resource: string) {
-        return this.tasks[resource] ?? (this.tasks[resource] = new Task(() => async () => (await fs.promises.stat(resource)).ctimeMs, resource));
-    }
-}
+export const outputDirectory = new OutputDirectory();
 
 
 
@@ -122,11 +102,23 @@ export function CompileImage(source: string, out: string, ...args: string[]) {
     return Compile({}, undefined, "-o", out, ...args, source);
 }
 
+/*
+export class ConditionalTask<X> extends Task<X | null> {
+    constructor(td: TaskDefinition<X | null>, condition: Task<any>, provides: string, cache?: Cache | Promise<Cache>) {
+        super(async depend => {
+            if (await depended(condition, depend)) {
+                return await td(depend);
+            }
+            // return async () => null;
+        }, provides, cache);
+    }
+}
+
 export class ConditionalCompileTask extends Task<void> {
     constructor(source: string, out: string, condition: Task<boolean>, args: string[] = [], provides = out) {
         super(async depend => {
             if (await depended(condition, depend)) {
-                await depend(Resources.get(source), outputDirectory);
+                await depend(Resource.get(source), outputDirectory);
                 return deps => CompileImage(source, path.join(deps.outputDirectory, out), ...args);
             }
             return () => { };
@@ -163,7 +155,7 @@ export class CopyTask extends Task<void> {
     constructor(source: string, out: string, provides = out, dependOnSource = true) {
         super(depend => {
             depend(outputDirectory);
-            if (dependOnSource) depend(Resources.get(source));
+            if (dependOnSource) depend(Resource.get(source));
 
             return deps => new Promise(
                 (res, rej) => fs.copyFile(source, path.join(deps.outputDirectory, out), err => {
@@ -188,4 +180,4 @@ export class ResolutionDependentSourceImageTask extends Task<void> {
             depend(new DefaultImageTask(source(resolution), basenames));
         }, provides);
     }
-}
+}*/
