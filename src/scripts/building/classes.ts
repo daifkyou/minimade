@@ -1,7 +1,7 @@
 import fs from "fs";
 import child_process from "child_process";
 import EventEmitter from "events";
-import { Task } from "./tasks.js";
+import { Updateable, Task } from "./tasks.js";
 import Config from "./config.js";
 import { Cache } from "./cache.js";
 import Resource from "./resource.js";
@@ -10,16 +10,7 @@ import path from "path";
 
 
 
-export type Constructor<T, Args extends unknown[] = unknown[]> = new (...args: Args) => T;
-
-
-
-export async function Init(main: () => unknown, cachePath: string, configPath: string) {
-    await Cache.load(cachePath);
-    await Config.load(configPath);
-    await main();
-    await Cache.save(cachePath);
-}
+type Constructor<T = any> = new (...args: any[]) => T;
 
 
 
@@ -42,7 +33,7 @@ export const outputDirectory = new OutputDirectory();
 
 const compiler = "rsvg-convert";
 
-export function Compile(options: child_process.SpawnOptions, out?: NodeJS.WritableStream, ...args: string[]) {
+export function Compile(options: child_process.SpawnOptions, out?: NodeJS.WritableStream, args: string[] = []) {
     return new Promise<void>((res, rej) => {
         const cp = child_process.spawn(compiler, args, options);
 
@@ -63,14 +54,14 @@ export function Compile(options: child_process.SpawnOptions, out?: NodeJS.Writab
     });
 }
 
-export function CompileImage(source: string, out: string, ...args: string[]) {
-    return Compile({}, undefined, "-o", out, ...args, source);
+export function CompileImage(source: string, out: string, args: string[] = []) {
+    return Compile({}, undefined, ["-o", out, ...args, source]);
 }
 
-export class CompileTask extends EventEmitter implements Task<void> {
+export class CompileTask extends EventEmitter implements Task<void>, Updateable {
     args;
 
-    constructor(public source: string, public out: string, args: string[]) {
+    constructor(public source: string, public out: string, args?: string[]) {
         super({ captureRejections: true });
 
         this.args = args;
@@ -80,38 +71,33 @@ export class CompileTask extends EventEmitter implements Task<void> {
     }
 
     update() {
-        CompileImage(path.join(outputDirectory.value!, this.source), this.out, ...this.args);
+        CompileImage(path.join(outputDirectory.value!, this.source), this.out, this.args);
         this.emit("update");
     }
 }
 
-export type CompileTaskConstructor = Constructor<CompileTask, [string, string, ...string[]]>;
+export function Dependent<T extends Constructor<Updateable>>(Base: T, task: Task<unknown>) {
+    return class Dependent extends Base {
+        constructor(...args: any[]) {
+            super(...args);
 
-export class Compile1xTask extends CompileTask implements CompileTask {
-    constructor(source: string, out: string, args: string[] = []) {
-        super(source, out, args);
-
-        Config.config.get("1x").on("update", this.update);
-    }
-
-    update() {
-        if (Config.config.get("1x").value) super.update();
-    }
+            task.on("update", this.update);
+        }
+    };
 }
 
-export class Compile2xTask extends CompileTask implements CompileTask {
-    constructor(source: string, out: string, args: string[] = ["-z=2"]) {
-        super(source, out, args);
-
-        Config.config.get("2x").on("update", this.update);
-    }
-
-    update() {
-        if (Config.config.get("2x").value) super.update();
-    }
+export function Conditional<T extends Constructor<Updateable>>(Base: T, predicate: Task<boolean>) {
+    return class Conditional extends Dependent(Base, predicate) {
+        update() {
+            if (predicate.value) super.update();
+        }
+    };
 }
 
-export function DefaultCompileImage(source: string, names: string[] | string) {
+export const Compile1xTask = Conditional(CompileTask, Config.config.get("1x"));
+export const Compile2xTask = Conditional(CompileTask, Config.config.get("2x"));
+
+export function DefaultCompile(source: string, names: string[] | string) {
     if (typeof names === "string") names = [names];
     return names.map(name => [
         new Compile1xTask(source, name + ".png"),
@@ -119,12 +105,10 @@ export function DefaultCompileImage(source: string, names: string[] | string) {
     ]);
 }
 
-export function resolutionDependentSource(Base: CompileTaskConstructor) {
-    return class extends Base {
+export function ResolutionDependentSource(Base: Constructor<CompileTask>) {
+    return class ResolutionDependentSource extends Dependent(Base, Config.config.get("resolution")) {
         constructor(public sourceCallback: (resolution: string) => string, out: string, ...args: string[]) {
-            super(shit("stuff ran out of order, maybe?"), out, ...args);
-
-            Config.config.get("resolution").on("update", this.update);
+            super(shit("stuff ran out of order, maybe?"), out, args);
         }
 
         update() {
@@ -134,10 +118,10 @@ export function resolutionDependentSource(Base: CompileTaskConstructor) {
     };
 }
 
-export const ResolutionDependentSourceCompile1xTask = resolutionDependentSource(Compile1xTask);
-export const ResolutionDependentSourceCompile2xTask = resolutionDependentSource(Compile2xTask);
+export const ResolutionDependentSourceCompile1xTask = ResolutionDependentSource(Compile1xTask);
+export const ResolutionDependentSourceCompile2xTask = ResolutionDependentSource(Compile2xTask);
 
-export function ResolutionDependentSourceCompileTask(source: (resolution: string) => string, names: string[] | string) {
+export function ResolutionDependentSourceCompile(source: (resolution: string) => string, names: string[] | string) {
     if (typeof names === "string") names = [names];
     return names.map(name => [
         new ResolutionDependentSourceCompile1xTask(source, name + ".png"),
@@ -163,29 +147,3 @@ export class NoneImageTask extends CopyTask {
         super("src/graphics/special/none.png", out, provides);
     }
 }
-
-/*
-export class Compile1xTask extends ConditionalCompileTask {
-    constructor(source: string, out: string, args: string[] = [], provides = out) {
-        super(source, out, config.get("1x"), args, provides);
-    }
-}
-
-export class Compile2xTask extends ConditionalCompileTask {
-    constructor(source: string, out: string, args: string[] = [], provides = out) {
-        super(source, out, config.get("2x"), ["-z=2", ...args], provides);
-    }
-}
-
-export class DefaultImageTask extends Task<void> {
-    constructor(source: string, basenames: string[] | string, provides = "" + basenames) {
-        if (typeof basenames == "string") basenames = [basenames] as string[];
-        super(depend => {
-            depend(
-                ...(<string[]>basenames).map(basename => new Compile1xTask(source, basename + ".png")),
-                ...(<string[]>basenames).map(basename => new Compile2xTask(source, basename + "@2x.png"))
-            );
-            return () => { };
-        }, provides);
-    }
-}*/

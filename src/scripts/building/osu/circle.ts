@@ -1,7 +1,7 @@
-import { DefaultCompileImage } from "../classes.js";
+import { DefaultCompile } from "../classes.js";
 
 export default [
-    DefaultCompileImage("src/graphics/gameplay/osu/approachcircle.svg", "approachcircle"),
-    DefaultCompileImage("src/graphics/gameplay/osu/circle.svg", "hitcircle"),
-    DefaultCompileImage("src/graphics/gameplay/osu/overlay.svg", "hitcircleoverlay")
+    DefaultCompile("src/graphics/gameplay/osu/approachcircle.svg", "approachcircle"),
+    DefaultCompile("src/graphics/gameplay/osu/circle.svg", "hitcircle"),
+    DefaultCompile("src/graphics/gameplay/osu/overlay.svg", "hitcircleoverlay")
 ];

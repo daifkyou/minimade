@@ -15,3 +15,11 @@ export interface Task<T> extends EventEmitter {
         event: E, ...args: Parameters<TaskEvents<T>[E]>
     ): boolean;
 }
+
+export interface Updateable { // extreme naming skills
+    update(): void
+}
+
+export interface Waitable extends Updateable {
+    promise: Promise<void>;
+}
