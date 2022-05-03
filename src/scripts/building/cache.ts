@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import EventEmitter from "events";
-import { Task } from "./tasks.js";
+import { Task } from "./task.js";
 
 export interface CacheEvents {
     "load": () => void,

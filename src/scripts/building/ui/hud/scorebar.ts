@@ -1,6 +1,6 @@
-import { DefaultCompileImage } from "../../classes.js";
+import { DefaultCompile } from "../../classes.js";
 
 export default [
-    DefaultCompileImage("src/graphics/interface/hud/scorebar/bg.svg", "scorebar-bg"),
-    DefaultCompileImage("src/graphics/interface/hud/scorebar/colour.svg", "scorebar-colour")
+    DefaultCompile("src/graphics/interface/hud/scorebar/bg.svg", "scorebar-bg"),
+    DefaultCompile("src/graphics/interface/hud/scorebar/colour.svg", "scorebar-colour")
 ];

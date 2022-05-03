@@ -1,7 +1,7 @@
 import fs from "fs";
 import child_process from "child_process";
 import EventEmitter from "events";
-import { Updateable, Task } from "./tasks.js";
+import { Updateable, Task } from "./task.js";
 import Config from "./config.js";
 import { Cache } from "./cache.js";
 import Resource from "./resource.js";
@@ -87,15 +87,19 @@ export function Dependent<T extends Constructor<Updateable>>(Base: T, task: Task
 }
 
 export function Conditional<T extends Constructor<Updateable>>(Base: T, predicate: Task<boolean>) {
-    return class Conditional extends Dependent(Base, predicate) {
+    return class Conditional extends Base {
         update() {
             if (predicate.value) super.update();
         }
     };
 }
 
-export const Compile1xTask = Conditional(CompileTask, Config.config.get("1x"));
-export const Compile2xTask = Conditional(CompileTask, Config.config.get("2x"));
+export class Compile1xTask extends Conditional(CompileTask, Config.config.get("1x")) { }
+export class Compile2xTask extends Conditional(CompileTask, Config.config.get("2x")) {
+    constructor(public source: string, public out: string, args = ["-z=2"]) {
+        super(source, out, args);
+    }
+}
 
 export function DefaultCompile(source: string, names: string[] | string) {
     if (typeof names === "string") names = [names];
@@ -107,7 +111,7 @@ export function DefaultCompile(source: string, names: string[] | string) {
 
 export function ResolutionDependentSource(Base: Constructor<CompileTask>) {
     return class ResolutionDependentSource extends Dependent(Base, Config.config.get("resolution")) {
-        constructor(public sourceCallback: (resolution: string) => string, out: string, ...args: string[]) {
+        constructor(public sourceCallback: (resolution: string) => string, out: string, args?: string[]) {
             super(shit("stuff ran out of order, maybe?"), out, args);
         }
 
@@ -118,8 +122,8 @@ export function ResolutionDependentSource(Base: Constructor<CompileTask>) {
     };
 }
 
-export const ResolutionDependentSourceCompile1xTask = ResolutionDependentSource(Compile1xTask);
-export const ResolutionDependentSourceCompile2xTask = ResolutionDependentSource(Compile2xTask);
+export class ResolutionDependentSourceCompile1xTask extends ResolutionDependentSource(Compile1xTask) { }
+export class ResolutionDependentSourceCompile2xTask extends ResolutionDependentSource(Compile2xTask) { }
 
 export function ResolutionDependentSourceCompile(source: (resolution: string) => string, names: string[] | string) {
     if (typeof names === "string") names = [names];

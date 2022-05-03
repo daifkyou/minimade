@@ -1,6 +1,6 @@
 import fs from "fs";
 import { parse, ParseError } from "jsonc-parser";
-import Task from "./tasks.js";
+import type { Task } from "./task.js";
 import { CachedTask } from "./cache.js";
 
 export default class Config extends CachedTask<any> { // woah look at my insane cleverness (or possible lack thereof)

@@ -1,4 +1,6 @@
 import { CopyTask } from "./classes.js";
+import Config from "./config.js";
+import { Cache } from "./cache.js";
 
 import osu from "./osu/index.js";
 import ui from "./ui/index.js";

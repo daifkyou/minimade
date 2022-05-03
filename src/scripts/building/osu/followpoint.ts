@@ -1,3 +1,3 @@
-import { DefaultCompileImage } from "../classes.js";
+import { DefaultCompile } from "../classes.js";
 
-export default DefaultCompileImage("src/graphics/gameplay/osu/followpoint.svg", "followpoint");
+export default DefaultCompile("src/graphics/gameplay/osu/followpoint.svg", "followpoint");

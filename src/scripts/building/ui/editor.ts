@@ -1,6 +1,3 @@
-import { TaskGroup } from "ktw";
-import { DefaultCompileImage } from "../classes.js";
+import { DefaultCompile } from "../classes.js";
 
-export default new TaskGroup("editor", [
-    new DefaultCompileImage("src/graphics/interface/editor/select.svg", "hitcircleselect")
-]);
+export default DefaultCompile("src/graphics/interface/editor/select.svg", "hitcircleselect");
