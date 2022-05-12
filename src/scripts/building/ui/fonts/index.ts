@@ -29,7 +29,7 @@ export function CompileGlyph(glyph: string, name: string): [CompileGlyph1xTask, 
 export const glyphs = {} as Record<string, Record<string, [CompileGlyph1xTask, CompileGlyph2xTask]>>;
 
 fonts.on("update", fonts => {
-    for (const name in fonts) {
+    for (const name in fonts.value) {
         fonts[name].glyphs.forEach((glyph: string) => {
             if (glyphs[name] === undefined) { // if not defined define
                 glyphs[name] = {};

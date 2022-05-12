@@ -3,13 +3,7 @@ import { parse, ParseError } from "jsonc-parser";
 import type { Task } from "./task.js";
 import { CachedTask } from "./cache.js";
 
-export default class Config extends CachedTask<any> { // woah look at my insane cleverness (or possible lack thereof)
-    static config: Config;
-
-    static load(path: string) {
-        this.config = new ConfigRoot(path);
-    }
-
+export class ConfigBase extends CachedTask<any> { // woah look at my insane cleverness (or possible lack thereof)
     protected keys: { [key: string]: Config } = {};
 
     get(key: string) {
@@ -17,7 +11,7 @@ export default class Config extends CachedTask<any> { // woah look at my insane 
     }
 }
 
-export class ConfigRoot extends Config {
+export class ConfigRoot extends ConfigBase {
     protected async update(_type: string, value: string) {
         const errors: ParseError[] = [];
         const c = parse(value, errors);
@@ -26,20 +20,37 @@ export class ConfigRoot extends Config {
         this.emit("update", c);
     }
 
-    constructor(path: string) {
+    constructor(path: Promise<string>) {
         super("configRoot");
 
-        fs.promises.readFile(path, "utf8").then(value => this.update("", value)); // possible rare race condition?
-        fs.watch(path, "utf8").on("change", this.update);
+        path.then(path => {
+            fs.promises.readFile(path, "utf8").then(value => this.update("", value)); // possible rare race condition?
+            fs.watch(path, "utf8").on("change", this.update);
+        });
     }
 }
 
-class ConfigProperty extends Config {
+class ConfigProperty extends ConfigBase {
     constructor(parent: Task<any>, parentKey: string, key: string) {
         super(key + "_" + parentKey);
 
         parent.on("update", parentValue => {
             this.emit("update", parentValue[parentKey]);
         });
+    }
+}
+
+export default class Config {
+    private static configPath: Promise<;
+    private static configPathResolve = new Promise<(path: string) => void>(resres => {
+        new Promise<string>(respath => {
+            respath;
+        });
+    });
+
+    static config = new ConfigRoot();
+
+    static load(path: string) {
+        this.config = new ConfigRoot(path);
     }
 }
