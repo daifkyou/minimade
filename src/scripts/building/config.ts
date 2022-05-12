@@ -4,7 +4,7 @@ import type { Task } from "./task.js";
 import { CachedTask } from "./cache.js";
 
 export class ConfigBase extends CachedTask<any> { // woah look at my insane cleverness (or possible lack thereof)
-    protected keys: { [key: string]: Config } = {};
+    protected keys: { [key: string]: ConfigBase } = {};
 
     get(key: string) {
         return this.keys[key] ?? new ConfigProperty(this, key, this.key);
@@ -41,16 +41,13 @@ class ConfigProperty extends ConfigBase {
 }
 
 export default class Config {
-    private static configPath: Promise<;
-    private static configPathResolve = new Promise<(path: string) => void>(resres => {
-        new Promise<string>(respath => {
-            respath;
-        });
-    });
+    private static pathResolve: (path: string) => void;
 
-    static config = new ConfigRoot();
+    static config = new ConfigRoot(new Promise(res => {
+        this.pathResolve = res;
+    }));
 
     static load(path: string) {
-        this.config = new ConfigRoot(path);
+        this.pathResolve(path);
     }
 }

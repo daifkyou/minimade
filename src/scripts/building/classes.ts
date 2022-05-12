@@ -12,7 +12,7 @@ type Constructor<T = any> = new (...args: any[]) => T;
 class OutputDirectory extends EventEmitter implements Task<string> {
     value?: string;
 
-    constructor () {
+    constructor() {
         super({ captureRejections: true });
 
         Config.config.get("outputDirectory").on("update", async value => {
@@ -26,7 +26,7 @@ export const outputDirectory = new OutputDirectory();
 
 const compiler = "rsvg-convert";
 
-export function Compile (options: SpawnOptions, out?: NodeJS.WritableStream, args: string[] = []) { // TODO: make cleaner
+export function Compile(options: SpawnOptions, out?: NodeJS.WritableStream, args: string[] = []) { // TODO: make cleaner
     return new Promise<void>((res, rej) => {
         const cp = spawn(compiler, args, options);
 
@@ -49,13 +49,13 @@ export function Compile (options: SpawnOptions, out?: NodeJS.WritableStream, arg
 
 
 
-export function CompileImage (source: string, out: string, args: string[] = []) {
+export function CompileImage(source: string, out: string, args: string[] = []) {
     return Compile({}, undefined, ["-o", out, ...args, source]);
 }
 
-export function Dependent<T extends Constructor<Updateable>> (Base: T, task: Task<unknown>) {
+export function Dependent<T extends Constructor<Updateable>>(Base: T, task: Task<unknown>) {
     return class Dependent extends Base {
-        constructor (...args: any[]) {
+        constructor(...args: any[]) {
             super(...args);
 
             task.on("update", this.update);
@@ -63,9 +63,9 @@ export function Dependent<T extends Constructor<Updateable>> (Base: T, task: Tas
     };
 }
 
-export function Conditional<T extends Constructor<Updateable>> (Base: T, predicate: Task<boolean>) {
+export function Conditional<T extends Constructor<Updateable>>(Base: T, predicate: Task<boolean>) {
     return class Conditional extends Dependent(Base, predicate) {
-        update () {
+        update() {
             if (predicate.value) super.update();
         }
     };
@@ -76,7 +76,7 @@ export function Conditional<T extends Constructor<Updateable>> (Base: T, predica
 export class CompileTask extends EventEmitter implements Task<void>, Updateable {
     args;
 
-    constructor (public source: string, public out: string, args?: string[]) {
+    constructor(public source: string, public out: string, args?: string[]) {
         super({ captureRejections: true });
 
         this.args = args;
@@ -85,7 +85,7 @@ export class CompileTask extends EventEmitter implements Task<void>, Updateable 
         outputDirectory.on("update", this.update);
     }
 
-    update () {
+    update() {
         CompileImage(path.join(outputDirectory.value!, this.source), this.out, this.args);
         this.emit("update");
     }
@@ -93,12 +93,12 @@ export class CompileTask extends EventEmitter implements Task<void>, Updateable 
 
 export class Compile1xTask extends Conditional(CompileTask, Config.config.get("1x")) { }
 export class Compile2xTask extends Conditional(CompileTask, Config.config.get("2x")) {
-    constructor (public source: string, public out: string, args = ["-z=2"]) {
+    constructor(public source: string, public out: string, args = ["-z=2"]) {
         super(source, out, args);
     }
 }
 
-export function DefaultCompile (source: string, names: string[] | string) {
+export function DefaultCompile(source: string, names: string[] | string) {
     if (typeof names === "string") names = [names];
     return names.map(name => [
         new Compile1xTask(source, name + ".png"),
@@ -106,13 +106,13 @@ export function DefaultCompile (source: string, names: string[] | string) {
     ]);
 }
 
-export function ResolutionDependentSource (Base: Constructor<CompileTask>) {
+export function ResolutionDependentSource(Base: Constructor<CompileTask>) {
     return class ResolutionDependentSource extends Dependent(Base, Config.config.get("resolution")) {
-        constructor (public sourceCallback: (resolution: string) => string, out: string, args?: string[]) {
+        constructor(public sourceCallback: (resolution: string) => string, out: string, args?: string[]) {
             super(shit("stuff ran out of order, maybe?"), out, args);
         }
 
-        update () {
+        update() {
             this.source = this.sourceCallback(Config.config.get("resolution").value);
             super.update();
         }
@@ -122,7 +122,7 @@ export function ResolutionDependentSource (Base: Constructor<CompileTask>) {
 export class ResolutionDependentSourceCompile1xTask extends ResolutionDependentSource(Compile1xTask) { }
 export class ResolutionDependentSourceCompile2xTask extends ResolutionDependentSource(Compile2xTask) { }
 
-export function ResolutionDependentSourceCompile (source: (resolution: string) => string, names: string[] | string) {
+export function ResolutionDependentSourceCompile(source: (resolution: string) => string, names: string[] | string) {
     if (typeof names === "string") names = [names];
     return names.map(name => [
         new ResolutionDependentSourceCompile1xTask(source, name + ".png"),
@@ -131,20 +131,20 @@ export function ResolutionDependentSourceCompile (source: (resolution: string) =
 }
 
 export class CopyTask extends EventEmitter implements Task<void> {
-    constructor (public source: string, public out: string, public provides = out) {
+    constructor(public source: string, public out: string, public provides = out) {
         super({ captureRejections: true });
 
         outputDirectory.on("update", this.update);
         Resource.get(source).on("update", this.update);
     }
 
-    async update () {
+    async update() {
         fs.promises.copyFile(this.source, path.join(outputDirectory.value!, this.out));
     }
 }
 
 export class NoneImageTask extends CopyTask {
-    constructor (out: string, provides = out) {
+    constructor(out: string, provides = out) {
         super("src/graphics/special/none.png", out, provides);
     }
 }
