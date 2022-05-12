@@ -17,7 +17,7 @@ export default class Config extends CachedTask<any> { // woah look at my insane 
     }
 }
 
-class ConfigRoot extends Config {
+export class ConfigRoot extends Config {
     protected async update(_type: string, value: string) {
         const errors: ParseError[] = [];
         const c = parse(value, errors);
