@@ -8,6 +8,7 @@ import shit from "../shit.js";
 import path from "path";
 
 type Constructor<T = any> = new (...args: any[]) => T;
+type AbstractConstructor<T = any> = abstract new (...args: any[]) => T;
 
 class OutputDirectory extends EventEmitter implements Task<string> {
     value?: string;
@@ -53,41 +54,54 @@ export function CompileImage(source: string, out: string, args: string[] = []) {
     return Compile({}, undefined, ["-o", out, ...args, source]);
 }
 
-export function Dependent<T extends Constructor<Updateable>>(Base: T, task: Task<unknown>) {
-    return class Dependent extends Base {
+export function Dependent<T extends Constructor<Updateable> | AbstractConstructor<Updateable>>(Base: T, task: Task<unknown>) {
+    abstract class Dependent extends Base implements Updateable {
         constructor(...args: any[]) {
             super(...args);
 
             task.on("update", this.update);
         }
-    };
+
+        abstract update(): void;
+    }
+
+    return Dependent;
 }
 
-export function Conditional<T extends Constructor<Updateable>>(Base: T, predicate: Task<boolean>) {
-    return class Conditional extends Dependent(Base, predicate) {
+export function Conditional<T extends Constructor<Updateable> | AbstractConstructor<Updateable>>(Base: T, predicate: Task<boolean>) {
+    abstract class Conditional extends Dependent(Base, predicate) {
         update() {
             if (predicate.value) super.update();
         }
-    };
+    }
+
+    return Conditional;
 }
 
 
 
-export class CompileTask extends EventEmitter implements Task<void>, Updateable {
-    args;
+export abstract class CompileTaskBase extends EventEmitter implements Task<void>, Updateable { // best naming
+    abstract args: string[];
+    abstract source: string;
+    abstract out: string;
 
-    constructor(public source: string, public out: string, args?: string[]) {
+    constructor() {
         super({ captureRejections: true });
 
-        this.args = args;
-
-        Resource.get(source).on("update", this.update);
         outputDirectory.on("update", this.update);
     }
 
     update() {
         CompileImage(path.join(outputDirectory.value!, this.source), this.out, this.args);
         this.emit("update");
+    }
+}
+
+export class CompileTask extends CompileTaskBase {
+    constructor(public source: string, public out: string, public args: string[] = []) {
+        super();
+
+        Resource.get(source).on("update", this.update);
     }
 }
 
@@ -106,21 +120,35 @@ export function DefaultCompile(source: string, names: string[] | string) {
     ]);
 }
 
-export function ResolutionDependentSource(Base: Constructor<CompileTask>) {
-    return class ResolutionDependentSource extends Dependent(Base, Config.config.get("resolution")) {
-        constructor(public sourceCallback: (resolution: string) => string, out: string, args?: string[]) {
-            super(shit("stuff ran out of order, maybe?"), out, args);
+export function ResolutionDependentSource<T extends CompileTaskBase>(Base: Constructor<T> | AbstractConstructor<T>) {
+    return class ResolutionDependentSource extends Base {
+        source = shit("stuff ran out of order");
+        constructor(public sourceCallback: (resolution: string) => string, public out: string, public args: string[] = []) {
+            super();
+
+            Config.config.get("resolution").on("update", this.updateResolution);
+        }
+
+        updateResolution(resolution: string) {
+            Resource.get(this.source).removeListener("update", this.update);
+
+            Resource.get(this.source = this.sourceCallback(resolution)).on("update", this.update);
+
+            this.update();
         }
 
         update() {
-            this.source = this.sourceCallback(Config.config.get("resolution").value);
             super.update();
         }
     };
 }
 
-export class ResolutionDependentSourceCompile1xTask extends ResolutionDependentSource(Compile1xTask) { }
-export class ResolutionDependentSourceCompile2xTask extends ResolutionDependentSource(Compile2xTask) { }
+export class ResolutionDependentSourceCompile1xTask extends ResolutionDependentSource(Conditional(CompileTaskBase, Config.config.get("1x"))) { }
+export class ResolutionDependentSourceCompile2xTask extends ResolutionDependentSource(Conditional(CompileTaskBase, Config.config.get("2x"))) {
+    constructor(sourceCallback: (resolution: string) => string, public out: string, args = ["-z=2"]) {
+        super(sourceCallback, out, args);
+    }
+}
 
 export function ResolutionDependentSourceCompile(source: (resolution: string) => string, names: string[] | string) {
     if (typeof names === "string") names = [names];

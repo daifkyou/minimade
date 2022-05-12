@@ -1,7 +1,7 @@
 import { CompileTask, Compile1xTask, Compile2xTask } from "../../classes.js";
 import Config, { ConfigRoot } from "../../config.js";
 
-export const fonts = new ConfigRoot((async () => "src/fonts.jsonc")());
+export const fonts = new ConfigRoot((async () => "src/scripts/building/ui/fonts/fonts.jsonc")());
 
 export function Glyph(Base: typeof CompileTask) {
     return class Glyph extends Base {

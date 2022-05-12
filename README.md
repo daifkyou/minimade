@@ -27,8 +27,8 @@ Tested on Arch Linux (node v16.13.2, npm 8.5.4)
 
 ## Contributing
 Very open to contributions (including suggestions/issues) of any kind but I'm really not that active and I'm not very experienced.
-Especially, if there are any unnecessary details or inefficiencies, please open an issue or PR.
-I encourage forking as "minimaid" and replacing things with maid waifus. (i admire people who sacrifice their search history to make weeb skins)
+Especially open to improving sucky build scripts and fixing inefficiencies. (maybe i should switch to autotools somehow?)
+I suggest forking as "minimaid" and replacing things with maid waifus. (i admire people who sacrifice their search history to make weeb skins)
 
 ### Details
 All SVGs are in SD since they can be upscaled.
