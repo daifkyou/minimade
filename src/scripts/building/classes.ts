@@ -92,7 +92,7 @@ export abstract class CompileTaskBase extends EventEmitter implements Task<void>
     }
 
     update() {
-        //console.log(outputDirectory.value, this);
+        console.log(outputDirectory.value, this);
         CompileImage(path.join(outputDirectory.value!, this.source), this.out, this.args);
         this.emit("update");
     }

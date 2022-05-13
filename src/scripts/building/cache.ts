@@ -75,6 +75,6 @@ export class CachedTask<T> extends EventEmitter implements Task<T> {
     load() {
         this.oldValue = Cache.old[this.key] as T;
         if (this.value === undefined) this.value = this.oldValue;
-        // this.emit("load");
+        this.emit("load");
     }
 }

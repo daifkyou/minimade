@@ -10,7 +10,7 @@ const license = new CopyTask("LICENSE", "LICENSE", "license");
 
 
 
-const main = [license, ini, ui, osu];
+// const main = [license, ini, ui, osu];
 
 export default async function Init(cachePath: string, configPath: string) {
     await Cache.load(cachePath);
