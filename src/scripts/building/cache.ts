@@ -13,6 +13,10 @@ export interface CacheEventEmitter {
         event: E, listener: CacheEvents[E]
     ): this;
 
+    once<E extends keyof CacheEvents>(
+        event: E, listener: CacheEvents[E]
+    ): this;
+
     emit<E extends keyof CacheEvents>(
         event: E, ...args: Parameters<CacheEvents[E]>
     ): boolean;
@@ -33,6 +37,9 @@ export class Cache {
         } catch (e) {
             if ((e as any)?.code === "ENOENT") {
                 old = {};
+            } else if (e instanceof SyntaxError) {
+                console.error("The cache was invalid. Try clearing it with the clean script.");
+                throw e;
             } else throw e;
         }
 
@@ -60,7 +67,7 @@ export class CachedTask<T> extends EventEmitter implements Task<T> {
         super({ captureRejections: true });
 
         if (Cache.loaded) this.load();
-        else Cache.events.on("load", this.load);
+        else Cache.events.once("load", this.load);
 
         this.prependListener("update", value => {
             this.value = value;

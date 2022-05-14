@@ -6,7 +6,7 @@ import fs from "fs";
 import { parse } from "jsonc-parser";
 import type { ParseError } from "jsonc-parser";
 
-export default async (cachePath: string, configPath: string) => {
+export default async function clean(cachePath: string, configPath: string) {
     console.log("cleaning...");
 
     const errors: ParseError[] = [];
