@@ -5,3 +5,5 @@
 /scripts
 /cache
 /.vscode
+
+.sconsign.dblite
