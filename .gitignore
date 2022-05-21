@@ -1,9 +1,6 @@
 /build
 /*.osk
-/node_modules
 
-/scripts
-/cache
 /.vscode
 
 .sconsign.dblite

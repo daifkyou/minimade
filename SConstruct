@@ -1,5 +1,12 @@
-import cairosvg
+"""
+the big build script
+"""
+
 import os
+
+import cairosvg
+
+from SCons.Script import GetOption, AddOption, Environment, Builder, Copy
 
 
 AddOption('--no-1x',
@@ -22,63 +29,82 @@ BUILDDIR = 'build'
 SRCDIR = 'src'
 
 
-def render1x(target, source, env):
-    if(not GetOption('no_1x')):
-        for s in source:
-            render = cairosvg.svg2png(url=str(s))
-            for t in target:
-                file = open(str(t), 'wb')
-                file.write(render)
-                file.close()
+def Render(cb):
+    """creates a render task"""
+    def render(target, source, env):
+        """render an element"""
+        if len(source) > 1:
+            raise ValueError("Can't have more than one source!")
+
+        rendered = cb(target=target, source=source, env=env)
+        for t in target:
+            file = open(str(t), 'wb')
+            file.write(rendered)
+            file.close()
+    return render
 
 
-def render2x(target, source, env):
-    if(not GetOption('no_2x')):
-        for s in source:
-            render = cairosvg.svg2png(url=str(s), scale=2)
-            for t in target:
-                file = open(str(t), 'wb')
-                file.write(render)
-                file.close()
+render1x = Render(lambda target, source,
+                  env: cairosvg.svg2png(url=str(source[0])))
+render2x = Render(lambda target, source,
+                  env: cairosvg.svg2png(url=str(source[0]), scale=2))
 
 
-def prependBuildDirectory(target, source, env):
+def prepend_build_directory(target, source, env):
+    """
+    adds the build directory to the target
+    """
     return list(map(lambda t: os.path.join(BUILDDIR, str(t)), target)), source
 
 
-def prependSourceDirectory(target, source, env):
+def prepend_source_directory(target, source, env):
+    """
+    adds the source directory to the source
+    """
     return target, list(map(lambda s: os.path.join(SRCDIR, str(s)), source))
 
 
-def prependDirectories(target, source, env):
-    return prependSourceDirectory(*prependBuildDirectory(target, source, env), env)
+def prepend_directories(target, source, env):
+    """
+    adds the build directory and the source directory to the target and the source
+    """
+    return prepend_source_directory(*prepend_build_directory(target, source, env), env)
 
 
 svg1x = Builder(
     action=render1x,
     suffix='.png',
     src_suffix='.svg',
-    emitter=prependDirectories)
+    emitter=prepend_directories)
+
 svg2x = Builder(
     action=render2x,
-    suffix='@2x.png',
     src_suffix='.svg',
-    emitter=prependDirectories)
+    emitter=lambda target, source, env:  # scuffedness 1000000
+    (prepend_directories(list(map(lambda t: str(t) + '@2x.png', target)), source, env)))
+
+
+def default(target, source):
+    """
+    render both SD and HD as needed
+    """
+    if not GetOption('no_1x'):
+        env.SVG1x(target, source)
+
+    if not GetOption('no_2x'):
+        env.SVG2x(target, source)
+
 
 empty = Builder(
-    action=Copy(),
+    action=Copy('$TARGET', '$SOURCE'),
     suffix='.png',
-    emitter=lambda target, source, env: (prependBuildDirectory(target, source, env)[0], 'src/graphics/special/none.png'))
+    emitter=lambda target, source, env:
+    (prepend_build_directory(target, source, env)[0], 'src/graphics/special/none.png'))
 
 
 env = Environment(
     BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x, 'Empty': empty},
     NOQUALITY1X=GetOption('no_1x'), NOQUALITY2X=GetOption('no_2x'))
-
-
-def default(target, source):
-    env.SVG1x(target, source)
-    env.SVG2x(target, source)
 
 
 env.Command(
@@ -91,13 +117,150 @@ env.Command(
     os.path.join(SRCDIR, 'meta/skin.ini'),
     Copy('$TARGET', '$SOURCE'))
 
-if not GetOption('no_standard'):
-    default('hitcircle', 'graphics/gameplay/osu/circle')
 
-    default('followpoint', 'graphics/gameplay/osu/followpoint.svg')
-    env.Empty(['hit300', 'hit300k', 'hit300g'])
+# menu background
+# default('menu-background', 'graphics/interface/home/background.svg')
+env.Command(
+    os.path.join(BUILDDIR, 'menu-background.jpg'),
+    os.path.join(SRCDIR, 'graphics/interface/home/background.svg'),
+    action=render1x
+)
+
+
+# welcome
+env.Empty('welcome_text.png')
+
+
+# cursor
+default('cursor', 'graphics/interface/cursor/cursor.svg')
+env.Empty('cursortrail.png')
+
+
+# cursor ripple (surprisingly)
+default('cursor-ripple', 'graphics/interface/cursor/ripple')
+
+
+# button
+default('button-left', 'graphics/interface/button/left.svg')
+default('button-middle', 'graphics/interface/button/middle.svg')
+default('button-right', 'graphics/interface/button/right.svg')
+
+# offset tick
+default('options-offset-tick', 'graphics/interface/offset/tick')
+
+
+# ranking letters
+def ranking_grade_small(grade):
+    """render small grade letters as needed"""
+    target = os.path.join(BUILDDIR, 'ranking-'+grade+'-small')
+    source = os.path.join(
+        SRCDIR, 'graphics/interface/ranking/grades/' + grade + '.svg')
+
+    if not GetOption('no_1x'):
+        env.Command(target + '.png', source, action=lambda target, source, env: cairosvg.svg2png(
+            url=str(source[0]), output_width=34, write_to=str(target[0])))
+
+    if not GetOption('no_2x'):
+        env.Command(target + '@2x.png', source, action=lambda target, source, env: cairosvg.svg2png(
+            url=str(source[0]), output_width=68, write_to=str(target[0])))
+
+
+def ranking_grade(*grades):
+    """render grade letters as needed"""
+    for grade in grades:
+        default('ranking-'+grade, 'graphics/interface/ranking/grades/'+grade)
+        ranking_grade_small(grade)
+
+
+# masking border
+env.Empty('masking-border')
+
+
+# skip button
+default('play-skip', 'graphics/interface/hud/skip')
+
+
+# unranked icon
+default('play-unranked', 'graphics/interface/hud/unranked')
+
+
+# countdown
+env.Empty('ready')
+env.Empty('count3')
+env.Empty('count2')
+env.Empty('count1')
+env.Empty('go')
+
+
+# pass/fail
+default('section-pass', 'graphics/interface/hud/pass')
+default('section-fail', 'graphics/interface/hud/fail')
+
+
+# warning arrow
+default('play-warningarrow', 'graphics/interface/hud/warning')
+
+
+# multi-skipped
+env.Empty('multi-skipped')
+
+
+ranking_grade('XH', 'X', 'SH', 'S', 'A', 'B', 'C', 'D')
+
+
+# spinner
+ADDED_SPINNER = False
+
+
+def spinner():
+    """
+    exactly what it says on the tin
+    """
+    global ADDED_SPINNER
+    if not ADDED_SPINNER:
+        ADDED_SPINNER = True
+        default('spinner-circle', 'graphics/gameplay/spinner/circle')
+        default('spinner-approachcircle',
+                'graphics/gameplay/spinner/approachcircle')
+
+
+if not GetOption('no_standard'):
+    # cursor smoke (surprisingly)
+    default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
+
+    # approach circle (surprisingly)
+    default('approachcircle', 'graphics/gameplay/osu/approachcircle')
+
+    # circle (surprisingly)
+    default('hitcircle', 'graphics/gameplay/osu/circle')
+    default('hitcircleoverlay', 'graphics/gameplay/osu/circleoverlay')
+
+    # lighting (surprisingly)
+    default('lighting', 'graphics/gameplay/osu/lighting')
+
+    # slider (surprisingly)
+    default('hitcircle', 'graphics/gameplay/osu/circle')
+    env.Empty('sliderendcircle')
+
+    # spinner (surprinsingly)
+    spinner()
+    default('spinner-rpm', 'graphics/gameplay/osu/spinner/rpm')
+    default('spinner-metre', 'graphics/gameplay/osu/spinner/metre')
+    env.Empty('spinner-background')
+    env.Empty('spinner-clear')
+    env.Empty('spinner-spin')
+
+    # hitbursts
+    env.Empty('hit300')
+    env.Empty('hit300k')
+    env.Empty('hit300g')
 
     default(['hit100', 'hit100k'],
             'graphics/gameplay/osu/hitbursts/100.svg')
+
     default('hit50', 'graphics/gameplay/osu/hitbursts/50.svg')
+
     default('hit0', 'graphics/gameplay/osu/hitbursts/0.svg')
+
+    # follow points (surprisingly)
+    default('followpoint', 'graphics/gameplay/osu/followpoint.svg')
