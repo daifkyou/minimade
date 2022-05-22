@@ -30,13 +30,14 @@ Tested on Arch Linux (Python 3.10.4, pip 21.0, SCons 4.3.0, CairoSVG 2.5.2, Git 
 ## Contributing
 Very open to contributions (including suggestions/issues) of any kind but I'm really not that active and I'm not very experienced.
 Especially open to improving non-pythonic/non-scons-ic/sucky build scripts and fixing inefficiencies.
-I suggest forking as "minimaid" and replacing things with maid waifus. (i admire people who sacrifice their search history to make weeb skins)
+
+I would also suggest forking as "minimaid" and replacing things with maid waifus.
 
 ### Details
 All SVGs are in SD since they can be upscaled.
 
 ## License
-Please read LICENSE (and the note i left at the top), but this project is basically under the MIT license.
+Please see LICENSE; this project is basically under the MIT license.
 
 ## P.S.
 The name of the skin is actually a misnomer because I was using make before I switched to SCons so that's a thing

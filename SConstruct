@@ -2,8 +2,6 @@
 the big build script
 """
 
-import os
-
 import cairosvg
 
 from SCons.Script import GetOption, AddOption, Environment, Builder, Copy
@@ -24,44 +22,61 @@ AddOption('--no-std', '--no-standard',
           action='store_true',
           help="Don\'t build osu!standard elements")
 
+AddOption('--aspect-ratio',
+          dest='aspect_ratio',
+          type='string',
+          nargs=1,
+          action='store',
+          metavar='WIDTH-HEIGHT',
+          default='any',
+          help='The aspect ratio to build for. (Currently supports "4-3" and "16-9"; "any" disables aspect ratio dependent hacks.)')
+
+AddOption('--flashing',
+          dest='flashing',
+          action='store_true',
+          help="Enable flashing via mode-x in song selection")
+
+AddOption('--build-directory',
+          dest='build_dir',
+          action='store',
+          metavar='PATH',
+          default='build',
+          help="The directory where built files will be put")
+
+AddOption('--source-directory',
+          dest='source_dir',
+          action='store',
+          metavar='PATH',
+          default='src',
+          help="The directory where source files are put")
+
 
 BUILDDIR = 'build'
-SRCDIR = 'src'
+SOURCEDIR = 'src'
 
 
-def Render(cb):
-    """creates a render task"""
-    def render(target, source, env):
-        """render an element"""
-        if len(source) > 1:
-            raise ValueError("Can't have more than one source!")
-
-        rendered = cb(target=target, source=source, env=env)
-        for t in target:
-            file = open(str(t), 'wb')
-            file.write(rendered)
-            file.close()
-    return render
+def render1x(target, source, env):
+    for (t, s) in zip(target, source):
+        cairosvg.svg2png(url=str(s), write_to=str(t))
 
 
-render1x = Render(lambda target, source,
-                  env: cairosvg.svg2png(url=str(source[0])))
-render2x = Render(lambda target, source,
-                  env: cairosvg.svg2png(url=str(source[0]), scale=2))
+def render2x(target, source, env):
+    for (t, s) in zip(target, source):
+        cairosvg.svg2png(url=str(s), write_to=str(t), scale=2)
 
 
 def prepend_build_directory(target, source, env):
     """
     adds the build directory to the target
     """
-    return list(map(lambda t: os.path.join(BUILDDIR, str(t)), target)), source
+    return list(map(lambda t: '$BUILDDIR/'+str(t), target)), source
 
 
 def prepend_source_directory(target, source, env):
     """
     adds the source directory to the source
     """
-    return target, list(map(lambda s: os.path.join(SRCDIR, str(s)), source))
+    return target, list(map(lambda s: '$SOURCEDIR/'+str(s), source))
 
 
 def prepend_directories(target, source, env):
@@ -104,25 +119,28 @@ empty = Builder(
 
 env = Environment(
     BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x, 'Empty': empty},
-    NOQUALITY1X=GetOption('no_1x'), NOQUALITY2X=GetOption('no_2x'))
+    NOQUALITY1X=GetOption('no_1x'), NOQUALITY2X=GetOption('no_2x'),
+    ASPECTRATIO=GetOption('aspect_ratio'),
+    FLASHING=GetOption('flashing'),
+    BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir'))
 
 
 env.Command(
-    os.path.join(BUILDDIR, 'LICENSE'),
+    '$BUILDDIR/LICENSE',
     'LICENSE',
     Copy('$TARGET', '$SOURCE'))
 
 env.Command(
-    os.path.join(BUILDDIR, 'skin.ini'),
-    os.path.join(SRCDIR, 'meta/skin.ini'),
+    '$BUILDDIR/skin.ini',
+    '$SOURCEDIR/meta/skin.ini',
     Copy('$TARGET', '$SOURCE'))
 
 
 # menu background
 # default('menu-background', 'graphics/interface/home/background.svg')
 env.Command(
-    os.path.join(BUILDDIR, 'menu-background.jpg'),
-    os.path.join(SRCDIR, 'graphics/interface/home/background.svg'),
+    '$BUILDDIR/menu-background.jpg',
+    '$SOURCEDIR/graphics/interface/home/background.svg',
     action=render1x
 )
 
@@ -134,6 +152,7 @@ env.Empty('welcome_text.png')
 # cursor
 default('cursor', 'graphics/interface/cursor/cursor.svg')
 env.Empty('cursortrail.png')
+env.Empty('star2.png')
 
 
 # cursor ripple (surprisingly)
@@ -145,16 +164,57 @@ default('button-left', 'graphics/interface/button/left.svg')
 default('button-middle', 'graphics/interface/button/middle.svg')
 default('button-right', 'graphics/interface/button/right.svg')
 
+
 # offset tick
 default('options-offset-tick', 'graphics/interface/offset/tick')
+
+
+# song select buttons
+default('menu-back', 'graphics/interface/selection/frame/back.svg')
+
+default('selection-mode',
+        'graphics/interface/selection/frame/$ASPECTRATIO/mode.svg')
+default('selection-mode-over', 'graphics/interface/selection/frame/mode-over.svg')
+
+default('selection-mods', 'graphics/interface/selection/frame/mods.svg')
+default('selection-mods-over', 'graphics/interface/selection/frame/mods-over.svg')
+
+default('selection-random', 'graphics/interface/selection/frame/random.svg')
+default('selection-random-over',
+        'graphics/interface/selection/frame/random-over.svg')
+
+default('selection-options',
+        'graphics/interface/selection/frame/$ASPECTRATIO/options.svg')
+default('selection-options-over',
+        'graphics/interface/selection/frame/options-over.svg')
+
+# mode icon
+
+
+def mode_icon(mode):
+    """build mode icons"""
+    if(GetOption('flashing')):
+        env.SVG1x('mode-' + mode,
+                  'graphics/interface/selection/frame/$ASPECTRATIO/flash.svg')
+    else:
+        env.Empty('mode-' + mode)
+
+
+# song select tab
+default('selection-tab', 'graphics/interface/selection/frame/tab.svg')
+
+
+# song
+default('menu-button-background',
+        'graphics/interface/selection/song/background.svg')
+default('star', 'graphics/interface/selection/song/star.svg')
 
 
 # ranking letters
 def ranking_grade_small(grade):
     """render small grade letters as needed"""
-    target = os.path.join(BUILDDIR, 'ranking-'+grade+'-small')
-    source = os.path.join(
-        SRCDIR, 'graphics/interface/ranking/grades/' + grade + '.svg')
+    target = '$BUILDDIR/ranking-'+grade+'-small'
+    source = '$SOURCEDIR/graphics/interface/ranking/grades/' + grade + '.svg'
 
     if not GetOption('no_1x'):
         env.Command(target + '.png', source, action=lambda target, source, env: cairosvg.svg2png(
@@ -225,6 +285,9 @@ def spinner():
 
 
 if not GetOption('no_standard'):
+    # mode icon
+    mode_icon('osu')
+
     # cursor smoke (surprisingly)
     default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
 
@@ -238,8 +301,13 @@ if not GetOption('no_standard'):
     # lighting (surprisingly)
     default('lighting', 'graphics/gameplay/osu/lighting')
 
-    # slider (surprisingly)
-    default('hitcircle', 'graphics/gameplay/osu/circle')
+    # slider ball
+    default('sliderb', 'graphics/gameplay/osu/slider/ball')
+
+    # slider follow circle
+    default('sliderfollowcircle', 'graphics/gameplay/osu/slider/follow')
+
+    # slider end circle (surprisingly)
     env.Empty('sliderendcircle')
 
     # spinner (surprinsingly)
@@ -255,8 +323,14 @@ if not GetOption('no_standard'):
     env.Empty('hit300k')
     env.Empty('hit300g')
 
-    default(['hit100', 'hit100k'],
-            'graphics/gameplay/osu/hitbursts/100.svg')
+    default('hit100', 'graphics/gameplay/osu/hitbursts/100.svg')
+    if not GetOption('no_1x'):
+        env.Command('$BUILDDIR/hit100k.png', '$BUILDDIR/hit100.png',
+                    action=Copy('$TARGET', '$SOURCE'))
+
+    if not GetOption('no_2x'):
+        env.Command('$BUILDDIR/hit100k@2x.png',
+                    '$BUILDDIR/hit100@2x.png', action=Copy('$TARGET', '$SOURCE'))
 
     default('hit50', 'graphics/gameplay/osu/hitbursts/50.svg')
 
