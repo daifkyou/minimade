@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="128.00044"
-   height="128.00044"
-   viewBox="0 0 33.866781 33.866781"
+   width="108.00001"
+   height="108.00001"
+   viewBox="0 0 28.574999 28.574999"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
@@ -30,7 +30,7 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="3.9999998"
-     inkscape:cx="39.625002"
+     inkscape:cx="39.875002"
      inkscape:cy="69.625003"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
@@ -49,19 +49,19 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-7.4082734,-7.4082736)">
+     transform="translate(-7.4082764,-7.4082765)">
     <g
        id="g825"
-       transform="matrix(3.3418099,0,0,3.3418099,8.9957734,8.995772)"
-       style="fill:none;stroke:#ffffff;stroke-width:0.950084;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
+       transform="matrix(2.8232426,0,0,2.8232426,8.731193,8.7311918)"
+       style="fill:none;stroke:#ffffff;stroke-width:0.937161;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
       <path
          id="path1143"
-         style="fill:none;fill-opacity:0.8;stroke:#ffffff;stroke-width:0.950084;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;fill-opacity:0.8;stroke:#ffffff;stroke-width:0.937161;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 9.1841803,4.5920906 A 4.5920901,4.5920901 0 0 1 4.5920901,9.1841807 4.5920901,4.5920901 0 0 1 0,4.5920906 4.5920901,4.5920901 0 0 1 4.5920901,4.7683716e-7 4.5920901,4.5920901 0 0 1 9.1841803,4.5920906 Z" />
     </g>
     <g
        id="g825-3"
-       transform="matrix(2.3046876,0,0,2.3046876,13.758332,13.758332)"
+       transform="matrix(1.9073209,0,0,1.9073209,12.937187,12.937187)"
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
       <path
          id="path1143-6"

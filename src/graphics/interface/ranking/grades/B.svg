@@ -7,8 +7,8 @@
    viewBox="0 0 45.189805 45.189807"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="ranking-B.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="B.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2"
-     inkscape:cx="-162.75"
-     inkscape:cy="120.25"
+     inkscape:cx="74.75"
+     inkscape:cy="119.25"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -51,15 +51,20 @@
      id="layer1"
      transform="translate(0.42130301,-3.8634274)">
     <g
-       id="g828"
-       transform="matrix(0.88703603,0,0,0.88703603,2.2245303,2.9888382)"
-       style="fill:none;fill-opacity:1;stroke:#6cc1ff;stroke-width:1.12735;stroke-opacity:1">
-      <circle
-         style="fill:none;fill-opacity:1;stroke:#6cc1ff;stroke-width:5.96556;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-         id="path1108"
-         cx="22.489584"
-         cy="26.458332"
-         r="22.489584" />
+       id="g13161"
+       transform="translate(-0.31598227)"
+       style="fill:#6cc1ff;fill-opacity:1">
+      <text
+         xml:space="preserve"
+         style="font-size:60.8839px;line-height:1.25;font-family:Z003;-inkscape-font-specification:Z003;font-variant-ligatures:none;fill:#6cc1ff;fill-opacity:1;stroke-width:0.264583"
+         x="-0.93644786"
+         y="48.903324"
+         id="text6800"><tspan
+           sodipodi:role="line"
+           id="tspan6798"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;fill:#6cc1ff;fill-opacity:1;stroke-width:0.264583"
+           x="-0.93644786"
+           y="48.903324">B</tspan></text>
     </g>
   </g>
 </svg>

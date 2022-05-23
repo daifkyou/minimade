@@ -7,8 +7,8 @@
    viewBox="0 0 44.979163 44.979165"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="ranking-A.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="A.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,11 +27,11 @@
      width="32px"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
-     inkscape:snap-bbox-midpoints="false"
+     inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.0926202"
-     inkscape:cx="-86.733369"
-     inkscape:cy="71.919405"
+     inkscape:cx="63.795619"
+     inkscape:cy="82.910411"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -47,7 +47,8 @@
      inkscape:snap-nodes="true"
      inkscape:bbox-paths="true"
      inkscape:snap-intersection-paths="true"
-     inkscape:snap-object-midpoints="true" />
+     inkscape:snap-object-midpoints="true"
+     inkscape:lockguides="true" />
   <defs
      id="defs2" />
   <g
@@ -55,11 +56,16 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-9.5367431e-7,-3.968749)">
-    <circle
-       style="fill:none;fill-opacity:1;stroke:#00ff8b;stroke-width:5.29167;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       id="path1108"
-       cx="22.489584"
-       cy="26.458332"
-       r="19.843748" />
+    <text
+       xml:space="preserve"
+       style="font-size:60.8839px;line-height:1.25;font-family:Z003;-inkscape-font-specification:Z003;font-variant-ligatures:none;text-align:center;text-anchor:middle;fill:#00ff8b;fill-opacity:1;stroke-width:0.264583"
+       x="22.489584"
+       y="48.85873"
+       id="text825"><tspan
+         sodipodi:role="line"
+         id="tspan823"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;text-align:center;text-anchor:middle;fill:#00ff8b;fill-opacity:1;stroke-width:0.264583"
+         x="22.489584"
+         y="48.85873">A</tspan></text>
   </g>
 </svg>

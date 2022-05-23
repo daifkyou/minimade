@@ -29,7 +29,7 @@ AddOption('--aspect-ratio',
           action='store',
           metavar='WIDTH-HEIGHT',
           default='any',
-          help='The aspect ratio to build for. (Currently supports "4-3" and "16-9"; "any" disables aspect ratio dependent hacks.)')
+          help='The aspect ratio to build for. (Currently supports "4-3", "16-9", and "any", which disables aspect ratio dependent hacks.)')
 
 AddOption('--flashing',
           dest='flashing',
@@ -188,16 +188,35 @@ default('selection-options',
 default('selection-options-over',
         'graphics/interface/selection/frame/options-over.svg')
 
+
 # mode icon
 
 
 def mode_icon(mode):
     """build mode icons"""
+    # medium icon (in mode select)
+    
+    default('mode-'+mode+'-med','graphics/interface/modes/'+mode)
+    
+    # large icon (flashing in the middle of song select)
     if(GetOption('flashing')):
         env.SVG1x('mode-' + mode,
                   'graphics/interface/selection/frame/$ASPECTRATIO/flash.svg')
     else:
         env.Empty('mode-' + mode)
+
+    # small icon (preview on mode button + hacky way to change top border)
+    if GetOption('aspect_ratio') == 'any':
+        if not GetOption('no_1x'):
+            env.Command('$BUILDDIR/mode-'+mode+'-small.png',
+                        '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
+                        action=lambda target, source, env:
+                        cairosvg.svg2png(url=str(source[0]), write_to=str(target[0]), scale=0.5))
+
+        if not GetOption('no_2x'):
+            env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
+                        '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
+                        action=render1x)
 
 
 # song select tab
@@ -284,12 +303,30 @@ def spinner():
                 'graphics/gameplay/spinner/approachcircle')
 
 
+# scorebar
+ADDED_SCOREBAR = False
+
+
+def scorebar():
+    """
+    exactly what it says on the tin
+    """
+    global ADDED_SCOREBAR
+    if not ADDED_SCOREBAR:
+        ADDED_SCOREBAR = True
+        default('scorebar-bg', 'graphics/interface/hud/scorebar/background')
+        default('scorebar-colour', 'graphics/interface/hud/scorebar/colour')
+
+
 if not GetOption('no_standard'):
     # mode icon
     mode_icon('osu')
 
     # cursor smoke (surprisingly)
     default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
+
+    # scorebar (surprisingly)
+    scorebar()
 
     # approach circle (surprisingly)
     default('approachcircle', 'graphics/gameplay/osu/approachcircle')
