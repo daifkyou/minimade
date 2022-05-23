@@ -3,6 +3,7 @@ the big build script
 """
 
 import cairosvg
+import cairocffi
 
 from SCons.Script import GetOption, AddOption, Environment, Builder, Copy
 
@@ -217,6 +218,30 @@ def mode_icon(mode):
             env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
                         '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                         action=render1x)
+    
+    if GetOption('aspect_ratio') == 'any':
+        if not GetOption('no_1x'):
+            env.Command('$BUILDDIR/mode-'+mode+'-small.png',
+                        '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
+                        action=lambda target, source, env:
+                        cairosvg.svg2png(url=str(source[0]), write_to=str(target[0]), scale=0.5))
+
+        if not GetOption('no_2x'):
+            env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
+                        '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
+                        action=render1x)
+    else:
+        if not GetOption('no_1x'):
+            env.Command('$BUILDDIR/mode-'+mode+'-small.png',
+                        '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
+                        action=lambda target, source, env:
+                        cairosvg.svg2png(url=str(source[0]), write_to=str(target[0]), scale=0.5))
+
+        if not GetOption('no_2x'):
+            env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
+                        ['$SOURCEDIR/graphics/interface/modes/'+mode+'.svg', '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'],
+                        action=lambda target, source, env:
+                        (cairosvg.svg2png(url=str(source[0]), write_to=str(target[0]), scale=0.5)))
 
 
 # song select tab
@@ -346,6 +371,9 @@ if not GetOption('no_standard'):
 
     # slider end circle (surprisingly)
     env.Empty('sliderendcircle')
+
+    # slider reverse arrow
+    default('reversearrow', 'graphics/gameplay/osu/slider/reverse')
 
     # spinner (surprinsingly)
     spinner()
