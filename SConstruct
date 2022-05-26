@@ -3,7 +3,9 @@ the big build script
 """
 
 import cairosvg
+import cairosvg.surface
 import cairocffi
+import io
 
 from SCons.Script import GetOption, AddOption, Environment, Builder, Copy
 
@@ -239,18 +241,22 @@ def mode_icon(mode):
 
         if not GetOption('no_2x'):
             def mode_icon_small_2x(target, source, env):
-                target_surface = cairosvg.svg2png(url=str(source[1]), scale=2)
-                source_surface = cairosvg.svg2png(url=str(source[0]))
+                """read the damn name"""
+                target_surface = cairocffi.ImageSurface.create_from_png(io.BytesIO(cairosvg.svg2png(url=str(source[1]), scale=2)))
+                source_surface = cairocffi.ImageSurface.create_from_png(io.BytesIO(cairosvg.svg2png(url=str(source[0]))))
+                
                 ctx = cairocffi.Context(target_surface)
-                ctx.set_source_surface(
-                    source_surface, target_surface.get_width)
+
+                ctx.set_source_surface(source_surface,
+                target_surface.get_width() / 2 - source_surface.get_width() / 2,
+                target_surface.get_height() / 2 - source_surface.get_height() / 2)
                 ctx.paint()
-                target_surface.write_to_png(target[0])
+                ctx.get_target().write_to_png(str(target[0]))
 
             env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
                         ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
-                        action=action)
+                        action=mode_icon_small_2x)
 
 
 # song select tab
@@ -287,6 +293,13 @@ def ranking_grade(*grades):
 
 # masking border
 env.Empty('masking-border')
+
+
+# scorebar (surprisingly)
+
+ADDED_SCOREBAR = True
+default('scorebar-bg', 'graphics/interface/hud/scorebar/background')
+default('scorebar-colour', 'graphics/interface/hud/scorebar/colour')
 
 
 # skip button
@@ -337,30 +350,12 @@ def spinner():
                 'graphics/gameplay/spinner/approachcircle')
 
 
-# scorebar
-ADDED_SCOREBAR = False
-
-
-def scorebar():
-    """
-    exactly what it says on the tin
-    """
-    global ADDED_SCOREBAR
-    if not ADDED_SCOREBAR:
-        ADDED_SCOREBAR = True
-        default('scorebar-bg', 'graphics/interface/hud/scorebar/background')
-        default('scorebar-colour', 'graphics/interface/hud/scorebar/colour')
-
-
 if not GetOption('no_standard'):
     # mode icon
     mode_icon('osu')
 
     # cursor smoke (surprisingly)
     default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
-
-    # scorebar (surprisingly)
-    scorebar()
 
     # approach circle (surprisingly)
     default('approachcircle', 'graphics/gameplay/osu/approachcircle')
