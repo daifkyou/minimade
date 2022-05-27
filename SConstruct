@@ -55,6 +55,12 @@ AddOption('--source-directory',
           default='src',
           help="The directory where source files are put")
 
+AddOption('--client',
+          dest='client',
+          action='store',
+          metavar='PATH',
+          default='any',
+          help='The client to build for (supports "stable", "mcosu", and "any", which tries to make the skin work on both clients)')
 
 BUILDDIR = 'build'
 SOURCEDIR = 'src'
@@ -127,7 +133,8 @@ env = Environment(
     NOQUALITY1X=GetOption('no_1x'), NOQUALITY2X=GetOption('no_2x'),
     ASPECTRATIO=GetOption('aspect_ratio'),
     FLASHING=GetOption('flashing'),
-    BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir'))
+    BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir'),
+    CLIENT=GetOption('client'))
 
 
 env.Command(
@@ -295,6 +302,21 @@ def ranking_grade(*grades):
 ranking_grade('XH', 'X', 'SH', 'S', 'A', 'B', 'C', 'D')
 
 
+# mods
+def render_mods(*mods):
+    render_default(
+        list(map(lambda mod: 'selection-mod-'+mod, mods)),
+        list(map(lambda mod: 'graphics/interface/mods/'+mod, mods)))
+
+
+render_mods('easy', 'nofail', 'halftime',
+            'hardrock', 'suddendeath', 'perfect', 'doubletime', 'nightcore', 'hidden', 'flashlight',
+            'relax', 'relax2', 'target', 'spunout', 'autoplay', 'cinema', 'scorev2')
+
+if GetOption('client') in ('mcosu', 'any'):
+    render_mods('nightmare', 'touchdevice')
+
+
 # ranking panel and stuff
 render_default('ranking-panel', 'graphics/interface/ranking/panels/panel')
 render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
@@ -305,6 +327,7 @@ render_default('ranking-perfect', 'graphics/interface/ranking/status/fc')
 env.Empty('ranking-title')
 env.Empty('ranking-maxcombo')
 env.Empty('ranking-accuracy')
+
 
 # fonts
 
