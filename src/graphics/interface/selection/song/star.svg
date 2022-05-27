@@ -7,7 +7,7 @@
    viewBox="0 0 13.229166 13.229166"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    sodipodi:docname="star.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -21,7 +21,7 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
      width="32px"
@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="5.6568545"
-     inkscape:cx="36.327609"
-     inkscape:cy="14.4073"
+     inkscape:zoom="11.313709"
+     inkscape:cx="20.903843"
+     inkscape:cy="22.318057"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -49,14 +49,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#ffffff;fill-opacity:0.5;stroke:none;stroke-width:1.46648;stroke-linecap:round;stroke-linejoin:round"
-       id="rect925"
-       width="10.054167"
-       height="3.7041667"
-       x="1.5875001"
-       y="4.7624998"
-       rx="1.8520833"
-       ry="1.8520833" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round"
+       id="circle1158"
+       cx="6.614583"
+       cy="6.614583"
+       r="3.1749997" />
   </g>
 </svg>

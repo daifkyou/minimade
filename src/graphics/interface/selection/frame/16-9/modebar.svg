@@ -21,7 +21,7 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
      width="118px"
@@ -29,9 +29,9 @@
      inkscape:bbox-nodes="false"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="0.70710674"
-     inkscape:cx="1112.9861"
-     inkscape:cy="716.29921"
+     inkscape:zoom="1.9999999"
+     inkscape:cx="1011.2501"
+     inkscape:cy="173.25001"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -61,7 +61,7 @@
      style="mix-blend-mode:normal">
     <path
        style="fill:none;fill-opacity:0.968627;stroke:#ffffff;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -62.970564,-141.02292 H 33.998958"
+       d="M -62.970833,-141.2875 H 33.998958"
        id="path865"
        sodipodi:nodetypes="cc" />
   </g>

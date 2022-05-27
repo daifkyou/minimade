@@ -233,30 +233,39 @@ def mode_icon(mode):
                         '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                         action=render1x)
     else:
+        def mode_icon_small(target, modebar_surface, icon_surface):
+            """base for the hacky mode icon render script (pass string + cairocffi surfaces as arguments)"""
+            ctx = cairocffi.Context(modebar_surface)
+
+            ctx.set_source_surface(icon_surface,
+                                   modebar_surface.get_width() / 2 - icon_surface.get_width() / 2,
+                                   modebar_surface.get_height() / 2 - icon_surface.get_height() / 2)
+            ctx.paint()
+            modebar_surface.write_to_png(target)
+
         if not GetOption('no_1x'):
             env.Command('$BUILDDIR/mode-'+mode+'-small.png',
-                        '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
+                        ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
+                         '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=lambda target, source, env:
-                        cairosvg.svg2png(url=str(source[0]), write_to=str(target[0]), scale=0.5))
+                        mode_icon_small(
+                            str(target[0]),
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[1])))),
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0]), scale=0.5)))))
 
         if not GetOption('no_2x'):
-            def mode_icon_small_2x(target, source, env):
-                """read the damn name"""
-                target_surface = cairocffi.ImageSurface.create_from_png(io.BytesIO(cairosvg.svg2png(url=str(source[1]), scale=2)))
-                source_surface = cairocffi.ImageSurface.create_from_png(io.BytesIO(cairosvg.svg2png(url=str(source[0]))))
-                
-                ctx = cairocffi.Context(target_surface)
-
-                ctx.set_source_surface(source_surface,
-                target_surface.get_width() / 2 - source_surface.get_width() / 2,
-                target_surface.get_height() / 2 - source_surface.get_height() / 2)
-                ctx.paint()
-                ctx.get_target().write_to_png(str(target[0]))
-
             env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
                         ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
-                        action=mode_icon_small_2x)
+                        action=lambda target, source, env:
+                        mode_icon_small(
+                            str(target[0]),
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[1]), scale=2))),
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0]))))))
 
 
 # song select tab
