@@ -6,6 +6,7 @@ import cairosvg
 import cairosvg.surface
 import cairocffi
 import io
+import os
 
 from SCons.Script import GetOption, AddOption, Environment, Builder, Copy
 
@@ -72,14 +73,14 @@ def prepend_build_directory(target, source, env):
     """
     adds the build directory to the target
     """
-    return list(map(lambda t: '$BUILDDIR/'+str(t), target)), source
+    return tuple(map(lambda t: '$BUILDDIR/'+str(t), target)), source
 
 
 def prepend_source_directory(target, source, env):
     """
     adds the source directory to the source
     """
-    return target, list(map(lambda s: '$SOURCEDIR/'+str(s), source))
+    return target, tuple(map(lambda s: '$SOURCEDIR/'+str(s), source))
 
 
 def prepend_directories(target, source, env):
@@ -99,7 +100,7 @@ svg2x = Builder(
     action=render2x,
     src_suffix='.svg',
     emitter=lambda target, source, env:  # scuffedness 1000000
-    (prepend_directories(list(map(lambda t: str(t) + '@2x.png', target)), source, env)))
+    (prepend_directories(tuple(map(lambda t: str(t) + '@2x.png', target)), source, env)))
 
 
 def default(target, source):
@@ -220,7 +221,7 @@ def mode_icon(mode):
                         action=render1x)
     else:
         def mode_icon_small(target, modebar_surface, icon_surface):
-            """base for the hackymode icon render script (pass string + cairocffi surfaces as arguments)"""
+            """base for the hacky mode icon render (pass string + cairocffi surfaces)"""
             ctx = cairocffi.Context(modebar_surface)
 
             ctx.set_source_surface(icon_surface,
@@ -285,6 +286,35 @@ def ranking_grade(*grades):
         default('ranking-'+grade, 'graphics/interface/ranking/grades/'+grade)
         ranking_grade_small(grade)
 
+
+# fonts
+
+
+def font(name, scale=1):
+    """render fonts"""
+    def font_glyph_1x(target, source, env):
+        for t, s in zip(target, source):
+            cairosvg.svg2png(url=str(s), scale=scale, write_to=str(t))
+
+
+    def font_glyph_2x(target, source, env):
+        for t, s in zip(target, source):
+            cairosvg.svg2png(url=str(s), scale=scale * 2, write_to=str(t))
+
+    sources = Glob('$SOURCEDIR/graphics/interface/fonts/' + name + '/*')
+
+    if not GetOption('no_1x'):
+        env.Command(tuple(map(
+            lambda s: '$BUILDDIR/' + name + '-' + os.path.basename(s) + '.png', sources)), sources,
+            action=font_glyph_1x)
+
+    if not GetOption('no_2x'):
+        env.Command(tuple(map(
+            lambda s: '$BUILDDIR/' + name + '-' + os.path.basename(s) + '@2x.png', sources)), sources,
+            action=font_glyph_2x)
+
+
+font('default', 2)
 
 # masking border
 env.Empty('masking-border')
