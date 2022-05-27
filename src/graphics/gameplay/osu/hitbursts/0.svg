@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="33.385834"
-   height="33.385834"
-   viewBox="0 0 8.8333345 8.8333345"
+   width="11.103516"
+   height="22.119141"
+   viewBox="0 0 2.9378049 5.8523555"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="hit0.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="0.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -29,35 +29,35 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="4"
-     inkscape:cx="-66.625"
-     inkscape:cy="17.875"
+     inkscape:zoom="8"
+     inkscape:cx="30.375"
+     inkscape:cy="10.5"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="false" />
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-4.0499997,-4.0499997)">
-    <g
-       id="g1745"
-       transform="matrix(0.36540369,0,0,0.36540369,5.3729163,5.3729163)"
-       style="stroke-width:2.73669">
-      <path
-         style="fill:none;stroke:#ff6496;stroke-width:7.24085;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 0,0 16.933333,16.933333"
-         id="path943" />
-      <path
-         style="fill:none;stroke:#ff6496;stroke-width:7.24085;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 16.933333,0 0,16.933333"
-         id="path945" />
-    </g>
+     transform="translate(-6.114109,-6.5158701)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:1.25;font-family:sans-serif;fill:#ff6496;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="4.9320107"
+       y="12.368226"
+       id="text845"><tspan
+         sodipodi:role="line"
+         id="tspan843"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;fill:#ff6496;fill-opacity:1;stroke-width:0.264583"
+         x="4.9320107"
+         y="12.368226">0</tspan></text>
   </g>
 </svg>

@@ -7,8 +7,8 @@
    viewBox="0 0 44.979163 44.979163"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="ranking-XH.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="XH.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.0000001"
-     inkscape:cx="35.749998"
-     inkscape:cy="117.24999"
+     inkscape:cx="16.749999"
+     inkscape:cy="118.74999"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -47,14 +47,39 @@
      id="layer1"
      transform="translate(0,-3.9687481)">
     <g
-       id="g828-3"
+       id="g830"
        style="fill:#ffffff;fill-opacity:1">
-      <circle
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:5.29167;stroke-linecap:round;stroke-linejoin:round"
-         id="path1108-6"
-         cx="22.489584"
-         cy="26.458332"
-         r="22.489584" />
+      <g
+         id="g13161"
+         transform="translate(-26.482168,0.70941023)"
+         style="fill:#ffffff;fill-opacity:1">
+        <g
+           id="g6955"
+           transform="translate(-0.31664543,0.04459164)">
+          <text
+             xml:space="preserve"
+             style="font-size:60.8839px;line-height:1.25;font-family:Z003;-inkscape-font-specification:Z003;font-variant-ligatures:none;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="40.305008"
+             y="48.149323"
+             id="text6800"><tspan
+               sodipodi:role="line"
+               id="tspan6798"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+               x="40.305008"
+               y="48.149323">S</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:60.8839px;line-height:1.25;font-family:Z003;-inkscape-font-specification:Z003;font-variant-ligatures:none;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="50.304558"
+             y="48.149323"
+             id="text5292"><tspan
+               sodipodi:role="line"
+               id="tspan5290"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+               x="50.304558"
+               y="48.149323">S</tspan></text>
+        </g>
+      </g>
     </g>
   </g>
 </svg>
