@@ -193,10 +193,8 @@ default('selection-options-over',
 
 
 # mode icon
-
-
 def mode_icon(mode):
-    """build mode icons"""
+    """surprisingly long function to build mode icons"""
     # medium icon (in mode select)
 
     default('mode-'+mode+'-med', 'graphics/interface/modes/'+mode)
@@ -209,18 +207,6 @@ def mode_icon(mode):
         env.Empty('mode-' + mode)
 
     # small icon (preview on mode button + hacky way to change top border)
-    if GetOption('aspect_ratio') == 'any':
-        if not GetOption('no_1x'):
-            env.Command('$BUILDDIR/mode-'+mode+'-small.png',
-                        '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
-                        action=lambda target, source, env:
-                        cairosvg.svg2png(url=str(source[0]), write_to=str(target[0]), scale=0.5))
-
-        if not GetOption('no_2x'):
-            env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
-                        '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
-                        action=render1x)
-
     if GetOption('aspect_ratio') == 'any':
         if not GetOption('no_1x'):
             env.Command('$BUILDDIR/mode-'+mode+'-small.png',
