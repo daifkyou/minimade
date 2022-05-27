@@ -234,7 +234,7 @@ def mode_icon(mode):
                         action=render1x)
     else:
         def mode_icon_small(target, modebar_surface, icon_surface):
-            """base for the hacky mode icon render script (pass string + cairocffi surfaces as arguments)"""
+            """base for the hackymode icon render script (pass string + cairocffi surfaces as arguments)"""
             ctx = cairocffi.Context(modebar_surface)
 
             ctx.set_source_surface(icon_surface,
