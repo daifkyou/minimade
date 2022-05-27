@@ -6,7 +6,8 @@ import cairosvg
 import cairosvg.surface
 import cairocffi
 import io
-import os
+
+from pathlib import Path
 
 from SCons.Script import GetOption, AddOption, Environment, Builder, Copy
 
@@ -103,7 +104,7 @@ svg2x = Builder(
     (prepend_directories(tuple(map(lambda t: str(t) + '@2x.png', target)), source, env)))
 
 
-def default(target, source):
+def render_default(target, source):
     """
     render both SD and HD as needed
     """
@@ -154,43 +155,46 @@ env.Empty('welcome_text.png')
 
 
 # cursor
-default('cursor', 'graphics/interface/cursor/cursor.svg')
+render_default('cursor', 'graphics/interface/cursor/cursor.svg')
 env.Empty('cursortrail.png')
 env.Empty('star2.png')
 
 
 # cursor ripple (surprisingly)
-default('cursor-ripple', 'graphics/interface/cursor/ripple')
+render_default('cursor-ripple', 'graphics/interface/cursor/ripple')
 
 
 # button
-default('button-left', 'graphics/interface/button/left.svg')
-default('button-middle', 'graphics/interface/button/middle.svg')
-default('button-right', 'graphics/interface/button/right.svg')
+render_default('button-left', 'graphics/interface/button/left.svg')
+render_default('button-middle', 'graphics/interface/button/middle.svg')
+render_default('button-right', 'graphics/interface/button/right.svg')
 
 
 # offset tick
-default('options-offset-tick', 'graphics/interface/offset/tick')
+render_default('options-offset-tick', 'graphics/interface/offset/tick')
 
 
 # song select buttons
-default('menu-back', 'graphics/interface/selection/frame/back.svg')
+render_default('menu-back', 'graphics/interface/selection/frame/back.svg')
 
-default('selection-mode',
-        'graphics/interface/selection/frame/$ASPECTRATIO/mode.svg')
-default('selection-mode-over', 'graphics/interface/selection/frame/mode-over.svg')
+render_default('selection-mode',
+               'graphics/interface/selection/frame/$ASPECTRATIO/mode.svg')
+render_default('selection-mode-over',
+               'graphics/interface/selection/frame/mode-over.svg')
 
-default('selection-mods', 'graphics/interface/selection/frame/mods.svg')
-default('selection-mods-over', 'graphics/interface/selection/frame/mods-over.svg')
+render_default('selection-mods', 'graphics/interface/selection/frame/mods.svg')
+render_default('selection-mods-over',
+               'graphics/interface/selection/frame/mods-over.svg')
 
-default('selection-random', 'graphics/interface/selection/frame/random.svg')
-default('selection-random-over',
-        'graphics/interface/selection/frame/random-over.svg')
+render_default('selection-random',
+               'graphics/interface/selection/frame/random.svg')
+render_default('selection-random-over',
+               'graphics/interface/selection/frame/random-over.svg')
 
-default('selection-options',
-        'graphics/interface/selection/frame/$ASPECTRATIO/options.svg')
-default('selection-options-over',
-        'graphics/interface/selection/frame/options-over.svg')
+render_default('selection-options',
+               'graphics/interface/selection/frame/$ASPECTRATIO/options.svg')
+render_default('selection-options-over',
+               'graphics/interface/selection/frame/options-over.svg')
 
 
 # mode icon
@@ -198,7 +202,7 @@ def mode_icon(mode):
     """surprisingly long function to build mode icons"""
     # medium icon (in mode select)
 
-    default('mode-'+mode+'-med', 'graphics/interface/modes/'+mode)
+    render_default('mode-'+mode+'-med', 'graphics/interface/modes/'+mode)
 
     # large icon (flashing in the middle of song select)
     if(GetOption('flashing')):
@@ -256,13 +260,13 @@ def mode_icon(mode):
 
 
 # song select tab
-default('selection-tab', 'graphics/interface/selection/frame/tab.svg')
+render_default('selection-tab', 'graphics/interface/selection/frame/tab.svg')
 
 
 # song
-default('menu-button-background',
-        'graphics/interface/selection/song/background.svg')
-default('star', 'graphics/interface/selection/song/star.svg')
+render_default('menu-button-background',
+               'graphics/interface/selection/song/background.svg')
+render_default('star', 'graphics/interface/selection/song/star.svg')
 
 
 # ranking letters
@@ -283,38 +287,57 @@ def ranking_grade_small(grade):
 def ranking_grade(*grades):
     """render grade letters as needed"""
     for grade in grades:
-        default('ranking-'+grade, 'graphics/interface/ranking/grades/'+grade)
+        render_default('ranking-'+grade,
+                       'graphics/interface/ranking/grades/'+grade)
         ranking_grade_small(grade)
 
+
+ranking_grade('XH', 'X', 'SH', 'S', 'A', 'B', 'C', 'D')
+
+
+# ranking panel and stuff
+render_default('ranking-panel', 'graphics/interface/ranking/panels/panel')
+render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
+render_default('pause-replay', 'graphics/interface/ranking/panels/replay')
+render_default('ranking-winner', 'graphics/interface/ranking/status/winner')
+render_default('ranking-perfect', 'graphics/interface/ranking/status/fc')
+
+env.Empty('ranking-title')
+env.Empty('ranking-maxcombo')
+env.Empty('ranking-accuracy')
 
 # fonts
 
 
 def font(name, scale=1):
-    """render fonts"""
+    """render font"""
     def font_glyph_1x(target, source, env):
         for t, s in zip(target, source):
             cairosvg.svg2png(url=str(s), scale=scale, write_to=str(t))
-
 
     def font_glyph_2x(target, source, env):
         for t, s in zip(target, source):
             cairosvg.svg2png(url=str(s), scale=scale * 2, write_to=str(t))
 
-    sources = Glob('$SOURCEDIR/graphics/interface/fonts/' + name + '/*')
+    sources = Glob(GetOption('source_dir') +
+                   '/graphics/interface/fonts/' + name + '/*', strings=True)
 
     if not GetOption('no_1x'):
         env.Command(tuple(map(
-            lambda s: '$BUILDDIR/' + name + '-' + os.path.basename(s) + '.png', sources)), sources,
+            lambda s: '$BUILDDIR/' + name + '-' + Path(s).stem + '.png', sources)), sources,
             action=font_glyph_1x)
 
     if not GetOption('no_2x'):
         env.Command(tuple(map(
-            lambda s: '$BUILDDIR/' + name + '-' + os.path.basename(s) + '@2x.png', sources)), sources,
+            lambda s: '$BUILDDIR/' + name + '-' + Path(s).stem + '@2x.png', sources)), sources,
             action=font_glyph_2x)
 
 
-font('default', 2)
+font('default', 3)
+font('score', 3.5)
+env.Empty('score-x')
+env.Empty('score-percent')
+font('scoreentry')
 
 # masking border
 env.Empty('masking-border')
@@ -323,16 +346,16 @@ env.Empty('masking-border')
 # scorebar (surprisingly)
 
 ADDED_SCOREBAR = True
-default('scorebar-bg', 'graphics/interface/hud/scorebar/background')
-default('scorebar-colour', 'graphics/interface/hud/scorebar/colour')
+render_default('scorebar-bg', 'graphics/interface/hud/scorebar/background')
+render_default('scorebar-colour', 'graphics/interface/hud/scorebar/colour')
 
 
 # skip button
-default('play-skip', 'graphics/interface/hud/skip')
+render_default('play-skip', 'graphics/interface/hud/skip')
 
 
 # unranked icon
-default('play-unranked', 'graphics/interface/hud/unranked')
+render_default('play-unranked', 'graphics/interface/hud/unranked')
 
 
 # countdown
@@ -344,19 +367,16 @@ env.Empty('go')
 
 
 # pass/fail
-default('section-pass', 'graphics/interface/hud/pass')
-default('section-fail', 'graphics/interface/hud/fail')
+render_default('section-pass', 'graphics/interface/hud/pass')
+render_default('section-fail', 'graphics/interface/hud/fail')
 
 
 # warning arrow
-default('play-warningarrow', 'graphics/interface/hud/warning')
+render_default('play-warningarrow', 'graphics/interface/hud/warning')
 
 
 # multi-skipped
 env.Empty('multi-skipped')
-
-
-ranking_grade('XH', 'X', 'SH', 'S', 'A', 'B', 'C', 'D')
 
 
 # spinner
@@ -370,9 +390,9 @@ def spinner():
     global ADDED_SPINNER
     if not ADDED_SPINNER:
         ADDED_SPINNER = True
-        default('spinner-circle', 'graphics/gameplay/spinner/circle')
-        default('spinner-approachcircle',
-                'graphics/gameplay/spinner/approachcircle')
+        render_default('spinner-circle', 'graphics/gameplay/spinner/circle')
+        render_default('spinner-approachcircle',
+                       'graphics/gameplay/spinner/approachcircle')
 
 
 if not GetOption('no_standard'):
@@ -380,34 +400,34 @@ if not GetOption('no_standard'):
     mode_icon('osu')
 
     # cursor smoke (surprisingly)
-    default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
+    render_default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
 
     # approach circle (surprisingly)
-    default('approachcircle', 'graphics/gameplay/osu/approachcircle')
+    render_default('approachcircle', 'graphics/gameplay/osu/approachcircle')
 
     # circle (surprisingly)
-    default('hitcircle', 'graphics/gameplay/osu/circle')
-    default('hitcircleoverlay', 'graphics/gameplay/osu/circleoverlay')
+    render_default('hitcircle', 'graphics/gameplay/osu/circle')
+    render_default('hitcircleoverlay', 'graphics/gameplay/osu/circleoverlay')
 
     # lighting (surprisingly)
-    default('lighting', 'graphics/gameplay/osu/lighting')
+    render_default('lighting', 'graphics/gameplay/osu/lighting')
 
     # slider ball
-    default('sliderb', 'graphics/gameplay/osu/slider/ball')
+    render_default('sliderb', 'graphics/gameplay/osu/slider/ball')
 
     # slider follow circle
-    default('sliderfollowcircle', 'graphics/gameplay/osu/slider/follow')
+    render_default('sliderfollowcircle', 'graphics/gameplay/osu/slider/follow')
 
     # slider end circle (surprisingly)
     env.Empty('sliderendcircle')
 
     # slider reverse arrow
-    default('reversearrow', 'graphics/gameplay/osu/slider/reverse')
+    render_default('reversearrow', 'graphics/gameplay/osu/slider/reverse')
 
     # spinner (surprinsingly)
     spinner()
-    default('spinner-rpm', 'graphics/gameplay/osu/spinner/rpm')
-    default('spinner-metre', 'graphics/gameplay/osu/spinner/metre')
+    render_default('spinner-rpm', 'graphics/gameplay/osu/spinner/rpm')
+    render_default('spinner-metre', 'graphics/gameplay/osu/spinner/metre')
     env.Empty('spinner-background')
     env.Empty('spinner-clear')
     env.Empty('spinner-spin')
@@ -417,7 +437,7 @@ if not GetOption('no_standard'):
     env.Empty('hit300k')
     env.Empty('hit300g')
 
-    default('hit100', 'graphics/gameplay/osu/hitbursts/100.svg')
+    render_default('hit100', 'graphics/gameplay/osu/hitbursts/100.svg')
     if not GetOption('no_1x'):
         env.Command('$BUILDDIR/hit100k.png', '$BUILDDIR/hit100.png',
                     action=Copy('$TARGET', '$SOURCE'))
@@ -426,9 +446,9 @@ if not GetOption('no_standard'):
         env.Command('$BUILDDIR/hit100k@2x.png',
                     '$BUILDDIR/hit100@2x.png', action=Copy('$TARGET', '$SOURCE'))
 
-    default('hit50', 'graphics/gameplay/osu/hitbursts/50.svg')
+    render_default('hit50', 'graphics/gameplay/osu/hitbursts/50.svg')
 
-    default('hit0', 'graphics/gameplay/osu/hitbursts/0.svg')
+    render_default('hit0', 'graphics/gameplay/osu/hitbursts/0.svg')
 
     # follow points (surprisingly)
-    default('followpoint', 'graphics/gameplay/osu/followpoint.svg')
+    render_default('followpoint', 'graphics/gameplay/osu/followpoint.svg')

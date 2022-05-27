@@ -30,6 +30,8 @@ Tested on Arch Linux (Python 3.10.4, pip 21.0, SCons 4.3.0, CairoSVG 2.5.2, Git 
 ## Contributing
 Very open to contributions (including suggestions/issues) of any kind but I'm really not that active and I'm not very experienced.
 Especially open to improving non-pythonic/non-scons-ic/sucky build scripts and fixing inefficiencies.
+Improvements to source directory tree would also helpful.
+I don't really play multi or non-standard modes (if I skin those), so if you see anything that can be improved please bring it up!
 
 I would also suggest forking as "minimaid" and replacing things with maid waifus.
 
