@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="2194"
-   height="1423.9999"
-   viewBox="0 0 580.49582 376.76663"
+   width="545.00006"
+   height="1136.9999"
+   viewBox="0 0 144.19793 300.83121"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
@@ -21,17 +21,17 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
      width="118px"
      inkscape:snap-bbox="true"
-     inkscape:bbox-nodes="false"
+     inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="0.70710674"
-     inkscape:cx="1112.9861"
-     inkscape:cy="716.29921"
+     inkscape:zoom="0.12499999"
+     inkscape:cx="188.00001"
+     inkscape:cy="572.00003"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -44,7 +44,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      scale-x="0.25"
-     inkscape:snap-nodes="false"
+     inkscape:snap-nodes="true"
      inkscape:snap-object-midpoints="true"
      inkscape:bbox-paths="false"
      inkscape:snap-others="false"
@@ -57,11 +57,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(281.78125,179.91667)"
+     transform="translate(63.632294,141.94896)"
      style="mix-blend-mode:normal">
     <path
        style="fill:none;fill-opacity:0.968627;stroke:#ffffff;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -62.970564,-141.02292 H 33.998958"
+       d="M -62.970833,-141.2875 H 33.998958"
        id="path865"
        sodipodi:nodetypes="cc" />
   </g>

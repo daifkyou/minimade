@@ -7,8 +7,8 @@
    viewBox="0 0 44.979163 44.979164"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="ranking-C.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="C.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="1.4142136"
-     inkscape:cx="-226.62772"
-     inkscape:cy="58.336308"
+     inkscape:cx="120.5617"
+     inkscape:cy="81.670831"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -47,15 +47,19 @@
      id="layer1"
      transform="translate(2.2470371e-7,-3.9687478)">
     <g
-       id="g828"
-       style="fill:none;fill-opacity:1;stroke:#d897ff;stroke-width:1.13333;stroke-opacity:1"
-       transform="matrix(0.88235282,0,0,0.88235282,2.6458362,3.1127482)">
-      <circle
-         style="fill:none;fill-opacity:1;stroke:#d897ff;stroke-width:5.99723;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-         id="path1108"
-         cx="22.489584"
-         cy="26.458332"
-         r="22.489584" />
+       id="g13161"
+       transform="translate(-26.482168,0.70941023)">
+      <text
+         xml:space="preserve"
+         style="font-size:60.8839px;line-height:1.25;font-family:Z003;-inkscape-font-specification:Z003;font-variant-ligatures:none;text-align:center;text-anchor:middle;fill:#d897ff;fill-opacity:1;stroke-width:0.264583"
+         x="44.898952"
+         y="48.312828"
+         id="text6800"><tspan
+           sodipodi:role="line"
+           id="tspan6798"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;text-align:center;text-anchor:middle;fill:#d897ff;fill-opacity:1;stroke-width:0.264583"
+           x="44.898952"
+           y="48.312828">C</tspan></text>
     </g>
   </g>
 </svg>

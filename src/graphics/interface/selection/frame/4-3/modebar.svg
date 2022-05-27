@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="170.79613"
-   height="170.79613"
-   viewBox="0 0 45.189805 45.189807"
+   width="544.59631"
+   height="1137"
+   viewBox="0 0 144.0911 300.83125"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   sodipodi:docname="B.svg"
+   sodipodi:docname="modebar.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,50 +21,48 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
-     width="32px"
+     width="118px"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2"
-     inkscape:cx="74.75"
-     inkscape:cy="119.25"
+     inkscape:zoom="0.49999998"
+     inkscape:cx="-71.000003"
+     inkscape:cy="125.00001"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:snap-bbox-edge-midpoints="true"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     scale-x="0.25"
+     inkscape:snap-nodes="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:bbox-paths="false"
+     inkscape:snap-others="false"
+     inkscape:object-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-intersection-paths="true" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0.42130301,-3.8634274)">
-    <g
-       id="g13161"
-       transform="translate(-0.31598227)"
-       style="fill:#6cc1ff;fill-opacity:1">
-      <text
-         xml:space="preserve"
-         style="font-size:60.8839px;line-height:1.25;font-family:Z003;-inkscape-font-specification:Z003;font-variant-ligatures:none;fill:#6cc1ff;fill-opacity:1;stroke-width:0.264583"
-         x="-0.93644786"
-         y="48.903324"
-         id="text6800"><tspan
-           sodipodi:role="line"
-           id="tspan6798"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;fill:#6cc1ff;fill-opacity:1;stroke-width:0.264583"
-           x="-0.93644786"
-           y="48.903324">B</tspan></text>
-    </g>
+     transform="translate(63.578884,141.94897)"
+     style="mix-blend-mode:normal">
+    <path
+       style="fill:none;fill-opacity:0.968627;stroke:#ffffff;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -62.917423,-141.28751 H 41.883037"
+       id="path865"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>

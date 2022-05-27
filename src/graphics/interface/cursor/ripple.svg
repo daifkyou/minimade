@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="50"
-   height="50"
-   viewBox="0 0 13.229166 13.229166"
+   width="512"
+   height="512"
+   viewBox="0 0 135.46667 135.46667"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   sodipodi:docname="star.svg"
+   sodipodi:docname="ripple.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,35 +25,41 @@
      showgrid="false"
      units="px"
      width="32px"
-     inkscape:snap-bbox="true"
-     inkscape:bbox-nodes="true"
-     inkscape:snap-bbox-midpoints="true"
-     inkscape:snap-page="true"
-     inkscape:zoom="11.313709"
-     inkscape:cx="20.903843"
-     inkscape:cy="22.318057"
+     inkscape:zoom="1"
+     inkscape:cx="103.5"
+     inkscape:cy="206.5"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-page="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-midpoints="true"
+     lock-margins="true"
      fit-margin-top="0"
      fit-margin-left="0"
-     fit-margin-right="1"
-     fit-margin-bottom="0" />
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:snap-others="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-paths="true"
+     inkscape:snap-smooth-nodes="true" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-6.0854132,-6.0854132)">
     <circle
-       style="fill:#ffffff;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round"
-       id="circle1158"
-       cx="6.614583"
-       cy="6.614583"
-       r="3.1749997" />
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.05833;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path928"
+       cx="73.818748"
+       cy="73.818748"
+       r="67.20417" />
   </g>
 </svg>
