@@ -129,12 +129,13 @@ empty = Builder(
 
 
 env = Environment(
-    BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x, 'Empty': empty},
     NOQUALITY1X=GetOption('no_1x'), NOQUALITY2X=GetOption('no_2x'),
     ASPECTRATIO=GetOption('aspect_ratio'),
     FLASHING=GetOption('flashing'),
     BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir'),
     CLIENT=GetOption('client'))
+
+env.Append(BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x, 'Empty': empty})
 
 
 env.Command(
