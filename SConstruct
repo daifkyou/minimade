@@ -365,6 +365,16 @@ env.Empty('count2')
 env.Empty('count1')
 env.Empty('go')
 
+# input overlay
+env.Empty('inputoverlay-background')
+render_default('inputoverlay-key', 'graphics/interface/hud/inputoverlay/key')
+
+
+# pause screen
+render_default('pause-continue', 'graphics/interface/pause/continue')
+render_default('pause-retry', 'graphics/interface/pause/retry')
+render_default('pause-back', 'graphics/interface/pause/back')
+render_default('arrow-pause', 'graphics/interface/pause/focus')
 
 # pass/fail
 render_default('section-pass', 'graphics/interface/hud/pass')
