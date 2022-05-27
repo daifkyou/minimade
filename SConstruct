@@ -485,3 +485,7 @@ if not GetOption('no_standard'):
 
     # follow points (surprisingly)
     render_default('followpoint', 'graphics/gameplay/osu/followpoint.svg')
+
+
+# editor circle select
+render_default('hitcircleselect', 'graphics/interface/editor/select.svg')
