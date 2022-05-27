@@ -471,18 +471,23 @@ if not GetOption('no_standard'):
     env.Empty('hit300k')
     env.Empty('hit300g')
 
-    render_default('hit100', 'graphics/gameplay/osu/hitbursts/100.svg')
+    env.Empty('hit100')
+    env.Empty('hit100k')
+    env.Empty('hit50')
+    env.Empty('hit0')
+
+    render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100.svg')
     if not GetOption('no_1x'):
-        env.Command('$BUILDDIR/hit100k.png', '$BUILDDIR/hit100.png',
+        env.Command('$BUILDDIR/hit100k-0.png', '$BUILDDIR/hit100-0.png',
                     action=Copy('$TARGET', '$SOURCE'))
 
     if not GetOption('no_2x'):
-        env.Command('$BUILDDIR/hit100k@2x.png',
-                    '$BUILDDIR/hit100@2x.png', action=Copy('$TARGET', '$SOURCE'))
+        env.Command('$BUILDDIR/hit100k-0@2x.png',
+                    '$BUILDDIR/hit100-0@2x.png', action=Copy('$TARGET', '$SOURCE'))
 
-    render_default('hit50', 'graphics/gameplay/osu/hitbursts/50.svg')
+    render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50.svg')
 
-    render_default('hit0', 'graphics/gameplay/osu/hitbursts/0.svg')
+    render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0.svg')
 
     # follow points (surprisingly)
     render_default('followpoint', 'graphics/gameplay/osu/followpoint.svg')

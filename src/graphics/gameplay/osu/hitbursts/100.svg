@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="10.000001"
-   height="10.000001"
-   viewBox="0 0 2.6458334 2.6458334"
+   width="42.114258"
+   height="22.119141"
+   viewBox="0 0 11.14273 5.8523555"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="hit100-0.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="100.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="5.6568543"
-     inkscape:cx="-33.587572"
+     inkscape:cx="47.376154"
      inkscape:cy="5.8336309"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
@@ -42,51 +42,30 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
-     id="defs2">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter1381"
-       x="-2.7212596"
-       y="-2.7212596"
-       width="6.4425192"
-       height="6.4425192">
-      <feGaussianBlur
-         stdDeviation="3 3"
-         result="blur"
-         id="feGaussianBlur1379" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:label="Blur"
-       id="filter935"
-       x="-1.8141731"
-       y="-1.8141731"
-       width="4.628346"
-       height="4.628346">
-      <feGaussianBlur
-         stdDeviation="2 2"
-         result="blur"
-         id="feGaussianBlur933" />
-    </filter>
-  </defs>
+     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-1.852083,-1.8520831)">
+     transform="translate(19.52591,-1.9124885)">
     <g
-       id="g1000"
-       style="fill:#32ff96;fill-opacity:1"
-       transform="translate(-5.1262278,-2.3947338)">
-      <circle
-         style="fill:#32ff96;fill-opacity:1;stroke:none;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.2"
-         id="path848"
-         cx="8.3012276"
-         cy="5.5697336"
-         r="1.3229167" />
+       id="g1167"
+       transform="translate(-25.791173,-4.6033816)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:1.25;font-family:sans-serif;fill:#32ff96;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="4.9320107"
+         y="12.368226"
+         id="text845"><tspan
+           sodipodi:role="line"
+           id="tspan843"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;fill:#32ff96;fill-opacity:1;stroke-width:0.264583"
+           x="4.9320107"
+           y="12.368226">100</tspan></text>
     </g>
   </g>
 </svg>
