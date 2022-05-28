@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="12"
-   height="12"
-   viewBox="0 0 3.1749998 3.1749998"
+   width="10"
+   height="10"
+   viewBox="0 0 2.6458331 2.6458331"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   sodipodi:docname="sliderscorepoint.svg"
+   sodipodi:docname="tick.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
      width="118px"
@@ -30,7 +30,7 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="22.627416"
-     inkscape:cx="4.0879613"
+     inkscape:cx="4.1321554"
      inkscape:cy="10.275146"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
@@ -51,10 +51,10 @@
      id="layer1">
     <g
        id="g825"
-       transform="scale(0.34570314)"
-       style="stroke-width:2.89265;fill:#ffffff;fill-opacity:1">
+       transform="scale(0.28808593)"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:3.47118">
       <circle
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.65346;stroke-linecap:round;stroke-linejoin:round"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:9.18416;stroke-linecap:round;stroke-linejoin:round"
          id="path1143"
          cx="4.5920901"
          cy="4.5920906"

@@ -406,7 +406,7 @@ render_default('section-fail', 'graphics/interface/hud/fail')
 
 
 # warning arrow
-render_default('play-warningarrow', 'graphics/interface/hud/warning')
+render_default('arrow-warning', 'graphics/interface/hud/warning')
 
 
 # multi-skipped
@@ -448,6 +448,9 @@ if not GetOption('no_standard'):
 
     # slider ball
     render_default('sliderb', 'graphics/gameplay/osu/slider/ball')
+
+    # slider tick
+    render_default('sliderscorepoint', 'graphics/gameplay/osu/slider/tick')
 
     # slider follow circle
     render_default('sliderfollowcircle', 'graphics/gameplay/osu/slider/follow')
