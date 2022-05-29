@@ -6,6 +6,7 @@ import cairosvg
 import cairosvg.surface
 import cairocffi
 import io
+import math
 
 from pathlib import Path
 
@@ -331,37 +332,99 @@ env.Empty('ranking-accuracy')
 
 
 # fonts
+CHAR_REPLACE = {
+    'comma': ',',
+    'dot': '.',
+    'percent': '%'
+}
 
 
-def font(name, scale=1):
+GLYPH_WIDTH_OFFSET = {
+    ',': 0.1
+}
+
+
+def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
     """render font"""
-    def font_glyph_1x(target, source, env):
-        for t, s in zip(target, source):
-            cairosvg.svg2png(url=str(s), scale=scale, write_to=str(t))
+    glyphs = map(lambda g: (str(g), (CHAR_REPLACE[glyph] if (
+        glyph := str(g)) in CHAR_REPLACE else glyph)), glyphs)
 
-    def font_glyph_2x(target, source, env):
-        for t, s in zip(target, source):
-            cairosvg.svg2png(url=str(s), scale=scale * 2, write_to=str(t))
+    def get_render_font_glyph_1x(glyph, scale):
+        # cairo text actually sucks im just going to commit this shit i give up
+        def render_font_glyph_1x(target, source, env):
+            surface = cairocffi.ImageSurface(
+                cairocffi.FORMAT_ARGB32, 16 * scale, 16 * scale)
+            ctx = cairocffi.Context(surface)
+            ctx.scale(scale)
 
-    sources = Glob(GetOption('source_dir') +
-                   '/graphics/interface/fonts/' + name + '/*', strings=True)
+            ctx.set_source_rgba(1, 1, 1)
+            ctx.select_font_face('osifont')
+            ctx.set_font_size(1)
+            ascent, descent, _, _, _ = ctx.font_extents()
+            text_x_bearing, _, text_width, _, text_x_advance, _ = ctx.text_extents(
+                glyph)
 
-    if not GetOption('no_1x'):
-        env.Command(tuple(map(
-            lambda s: '$BUILDDIR/' + name + '-' + Path(s).stem + '.png', sources)), sources,
-            action=font_glyph_1x)
+            if(alignx == 'middle'):
+                x = -text_x_bearing
+                width = text_width
+            elif(alignx == 'left'):
+                x = 0
+                width = text_x_advance
 
-    if not GetOption('no_2x'):
-        env.Command(tuple(map(
-            lambda s: '$BUILDDIR/' + name + '-' + Path(s).stem + '@2x.png', sources)), sources,
-            action=font_glyph_2x)
+            if(glyph in GLYPH_WIDTH_OFFSET):
+                width += GLYPH_WIDTH_OFFSET[glyph]
+
+            if(aligny == 'middle'):
+                height = ascent + 2 * descent
+                y = ascent + descent
+            elif(aligny == 'top'):
+                height = ascent + descent
+                y = ascent
+
+            ctx.move_to(x, y)
+
+            ctx.show_text(glyph)
 
 
-font('default', 3)
-font('score', 3.5)
+            cropped_surface = cairocffi.ImageSurface(
+                cairocffi.FORMAT_ARGB32, math.ceil(width * scale), math.ceil(height * scale))
+
+            ctx = cairocffi.Context(cropped_surface)
+
+            # debugging (i feel the need to leave this in here. that's how bad it gets)
+            # ctx.set_source_rgba(1, 0, 0)
+            # ctx.paint()
+
+            ctx.set_source_surface(surface)
+            ctx.paint()
+
+            cropped_surface.write_to_png(str(target[0]))
+
+        return render_font_glyph_1x
+
+    def get_render_font_glyph_2x(glyph, scale):
+        return get_render_font_glyph_1x(glyph, scale * 2)
+
+    for glyph_name, glyph in glyphs:
+        if not GetOption('no_1x'):
+            env.Command(
+                '$BUILDDIR/' + font_name + '-' + glyph_name + '.png',
+                [],
+                action=get_render_font_glyph_1x(glyph, scale))
+
+        if not GetOption('no_2x'):
+            env.Command(
+                '$BUILDDIR/' + font_name + '-' + glyph_name + '@2x.png',
+                [],
+                action=get_render_font_glyph_2x(glyph, scale))
+
+
+font('default', range(10), 40, 'middle', 'middle')
+font('score', [*range(10), 'comma', 'dot'], 40, 'left', 'middle')
 env.Empty('score-x')
 env.Empty('score-percent')
-font('scoreentry')
+font('scoreentry', [*range(10), 'comma', 'dot',
+     'percent', 'x'], 15, 'left', 'middle')
 
 # masking border
 env.Empty('masking-border')
