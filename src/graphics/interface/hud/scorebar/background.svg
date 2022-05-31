@@ -7,8 +7,8 @@
    viewBox="0 0 128.3229 7.4083329"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   sodipodi:docname="bg.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="background.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2"
-     inkscape:cx="205.75"
-     inkscape:cy="60.75"
+     inkscape:cx="188.25"
+     inkscape:cy="61"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -44,7 +44,9 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      height="36.71px"
-     showguides="false" />
+     showguides="false"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
@@ -53,7 +55,7 @@
      id="layer1"
      transform="translate(6.1229202,9.033333)">
     <rect
-       style="fill:#ffffff;fill-opacity:0.40000001;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:round"
+       style="fill:#808080;fill-opacity:0.5;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:round"
        id="rect937"
        width="127"
        height="3.175"
