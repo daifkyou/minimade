@@ -352,7 +352,7 @@ if GetOption('client') in ('mcosu', 'any'):
 
 
 # ranking panel and stuff
-render_default('ranking-panel', 'graphics/interface/ranking/panels/panel')
+render_default('ranking-panel', 'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
 render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
 render_default('pause-replay', 'graphics/interface/ranking/panels/replay')
 render_default('ranking-winner', 'graphics/interface/ranking/status/winner')
@@ -450,7 +450,7 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
                 action=get_render_font_glyph_2x(glyph, scale))
 
 
-font('default', range(10), 40, 'middle', 'middle')
+font('default', range(10), 35, 'middle', 'middle')
 font('score', [*range(10), 'comma', 'dot'], 40, 'left', 'middle')
 env.Empty('score-x')
 env.Empty('score-percent')
