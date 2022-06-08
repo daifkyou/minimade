@@ -77,38 +77,38 @@ def render2x(target, source, env):
         cairosvg.svg2png(url=str(s), write_to=str(t), scale=2)
 
 
-def prepend_build_directory(target, source, env):
+def prepend_build_directory(files):
     """
     adds the build directory to the target
     """
-    return tuple(map(lambda t: '$BUILDDIR/'+str(t), target)), source
+    return tuple(map(lambda t: '$BUILDDIR/'+str(t), files))
 
 
-def prepend_source_directory(target, source, env):
+def prepend_source_directory(files):
     """
     adds the source directory to the source
     """
-    return target, tuple(map(lambda s: '$SOURCEDIR/'+str(s), source))
+    return tuple(map(lambda s: '$SOURCEDIR/'+str(s), files))
 
 
-def prepend_directories(target, source, env):
+def prepend_directories(target, source):
     """
     adds the build directory and the source directory to the target and the source
     """
-    return prepend_source_directory(*prepend_build_directory(target, source, env), env)
+    return prepend_build_directory(target), prepend_source_directory(source)
 
 
 svg1x = Builder(
     action=render1x,
     suffix='.png',
     src_suffix='.svg',
-    emitter=prepend_directories)
+    emitter=lambda target, source, env: prepend_directories(target, source))
 
 svg2x = Builder(
     action=render2x,
     src_suffix='.svg',
     emitter=lambda target, source, env:  # scuffedness 1000000
-    (prepend_directories(tuple(map(lambda t: str(t) + '@2x.png', target)), source, env)))
+    (prepend_directories(tuple(map(lambda t: str(t) + '@2x.png', target)), source)))
 
 
 def render_default(target, source):
@@ -142,14 +142,10 @@ def render_animation(target, frames):
 
         for j in range(frame + 1, frame + 1 + repeat):
             if not GetOption('no_1x'):
-                env.Command(
-                    '$BUILDDIR/' + target + str(j) + '.png',
-                    '$BUILDDIR/' + t + '.png', Copy('$TARGET', '$SOURCE'))
+                env.CopyImage(target + str(j), t)
 
             if not GetOption('no_2x') and not source == None:
-                env.Command(
-                    '$BUILDDIR/' + target + str(j) + '@2x.png',
-                    '$BUILDDIR/' + t + '@2x.png', Copy('$TARGET', '$SOURCE'))
+                env.CopyImage(target + str(j) + '@2x', t + '@2x')
 
         frame += repeat + 1
 
@@ -158,7 +154,15 @@ empty = Builder(
     action=Copy('$TARGET', '$SOURCE'),
     suffix='.png',
     emitter=lambda target, source, env:
-    (prepend_build_directory(target, source, env)[0], 'src/graphics/special/none.png'))
+    (prepend_build_directory(target), 'src/graphics/special/none.png'))
+
+
+copy_image = Builder(
+    action=Copy('$TARGET', '$SOURCE'),
+    suffix='.png',
+    src_suffix='.png',
+    emitter=lambda target, source, env:
+    (prepend_build_directory(target), prepend_build_directory(source)))
 
 
 env = Environment(
@@ -168,7 +172,8 @@ env = Environment(
     BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir'),
     CLIENT=GetOption('client'))
 
-env.Append(BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x, 'Empty': empty})
+env.Append(BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x,
+           'Empty': empty, 'CopyImage': copy_image})
 
 
 env.Command(
@@ -352,7 +357,8 @@ if GetOption('client') in ('mcosu', 'any'):
 
 
 # ranking panel and stuff
-render_default('ranking-panel', 'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
+render_default('ranking-panel',
+               'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
 render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
 render_default('pause-replay', 'graphics/interface/ranking/panels/replay')
 render_default('ranking-winner', 'graphics/interface/ranking/status/winner')
@@ -575,12 +581,10 @@ if not GetOption('no_standard'):
 
     render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
     if not GetOption('no_1x'):
-        env.Command('$BUILDDIR/hit100k-0.png', '$BUILDDIR/hit100-0.png',
-                    action=Copy('$TARGET', '$SOURCE'))
+        env.CopyImage('hit100k-0', 'hit100-0')
 
     if not GetOption('no_2x'):
-        env.Command('$BUILDDIR/hit100k-0@2x.png',
-                    '$BUILDDIR/hit100-0@2x.png', action=Copy('$TARGET', '$SOURCE'))
+        env.CopyImage('hit100k-0@2x', 'hit100-0@2x')
 
     render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
 
