@@ -139,7 +139,7 @@ def render_animation(target, frames):
             env.Empty(t)
         else:
             render_default(t, source)
-        
+
         for j in range(frame + 1, frame + 1 + repeat):
             if not GetOption('no_1x'):
                 env.Command(
@@ -150,7 +150,7 @@ def render_animation(target, frames):
                 env.Command(
                     '$BUILDDIR/' + target + str(j) + '@2x.png',
                     '$BUILDDIR/' + t + '@2x.png', Copy('$TARGET', '$SOURCE'))
-        
+
         frame += repeat + 1
 
 
@@ -352,7 +352,7 @@ if GetOption('client') in ('mcosu', 'any'):
 
 
 # ranking panel and stuff
-render_default('ranking-panel', 'graphics/interface/ranking/panels/panel')
+render_default('ranking-panel', 'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
 render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
 render_default('pause-replay', 'graphics/interface/ranking/panels/replay')
 render_default('ranking-winner', 'graphics/interface/ranking/status/winner')
@@ -450,7 +450,7 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
                 action=get_render_font_glyph_2x(glyph, scale))
 
 
-font('default', range(10), 40, 'middle', 'middle')
+font('default', range(10), 35, 'middle', 'middle')
 font('score', [*range(10), 'comma', 'dot'], 40, 'left', 'middle')
 env.Empty('score-x')
 env.Empty('score-percent')
@@ -573,7 +573,7 @@ if not GetOption('no_standard'):
     env.Empty('hit50')
     env.Empty('hit0')
 
-    render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100.svg')
+    render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
     if not GetOption('no_1x'):
         env.Command('$BUILDDIR/hit100k-0.png', '$BUILDDIR/hit100-0.png',
                     action=Copy('$TARGET', '$SOURCE'))
@@ -582,16 +582,16 @@ if not GetOption('no_standard'):
         env.Command('$BUILDDIR/hit100k-0@2x.png',
                     '$BUILDDIR/hit100-0@2x.png', action=Copy('$TARGET', '$SOURCE'))
 
-    render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50.svg')
+    render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
 
-    render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0.svg')
+    render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0')
 
     # follow points (surprisingly)
     # render_default('followpoint', 'graphics/gameplay/osu/followpoint.svg') # non-animated followpoints if you are a masochist
 
-    render_animation('followpoint-', ( # thanks to stephen clark's video on followpoints (https://youtu.be/OVGzCPsLH7c?t=247)
+    render_animation('followpoint-', (  # thanks to stephen clark's video on followpoints (https://youtu.be/OVGzCPsLH7c?t=247)
         (None, 0),
-        ('graphics/gameplay/osu/followpoint.svg', 1),
+        ('graphics/gameplay/osu/followpoint', 1),
         (None, 0)
     ))
 
