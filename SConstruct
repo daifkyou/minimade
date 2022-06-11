@@ -534,7 +534,7 @@ if not GetOption('no_standard'):
     mode_icon('osu')
 
     # cursor smoke (surprisingly)
-    render_default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
+    # render_default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
 
     # approach circle (surprisingly)
     render_default('approachcircle', 'graphics/gameplay/osu/approachcircle')
