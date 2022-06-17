@@ -6,7 +6,7 @@
    viewBox="0 0 1480 178"
    id="svg4"
    sodipodi:docname="options.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -81,9 +81,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="4.0000001"
-     inkscape:cx="579.87499"
-     inkscape:cy="98.124998"
+     inkscape:zoom="32.000001"
+     inkscape:cx="298.06249"
+     inkscape:cy="175.375"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -103,7 +103,9 @@
      inkscape:snap-intersection-paths="true"
      inkscape:object-paths="true"
      inkscape:snap-smooth-nodes="true"
-     inkscape:object-nodes="true" />
+     inkscape:object-nodes="true"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <g
      inkscape:groupmode="layer"
      id="layer1"
