@@ -27,7 +27,7 @@ Makes theoretically infinite servings.
     1. (The cool way) Symlink the build directory into your skins directory (i.e. plate)
     (e.g. on my Arch system on ext4 with minimade in my home directory and my osu!, using Katoumegumi's osu! wine guide, directory symlinked to ~/osufolder, this is `$ ln -s $HOME/minimade/build ~/osufolder/Skins/`)
     2. (The "I use FAT32" way) See "The cool way" but mentally replace "symlink" with "copy."
-    2. (The prepackaged way) Zip the build directory and rename it to end with an .osk extension. Share with a friend ;)
+    2. (The prepackaged way) Zip the build directory and rename it to end with an .osk extension. Share with a friend :)
 
 ## Contributing
 Very open to contributions (including suggestions/issues) of any kind but I'm really not that active and I'm not very experienced.
@@ -41,6 +41,20 @@ All SVGs are in SD since they can be upscaled.
 
 ## License
 Please see LICENSE; this project is basically under the MIT license.
+
+## Screenshots
+| Subject | Image |
+| --- | --- |
+| Main Menu | no supporter no ss welp |
+| Song Select | ![selection](https://user-images.githubusercontent.com/62647827/174412433-09d9d51f-451c-424a-8a49-caef6beafb66.png) |
+| Mod Select | ![mods](https://user-images.githubusercontent.com/62647827/174412962-36acca33-91df-4cea-9ecd-35c78e9e91f1.png) |
+| Options (get a good look at those buttons) | ![options](https://user-images.githubusercontent.com/62647827/174412778-80bfc51a-8ce4-4708-b20b-b61593e7aff1.png) |
+| Skip | ![skip](https://user-images.githubusercontent.com/62647827/174412978-e4fc916d-06fe-4174-82e1-89bb39424162.png)
+| Gameplay | ![gameplaynt](https://user-images.githubusercontent.com/62647827/174412310-a6df81bb-e9a2-4cf6-86d8-10a52cebd335.png) |
+| Spinner | ![spinner](https://user-images.githubusercontent.com/62647827/174412885-9060fdce-9432-42ea-a733-75bb88bcdf79.png) |
+| Ranking | ![ranking](https://user-images.githubusercontent.com/62647827/174413050-370d8d01-6773-4ac9-981f-4f94f57c66d4.png)
+| Results | ![results](https://user-images.githubusercontent.com/62647827/174412920-b72d0900-06ac-41f2-8e52-b6256615906e.png) |
+| Editor | ![editor](https://user-images.githubusercontent.com/62647827/174412934-327af37d-f292-4761-b30b-95daf8b70620.png) |
 
 ## P.S.
 The name of the skin is actually a misnomer because I was using make before I switched to SCons so that's a thing
