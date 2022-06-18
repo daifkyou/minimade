@@ -8,10 +8,6 @@ import cairocffi
 import io
 import math
 
-from pathlib import Path
-
-from SCons.Script import GetOption, AddOption, Environment, Builder, Copy
-
 
 AddOption('--no-1x',
           dest='no_1x',
