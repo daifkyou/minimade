@@ -50,13 +50,13 @@ Please see LICENSE; this project is basically under the MIT license.
 | Mod Select | ![mods](https://user-images.githubusercontent.com/62647827/174412962-36acca33-91df-4cea-9ecd-35c78e9e91f1.png) |
 | Options (get a good look at those buttons) | ![options](https://user-images.githubusercontent.com/62647827/174412778-80bfc51a-8ce4-4708-b20b-b61593e7aff1.png) |
 | Skip | ![skip](https://user-images.githubusercontent.com/62647827/174412978-e4fc916d-06fe-4174-82e1-89bb39424162.png) |
-| Gameplay | ![gameplaynt](https://user-images.githubusercontent.com/62647827/174412310-a6df81bb-e9a2-4cf6-86d8-10a52cebd335.png) |
+| Gameplay | ![gameplaynt](https://user-images.githubusercontent.com/62647827/174436427-4654c6e8-cc90-4739-9fd9-d043dc977d9e.png) |
 | Spinner | ![spinner](https://user-images.githubusercontent.com/62647827/174412885-9060fdce-9432-42ea-a733-75bb88bcdf79.png) |
 | Pause | ![pause](https://user-images.githubusercontent.com/62647827/174415542-382e4eca-b7e3-424b-b35b-c4fde75b0715.png) |
 | Fail | ![fail](https://user-images.githubusercontent.com/62647827/174415572-25641710-31a8-4bbe-8ccb-179970298310.png)|
 | Ranking | ![ranking](https://user-images.githubusercontent.com/62647827/174413050-370d8d01-6773-4ac9-981f-4f94f57c66d4.png)
 | Results | ![results](https://user-images.githubusercontent.com/62647827/174412920-b72d0900-06ac-41f2-8e52-b6256615906e.png) |
-| Editor | ![editor](https://user-images.githubusercontent.com/62647827/174412934-327af37d-f292-4761-b30b-95daf8b70620.png) |
+| Editor | ![editor](https://user-images.githubusercontent.com/62647827/174436436-1e075593-78b2-481d-a808-b7b9c1939100.png) |
 
 ## P.S.
 The name of the skin is actually a misnomer because I was using make before I switched to SCons so that's a thing
