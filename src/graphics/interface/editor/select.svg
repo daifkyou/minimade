@@ -30,10 +30,10 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="4"
-     inkscape:cx="3.75"
-     inkscape:cy="105.5"
+     inkscape:cx="4"
+     inkscape:cy="85.625"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -48,15 +48,15 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g13"
-       transform="translate(-8.4877014e-5,-8.4877014e-5)"
-       style="stroke:#ffffff;stroke-opacity:1;fill:#ffffff;fill-opacity:0.29803923">
+       id="g1790"
+       transform="translate(1.9729138e-5,-3.6895275e-5)"
+       style="fill:#ffffff;fill-opacity:0.29803923">
       <circle
-         style="fill:#ffffff;fill-opacity:0.29803923;stroke:#ffffff;stroke-width:2.646;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="path1328"
-         cx="16.933332"
-         cy="16.933332"
-         r="14.287494" />
+         style="fill:#ffffff;fill-opacity:0.29803923;stroke:#ffffff;stroke-width:1.85208;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1328-3"
+         cx="16.933256"
+         cy="16.933256"
+         r="14.684425" />
     </g>
   </g>
 </svg>

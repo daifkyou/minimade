@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="118"
-   height="118"
-   viewBox="0 0 31.220831 31.220831"
+   width="104"
+   height="104"
+   viewBox="0 0 27.516665 27.516665"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="sliderb.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="ball.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
      width="118px"
@@ -29,16 +29,18 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="false"
      inkscape:snap-page="true"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="-7.7781746"
-     inkscape:cy="122.32947"
+     inkscape:zoom="5.6568544"
+     inkscape:cx="46.669046"
+     inkscape:cy="45.873551"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="false" />
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
@@ -47,11 +49,22 @@
      id="layer1">
     <g
        id="g1826"
-       transform="translate(-1.322919,-1.322919)"
-       style="stroke-width:5.29166;stroke-miterlimit:4;stroke-dasharray:none">
+       transform="matrix(0.98979595,0,0,0.98979595,-3.0022136,-3.0022136)"
+       style="stroke-width:1.87118;stroke-miterlimit:4;stroke-dasharray:none;fill:none;fill-opacity:0.50196081;stroke:#ffffff;stroke-opacity:0.50196081">
       <circle
-         style="fill:none;stroke:#ffffff;stroke-width:5.29166;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.5"
+         style="fill:none;stroke:#ffffff;stroke-width:1.87118;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50196081;fill-opacity:0.50196081"
          id="path1368"
+         cx="16.933334"
+         cy="16.933334"
+         r="12.964582" />
+    </g>
+    <g
+       id="g2019"
+       transform="matrix(0.91836378,0,0,0.91836378,-1.7926288,-1.7926288)"
+       style="fill:#ffffff;fill-opacity:0.12;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none">
+      <circle
+         style="fill:#ffffff;fill-opacity:0.12;stroke:none;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.5"
+         id="circle2017"
          cx="16.933334"
          cy="16.933334"
          r="12.964582" />
