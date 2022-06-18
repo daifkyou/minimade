@@ -52,8 +52,8 @@ Please see LICENSE; this project is basically under the MIT license.
 | Skip | ![skip](https://user-images.githubusercontent.com/62647827/174412978-e4fc916d-06fe-4174-82e1-89bb39424162.png) |
 | Gameplay | ![gameplaynt](https://user-images.githubusercontent.com/62647827/174436427-4654c6e8-cc90-4739-9fd9-d043dc977d9e.png) |
 | Spinner | ![spinner](https://user-images.githubusercontent.com/62647827/174412885-9060fdce-9432-42ea-a733-75bb88bcdf79.png) |
-| Pause | ![pause](https://user-images.githubusercontent.com/62647827/174415542-382e4eca-b7e3-424b-b35b-c4fde75b0715.png) |
-| Fail | ![fail](https://user-images.githubusercontent.com/62647827/174415572-25641710-31a8-4bbe-8ccb-179970298310.png)|
+| Pause | ![pause](https://user-images.githubusercontent.com/62647827/174436675-110c72fd-7157-410b-97b3-79b09d614427.png) |
+| Fail | ![fail](https://user-images.githubusercontent.com/62647827/174436678-adf38f9b-bc34-439f-a005-5977f0460da1.png) |
 | Ranking | ![ranking](https://user-images.githubusercontent.com/62647827/174413050-370d8d01-6773-4ac9-981f-4f94f57c66d4.png)
 | Results | ![results](https://user-images.githubusercontent.com/62647827/174412920-b72d0900-06ac-41f2-8e52-b6256615906e.png) |
 | Editor | ![editor](https://user-images.githubusercontent.com/62647827/174436436-1e075593-78b2-481d-a808-b7b9c1939100.png) |
