@@ -5,8 +5,8 @@
    height="56"
    viewBox="0 0 280 56"
    id="svg4"
-   sodipodi:docname="spinner-rpm.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="rpm.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,10 +26,10 @@
      inkscape:bbox-paths="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.6479676"
-     inkscape:cx="102.72029"
-     inkscape:cy="49.471904"
+     inkscape:cx="145.77218"
+     inkscape:cy="41.35247"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -41,16 +41,18 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-bbox-edge-midpoints="true"
-     inkscape:snap-bbox-midpoints="true" />
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <text
      xml:space="preserve"
-     style="font-size:56.9642px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.999994"
-     x="-12.766878"
-     y="51.999969"
+     style="font-size:36px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.999994"
+     x="111.93164"
+     y="44.542969"
      id="text4193"><tspan
        sodipodi:role="line"
        id="tspan4191"
-       x="-12.766878"
-       y="51.999969"
-       style="stroke-width:0.999994">RPM</tspan></text>
+       x="111.93164"
+       y="44.542969"
+       style="font-size:36px;stroke-width:0.999994">RPM</tspan></text>
 </svg>

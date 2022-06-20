@@ -24,6 +24,11 @@ AddOption('--no-std', '--no-standard',
           action='store_true',
           help="Don\'t build osu!standard elements")
 
+AddOption('--no-tk', '--no-taiko',
+          dest='no_taiko',
+          action='store_true',
+          help="Don\'t build osu!taiko elements")
+
 AddOption('--aspect-ratio',
           dest='aspect_ratio',
           type='string',
@@ -378,14 +383,17 @@ GLYPH_WIDTH_OFFSET = {
 }
 
 
-def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
+OVERLAP = -6 # we draw overlap into the skin instead of using skin.ini because for some reason ranking screen doesnt respect it
+
+
+def font(font_name, glyphs, scale=20, aligny='top'):
     """render font"""
     glyphs = map(lambda g: (str(g), (CHAR_REPLACE[glyph] if (
         glyph := str(g)) in CHAR_REPLACE else glyph)), glyphs)
 
-    def get_render_font_glyph_1x(glyph, scale):
+    def get_render_font_glyph(glyph, scale, width_override = None):
         # cairo text actually sucks im just going to commit this shit i give up
-        def render_font_glyph_1x(target, source, env):
+        def render_font_glyph(target, source, env):
             surface = cairocffi.ImageSurface(
                 cairocffi.FORMAT_ARGB32, 16 * scale, 16 * scale)
             ctx = cairocffi.Context(surface)
@@ -395,18 +403,18 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
             ctx.select_font_face('osifont')
             ctx.set_font_size(1)
             ascent, descent, _, _, _ = ctx.font_extents()
-            text_x_bearing, _, text_width, _, text_x_advance, _ = ctx.text_extents(
+            text_x_bearing, _, text_width, _, _, _ = ctx.text_extents(
                 glyph)
 
-            if(alignx == 'middle'):
-                x = -text_x_bearing
-                width = text_width
-            elif(alignx == 'left'):
-                x = 0
-                width = text_x_advance
+            if(width_override != None): width = width_override
+            else: width = text_width
+
+            x = -text_x_bearing
 
             if(glyph in GLYPH_WIDTH_OFFSET):
                 width += GLYPH_WIDTH_OFFSET[glyph]
+
+            width -= OVERLAP / scale
 
             if(aligny == 'middle'):
                 height = ascent + 2 * descent
@@ -433,31 +441,30 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
 
             cropped_surface.write_to_png(str(target[0]))
 
-        return render_font_glyph_1x
-
-    def get_render_font_glyph_2x(glyph, scale):
-        return get_render_font_glyph_1x(glyph, scale * 2)
+        return render_font_glyph
 
     for glyph_name, glyph in glyphs:
+        width_override = 0.4 if glyph in [str(n) for n in range(10)] else None
+
         if not GetOption('no_1x'):
             env.Command(
                 '$BUILDDIR/' + font_name + '-' + glyph_name + '.png',
                 [],
-                action=get_render_font_glyph_1x(glyph, scale))
+                action=get_render_font_glyph(glyph, scale, width_override))
 
         if not GetOption('no_2x'):
             env.Command(
                 '$BUILDDIR/' + font_name + '-' + glyph_name + '@2x.png',
                 [],
-                action=get_render_font_glyph_2x(glyph, scale))
+                action=get_render_font_glyph(glyph, scale * 2, width_override))
 
 
-font('default', range(10), 35, 'middle', 'middle')
-font('score', [*range(10), 'comma', 'dot'], 40, 'left', 'middle')
+font('default', range(10), 35, 'middle')
+font('score', [*range(10), 'comma', 'dot'], 40, 'middle')
 env.Empty('score-x')
 env.Empty('score-percent')
 font('scoreentry', [*range(10), 'comma', 'dot',
-     'percent', 'x'], 15, 'left', 'middle')
+     'percent', 'x'], 15, 'middle')
 
 # masking border
 env.Empty('masking-border')
