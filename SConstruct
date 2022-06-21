@@ -371,7 +371,7 @@ env.Empty('ranking-accuracy')
 
 
 # fonts
-CHAR_REPLACE = {
+CHAR_REPLACE = { # special characters in filenames and their corresponding characters
     'comma': ',',
     'dot': '.',
     'percent': '%'
@@ -386,7 +386,7 @@ GLYPH_WIDTH_OFFSET = {
 OVERLAP = -6 # we draw overlap into the skin instead of using skin.ini because for some reason ranking screen doesnt respect it
 
 
-def font(font_name, glyphs, scale=20, aligny='top'):
+def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
     """render font"""
     glyphs = map(lambda g: (str(g), (CHAR_REPLACE[glyph] if (
         glyph := str(g)) in CHAR_REPLACE else glyph)), glyphs)
@@ -406,15 +406,20 @@ def font(font_name, glyphs, scale=20, aligny='top'):
             text_x_bearing, _, text_width, _, _, _ = ctx.text_extents(
                 glyph)
 
-            if(width_override != None): width = width_override
-            else: width = text_width
+            if alignx == 'left':
+                if width_override != None:
+                    width = width_override
+                else:
+                    x = 0
+                    width = text_x_advance
+            elif alignx == 'middle':
+                x = -text_x_bearing - OVERLAP / scale / 2
+                width = text_width
 
-            x = -text_x_bearing
+            width -= OVERLAP / scale
 
             if(glyph in GLYPH_WIDTH_OFFSET):
                 width += GLYPH_WIDTH_OFFSET[glyph]
-
-            width -= OVERLAP / scale
 
             if(aligny == 'middle'):
                 height = ascent + 2 * descent
@@ -459,19 +464,18 @@ def font(font_name, glyphs, scale=20, aligny='top'):
                 action=get_render_font_glyph(glyph, scale * 2, width_override))
 
 
-font('default', range(10), 35, 'middle')
+font('default', range(10), 35, 'middle', 'middle')
 font('score', [*range(10), 'comma', 'dot'], 40, 'middle')
 env.Empty('score-x')
 env.Empty('score-percent')
 font('scoreentry', [*range(10), 'comma', 'dot',
-     'percent', 'x'], 15, 'middle')
+     'percent', 'x'], 15, 'middle', 'middle')
 
 # masking border
 env.Empty('masking-border')
 
 
 # scorebar (surprisingly)
-
 ADDED_SCOREBAR = True
 render_default('scorebar-bg', 'graphics/interface/hud/scorebar/background')
 render_default('scorebar-colour', 'graphics/interface/hud/scorebar/colour')
