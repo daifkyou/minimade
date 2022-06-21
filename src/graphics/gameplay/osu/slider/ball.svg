@@ -30,7 +30,7 @@
      inkscape:snap-bbox-midpoints="false"
      inkscape:snap-page="true"
      inkscape:zoom="5.6568544"
-     inkscape:cx="46.669046"
+     inkscape:cx="46.845823"
      inkscape:cy="45.873551"
      inkscape:window-width="1920"
      inkscape:window-height="1003"
@@ -50,9 +50,9 @@
     <g
        id="g1826"
        transform="matrix(0.98979595,0,0,0.98979595,-3.0022136,-3.0022136)"
-       style="stroke-width:1.87118;stroke-miterlimit:4;stroke-dasharray:none;fill:none;fill-opacity:0.50196081;stroke:#ffffff;stroke-opacity:0.50196081">
+       style="stroke-width:1.87118;stroke-miterlimit:4;stroke-dasharray:none;fill:none;fill-opacity:0.50196081;stroke:#ffffff;stroke-opacity:0.5">
       <circle
-         style="fill:none;stroke:#ffffff;stroke-width:1.87118;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50196081;fill-opacity:0.50196081"
+         style="fill:none;stroke:#ffffff;stroke-width:1.87118;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.5;fill-opacity:0.50196081"
          id="path1368"
          cx="16.933334"
          cy="16.933334"
@@ -61,9 +61,9 @@
     <g
        id="g2019"
        transform="matrix(0.91836378,0,0,0.91836378,-1.7926288,-1.7926288)"
-       style="fill:#ffffff;fill-opacity:0.12;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none">
+       style="fill:#ffffff;fill-opacity:0.25;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none">
       <circle
-         style="fill:#ffffff;fill-opacity:0.12;stroke:none;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.5"
+         style="fill:#ffffff;fill-opacity:0.25;stroke:none;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.5"
          id="circle2017"
          cx="16.933334"
          cy="16.933334"
