@@ -24,10 +24,10 @@ AddOption('--no-std', '--no-standard',
           action='store_true',
           help="Don\'t build osu!standard elements")
 
-AddOption('--no-tk', '--no-taiko',
+"""AddOption('--no-tk', '--no-taiko',
           dest='no_taiko',
           action='store_true',
-          help="Don\'t build osu!taiko elements")
+          help="Don\'t build osu!taiko elements")"""
 
 AddOption('--aspect-ratio',
           dest='aspect_ratio',
