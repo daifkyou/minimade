@@ -421,12 +421,8 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
             if(glyph in GLYPH_WIDTH_OFFSET):
                 width += GLYPH_WIDTH_OFFSET[glyph]
 
-            if(aligny == 'middle'):
-                height = ascent + 2 * descent
-                y = ascent + descent
-            elif(aligny == 'top'):
-                height = ascent + descent
-                y = ascent
+            height = ascent + 2 * descent
+            y = ascent + descent
 
             ctx.move_to(x, y)
 
@@ -464,12 +460,12 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
                 action=get_render_font_glyph(glyph, scale * 2, width_override))
 
 
-font('default', range(10), 35, 'middle', 'middle')
+font('default', range(10), 35, 'middle')
 font('score', [*range(10), 'comma', 'dot'], 40, 'middle')
 env.Empty('score-x')
 env.Empty('score-percent')
 font('scoreentry', [*range(10), 'comma', 'dot',
-     'percent', 'x'], 15, 'middle', 'middle')
+     'percent', 'x'], 15, 'middle')
 
 # masking border
 env.Empty('masking-border')
