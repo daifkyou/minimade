@@ -33,7 +33,7 @@ AddOption('--client',
           help='The client to build for (supports "stable", "mcosu", and "any", which tries to make the skin work on both clients)')
 
 AddOption('--ranking-panel',
-          dest='ranking-panel',
+          dest='ranking_panel',
           action='store',
           metavar='PATH',
           default='any',
@@ -73,6 +73,14 @@ AddOption('--source-directory',
 
 BUILDDIR = 'build'
 SOURCEDIR = 'src'
+
+
+def composite(target_surface, source_surface, x=0, y=0):
+    ctx = cairocffi.Context(target_surface)
+
+    ctx.set_source_surface(source_surface, x, y)
+    ctx.paint()
+    return target_surface
 
 
 def render1x(target, source, env):
@@ -280,39 +288,31 @@ def mode_icon(mode):
                         '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                         action=render1x)
     else:
-        def mode_icon_small(target, modebar_surface, icon_surface):
-            """base for the hacky mode icon render (pass string + cairocffi surfaces)"""
-            ctx = cairocffi.Context(modebar_surface)
-
-            ctx.set_source_surface(icon_surface,
-                                   modebar_surface.get_width() / 2 - icon_surface.get_width() / 2,
-                                   modebar_surface.get_height() / 2 - icon_surface.get_height() / 2)
-            ctx.paint()
-            modebar_surface.write_to_png(target)
-
         if not GetOption('no_1x'):
             env.Command('$BUILDDIR/mode-'+mode+'-small.png',
                         ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=lambda target, source, env:
-                        mode_icon_small(
-                            str(target[0]),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                        composite(
+                            target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
                                 cairosvg.svg2png(url=str(source[1])))),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0]), scale=0.5)))))
+                            source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0]), scale=0.5))),
+                            target_surface.get_width() / 2 - source_surface.get_width() / 2,
+                            target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0])))
 
         if not GetOption('no_2x'):
             env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
                         ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=lambda target, source, env:
-                        mode_icon_small(
-                            str(target[0]),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                        composite(
+                            target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
                                 cairosvg.svg2png(url=str(source[1]), scale=2))),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0]))))))
+                            source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0])))),
+                            target_surface.get_width() / 2 - source_surface.get_width() / 2,
+                            target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0])))
 
 
 # song select tab
@@ -367,28 +367,26 @@ if GetOption('client') in ('mcosu', 'any'):
 
 
 # ranking panel and stuff
-def composite(target, surface, x=0, y=0):
-    ctx = cairocffi.Context(target)
-
-    ctx.set_source_surface(surface,
-                           modebar_surface.get_width() / 2 - icon_surface.get_width() / 2,
-                           modebar_surface.get_height() / 2 - icon_surface.get_height() / 2)
-    ctx.paint()
-    return target
-
-
-if GetOption(ranking_panel) == 'any':
+if GetOption('ranking_panel') == 'any':
     render_default('ranking-panel',
                    'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
 else:
     if not GetOption('no_1x'):
-        env.Command('ranking-panel.png', ['graphics/interface/ranking/panels/$ASPECTRATIO/panel',
-                    'graphics/interface/ranking/panels/numbers/$RANKINGPANEL.svg'], lambda target, source, env:
+        env.Command('$BUILDDIR/ranking-panel.png', ['$SOURCEDIR/graphics/interface/ranking/panels/$ASPECTRATIO/panel.svg',
+                    '$SOURCEDIR/graphics/interface/ranking/panels/numbers/'+GetOption('ranking_panel')+'.svg'], lambda target, source, env:
                         composite(
                             cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[1])))),
+                                cairosvg.svg2png(url=str(source[0])))),
                             cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0])))))).write_to_png(target[0])
+                                cairosvg.svg2png(url=str(source[1]))))).write_to_png(str(target[0])))
+    if not GetOption('no_2x'):
+        env.Command('$BUILDDIR/ranking-panel@2x.png', ['$SOURCEDIR/graphics/interface/ranking/panels/$ASPECTRATIO/panel.svg',
+                    '$SOURCEDIR/graphics/interface/ranking/panels/numbers/'+GetOption('ranking_panel')+'.svg'], lambda target, source, env:
+                        composite(
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0]), scale=2))),
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[1]), scale=2)))).write_to_png(str(target[0])))
 render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
 render_default('pause-replay', 'graphics/interface/ranking/panels/replay')
 render_default('ranking-winner', 'graphics/interface/ranking/status/winner')
@@ -559,6 +557,10 @@ def spinner():
                        'graphics/gameplay/spinner/approachcircle')
 
 
+# hitburst dimensions for any ranking panel
+HITBURST_WIDTH = 134
+HITBURST_HEIGHT = 59
+
 if not GetOption('no_standard'):  # standard-only elements
     # mode icon
     mode_icon('osu')
@@ -605,31 +607,55 @@ if not GetOption('no_standard'):  # standard-only elements
     env.Empty('hit300g')
 
     if GetOption('ranking_panel') == 'any':
-        hit100 = 'hit100'
-        hit100k = 'hit100k'
-        hit50 = 'hit50'
-        hit0 = 'hit0'
+        if not GetOption('no_1x'):
+            def paddedhitburst1x(target, source, env):
+                composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH, HITBURST_HEIGHT),
+                          hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                              cairosvg.svg2png(url=str(source[0])))), HITBURST_WIDTH - hitburst_surface.get_width(), HITBURST_HEIGHT - hitburst_surface.get_height()).write_to_png(str(target[0]))
+
+            env.Command('$BUILDDIR/hit100.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/100.svg', paddedhitburst1x)
+            env.Command('$BUILDDIR/hit50.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/50.svg', paddedhitburst1x)
+            env.Command('$BUILDDIR/hit0.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/0.svg', paddedhitburst1x)
+
+            env.CopyImage('hit100k', 'hit100')
+
+        if not GetOption('no_2x'):
+            def paddedhitburst2x(target, source, env):
+                composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH * 2, HITBURST_HEIGHT * 2),
+                          hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                              cairosvg.svg2png(url=str(source[0]), scale=2))), HITBURST_WIDTH * 2 - hitburst_surface.get_width(), HITBURST_HEIGHT * 2 - hitburst_surface.get_height()).write_to_png(str(target[0]))
+
+            env.Command('$BUILDDIR/hit100@2x.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/100.svg', paddedhitburst2x)
+            env.Command('$BUILDDIR/hit50@2x.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/50.svg', paddedhitburst2x)
+            env.Command('$BUILDDIR/hit0@2x.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/0.svg', paddedhitburst2x)
+
+            env.CopyImage('hit100k@2x', 'hit100@2x')
     else:
-        hit100 = 'hit100-0'
-        hit100k = 'hit100k-0'
-        hit50 = 'hit50-0'
-        hit0 = 'hit0-0'
+        render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
+        render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
+        render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0')
+
+        if not GetOption('no_1x'):
+            env.CopyImage('hit100k-0', 'hit100-0')
+
+        if not GetOption('no_2x'):
+            env.CopyImage('hit100k-0@2x', 'hit100-0@2x')
 
         env.Empty('hit100')
+        # i dont wanna deal with this rn but we could save a little space by deleting this file instead
+        env.Empty('hit100@2x')
         env.Empty('hit100k')
+        env.Empty('hit100k@2x')
         env.Empty('hit50')
+        env.Empty('hit50@2x')
         env.Empty('hit0')
-
-    render_default(hit100, 'graphics/gameplay/osu/hitbursts/100')
-    if not GetOption('no_1x'):
-        env.CopyImage(hit100k, hit100)
-
-    if not GetOption('no_2x'):
-        env.CopyImage(hit100k + '@2x', hit100 + '@2x')
-
-    render_default(hit50, 'graphics/gameplay/osu/hitbursts/50')
-
-    render_default(hit0, 'graphics/gameplay/osu/hitbursts/0')
+        env.Empty('hit0@2x')
 
     # follow points (surprisingly)
     # render_default('followpoint', 'graphics/gameplay/osu/followpoint.svg') # non-animated followpoints if you are a masochist
