@@ -9,6 +9,41 @@ import io
 import math
 
 
+AddOption('--aspect-ratio',
+          dest='aspect_ratio',
+          type='string',
+          nargs=1,
+          action='store',
+          metavar='WIDTH-HEIGHT',
+          default='any',
+          help='The aspect ratio to build for. (Currently supports "4-3", "16-9", and "any", which disables aspect ratio dependent hacks.)')
+
+AddOption('--build-directory',
+          dest='build_dir',
+          action='store',
+          metavar='PATH',
+          default='build',
+          help="The directory where built files will be put")
+
+AddOption('--client',
+          dest='client',
+          action='store',
+          metavar='PATH',
+          default='any',
+          help='The client to build for (supports "stable", "mcosu", and "any", which tries to make the skin work on both clients)')
+
+AddOption('--ranking-panel',
+          dest='ranking-panel',
+          action='store',
+          metavar='PATH',
+          default='any',
+          help='The hacky ranking panel type to build (supports "osu", "taiko" (wip), and "any", which tries to make the ranking panel work for all modes (you probably want this if you compile for more than one mode))')
+
+AddOption('--flashing',
+          dest='flashing',
+          action='store_true',
+          help="Enable flashing via mode-x in song selection")
+
 AddOption('--no-1x',
           dest='no_1x',
           action='store_true',
@@ -24,26 +59,10 @@ AddOption('--no-std', '--no-standard',
           action='store_true',
           help="Don\'t build osu!standard elements")
 
-AddOption('--aspect-ratio',
-          dest='aspect_ratio',
-          type='string',
-          nargs=1,
-          action='store',
-          metavar='WIDTH-HEIGHT',
-          default='any',
-          help='The aspect ratio to build for. (Currently supports "4-3", "16-9", and "any", which disables aspect ratio dependent hacks.)')
-
-AddOption('--flashing',
-          dest='flashing',
+AddOption('--no-tk', '--no-taiko',
+          dest='no_taiko',
           action='store_true',
-          help="Enable flashing via mode-x in song selection")
-
-AddOption('--build-directory',
-          dest='build_dir',
-          action='store',
-          metavar='PATH',
-          default='build',
-          help="The directory where built files will be put")
+          help="Don\'t build osu!taiko elements (wip)")
 
 AddOption('--source-directory',
           dest='source_dir',
@@ -51,13 +70,6 @@ AddOption('--source-directory',
           metavar='PATH',
           default='src',
           help="The directory where source files are put")
-
-AddOption('--client',
-          dest='client',
-          action='store',
-          metavar='PATH',
-          default='any',
-          help='The client to build for (supports "stable", "mcosu", and "any", which tries to make the skin work on both clients)')
 
 BUILDDIR = 'build'
 SOURCEDIR = 'src'
@@ -166,7 +178,8 @@ env = Environment(
     ASPECTRATIO=GetOption('aspect_ratio'),
     FLASHING=GetOption('flashing'),
     BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir'),
-    CLIENT=GetOption('client'))
+    CLIENT=GetOption('client'),
+    RANKINGPANEL=GetOption('ranking_panel'))
 
 env.Append(BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x,
            'Empty': empty, 'CopyImage': copy_image})
@@ -238,8 +251,9 @@ render_default('selection-options',
 render_default('selection-options-over',
                'graphics/interface/selection/frame/options-over.svg')
 
-
 # mode icon
+
+
 def mode_icon(mode):
     """surprisingly long function to build mode icons"""
     # medium icon (in mode select)
@@ -314,7 +328,7 @@ render_default('star', 'graphics/interface/selection/song/star.svg')
 # ranking letters
 def ranking_grade_small(grade):
     """render small grade letters as needed"""
-    target = '$BUILDDIR/ranking-'+grade+'-small'
+    target = '$BUILDDIR/ranking-' + grade + '-small'
     source = '$SOURCEDIR/graphics/interface/ranking/grades/' + grade + '.svg'
 
     if not GetOption('no_1x'):
@@ -353,8 +367,28 @@ if GetOption('client') in ('mcosu', 'any'):
 
 
 # ranking panel and stuff
-render_default('ranking-panel',
-               'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
+def composite(target, surface, x=0, y=0):
+    ctx = cairocffi.Context(target)
+
+    ctx.set_source_surface(surface,
+                           modebar_surface.get_width() / 2 - icon_surface.get_width() / 2,
+                           modebar_surface.get_height() / 2 - icon_surface.get_height() / 2)
+    ctx.paint()
+    return target
+
+
+if GetOption(ranking_panel) == 'any':
+    render_default('ranking-panel',
+                   'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
+else:
+    if not GetOption('no_1x'):
+        env.Command('ranking-panel.png', ['graphics/interface/ranking/panels/$ASPECTRATIO/panel',
+                    'graphics/interface/ranking/panels/numbers/$RANKINGPANEL.svg'], lambda target, source, env:
+                        composite(
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[1])))),
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0])))))).write_to_png(target[0])
 render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
 render_default('pause-replay', 'graphics/interface/ranking/panels/replay')
 render_default('ranking-winner', 'graphics/interface/ranking/status/winner')
@@ -525,7 +559,7 @@ def spinner():
                        'graphics/gameplay/spinner/approachcircle')
 
 
-if not GetOption('no_standard'):
+if not GetOption('no_standard'):  # standard-only elements
     # mode icon
     mode_icon('osu')
 
@@ -570,21 +604,32 @@ if not GetOption('no_standard'):
     env.Empty('hit300k')
     env.Empty('hit300g')
 
-    env.Empty('hit100')
-    env.Empty('hit100k')
-    env.Empty('hit50')
-    env.Empty('hit0')
+    if GetOption('ranking_panel') == 'any':
+        hit100 = 'hit100'
+        hit100k = 'hit100k'
+        hit50 = 'hit50'
+        hit0 = 'hit0'
+    else:
+        hit100 = 'hit100-0'
+        hit100k = 'hit100k-0'
+        hit50 = 'hit50-0'
+        hit0 = 'hit0-0'
 
-    render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
+        env.Empty('hit100')
+        env.Empty('hit100k')
+        env.Empty('hit50')
+        env.Empty('hit0')
+
+    render_default(hit100, 'graphics/gameplay/osu/hitbursts/100')
     if not GetOption('no_1x'):
-        env.CopyImage('hit100k-0', 'hit100-0')
+        env.CopyImage(hit100k, hit100)
 
     if not GetOption('no_2x'):
-        env.CopyImage('hit100k-0@2x', 'hit100-0@2x')
+        env.CopyImage(hit100k + '@2x', hit100 + '@2x')
 
-    render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
+    render_default(hit50, 'graphics/gameplay/osu/hitbursts/50')
 
-    render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0')
+    render_default(hit0, 'graphics/gameplay/osu/hitbursts/0')
 
     # follow points (surprisingly)
     # render_default('followpoint', 'graphics/gameplay/osu/followpoint.svg') # non-animated followpoints if you are a masochist
@@ -594,6 +639,25 @@ if not GetOption('no_standard'):
         ('graphics/gameplay/osu/followpoint', 1),
         (None, 0)
     ))
+
+if not GetOption('no_taiko'):
+    # pippidon (sorry pippidon)
+    env.Empty('pippidonidle')
+    env.Empty('pippidonkiai')
+    env.Empty('pippidonfail')
+    env.Empty('pippidonclear')
+
+    # slider thing
+    env.Empty('taiko-slider')
+    env.Empty('taiko-slider-fail')
+
+    # bar left drum thing
+    render_default('taiko-bar-left',
+                   'graphics/gameplay/taiko/bar/drum/background')
+    render_default('taiko-drum-inner',
+                   'graphics/gameplay/taiko/bar/drum/inner')
+    render_default('taiko-drum-outer',
+                   'graphics/gameplay/taiko/bar/drum/outer')
 
 
 # editor circle select

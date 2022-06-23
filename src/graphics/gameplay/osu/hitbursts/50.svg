@@ -31,9 +31,9 @@
      inkscape:snap-page="true"
      inkscape:zoom="15.999999"
      inkscape:cx="40.250003"
-     inkscape:cy="7.8125005"
+     inkscape:cy="7.8437505"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -54,16 +54,17 @@
      transform="translate(8.6950386,-6.1437684)">
     <g
        id="g1167"
-       transform="translate(-8.3919266,-3.4574632)">
+       transform="translate(-8.3919266,-3.4574632)"
+       style="stroke:none;stroke-opacity:1;stroke-width:0;stroke-dasharray:none;fill:#4da8ff;fill-opacity:1">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:1.25;font-family:sans-serif;fill:#4da8ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:1.25;font-family:sans-serif;fill:#4da8ff;fill-opacity:1;stroke:none;stroke-width:0;stroke-opacity:1;stroke-dasharray:none"
          x="-1.6983757"
          y="15.453588"
          id="text845"><tspan
            sodipodi:role="line"
            id="tspan843"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;fill:#4da8ff;fill-opacity:1;stroke-width:0.264583"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;fill:#4da8ff;fill-opacity:1;stroke-width:0;stroke:none;stroke-opacity:1;stroke-dasharray:none"
            x="-1.6983757"
            y="15.453588">50</tspan></text>
     </g>
