@@ -7,6 +7,7 @@ import cairosvg.surface
 import cairocffi
 import io
 import math
+from SCons.Script import AddOption, GetOption, Builder, Copy, Environment
 
 
 AddOption('--aspect-ratio',
@@ -157,11 +158,7 @@ def render_animation(target, frames):
             render_default(t, source)
 
         for j in range(frame + 1, frame + 1 + repeat):
-            if not GetOption('no_1x'):
-                env.CopyImage(target + str(j), t)
-
-            if not GetOption('no_2x') and not source == None:
-                env.CopyImage(target + str(j) + '@2x', t + '@2x')
+            copy_default(target + str(j), t)
 
         frame += repeat + 1
 
@@ -179,6 +176,17 @@ copy_image = Builder(
     src_suffix='.png',
     emitter=lambda target, source, env:
     (prepend_build_directory(target), prepend_build_directory(source)))
+
+
+def copy_default(target, source):
+    """
+    copy both SD and HD as needed
+    """
+    if not GetOption('no_1x'):
+        env.CopyImage(target, source)
+
+    if not GetOption('no_2x'):
+        env.CopyImage(target + '@2x', source + '@2x')
 
 
 env = Environment(
@@ -398,7 +406,7 @@ env.Empty('ranking-accuracy')
 
 
 # fonts
-CHAR_REPLACE = { # special characters in filenames and their corresponding characters
+CHAR_REPLACE = {  # special characters in filenames and their corresponding characters
     'comma': ',',
     'dot': '.',
     'percent': '%'
@@ -410,7 +418,7 @@ GLYPH_WIDTH_OFFSET = {
 }
 
 
-OVERLAP = -6 # we draw overlap into the skin instead of using skin.ini because for some reason ranking screen doesnt respect it
+OVERLAP = -6  # we draw overlap into the skin instead of using skin.ini because for some reason ranking screen doesnt respect it
 
 
 def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
@@ -418,7 +426,7 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
     glyphs = map(lambda g: (str(g), (CHAR_REPLACE[glyph] if (
         glyph := str(g)) in CHAR_REPLACE else glyph)), glyphs)
 
-    def get_render_font_glyph(glyph, scale, width_override = None):
+    def get_render_font_glyph(glyph, scale, width_override=None):
         # cairo text actually sucks im just going to commit this shit i give up
         def render_font_glyph(target, source, env):
             surface = cairocffi.ImageSurface(
@@ -559,6 +567,28 @@ def spinner():
                        'graphics/gameplay/spinner/approachcircle')
 
 
+# approach circle
+ADDED_APPROACHCIRCLE = False
+
+
+def approachcircle():
+    global ADDED_APPROACHCIRCLE
+    if not ADDED_APPROACHCIRCLE:
+        ADDED_APPROACHCIRCLE = True
+        render_default('approachcircle', 'graphics/gameplay/approachcircle')
+
+
+# lighting
+ADDED_LIGHTING = False
+
+
+def lighting():
+    global ADDED_LIGHTING
+    if not ADDED_LIGHTING:
+        ADDED_LIGHTING = True
+        render_default('lighting', 'graphics/gameplay/lighting')
+
+
 # hitburst dimensions for any ranking panel
 HITBURST_WIDTH = 134
 HITBURST_HEIGHT = 59
@@ -570,15 +600,12 @@ if not GetOption('no_standard'):  # standard-only elements
     # cursor smoke (surprisingly)
     # render_default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
 
-    # approach circle (surprisingly)
-    render_default('approachcircle', 'graphics/gameplay/osu/approachcircle')
+    # approach circle
+    approachcircle()
 
     # circle (surprisingly)
     render_default('hitcircle', 'graphics/gameplay/osu/circle')
     render_default('hitcircleoverlay', 'graphics/gameplay/osu/circleoverlay')
-
-    # lighting (surprisingly)
-    render_default('lighting', 'graphics/gameplay/osu/lighting')
 
     # slider ball
     render_default('sliderb', 'graphics/gameplay/osu/slider/ball')
@@ -622,8 +649,6 @@ if not GetOption('no_standard'):  # standard-only elements
             env.Command('$BUILDDIR/hit0.png',
                         '$SOURCEDIR/graphics/gameplay/osu/hitbursts/0.svg', paddedhitburst1x)
 
-            env.CopyImage('hit100k', 'hit100')
-
         if not GetOption('no_2x'):
             def paddedhitburst2x(target, source, env):
                 composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH * 2, HITBURST_HEIGHT * 2),
@@ -637,20 +662,16 @@ if not GetOption('no_standard'):  # standard-only elements
             env.Command('$BUILDDIR/hit0@2x.png',
                         '$SOURCEDIR/graphics/gameplay/osu/hitbursts/0.svg', paddedhitburst2x)
 
-            env.CopyImage('hit100k@2x', 'hit100@2x')
+        copy_default('hit100k', 'hit100')
     else:
         render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
         render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
         render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0')
 
-        if not GetOption('no_1x'):
-            env.CopyImage('hit100k-0', 'hit100-0')
-
-        if not GetOption('no_2x'):
-            env.CopyImage('hit100k-0@2x', 'hit100-0@2x')
+        copy_default('hit100k-0', 'hit100-0')
 
         env.Empty('hit100')
-        # i dont wanna deal with this rn but we could save a little space by deleting this file instead
+        # i dont wanna deal with this rn but we could save a little space by deleting @2x instead of writing an empty image
         env.Empty('hit100@2x')
         env.Empty('hit100k')
         env.Empty('hit100k@2x')
@@ -669,15 +690,15 @@ if not GetOption('no_standard'):  # standard-only elements
     ))
 
 if not GetOption('no_taiko'):
+    # slider thing
+    env.Empty('taiko-slider')
+    env.Empty('taiko-slider-fail')
+
     # pippidon (sorry pippidon)
     env.Empty('pippidonidle')
     env.Empty('pippidonkiai')
     env.Empty('pippidonfail')
     env.Empty('pippidonclear')
-
-    # slider thing
-    env.Empty('taiko-slider')
-    env.Empty('taiko-slider-fail')
 
     # bar left drum thing
     render_default('taiko-bar-left',
@@ -687,6 +708,60 @@ if not GetOption('no_taiko'):
     render_default('taiko-drum-outer',
                    'graphics/gameplay/taiko/bar/drum/outer')
 
+    # bar
+    render_default('taiko-bar-right', 'graphics/gameplay/taiko/bar/bar.svg')
+    render_default('taiko-bar-right-glow',
+                   'graphics/gameplay/taiko/bar/glow.svg')
+
+    # approach circle
+    approachcircle()
+    env.Empty('taiko-glow')
+
+    # circle (surprisingly)
+    render_default('taikohitcircle', 'graphics/gameplay/taiko/circle')
+    render_default('taikohitcircleoverlay',
+                   'graphics/gameplay/taiko/circleoverlay')
+
+    copy_default('taikobigcircle', 'taikohitcircle')
+    copy_default('taikobigcircleoverlay', 'taikohitcircleoverlay')
+
+    # hitbursts
+    env.Empty('taiko-hit300')
+    env.Empty('taiko-hit300k')
+    env.Empty('taiko-hit300g')
+
+    if GetOption('ranking_panel') == 'any':
+        def paddedtaikohitburst1x(target, source, env):
+            hitburst_surface = cairocffi.ImageSurface.create_from_png(
+                io.BytesIO(cairosvg.svg2png(url=str(source[0]))))
+            composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH, hitburst_surface.get_height() + HITBURST_HEIGHT),
+                      hitburst_surface, HITBURST_WIDTH - hitburst_surface.get_width(), HITBURST_HEIGHT - hitburst_surface.get_height()).write_to_png(str(target[0]))
+
+            env.Command('$BUILDDIR/taiko-hit100.png',
+                        '$SOURCEDIR/graphics/gameplay/taiko/hitbursts/100.svg', paddedhitburst1x)
+            env.Command('$BUILDDIR/taiko-hit50.png',
+                        '$SOURCEDIR/graphics/gameplay/taiko/hitbursts/50.svg', paddedhitburst1x)
+            env.Command('$BUILDDIR/taiko-hit0.png',
+                        '$SOURCEDIR/graphics/gameplay/taiko/hitbursts/0.svg', paddedhitburst1x)
+
+        copy_default('taiko-hit100k', 'taiko-hit100')
+    else:
+        render_default('taiko-hit100-0',
+                       'graphics/gameplay/taiko/hitbursts/100')
+        render_default('taiko-hit50-0', 'graphics/gameplay/taiko/hitbursts/50')
+        render_default('taiko-hit0-0', 'graphics/gameplay/taiko/hitbursts/0')
+
+        copy_default('taiko-hit100k-0', 'taiko-hit100-0')
+
+        env.Empty('taiko-hit100')
+        # i dont wanna deal with this rn but we could save a little space by deleting @2x instead of writing an empty image
+        env.Empty('taiko-hit100@2x')
+        env.Empty('taiko-hit100k')
+        env.Empty('taiko-hit100k@2x')
+        env.Empty('taiko-hit50')
+        env.Empty('taiko-hit50@2x')
+        env.Empty('taiko-hit0')
+        env.Empty('taiko-hit0@2x')
 
 # editor circle select
 render_default('hitcircleselect', 'graphics/interface/editor/select.svg')
