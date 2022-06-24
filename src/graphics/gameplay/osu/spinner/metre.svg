@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1024"
-   height="702"
-   viewBox="0 0 270.93331 185.73748"
+   width="516"
+   height="692"
+   viewBox="0 0 136.52499 183.09165"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="spinner-metre.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="metre.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
      width="32px"
@@ -29,11 +29,11 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="550.12908"
-     inkscape:cy="364.8671"
+     inkscape:zoom="8"
+     inkscape:cx="509.75"
+     inkscape:cy="697.1875"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -43,20 +43,20 @@
      inkscape:snap-object-midpoints="true"
      inkscape:snap-center="true"
      showguides="true"
-     inkscape:guide-bbox="true" />
+     inkscape:guide-bbox="true"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <ellipse
-       style="fill:#ffffff;fill-opacity:0.2;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path928"
-       cx="135.46666"
-       cy="92.868752"
-       rx="92.207001"
-       ry="92.207291"
-       transform="matrix(0.95733785,0,0,0.95733785,5.7792988,3.9619802)" />
+     id="layer1"
+     transform="translate(-134.54062,-4.5952845)">
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:1.85208;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2"
+       d="m 270.00728,5.7859091 -10e-6,180.7104009"
+       id="path297"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
