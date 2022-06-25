@@ -689,7 +689,7 @@ if not GetOption('no_standard'):  # standard-only elements
         (None, 0)
     ))
 
-# TAIKO_HITBURST_PAD_BOTTOM = 
+# TAIKO_HITBURST_PAD_BOTTOM =
 
 if not GetOption('no_taiko'):
     # slider thing
@@ -725,7 +725,14 @@ if not GetOption('no_taiko'):
                    'graphics/gameplay/taiko/circleoverlay')
 
     copy_default('taikobigcircle', 'taikohitcircle')
-    copy_default('taikobigcircleoverlay', 'taikohitcircleoverlay')
+    render_default('taikobigcircleoverlay',
+                   'graphics/gameplay/taiko/bigcircleoverlay')
+
+    # roll
+    render_default('taiko-roll-middle',
+                   'graphics/gameplay/taiko/roll/middle')
+    render_default('taiko-roll-end',
+                   'graphics/gameplay/taiko/roll/end')
 
     # spinner warning
     render_default('spinner-warning', 'graphics/gameplay/taiko/spinner')
