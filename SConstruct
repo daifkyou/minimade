@@ -727,6 +727,9 @@ if not GetOption('no_taiko'):
     copy_default('taikobigcircle', 'taikohitcircle')
     copy_default('taikobigcircleoverlay', 'taikohitcircleoverlay')
 
+    # spinner warning
+    render_default('spinner-warning', 'graphics/gameplay/taiko/spinner')
+
     # hitbursts
     env.Empty('taiko-hit300')
     env.Empty('taiko-hit300k')

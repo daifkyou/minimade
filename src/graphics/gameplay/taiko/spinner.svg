@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="118"
-   height="118"
-   viewBox="0 0 31.220831 31.220831"
+   width="144"
+   height="144"
+   viewBox="0 0 38.099997 38.099997"
    version="1.1"
    id="svg5"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
-   sodipodi:docname="circle.svg"
+   sodipodi:docname="spinner.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="3.9999998"
-     inkscape:cx="46.250002"
-     inkscape:cy="60.625003"
+     inkscape:cx="51.250003"
+     inkscape:cy="65.625003"
      inkscape:window-width="1920"
      inkscape:window-height="1003"
      inkscape:window-x="0"
@@ -47,13 +47,19 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-1.322917,-1.322917)">
+     id="layer1">
     <circle
-       style="fill:#ffffff;fill-opacity:0.75;stroke-width:0;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:0.25"
-       id="path841"
-       cx="16.933332"
-       cy="16.933332"
-       r="15.610415" />
+       style="fill:none;fill-opacity:0.1;stroke:#ffffff;stroke-width:1.85208;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       id="path720"
+       cx="19.049999"
+       cy="19.049999"
+       r="18.123957" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       id="path1824"
+       cx="19.049999"
+       cy="19.049999"
+       rx="1.8520831"
+       ry="1.8520832" />
   </g>
 </svg>
