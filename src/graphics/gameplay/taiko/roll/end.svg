@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="15.999984"
-   height="24.00012"
-   viewBox="0 0 4.2333288 6.3500312"
+   width="59"
+   height="123"
+   viewBox="0 0 15.610417 32.543749"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="arrow-pause.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="end.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
      width="32px"
@@ -29,32 +29,30 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="7.9999996"
-     inkscape:cx="30.562502"
-     inkscape:cy="34.437502"
+     inkscape:zoom="3.9999998"
+     inkscape:cx="-22.750001"
+     inkscape:cy="56.875003"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      inkscape:snap-bbox-edge-midpoints="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     showguides="false" />
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(2.3999978,2.3999978)">
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:1.76388;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -1.5180578,-1.5180578 0.95143259,0.77501808 -1.5180578,3.068094"
-       id="path855"
-       sodipodi:nodetypes="ccc" />
+     transform="translate(-1.3227908,-1.3227908)">
+    <circle
+       style="fill:#818181;fill-opacity:0.75;stroke:#ffffff;stroke-width:1.85208;stroke-linecap:round;stroke-dasharray:none"
+       id="path2541"
+       cx="1.3227907"
+       cy="18.256126"
+       r="14.684375" />
   </g>
 </svg>

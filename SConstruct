@@ -7,7 +7,43 @@ import cairosvg.surface
 import cairocffi
 import io
 import math
+from SCons.Script import AddOption, GetOption, Builder, Copy, Environment
 
+
+AddOption('--aspect-ratio',
+          dest='aspect_ratio',
+          type='string',
+          nargs=1,
+          action='store',
+          metavar='WIDTH-HEIGHT',
+          default='any',
+          help='The aspect ratio to build for. (Currently supports "4-3", "16-9", and "any", which disables aspect ratio dependent hacks.)')
+
+AddOption('--build-directory',
+          dest='build_dir',
+          action='store',
+          metavar='PATH',
+          default='build',
+          help="The directory where built files will be put")
+
+AddOption('--client',
+          dest='client',
+          action='store',
+          metavar='PATH',
+          default='any',
+          help='The client to build for (supports "stable", "mcosu", and "any", which tries to make the skin work on both clients)')
+
+AddOption('--ranking-panel',
+          dest='ranking_panel',
+          action='store',
+          metavar='PATH',
+          default='any',
+          help='The hacky ranking panel type to build (supports "osu", "taiko" (wip), and "any", which tries to make the ranking panel work for all modes (you probably want this if you compile for more than one mode))')
+
+AddOption('--flashing',
+          dest='flashing',
+          action='store_true',
+          help="Enable flashing via mode-x in song selection")
 
 AddOption('--no-1x',
           dest='no_1x',
@@ -24,31 +60,10 @@ AddOption('--no-std', '--no-standard',
           action='store_true',
           help="Don\'t build osu!standard elements")
 
-"""AddOption('--no-tk', '--no-taiko',
+AddOption('--no-tk', '--no-taiko',
           dest='no_taiko',
           action='store_true',
-          help="Don\'t build osu!taiko elements")"""
-
-AddOption('--aspect-ratio',
-          dest='aspect_ratio',
-          type='string',
-          nargs=1,
-          action='store',
-          metavar='WIDTH-HEIGHT',
-          default='any',
-          help='The aspect ratio to build for. (Currently supports "4-3", "16-9", and "any", which disables aspect ratio dependent hacks.)')
-
-AddOption('--flashing',
-          dest='flashing',
-          action='store_true',
-          help="Enable flashing via mode-x in song selection")
-
-AddOption('--build-directory',
-          dest='build_dir',
-          action='store',
-          metavar='PATH',
-          default='build',
-          help="The directory where built files will be put")
+          help="Don\'t build osu!taiko elements (wip)")
 
 AddOption('--source-directory',
           dest='source_dir',
@@ -57,15 +72,16 @@ AddOption('--source-directory',
           default='src',
           help="The directory where source files are put")
 
-AddOption('--client',
-          dest='client',
-          action='store',
-          metavar='PATH',
-          default='any',
-          help='The client to build for (supports "stable", "mcosu", and "any", which tries to make the skin work on both clients)')
-
 BUILDDIR = 'build'
 SOURCEDIR = 'src'
+
+
+def composite(target_surface, source_surface, x=0, y=0):
+    ctx = cairocffi.Context(target_surface)
+
+    ctx.set_source_surface(source_surface, x, y)
+    ctx.paint()
+    return target_surface
 
 
 def render1x(target, source, env):
@@ -142,11 +158,7 @@ def render_animation(target, frames):
             render_default(t, source)
 
         for j in range(frame + 1, frame + 1 + repeat):
-            if not GetOption('no_1x'):
-                env.CopyImage(target + str(j), t)
-
-            if not GetOption('no_2x') and not source == None:
-                env.CopyImage(target + str(j) + '@2x', t + '@2x')
+            copy_default(target + str(j), t)
 
         frame += repeat + 1
 
@@ -166,12 +178,24 @@ copy_image = Builder(
     (prepend_build_directory(target), prepend_build_directory(source)))
 
 
+def copy_default(target, source):
+    """
+    copy both SD and HD as needed
+    """
+    if not GetOption('no_1x'):
+        env.CopyImage(target, source)
+
+    if not GetOption('no_2x'):
+        env.CopyImage(target + '@2x', source + '@2x')
+
+
 env = Environment(
     NOQUALITY1X=GetOption('no_1x'), NOQUALITY2X=GetOption('no_2x'),
     ASPECTRATIO=GetOption('aspect_ratio'),
     FLASHING=GetOption('flashing'),
     BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir'),
-    CLIENT=GetOption('client'))
+    CLIENT=GetOption('client'),
+    RANKINGPANEL=GetOption('ranking_panel'))
 
 env.Append(BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x,
            'Empty': empty, 'CopyImage': copy_image})
@@ -243,8 +267,9 @@ render_default('selection-options',
 render_default('selection-options-over',
                'graphics/interface/selection/frame/options-over.svg')
 
-
 # mode icon
+
+
 def mode_icon(mode):
     """surprisingly long function to build mode icons"""
     # medium icon (in mode select)
@@ -271,39 +296,31 @@ def mode_icon(mode):
                         '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                         action=render1x)
     else:
-        def mode_icon_small(target, modebar_surface, icon_surface):
-            """base for the hacky mode icon render (pass string + cairocffi surfaces)"""
-            ctx = cairocffi.Context(modebar_surface)
-
-            ctx.set_source_surface(icon_surface,
-                                   modebar_surface.get_width() / 2 - icon_surface.get_width() / 2,
-                                   modebar_surface.get_height() / 2 - icon_surface.get_height() / 2)
-            ctx.paint()
-            modebar_surface.write_to_png(target)
-
         if not GetOption('no_1x'):
             env.Command('$BUILDDIR/mode-'+mode+'-small.png',
                         ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=lambda target, source, env:
-                        mode_icon_small(
-                            str(target[0]),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                        composite(
+                            target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
                                 cairosvg.svg2png(url=str(source[1])))),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0]), scale=0.5)))))
+                            source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0]), scale=0.5))),
+                            target_surface.get_width() / 2 - source_surface.get_width() / 2,
+                            target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0])))
 
         if not GetOption('no_2x'):
             env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
                         ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=lambda target, source, env:
-                        mode_icon_small(
-                            str(target[0]),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                        composite(
+                            target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
                                 cairosvg.svg2png(url=str(source[1]), scale=2))),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0]))))))
+                            source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0])))),
+                            target_surface.get_width() / 2 - source_surface.get_width() / 2,
+                            target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0])))
 
 
 # song select tab
@@ -319,7 +336,7 @@ render_default('star', 'graphics/interface/selection/song/star.svg')
 # ranking letters
 def ranking_grade_small(grade):
     """render small grade letters as needed"""
-    target = '$BUILDDIR/ranking-'+grade+'-small'
+    target = '$BUILDDIR/ranking-' + grade + '-small'
     source = '$SOURCEDIR/graphics/interface/ranking/grades/' + grade + '.svg'
 
     if not GetOption('no_1x'):
@@ -358,8 +375,26 @@ if GetOption('client') in ('mcosu', 'any'):
 
 
 # ranking panel and stuff
-render_default('ranking-panel',
-               'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
+if GetOption('ranking_panel') == 'any':
+    render_default('ranking-panel',
+                   'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
+else:
+    if not GetOption('no_1x'):
+        env.Command('$BUILDDIR/ranking-panel.png', ['$SOURCEDIR/graphics/interface/ranking/panels/$ASPECTRATIO/panel.svg',
+                    '$SOURCEDIR/graphics/interface/ranking/panels/numbers/'+GetOption('ranking_panel')+'.svg'], lambda target, source, env:
+                        composite(
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0])))),
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[1]))))).write_to_png(str(target[0])))
+    if not GetOption('no_2x'):
+        env.Command('$BUILDDIR/ranking-panel@2x.png', ['$SOURCEDIR/graphics/interface/ranking/panels/$ASPECTRATIO/panel.svg',
+                    '$SOURCEDIR/graphics/interface/ranking/panels/numbers/'+GetOption('ranking_panel')+'.svg'], lambda target, source, env:
+                        composite(
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0]), scale=2))),
+                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[1]), scale=2)))).write_to_png(str(target[0])))
 render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
 render_default('pause-replay', 'graphics/interface/ranking/panels/replay')
 render_default('ranking-winner', 'graphics/interface/ranking/status/winner')
@@ -371,7 +406,7 @@ env.Empty('ranking-accuracy')
 
 
 # fonts
-CHAR_REPLACE = { # special characters in filenames and their corresponding characters
+CHAR_REPLACE = {  # special characters in filenames and their corresponding characters
     'comma': ',',
     'dot': '.',
     'percent': '%'
@@ -383,7 +418,7 @@ GLYPH_WIDTH_OFFSET = {
 }
 
 
-OVERLAP = -6 # we draw overlap into the skin instead of using skin.ini because for some reason ranking screen doesnt respect it
+OVERLAP = -6  # we draw overlap into the skin instead of using skin.ini because for some reason ranking screen doesnt respect it
 
 
 def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
@@ -391,7 +426,7 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
     glyphs = map(lambda g: (str(g), (CHAR_REPLACE[glyph] if (
         glyph := str(g)) in CHAR_REPLACE else glyph)), glyphs)
 
-    def get_render_font_glyph(glyph, scale, width_override = None):
+    def get_render_font_glyph(glyph, scale, width_override=None):
         # cairo text actually sucks im just going to commit this shit i give up
         def render_font_glyph(target, source, env):
             surface = cairocffi.ImageSurface(
@@ -532,22 +567,45 @@ def spinner():
                        'graphics/gameplay/spinner/approachcircle')
 
 
-if not GetOption('no_standard'):
+# approach circle
+ADDED_APPROACHCIRCLE = False
+
+
+def approachcircle():
+    global ADDED_APPROACHCIRCLE
+    if not ADDED_APPROACHCIRCLE:
+        ADDED_APPROACHCIRCLE = True
+        render_default('approachcircle', 'graphics/gameplay/approachcircle')
+
+
+# lighting
+ADDED_LIGHTING = False
+
+
+def lighting():
+    global ADDED_LIGHTING
+    if not ADDED_LIGHTING:
+        ADDED_LIGHTING = True
+        render_default('lighting', 'graphics/gameplay/lighting')
+
+
+# hitburst dimensions for any ranking panel
+HITBURST_WIDTH = 134
+HITBURST_HEIGHT = 59
+
+if not GetOption('no_standard'):  # standard-only elements
     # mode icon
     mode_icon('osu')
 
     # cursor smoke (surprisingly)
     # render_default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
 
-    # approach circle (surprisingly)
-    render_default('approachcircle', 'graphics/gameplay/osu/approachcircle')
+    # approach circle
+    approachcircle()
 
     # circle (surprisingly)
     render_default('hitcircle', 'graphics/gameplay/osu/circle')
     render_default('hitcircleoverlay', 'graphics/gameplay/osu/circleoverlay')
-
-    # lighting (surprisingly)
-    render_default('lighting', 'graphics/gameplay/osu/lighting')
 
     # slider ball
     render_default('sliderb', 'graphics/gameplay/osu/slider/ball')
@@ -577,21 +635,50 @@ if not GetOption('no_standard'):
     env.Empty('hit300k')
     env.Empty('hit300g')
 
-    env.Empty('hit100')
-    env.Empty('hit100k')
-    env.Empty('hit50')
-    env.Empty('hit0')
+    if GetOption('ranking_panel') == 'any':
+        if not GetOption('no_1x'):
+            def paddedhitburst1x(target, source, env):
+                composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH, HITBURST_HEIGHT),
+                          hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                              cairosvg.svg2png(url=str(source[0])))), (HITBURST_WIDTH - hitburst_surface.get_width()) / 2, HITBURST_HEIGHT / 2).write_to_png(str(target[0]))
 
-    render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
-    if not GetOption('no_1x'):
-        env.CopyImage('hit100k-0', 'hit100-0')
+            env.Command('$BUILDDIR/hit100.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/100.svg', paddedhitburst1x)
+            env.Command('$BUILDDIR/hit50.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/50.svg', paddedhitburst1x)
+            env.Command('$BUILDDIR/hit0.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/0.svg', paddedhitburst1x)
 
-    if not GetOption('no_2x'):
-        env.CopyImage('hit100k-0@2x', 'hit100-0@2x')
+        if not GetOption('no_2x'):
+            def paddedhitburst2x(target, source, env):
+                composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH * 2, HITBURST_HEIGHT * 2),
+                          hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                              cairosvg.svg2png(url=str(source[0]), scale=2))), HITBURST_WIDTH - hitburst_surface.get_width() / 2, HITBURST_HEIGHT).write_to_png(str(target[0]))
 
-    render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
+            env.Command('$BUILDDIR/hit100@2x.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/100.svg', paddedhitburst2x)
+            env.Command('$BUILDDIR/hit50@2x.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/50.svg', paddedhitburst2x)
+            env.Command('$BUILDDIR/hit0@2x.png',
+                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/0.svg', paddedhitburst2x)
 
-    render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0')
+        copy_default('hit100k', 'hit100')
+    else:
+        render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
+        render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
+        render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0')
+
+        copy_default('hit100k-0', 'hit100-0')
+
+        env.Empty('hit100')
+        # i dont wanna deal with this rn but we could save a little space by deleting @2x instead of writing an empty image
+        env.Empty('hit100@2x')
+        env.Empty('hit100k')
+        env.Empty('hit100k@2x')
+        env.Empty('hit50')
+        env.Empty('hit50@2x')
+        env.Empty('hit0')
+        env.Empty('hit0@2x')
 
     # follow points (surprisingly)
     # render_default('followpoint', 'graphics/gameplay/osu/followpoint.svg') # non-animated followpoints if you are a masochist
@@ -602,6 +689,81 @@ if not GetOption('no_standard'):
         (None, 0)
     ))
 
+# TAIKO_HITBURST_PAD_BOTTOM =
+
+if not GetOption('no_taiko'):
+    # slider thing
+    env.Empty('taiko-slider')
+    env.Empty('taiko-slider-fail')
+
+    # pippidon (sorry pippidon)
+    env.Empty('pippidonidle')
+    env.Empty('pippidonkiai')
+    env.Empty('pippidonfail')
+    env.Empty('pippidonclear')
+
+    # bar left drum thing
+    render_default('taiko-bar-left',
+                   'graphics/gameplay/taiko/bar/drum/background')
+    render_default('taiko-drum-inner',
+                   'graphics/gameplay/taiko/bar/drum/inner')
+    render_default('taiko-drum-outer',
+                   'graphics/gameplay/taiko/bar/drum/outer')
+
+    # bar
+    render_default('taiko-bar-right', 'graphics/gameplay/taiko/bar/bar.svg')
+    render_default('taiko-bar-right-glow',
+                   'graphics/gameplay/taiko/bar/glow.svg')
+
+    # approach circle
+    approachcircle()
+    env.Empty('taiko-glow')
+
+    # circle (surprisingly)
+    render_default('taikohitcircle', 'graphics/gameplay/taiko/circle')
+    render_default('taikohitcircleoverlay',
+                   'graphics/gameplay/taiko/circleoverlay')
+
+    copy_default('taikobigcircle', 'taikohitcircle')
+    render_default('taikobigcircleoverlay',
+                   'graphics/gameplay/taiko/bigcircleoverlay')
+
+    # roll
+    render_default('taiko-roll-middle',
+                   'graphics/gameplay/taiko/roll/middle')
+    render_default('taiko-roll-end',
+                   'graphics/gameplay/taiko/roll/end')
+
+    # spinner warning
+    render_default('spinner-warning', 'graphics/gameplay/taiko/spinner')
+
+    # hitbursts
+    env.Empty('taiko-hit300')
+    env.Empty('taiko-hit300k')
+    env.Empty('taiko-hit300g')
+
+    if GetOption('ranking_panel') == 'any':
+        render_default('taiko-hit100',
+                       'graphics/gameplay/taiko/hitbursts/100')
+        render_default('taiko-hit0', 'graphics/gameplay/taiko/hitbursts/0')
+
+        copy_default('taiko-hit100k', 'taiko-hit100')
+    else:
+        render_default('taiko-hit100-0',
+                       'graphics/gameplay/taiko/hitbursts/100')
+        render_default('taiko-hit0-0', 'graphics/gameplay/taiko/hitbursts/0')
+
+        copy_default('taiko-hit100k-0', 'taiko-hit100-0')
+
+        env.Empty('taiko-hit100')
+        # i dont wanna deal with this rn but we could save a little space by deleting @2x instead of writing an empty image
+        env.Empty('taiko-hit100@2x')
+        env.Empty('taiko-hit100k')
+        env.Empty('taiko-hit100k@2x')
+        env.Empty('taiko-hit50')
+        env.Empty('taiko-hit50@2x')
+        env.Empty('taiko-hit0')
+        env.Empty('taiko-hit0@2x')
 
 # editor circle select
 render_default('hitcircleselect', 'graphics/interface/editor/select.svg')

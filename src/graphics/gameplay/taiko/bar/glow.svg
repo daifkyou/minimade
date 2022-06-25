@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="15.999984"
-   height="24.00012"
-   viewBox="0 0 4.2333288 6.3500312"
+   width="1024"
+   height="187"
+   viewBox="0 0 270.93331 49.47708"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="arrow-pause.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="glow.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
      width="32px"
@@ -29,32 +29,31 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="7.9999996"
-     inkscape:cx="30.562502"
-     inkscape:cy="34.437502"
+     inkscape:zoom="1.4142135"
+     inkscape:cx="576.29206"
+     inkscape:cy="105.00536"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      inkscape:snap-bbox-edge-midpoints="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     showguides="false" />
+     inkscape:bbox-paths="true"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(2.3999978,2.3999978)">
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:1.76388;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -1.5180578,-1.5180578 0.95143259,0.77501808 -1.5180578,3.068094"
-       id="path855"
-       sodipodi:nodetypes="ccc" />
+     id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:0.1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:0.501961"
+       id="rect286"
+       width="270.93332"
+       height="46.037495"
+       x="0"
+       y="3.4395831" />
   </g>
 </svg>

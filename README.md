@@ -46,16 +46,16 @@ Please see LICENSE; this project is basically under the MIT license.
 | Subject | Image |
 | --- | --- |
 | Main Menu | no supporter no ss welp |
-| Song Select | ![selection](https://user-images.githubusercontent.com/62647827/174412433-09d9d51f-451c-424a-8a49-caef6beafb66.png) |
+| Song Select (16-9) | ![selection](https://user-images.githubusercontent.com/62647827/174412433-09d9d51f-451c-424a-8a49-caef6beafb66.png) |
 | Mod Select | ![mods](https://user-images.githubusercontent.com/62647827/174412962-36acca33-91df-4cea-9ecd-35c78e9e91f1.png) |
-| Options (get a good look at those buttons) | ![options](https://user-images.githubusercontent.com/62647827/174412778-80bfc51a-8ce4-4708-b20b-b61593e7aff1.png) |
+| Options | ![options](https://user-images.githubusercontent.com/62647827/174412778-80bfc51a-8ce4-4708-b20b-b61593e7aff1.png) |
 | Skip | ![skip](https://user-images.githubusercontent.com/62647827/174412978-e4fc916d-06fe-4174-82e1-89bb39424162.png) |
-| Gameplay | ![gameplaynt](https://user-images.githubusercontent.com/62647827/174436427-4654c6e8-cc90-4739-9fd9-d043dc977d9e.png) |
-| Spinner | ![spinner](https://user-images.githubusercontent.com/62647827/174412885-9060fdce-9432-42ea-a733-75bb88bcdf79.png) |
+| Standard | ![gameplaynt](https://user-images.githubusercontent.com/62647827/174436427-4654c6e8-cc90-4739-9fd9-d043dc977d9e.png)<br>![spinner](https://user-images.githubusercontent.com/62647827/175786390-5bb3af51-07d7-415b-a473-b9f6f3cb09a3.png) |
+| Taiko | ![tkcircles](https://user-images.githubusercontent.com/62647827/175785320-1a5b27d3-0e00-4bac-8fbd-bf4212cdc4ae.png)<br>![tkspinner](https://user-images.githubusercontent.com/62647827/175785347-5b5f9c5a-a642-42ce-8a8a-1a393bbe9024.png)<br>![tkslider](https://user-images.githubusercontent.com/62647827/175785362-4c68d002-f020-4ba3-8b0c-4a2e53618eee.png) |
 | Pause | ![pause](https://user-images.githubusercontent.com/62647827/174436705-8509e6a4-9d61-4a01-abf0-c4fc71cc63d9.png) |
 | Fail | ![fail](https://user-images.githubusercontent.com/62647827/174436678-adf38f9b-bc34-439f-a005-5977f0460da1.png) |
-| Ranking | ![ranking](https://user-images.githubusercontent.com/62647827/174413050-370d8d01-6773-4ac9-981f-4f94f57c66d4.png)
-| Results | ![results](https://user-images.githubusercontent.com/62647827/174412920-b72d0900-06ac-41f2-8e52-b6256615906e.png) |
+| Ranking (standard-pretty version) | ![ranking](https://user-images.githubusercontent.com/62647827/174413050-370d8d01-6773-4ac9-981f-4f94f57c66d4.png)
+| Results (16-9) | ![results](https://user-images.githubusercontent.com/62647827/174412920-b72d0900-06ac-41f2-8e52-b6256615906e.png) |
 | Editor | ![editor](https://user-images.githubusercontent.com/62647827/174436436-1e075593-78b2-481d-a808-b7b9c1939100.png) |
 
 ## P.S.
