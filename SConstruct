@@ -731,11 +731,12 @@ if not GetOption('no_taiko'):
     env.Empty('taiko-hit300g')
 
     if GetOption('ranking_panel') == 'any':
-        def paddedtaikohitburst1x(target, source, env):
-            hitburst_surface = cairocffi.ImageSurface.create_from_png(
-                io.BytesIO(cairosvg.svg2png(url=str(source[0]))))
-            composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH, hitburst_surface.get_height() + HITBURST_HEIGHT),
-                      hitburst_surface, HITBURST_WIDTH - hitburst_surface.get_width(), HITBURST_HEIGHT - hitburst_surface.get_height()).write_to_png(str(target[0]))
+        if not GetOption('no_1x'):
+            def paddedtaikohitburst1x(target, source, env):
+                hitburst_surface = cairocffi.ImageSurface.create_from_png(
+                    io.BytesIO(cairosvg.svg2png(url=str(source[0]))))
+                composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH, hitburst_surface.get_height() + HITBURST_HEIGHT),
+                          hitburst_surface, HITBURST_WIDTH - hitburst_surface.get_width(), HITBURST_HEIGHT / 2).write_to_png(str(target[0]))
 
             env.Command('$BUILDDIR/taiko-hit100.png',
                         '$SOURCEDIR/graphics/gameplay/taiko/hitbursts/100.svg', paddedhitburst1x)
@@ -743,6 +744,20 @@ if not GetOption('no_taiko'):
                         '$SOURCEDIR/graphics/gameplay/taiko/hitbursts/50.svg', paddedhitburst1x)
             env.Command('$BUILDDIR/taiko-hit0.png',
                         '$SOURCEDIR/graphics/gameplay/taiko/hitbursts/0.svg', paddedhitburst1x)
+
+        if not GetOption('no_2x'):
+            def paddedtaikohitburst2x(target, source, env):
+                hitburst_surface = cairocffi.ImageSurface.create_from_png(
+                    io.BytesIO(cairosvg.svg2png(url=str(source[0], scale=2))))
+                composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH * 2, hitburst_surface.get_height() + HITBURST_HEIGHT * 2),
+                          hitburst_surface, HITBURST_WIDTH * 2 - hitburst_surface.get_width(), HITBURST_HEIGHT).write_to_png(str(target[0]))
+
+            env.Command('$BUILDDIR/taiko-hit100@2x.png',
+                        '$SOURCEDIR/graphics/gameplay/taiko/hitbursts/100.svg', paddedhitburst2x)
+            env.Command('$BUILDDIR/taiko-hit50@2x.png',
+                        '$SOURCEDIR/graphics/gameplay/taiko/hitbursts/50.svg', paddedhitburst2x)
+            env.Command('$BUILDDIR/taiko-hit0@2x.png',
+                        '$SOURCEDIR/graphics/gameplay/taiko/hitbursts/0.svg', paddedhitburst2x)
 
         copy_default('taiko-hit100k', 'taiko-hit100')
     else:
