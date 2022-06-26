@@ -72,9 +72,6 @@ AddOption('--source-directory',
           default='src',
           help="The directory where source files are put")
 
-BUILDDIR = 'build'
-SOURCEDIR = 'src'
-
 
 def composite(target_surface, source_surface, x=0, y=0):
     ctx = cairocffi.Context(target_surface)
@@ -692,6 +689,9 @@ if not GetOption('no_standard'):  # standard-only elements
 # TAIKO_HITBURST_PAD_BOTTOM =
 
 if not GetOption('no_taiko'):
+    # mode icon
+    mode_icon('taiko')
+
     # slider thing
     env.Empty('taiko-slider')
     env.Empty('taiko-slider-fail')

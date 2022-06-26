@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
-   sodipodi:docname="osu.svg"
+   sodipodi:docname="taiko.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="2.828427"
-     inkscape:cx="7.7781749"
-     inkscape:cy="18.915107"
+     inkscape:cx="7.4246216"
+     inkscape:cy="18.561554"
      inkscape:window-width="1920"
      inkscape:window-height="1003"
      inkscape:window-x="0"
@@ -46,7 +46,33 @@
      inkscape:showpageshadow="0"
      inkscape:deskcolor="#505050" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect1297"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1293">
+      <rect
+         style="display:none;fill:#000000;fill-opacity:1;stroke-width:2.64582;stroke-linecap:round;stroke-dasharray:none"
+         id="rect1295"
+         width="1.5306969"
+         height="15.306961"
+         x="3.8267415"
+         y="-3.0613902" />
+      <path
+         id="lpe_path-effect1297"
+         style="fill:#000000;fill-opacity:1;stroke-width:2.64582;stroke-linecap:round;stroke-dasharray:none"
+         class="powerclip"
+         d="M -5,-4.9999995 H 14.18418 V 14.184181 H -5 Z m 8.8267415,1.9386093 V 12.245571 H 5.3574383 V -3.0613902 Z" />
+    </clipPath>
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -65,11 +91,13 @@
        id="g825-3"
        transform="matrix(1.7285156,0,0,1.7285156,12.699943,12.699942)"
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       clip-path="none">
+       clip-path="url(#clipPath1293)"
+       inkscape:path-effect="#path-effect1297">
       <path
          id="path1143-6"
          style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 9.1841803,4.5920906 A 4.5920901,4.5920901 0 0 1 4.5920901,9.1841807 4.5920901,4.5920901 0 0 1 0,4.5920906 4.5920901,4.5920901 0 0 1 4.5920901,4.7683716e-7 4.5920901,4.5920901 0 0 1 9.1841803,4.5920906 Z" />
+         d="M 9.1841803,4.5920906 A 4.5920901,4.5920901 0 0 1 4.5920901,9.1841807 4.5920901,4.5920901 0 0 1 0,4.5920906 4.5920901,4.5920901 0 0 1 4.5920901,4.7683716e-7 4.5920901,4.5920901 0 0 1 9.1841803,4.5920906 Z"
+         inkscape:original-d="M 9.1841803,4.5920906 A 4.5920901,4.5920901 0 0 1 4.5920901,9.1841807 4.5920901,4.5920901 0 0 1 0,4.5920906 4.5920901,4.5920901 0 0 1 4.5920901,4.7683716e-7 4.5920901,4.5920901 0 0 1 9.1841803,4.5920906 Z" />
     </g>
   </g>
 </svg>
