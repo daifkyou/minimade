@@ -46,7 +46,7 @@ Please see LICENSE; this project is basically under the MIT license.
 | Subject | Image |
 | --- | --- |
 | Main Menu | no supporter no ss welp |
-| Song Select (16-9) | ![selection](https://user-images.githubusercontent.com/62647827/174412433-09d9d51f-451c-424a-8a49-caef6beafb66.png) |
+| Song Select (16-9) | ![selection](https://user-images.githubusercontent.com/62647827/175831840-0109e70c-3356-437b-872d-c848ada4d865.png) |
 | Mod Select | ![mods](https://user-images.githubusercontent.com/62647827/174412962-36acca33-91df-4cea-9ecd-35c78e9e91f1.png) |
 | Options | ![options](https://user-images.githubusercontent.com/62647827/174412778-80bfc51a-8ce4-4708-b20b-b61593e7aff1.png) |
 | Skip | ![skip](https://user-images.githubusercontent.com/62647827/174412978-e4fc916d-06fe-4174-82e1-89bb39424162.png) |
