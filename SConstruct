@@ -23,8 +23,8 @@ AddOption('--build-directory',
           dest='build_dir',
           action='store',
           metavar='PATH',
-          default='build',
-          help="The directory where built files will be put")
+          default='build/main',
+          help="The skin's directory (think unzipped .osk)")
 
 AddOption('--client',
           dest='client',
@@ -600,6 +600,9 @@ if not GetOption('no_standard'):  # standard-only elements
     # approach circle
     approachcircle()
 
+    # hit lighting
+    lighting()
+
     # circle (surprisingly)
     render_default('hitcircle', 'graphics/gameplay/osu/circle')
     render_default('hitcircleoverlay', 'graphics/gameplay/osu/circleoverlay')
@@ -709,6 +712,9 @@ if not GetOption('no_taiko'):
                    'graphics/gameplay/taiko/bar/drum/inner')
     render_default('taiko-drum-outer',
                    'graphics/gameplay/taiko/bar/drum/outer')
+    
+    # lighting
+    lighting()
 
     # bar
     render_default('taiko-bar-right', 'graphics/gameplay/taiko/bar/bar.svg')
