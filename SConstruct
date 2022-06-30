@@ -299,10 +299,10 @@ def mode_icon(mode):
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=lambda target, source, env:
                         composite(
-                            target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[1])))),
-                            source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0]), scale=0.5))),
+                            (target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[1]))))),
+                            (source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0]), scale=0.5)))),
                             target_surface.get_width() / 2 - source_surface.get_width() / 2,
                             target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0])))
 
@@ -312,10 +312,10 @@ def mode_icon(mode):
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=lambda target, source, env:
                         composite(
-                            target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[1]), scale=2))),
-                            source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0])))),
+                            (target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[1]), scale=2)))),
+                            (source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                                cairosvg.svg2png(url=str(source[0]))))),
                             target_surface.get_width() / 2 - source_surface.get_width() / 2,
                             target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0])))
 
@@ -639,8 +639,9 @@ if not GetOption('no_standard'):  # standard-only elements
         if not GetOption('no_1x'):
             def paddedhitburst1x(target, source, env):
                 composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH, HITBURST_HEIGHT),
-                          hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                              cairosvg.svg2png(url=str(source[0])))), (HITBURST_WIDTH - hitburst_surface.get_width()) / 2, HITBURST_HEIGHT / 2).write_to_png(str(target[0]))
+                          (hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                              cairosvg.svg2png(url=str(source[0]))))),
+                              (HITBURST_WIDTH - hitburst_surface.get_width()) / 2, (HITBURST_HEIGHT - hitburst_surface.get_height()) / 2).write_to_png(str(target[0]))
 
             env.Command('$BUILDDIR/hit100.png',
                         '$SOURCEDIR/graphics/gameplay/osu/hitbursts/100.svg', paddedhitburst1x)
@@ -652,8 +653,9 @@ if not GetOption('no_standard'):  # standard-only elements
         if not GetOption('no_2x'):
             def paddedhitburst2x(target, source, env):
                 composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH * 2, HITBURST_HEIGHT * 2),
-                          hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                              cairosvg.svg2png(url=str(source[0]), scale=2))), HITBURST_WIDTH - hitburst_surface.get_width() / 2, HITBURST_HEIGHT).write_to_png(str(target[0]))
+                          (hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
+                              cairosvg.svg2png(url=str(source[0]), scale=2)))),
+                              HITBURST_WIDTH - hitburst_surface.get_width() / 2, HITBURST_HEIGHT - hitburst_surface.get_height() / 2).write_to_png(str(target[0]))
 
             env.Command('$BUILDDIR/hit100@2x.png',
                         '$SOURCEDIR/graphics/gameplay/osu/hitbursts/100.svg', paddedhitburst2x)
