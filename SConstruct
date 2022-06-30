@@ -415,7 +415,7 @@ GLYPH_WIDTH_OFFSET = {
 }
 
 
-OVERLAP = -6  # we draw overlap into the skin instead of using skin.ini because for some reason ranking screen doesnt respect it
+OVERLAP = -0.2  # we draw overlap into the skin instead of using skin.ini because for some reason ranking screen doesnt respect it
 
 
 def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
@@ -445,10 +445,10 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
                     x = 0
                     width = text_x_advance
             elif alignx == 'middle':
-                x = -text_x_bearing - OVERLAP / scale / 2
+                x = -text_x_bearing - OVERLAP / 2
                 width = text_width
 
-            width -= OVERLAP / scale
+            width -= OVERLAP
 
             if(glyph in GLYPH_WIDTH_OFFSET):
                 width += GLYPH_WIDTH_OFFSET[glyph]
@@ -585,11 +585,6 @@ def lighting():
         ADDED_LIGHTING = True
         render_default('lighting', 'graphics/gameplay/lighting')
 
-
-# hitburst dimensions for any ranking panel
-HITBURST_WIDTH = 134
-HITBURST_HEIGHT = 59
-
 if not GetOption('no_standard'):  # standard-only elements
     # mode icon
     mode_icon('osu')
@@ -636,33 +631,9 @@ if not GetOption('no_standard'):  # standard-only elements
     env.Empty('hit300g')
 
     if GetOption('ranking_panel') == 'any':
-        if not GetOption('no_1x'):
-            def paddedhitburst1x(target, source, env):
-                composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH, HITBURST_HEIGHT),
-                          (hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                              cairosvg.svg2png(url=str(source[0]))))),
-                              (HITBURST_WIDTH - hitburst_surface.get_width()) / 2, (HITBURST_HEIGHT - hitburst_surface.get_height()) / 2).write_to_png(str(target[0]))
-
-            env.Command('$BUILDDIR/hit100.png',
-                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/100.svg', paddedhitburst1x)
-            env.Command('$BUILDDIR/hit50.png',
-                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/50.svg', paddedhitburst1x)
-            env.Command('$BUILDDIR/hit0.png',
-                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/0.svg', paddedhitburst1x)
-
-        if not GetOption('no_2x'):
-            def paddedhitburst2x(target, source, env):
-                composite(cairocffi.ImageSurface(cairocffi.FORMAT_ARGB32, HITBURST_WIDTH * 2, HITBURST_HEIGHT * 2),
-                          (hitburst_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                              cairosvg.svg2png(url=str(source[0]), scale=2)))),
-                              HITBURST_WIDTH - hitburst_surface.get_width() / 2, HITBURST_HEIGHT - hitburst_surface.get_height() / 2).write_to_png(str(target[0]))
-
-            env.Command('$BUILDDIR/hit100@2x.png',
-                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/100.svg', paddedhitburst2x)
-            env.Command('$BUILDDIR/hit50@2x.png',
-                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/50.svg', paddedhitburst2x)
-            env.Command('$BUILDDIR/hit0@2x.png',
-                        '$SOURCEDIR/graphics/gameplay/osu/hitbursts/0.svg', paddedhitburst2x)
+        render_default('hit100', 'graphics/gameplay/osu/hitbursts/100')
+        render_default('hit50', 'graphics/gameplay/osu/hitbursts/0')
+        render_default('hit0', 'graphics/gameplay/osu/hitbursts/0')
 
         copy_default('hit100k', 'hit100')
     else:
