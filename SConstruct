@@ -632,7 +632,7 @@ if not GetOption('no_standard'):  # standard-only elements
 
     if GetOption('ranking_panel') == 'any':
         render_default('hit100', 'graphics/gameplay/osu/hitbursts/100')
-        render_default('hit50', 'graphics/gameplay/osu/hitbursts/0')
+        render_default('hit50', 'graphics/gameplay/osu/hitbursts/50')
         render_default('hit0', 'graphics/gameplay/osu/hitbursts/0')
 
         copy_default('hit100k', 'hit100')
