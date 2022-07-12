@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="252.77211"
-   height="36"
-   viewBox="0 0 66.879288 9.5249989"
+   width="249.51199"
+   height="52.882999"
+   viewBox="0 0 66.016715 13.991958"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="pause-continue.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="continue.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,55 +21,54 @@
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
      units="px"
-     width="252.77211px"
+     width="32px"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2"
-     inkscape:cx="159.75"
-     inkscape:cy="67.25"
+     inkscape:zoom="4.0000001"
+     inkscape:cx="127.75"
+     inkscape:cy="-1.875"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1009"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-edge-midpoints="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:snap-object-midpoints="true"
-     lock-margins="true" />
+     lock-margins="true"
+     inkscape:snap-nodes="false"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-0.72500186,1.341649)">
+     transform="translate(8.6458335,2.645834)">
     <text
        xml:space="preserve"
        style="font-size:12.876px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
-       x="12.994454"
-       y="8.183322"
+       x="2.2319534"
+       y="7.4083037"
        id="text5998"><tspan
          sodipodi:role="line"
          id="tspan5996"
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
-         x="12.994454"
-         y="8.183322">Continue</tspan></text>
-    <path
-       d="M 5.1250018,-0.28333138 V 7.1250026 l 5.8208312,-3.704166 z"
-       id="path991"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
+         x="2.2319534"
+         y="7.4083037">Continue</tspan></text>
     <g
        id="g7547"
-       transform="translate(-4.3554651,-18.122663)">
+       transform="translate(-13.726301,-19.700435)">
       <g
          id="g845"
          transform="translate(-54.233597,8.2098134)">
@@ -87,12 +86,12 @@
                 <text
                    xml:space="preserve"
                    style="font-size:20.3624px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;stroke-width:0.50906"
-                   x="-3.1020846"
-                   y="-1.9710237"
+                   x="-3.1020844"
+                   y="-0.93699408"
                    id="text6689"><tspan
                      sodipodi:role="line"
-                     x="-3.1020846"
-                     y="-1.9710237"
+                     x="-3.1020844"
+                     y="-0.93699408"
                      style="stroke-width:0.50906"
                      id="tspan11469">modified: resized, recolored, added text</tspan></text>
               </g>
@@ -101,5 +100,9 @@
         </g>
       </g>
     </g>
+    <path
+       d="M -6.7937503,-1.0709231 V 6.3374103 L -0.97291751,2.6332429 Z"
+       id="path2356"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.529166" />
   </g>
 </svg>

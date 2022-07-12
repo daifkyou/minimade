@@ -7,8 +7,8 @@
    viewBox="0 0 59.266663 24.077078"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="menu-back.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="back.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -29,11 +29,11 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="350.3714"
-     inkscape:cy="-19.445436"
+     inkscape:zoom="2.8284272"
+     inkscape:cx="177.13024"
+     inkscape:cy="19.622213"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1009"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -47,7 +47,9 @@
      inkscape:object-nodes="false"
      inkscape:snap-center="true"
      lock-margins="true"
-     height="61px" />
+     height="61px"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
@@ -62,21 +64,6 @@
        height="24.077084"
        x="59.314064"
        y="8.8447876" />
-    <path
-       d="m 79.248538,17.179162 v 7.408335 l -3.704166,-3.704166 m -3.704167,-3.704169 v 7.408335 h -1.058334 v -7.408335 m 4.762501,0 v 7.408335 l -3.704167,-3.704166"
-       id="path1196"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264582" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.9187px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.322968"
-       x="80.231377"
-       y="25.645863"
-       id="text9067"><tspan
-         sodipodi:role="line"
-         id="tspan9065"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.322968"
-         x="80.231377"
-         y="25.645863">Back</tspan></text>
     <g
        id="g842"
        transform="matrix(0.26458333,0,0,0.26458333,59.314064,8.8447876)">
@@ -103,5 +90,20 @@
         </g>
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-size:12.876px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+       x="79.64019"
+       y="25.630096"
+       id="text5998"><tspan
+         sodipodi:role="line"
+         id="tspan5996"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
+         x="79.64019"
+         y="25.630096">Back</tspan></text>
+    <path
+       d="m 77.451842,20.357308 v 1.058334 h -6.349998 l 2.910416,2.910416 -0.751418,0.751417 -4.190998,-4.191 4.190998,-4.191 0.751418,0.751417 -2.910416,2.910416 z"
+       id="path400"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.529166" />
   </g>
 </svg>
