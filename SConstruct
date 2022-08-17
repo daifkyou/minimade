@@ -1,14 +1,23 @@
-"""
-the big build script
-"""
-
-import cairosvg
-import cairosvg.surface
-import cairocffi
+import subprocess
+import cairo
 import io
 import math
 from SCons.Script import AddOption, GetOption, Builder, Copy, Environment
 
+
+AddOption('--compiler',
+          dest='compiler',
+          action='store',
+          metavar='PATH',
+          default='/usr/bin/rsvg-convert',
+          help="The path to the compiler, probably should be the path to rsvg-convert. Defaults to /usr/bin/rsvg-convert so needs to be set on Windows.")
+
+AddOption('--client',
+          dest='client',
+          action='store',
+          metavar='PATH',
+          default='any',
+          help='The client to build for (supports "stable", "mcosu", and "any" (default) which tries to make the skin work on both clients)')
 
 AddOption('--aspect-ratio',
           dest='aspect_ratio',
@@ -17,33 +26,25 @@ AddOption('--aspect-ratio',
           action='store',
           metavar='WIDTH-HEIGHT',
           default='any',
-          help='The aspect ratio to build for. (Currently supports "4-3", "16-9", and "any", which disables aspect ratio dependent hacks.)')
-
-AddOption('--build-directory',
-          dest='build_dir',
-          action='store',
-          metavar='PATH',
-          default='build/main',
-          help="The skin's directory (think unzipped .osk)")
-
-AddOption('--client',
-          dest='client',
-          action='store',
-          metavar='PATH',
-          default='any',
-          help='The client to build for (supports "stable", "mcosu", and "any", which tries to make the skin work on both clients)')
+          help='The aspect ratio to build for (currently supports "4-3", "16-9", and "any" (default) which disables aspect ratio dependent hacks)')
 
 AddOption('--ranking-panel',
           dest='ranking_panel',
           action='store',
-          metavar='PATH',
+          metavar='MODE',
           default='any',
-          help='The hacky ranking panel type to build (supports "osu", "taiko" (wip), and "any", which tries to make the ranking panel work for all modes (you probably want this if you compile for more than one mode))')
+          help='The hacky ranking panel type to build (supports "osu", "taiko", and "any" (default) which tries to make the ranking panel work for all modes; choose your main mode if you don\'t mind the ranking panel being wrong for other modes or if you don\'t play other modes.)')
 
 AddOption('--flashing',
           dest='flashing',
           action='store_true',
           help="Enable flashing via mode-x in song selection")
+
+
+AddOption('--units',
+          dest='units',
+          action='store_true',
+          help="Enable units in fonts (combo x, accuracy % (percent sign))")
 
 AddOption('--no-1x',
           dest='no_1x',
@@ -65,30 +66,68 @@ AddOption('--no-tk', '--no-taiko',
           action='store_true',
           help="Don\'t build osu!taiko elements (wip)")
 
+AddOption('--build-directory',
+          dest='build_dir',
+          action='store',
+          metavar='PATH',
+          default='build/main',
+          help='The skin\'s directory (basically unzipped .osk). Defaults to "build/main"')
+
 AddOption('--source-directory',
           dest='source_dir',
           action='store',
           metavar='PATH',
           default='src',
-          help="The directory where source files are put")
+          help='The directory where source files are put. Defaults to "src".')
 
 
 def composite(target_surface, source_surface, x=0, y=0):
-    ctx = cairocffi.Context(target_surface)
+    ctx = cairo.Context(target_surface)
 
     ctx.set_source_surface(source_surface, x, y)
     ctx.paint()
     return target_surface
 
 
+def compiler(source, target=None, zoom=None, xZoom=None, yZoom=None, width=None, height=None, left=None, top=None, keep_aspect_ratio=True):
+    args = [GetOption("compiler")]
+    if(keep_aspect_ratio):
+        args.append("-a")
+
+    if(target != None):
+        args.extend(["-o", str(target)])
+
+    if(width != None):
+        args.extend(["-w", str(width)])
+    if(height != None):
+        args.extend(["-h", str(height)])
+    if(top != None):
+        args.extend(["--top", str(top)])
+    if(left != None):
+        args.extend(["--left", str(left)])
+
+    if(zoom != None):
+        args.extend(["-z", str(zoom)])
+    if(xZoom != None):
+        args.extend(["-x", str(xZoom)])
+    if(yZoom != None):
+        args.extend(["-y", str(yZoom)])
+
+    args.append(str(source))
+
+    completed = subprocess.run(args, capture_output=True)
+    if(target == None):
+        return io.BytesIO(completed.stdout)
+
+
 def render1x(target, source, env):
     for (t, s) in zip(target, source):
-        cairosvg.svg2png(url=str(s), write_to=str(t))
+        compiler(s, t)
 
 
 def render2x(target, source, env):
     for (t, s) in zip(target, source):
-        cairosvg.svg2png(url=str(s), write_to=str(t), scale=2)
+        compiler(s, t, zoom=2)
 
 
 def prepend_build_directory(files):
@@ -162,10 +201,16 @@ def render_animation(target, frames):
 
 empty = Builder(
     action=Copy('$TARGET', '$SOURCE'),
-    suffix='.png',
+    suffix=".png",
     emitter=lambda target, source, env:
-    (prepend_build_directory(target), 'src/graphics/special/none.png'))
+    (prepend_build_directory(target), '$SOURCEDIR/graphics/special/none.png'))
 
+delete = Builder(
+    action=[
+        Delete('$TARGET')
+    ],
+    emitter=lambda target, source, env:
+    (prepend_build_directory(target), ''))
 
 copy_image = Builder(
     action=Copy('$TARGET', '$SOURCE'),
@@ -191,11 +236,10 @@ env = Environment(
     ASPECTRATIO=GetOption('aspect_ratio'),
     FLASHING=GetOption('flashing'),
     BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir'),
-    CLIENT=GetOption('client'),
     RANKINGPANEL=GetOption('ranking_panel'))
 
 env.Append(BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x,
-           'Empty': empty, 'CopyImage': copy_image})
+           'Empty': empty, 'Delete': delete, 'CopyImage': copy_image})
 
 
 env.Command(
@@ -219,13 +263,13 @@ env.Command(
 
 
 # welcome
-env.Empty('welcome_text.png')
+env.Empty('welcome_text')
 
 
 # cursor
-render_default('cursor', 'graphics/interface/cursor/cursor.svg')
-env.Empty('cursortrail.png')
-env.Empty('star2.png')
+render_default('cursor', 'graphics/interface/cursor/cursor')
+env.Empty('cursortrail')
+env.Empty('star2')
 
 
 # cursor ripple (surprisingly)
@@ -233,9 +277,9 @@ render_default('cursor-ripple', 'graphics/interface/cursor/ripple')
 
 
 # button
-render_default('button-left', 'graphics/interface/button/left.svg')
-render_default('button-middle', 'graphics/interface/button/middle.svg')
-render_default('button-right', 'graphics/interface/button/right.svg')
+render_default('button-left', 'graphics/interface/button/left')
+render_default('button-middle', 'graphics/interface/button/middle')
+render_default('button-right', 'graphics/interface/button/right')
 
 
 # offset tick
@@ -243,26 +287,26 @@ render_default('options-offset-tick', 'graphics/interface/offset/tick')
 
 
 # song select buttons
-render_default('menu-back', 'graphics/interface/selection/frame/back.svg')
+render_default('menu-back', 'graphics/interface/selection/frame/back')
 
 render_default('selection-mode',
-               'graphics/interface/selection/frame/$ASPECTRATIO/mode.svg')
+               'graphics/interface/selection/frame/$ASPECTRATIO/mode')
 render_default('selection-mode-over',
-               'graphics/interface/selection/frame/mode-over.svg')
+               'graphics/interface/selection/frame/mode-over')
 
-render_default('selection-mods', 'graphics/interface/selection/frame/mods.svg')
+render_default('selection-mods', 'graphics/interface/selection/frame/mods')
 render_default('selection-mods-over',
-               'graphics/interface/selection/frame/mods-over.svg')
+               'graphics/interface/selection/frame/mods-over')
 
 render_default('selection-random',
-               'graphics/interface/selection/frame/random.svg')
+               'graphics/interface/selection/frame/random')
 render_default('selection-random-over',
-               'graphics/interface/selection/frame/random-over.svg')
+               'graphics/interface/selection/frame/random-over')
 
 render_default('selection-options',
-               'graphics/interface/selection/frame/$ASPECTRATIO/options.svg')
+               'graphics/interface/selection/frame/$ASPECTRATIO/options')
 render_default('selection-options-over',
-               'graphics/interface/selection/frame/options-over.svg')
+               'graphics/interface/selection/frame/options-over')
 
 # mode icon
 
@@ -285,8 +329,7 @@ def mode_icon(mode):
         if not GetOption('no_1x'):
             env.Command('$BUILDDIR/mode-'+mode+'-small.png',
                         '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
-                        action=lambda target, source, env:
-                        cairosvg.svg2png(url=str(source[0]), write_to=str(target[0]), scale=0.5))
+                        action=lambda target, source, env: compiler(source[0], target[0], zoom=0.5))
 
         if not GetOption('no_2x'):
             env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
@@ -294,17 +337,19 @@ def mode_icon(mode):
                         action=render1x)
     else:
         if not GetOption('no_1x'):
+            def action(target, source, env):
+                composite(
+                    (target_surface := cairo.ImageSurface.create_from_png(
+                        compiler(source[1]))),
+                    (source_surface := cairo.ImageSurface.create_from_png(
+                        compiler(source[0], zoom=0.5))),
+                    target_surface.get_width() / 2 - source_surface.get_width() / 2,
+                    target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0]))
+
             env.Command('$BUILDDIR/mode-'+mode+'-small.png',
                         ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
-                        action=lambda target, source, env:
-                        composite(
-                            (target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[1]))))),
-                            (source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0]), scale=0.5)))),
-                            target_surface.get_width() / 2 - source_surface.get_width() / 2,
-                            target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0])))
+                        action=action)
 
         if not GetOption('no_2x'):
             env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
@@ -312,10 +357,10 @@ def mode_icon(mode):
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=lambda target, source, env:
                         composite(
-                            (target_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[1]), scale=2)))),
-                            (source_surface := cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0]))))),
+                            (target_surface := cairo.ImageSurface.create_from_png(
+                                compiler(source[1], zoom=2))),
+                            (source_surface := cairo.ImageSurface.create_from_png(
+                                compiler(source[0]))),
                             target_surface.get_width() / 2 - source_surface.get_width() / 2,
                             target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0])))
 
@@ -337,12 +382,12 @@ def ranking_grade_small(grade):
     source = '$SOURCEDIR/graphics/interface/ranking/grades/' + grade + '.svg'
 
     if not GetOption('no_1x'):
-        env.Command(target + '.png', source, action=lambda target, source, env: cairosvg.svg2png(
-            url=str(source[0]), output_width=34, write_to=str(target[0])))
+        env.Command(target + '.png', source, action=lambda target, source, env: compiler(
+            source[0], target[0], width=38))
 
     if not GetOption('no_2x'):
-        env.Command(target + '@2x.png', source, action=lambda target, source, env: cairosvg.svg2png(
-            url=str(source[0]), output_width=68, write_to=str(target[0])))
+        env.Command(target + '@2x.png', source, action=lambda target, source, env: compiler(
+            source[0], str(target[0]), width=68))
 
 
 def ranking_grade(*grades):
@@ -380,18 +425,18 @@ else:
         env.Command('$BUILDDIR/ranking-panel.png', ['$SOURCEDIR/graphics/interface/ranking/panels/$ASPECTRATIO/panel.svg',
                     '$SOURCEDIR/graphics/interface/ranking/panels/numbers/'+GetOption('ranking_panel')+'.svg'], lambda target, source, env:
                         composite(
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0])))),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[1]))))).write_to_png(str(target[0])))
+                            cairo.ImageSurface.create_from_png(
+                                compiler(source[0])),
+                            cairo.ImageSurface.create_from_png(
+                                compiler(source[1]))).write_to_png(str(target[0])))
     if not GetOption('no_2x'):
         env.Command('$BUILDDIR/ranking-panel@2x.png', ['$SOURCEDIR/graphics/interface/ranking/panels/$ASPECTRATIO/panel.svg',
                     '$SOURCEDIR/graphics/interface/ranking/panels/numbers/'+GetOption('ranking_panel')+'.svg'], lambda target, source, env:
                         composite(
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[0]), scale=2))),
-                            cairocffi.ImageSurface.create_from_png(io.BytesIO(
-                                cairosvg.svg2png(url=str(source[1]), scale=2)))).write_to_png(str(target[0])))
+                            cairo.ImageSurface.create_from_png(
+                                compiler(source[0], zoom=2)),
+                            cairo.ImageSurface.create_from_png(
+                                compiler(source[1], zoom=2))).write_to_png(str(target[0])))
 render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
 render_default('pause-replay', 'graphics/interface/ranking/panels/replay')
 render_default('ranking-winner', 'graphics/interface/ranking/status/winner')
@@ -415,58 +460,49 @@ GLYPH_WIDTH_OFFSET = {
 }
 
 
-OVERLAP = -0.2  # we draw overlap into the skin instead of using skin.ini because for some reason ranking screen doesnt respect it
+def default_get_dimensions(font_extents, text_extents, glyph):
+    ascent, descent, font_height, max_x_advance, max_y_advance = font_extents
+
+    return (
+        -text_extents.x_bearing / 2,
+        ascent
+        + descent / 2,  # center vertically, the only reason the descents aren't cropped out entirely is because of commas lol. have fun if you're using any other font
+        text_extents.x_advance  # questionable
+        + (GLYPH_WIDTH_OFFSET[glyph] if glyph in GLYPH_WIDTH_OFFSET else 0),
+        ascent + descent
+    )
 
 
-def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
-    """render font"""
+def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, font_face='osifont', rgba=(1, 1, 1, 1)):
+    """render font glyphs"""
     glyphs = map(lambda g: (str(g), (CHAR_REPLACE[glyph] if (
         glyph := str(g)) in CHAR_REPLACE else glyph)), glyphs)
 
-    def get_render_font_glyph(glyph, scale, width_override=None):
+    def get_render_font_glyph(glyph, scale):
         # cairo text actually sucks im just going to commit this shit i give up
         def render_font_glyph(target, source, env):
-            surface = cairocffi.ImageSurface(
-                cairocffi.FORMAT_ARGB32, 16 * scale, 16 * scale)
-            ctx = cairocffi.Context(surface)
-            ctx.scale(scale)
+            surface = cairo.ImageSurface(
+                cairo.FORMAT_ARGB32, 16 * scale, 16 * scale)
+            ctx = cairo.Context(surface)
+            ctx.scale(scale, scale)
 
             ctx.set_source_rgba(1, 1, 1)
-            ctx.select_font_face('osifont')
+            ctx.select_font_face(font_face)
             ctx.set_font_size(1)
-            ascent, descent, _, _, _ = ctx.font_extents()
-            text_x_bearing, _, text_width, _, _, _ = ctx.text_extents(
-                glyph)
-
-            if alignx == 'left':
-                if width_override != None:
-                    width = width_override
-                else:
-                    x = 0
-                    width = text_x_advance
-            elif alignx == 'middle':
-                x = -text_x_bearing - OVERLAP / 2
-                width = text_width
-
-            width -= OVERLAP
-
-            if(glyph in GLYPH_WIDTH_OFFSET):
-                width += GLYPH_WIDTH_OFFSET[glyph]
-
-            height = ascent + 2 * descent
-            y = ascent + descent
+            x, y, width, height = get_dimensions(
+                ctx.font_extents(), ctx.text_extents(glyph), glyph)
 
             ctx.move_to(x, y)
-
+            ctx.set_source_rgba(*rgba)
             ctx.show_text(glyph)
 
-            cropped_surface = cairocffi.ImageSurface(
-                cairocffi.FORMAT_ARGB32, math.ceil(width * scale), math.ceil(height * scale))
+            cropped_surface = cairo.ImageSurface(
+                cairo.FORMAT_ARGB32, width := math.ceil(width * scale), height := math.ceil(height * scale))
 
-            ctx = cairocffi.Context(cropped_surface)
+            ctx = cairo.Context(cropped_surface)
 
-            # debugging (i feel the need to leave this in here. that's how bad it gets)
-            # ctx.set_source_rgba(1, 0, 0)
+            # debugging, pretty useful
+            # ctx.set_source_rgba(1, 0, 0, 0.5)
             # ctx.paint()
 
             ctx.set_source_surface(surface)
@@ -477,27 +513,34 @@ def font(font_name, glyphs, scale=20, alignx='left', aligny='top'):
         return render_font_glyph
 
     for glyph_name, glyph in glyphs:
-        width_override = 0.4 if glyph in [str(n) for n in range(10)] else None
-
         if not GetOption('no_1x'):
             env.Command(
                 '$BUILDDIR/' + font_name + '-' + glyph_name + '.png',
                 [],
-                action=get_render_font_glyph(glyph, scale, width_override))
+                action=get_render_font_glyph(glyph, scale))
 
         if not GetOption('no_2x'):
             env.Command(
                 '$BUILDDIR/' + font_name + '-' + glyph_name + '@2x.png',
                 [],
-                action=get_render_font_glyph(glyph, scale * 2, width_override))
+                action=get_render_font_glyph(glyph, scale * 2))
 
 
-font('default', range(10), 35, 'middle')
-font('score', [*range(10), 'comma', 'dot'], 40, 'middle')
-env.Empty('score-x')
-env.Empty('score-percent')
-font('scoreentry', [*range(10), 'comma', 'dot',
-     'percent', 'x'], 15, 'middle')
+font('default', range(10), 40)
+font('score', [*range(10), 'comma', 'dot'], 45)
+font('scoreentry', [*range(10), 'comma', 'dot'], 14)
+if GetOption("units"):
+    font('score', ['x', 'percent'], 45, rgba=(0.5, 0.5, 0.5, 0.8))
+    font('scoreentry', ['x', 'percent'], 14, rgba=(0.5, 0.5, 0.5, 0.8))
+else:
+    env.Empty('score-x')
+    env.Delete('score-x@2x.png') # too lazy to fix
+    env.Empty('score-percent')
+    env.Delete('score-percent@2x.png')
+    env.Empty('scoreentry-x')
+    env.Delete('scoreentry-x@2x.png')
+    env.Empty('scoreentry-percent')
+    env.Delete('scoreentry-percent@2x.png')
 
 # masking border
 env.Empty('masking-border')
@@ -585,6 +628,7 @@ def lighting():
         ADDED_LIGHTING = True
         render_default('lighting', 'graphics/gameplay/lighting')
 
+
 if not GetOption('no_standard'):  # standard-only elements
     # mode icon
     mode_icon('osu')
@@ -619,7 +663,7 @@ if not GetOption('no_standard'):  # standard-only elements
 
     # spinner (surprinsingly)
     spinner()
-    render_default('spinner-rpm', 'graphics/gameplay/osu/spinner/rpm')
+    env.Empty('spinner-rpm')
     render_default('spinner-metre', 'graphics/gameplay/osu/spinner/metre')
     env.Empty('spinner-background')
     env.Empty('spinner-clear')
@@ -629,29 +673,15 @@ if not GetOption('no_standard'):  # standard-only elements
     env.Empty('hit300')
     env.Empty('hit300k')
     env.Empty('hit300g')
+    env.Empty('hit100')
+    env.Empty('hit100k')
+    env.Empty('hit50')
+    env.Empty('hit0')
 
-    if GetOption('ranking_panel') == 'any':
-        render_default('hit100', 'graphics/gameplay/osu/hitbursts/100')
-        render_default('hit50', 'graphics/gameplay/osu/hitbursts/50')
-        render_default('hit0', 'graphics/gameplay/osu/hitbursts/0')
-
-        copy_default('hit100k', 'hit100')
-    else:
-        render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
-        render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
-        render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0')
-
-        copy_default('hit100k-0', 'hit100-0')
-
-        env.Empty('hit100')
-        # i dont wanna deal with this rn but we could save a little space by deleting @2x instead of writing an empty image
-        env.Empty('hit100@2x')
-        env.Empty('hit100k')
-        env.Empty('hit100k@2x')
-        env.Empty('hit50')
-        env.Empty('hit50@2x')
-        env.Empty('hit0')
-        env.Empty('hit0@2x')
+    render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
+    copy_default('hit100k-0', 'hit100-0')
+    render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
+    render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0')
 
     # follow points (surprisingly)
     # render_default('followpoint', 'graphics/gameplay/osu/followpoint.svg') # non-animated followpoints if you are a masochist
@@ -661,8 +691,6 @@ if not GetOption('no_standard'):  # standard-only elements
         ('graphics/gameplay/osu/followpoint', 1),
         (None, 0)
     ))
-
-# TAIKO_HITBURST_PAD_BOTTOM =
 
 if not GetOption('no_taiko'):
     # mode icon
@@ -685,7 +713,7 @@ if not GetOption('no_taiko'):
                    'graphics/gameplay/taiko/bar/drum/inner')
     render_default('taiko-drum-outer',
                    'graphics/gameplay/taiko/bar/drum/outer')
-    
+
     # lighting
     lighting()
 
@@ -720,29 +748,14 @@ if not GetOption('no_taiko'):
     env.Empty('taiko-hit300')
     env.Empty('taiko-hit300k')
     env.Empty('taiko-hit300g')
+    env.Empty('taiko-hit100')
+    env.Empty('taiko-hit100k')
+    env.Empty('taiko-hit0')
 
-    if GetOption('ranking_panel') == 'any':
-        render_default('taiko-hit100',
-                       'graphics/gameplay/taiko/hitbursts/100')
-        render_default('taiko-hit0', 'graphics/gameplay/taiko/hitbursts/0')
-
-        copy_default('taiko-hit100k', 'taiko-hit100')
-    else:
-        render_default('taiko-hit100-0',
-                       'graphics/gameplay/taiko/hitbursts/100')
-        render_default('taiko-hit0-0', 'graphics/gameplay/taiko/hitbursts/0')
-
-        copy_default('taiko-hit100k-0', 'taiko-hit100-0')
-
-        env.Empty('taiko-hit100')
-        # i dont wanna deal with this rn but we could save a little space by deleting @2x instead of writing an empty image
-        env.Empty('taiko-hit100@2x')
-        env.Empty('taiko-hit100k')
-        env.Empty('taiko-hit100k@2x')
-        env.Empty('taiko-hit50')
-        env.Empty('taiko-hit50@2x')
-        env.Empty('taiko-hit0')
-        env.Empty('taiko-hit0@2x')
+    render_default('taiko-hit100-0',
+                   'graphics/gameplay/taiko/hitbursts/100')
+    copy_default('taiko-hit100k-0', 'taiko-hit100-0')
+    render_default('taiko-hit0-0', 'graphics/gameplay/taiko/hitbursts/0')
 
 # editor circle select
 render_default('hitcircleselect', 'graphics/interface/editor/select.svg')
