@@ -7,7 +7,7 @@
    viewBox="0 0 72.495827 72.495826"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    sodipodi:docname="circle.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,10 +30,10 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="false"
      inkscape:zoom="2.8284272"
-     inkscape:cx="62.932502"
-     inkscape:cy="153.61894"
+     inkscape:cx="126.39533"
+     inkscape:cy="131.87541"
      inkscape:window-width="1920"
-     inkscape:window-height="1003"
+     inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -68,7 +68,7 @@
          ry="2.8222165" />
     </g>
     <path
-       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.85208;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:0.23999999"
+       style="fill:none;fill-opacity:1;stroke:#808080;stroke-width:1.85208;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:0.75"
        id="path440"
        sodipodi:type="arc"
        sodipodi:cx="135.46666"
@@ -81,7 +81,7 @@
        d="m 170.78853,92.868752 a 35.321873,35.321873 0 0 1 -10.34554,24.976338 35.321873,35.321873 0 0 1 -24.97633,10.34553"
        sodipodi:open="true" />
     <path
-       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.85208;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:0.23999999"
+       style="fill:none;fill-opacity:1;stroke:#808080;stroke-width:1.85208;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:0.75"
        id="path442"
        sodipodi:type="arc"
        sodipodi:cx="-135.46666"
