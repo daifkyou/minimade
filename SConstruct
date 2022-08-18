@@ -209,6 +209,7 @@ delete = Builder(
     action=[
         Delete('$TARGET')
     ],
+    suffix='.png',
     emitter=lambda target, source, env:
     (prepend_build_directory(target), ''))
 
@@ -534,13 +535,13 @@ if GetOption("units"):
     font('scoreentry', ['x', 'percent'], 14, rgba=(0.5, 0.5, 0.5, 0.8))
 else:
     env.Empty('score-x')
-    env.Delete('score-x@2x.png') # too lazy to fix
+    env.Delete('score-x@2x') # too lazy to fix
     env.Empty('score-percent')
-    env.Delete('score-percent@2x.png')
+    env.Delete('score-percent@2x')
     env.Empty('scoreentry-x')
-    env.Delete('scoreentry-x@2x.png')
+    env.Delete('scoreentry-x@2x')
     env.Empty('scoreentry-percent')
-    env.Delete('scoreentry-percent@2x.png')
+    env.Delete('scoreentry-percent@2x')
 
 # masking border
 env.Empty('masking-border')
