@@ -1,2 +1,2 @@
-pycairo
-scons
+pycairo~=1.21.0
+scons~=4.4.0

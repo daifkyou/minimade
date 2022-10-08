@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="488"
-   height="30"
-   viewBox="0 0 488 30"
+   width="128"
+   height="128"
+   viewBox="0 0 33.866664 33.866664"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
-   sodipodi:docname="background.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="end.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -29,22 +29,17 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2"
-     inkscape:cx="183.5"
-     inkscape:cy="45.75"
+     inkscape:zoom="3.9999998"
+     inkscape:cx="42.500002"
+     inkscape:cy="66.125003"
      inkscape:window-width="1920"
      inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="true"
-     fit-margin-top="16"
-     fit-margin-left="5"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     height="36.71px"
-     showguides="false"
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:bbox-paths="true"
      inkscape:showpageshadow="0"
      inkscape:deskcolor="#505050" />
   <defs
@@ -52,12 +47,17 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(6.1229202,9.033333)">
-    <path
-       style="fill:none;stroke:#808080;stroke-width:16;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.501961"
-       d="M 3.9101395,12.966667 H 473.84401"
-       id="path473"
-       sodipodi:nodetypes="cc" />
+     id="layer1">
+    <g
+       id="g1826"
+       transform="matrix(0.98979595,0,0,0.98979595,0.17278459,0.17278479)"
+       style="fill:none;fill-opacity:0.501961;stroke:#ffffff;stroke-width:1.87118;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.05">
+      <circle
+         style="fill:none;fill-opacity:0.501961;stroke:#ffffff;stroke-width:1.87118;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.05"
+         id="path1368"
+         cx="16.933334"
+         cy="16.933334"
+         r="12.964582" />
+    </g>
   </g>
 </svg>

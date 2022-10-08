@@ -2,12 +2,12 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="7"
-   height="7"
-   viewBox="0 0 1.8520832 1.8520832"
+   width="8"
+   height="8"
+   viewBox="0 0 2.1166666 2.1166666"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    sodipodi:docname="tick.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -53,10 +53,10 @@
      id="layer1">
     <g
        id="g825"
-       transform="scale(0.20166015)"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:4.95883">
+       transform="scale(0.23046875)"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:4.33896">
       <circle
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:13.1202;stroke-linecap:round;stroke-linejoin:round"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:11.4802;stroke-linecap:round;stroke-linejoin:round"
          id="path1143"
          cx="4.5920901"
          cy="4.5920906"

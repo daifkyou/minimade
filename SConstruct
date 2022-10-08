@@ -2,7 +2,7 @@ import subprocess
 import cairo
 import io
 import math
-from SCons.Script import AddOption, GetOption, Builder, Copy, Environment
+from SCons.Script import AddOption, GetOption, Builder, Copy, Delete, Environment
 
 
 AddOption('--compiler',
@@ -657,7 +657,7 @@ if not GetOption('no_standard'):  # standard-only elements
     render_default('sliderfollowcircle', 'graphics/gameplay/osu/slider/follow')
 
     # slider end circle (surprisingly)
-    env.Empty('sliderendcircle')
+    render_default('sliderendcircle', 'graphics/gameplay/osu/slider/end')
 
     # slider reverse arrow
     render_default('reversearrow', 'graphics/gameplay/osu/slider/reverse')

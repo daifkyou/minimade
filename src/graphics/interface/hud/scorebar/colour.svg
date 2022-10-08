@@ -4,10 +4,10 @@
 <svg
    width="480"
    height="12"
-   viewBox="0 0 126.99998 3.1749997"
+   viewBox="0 0 480 12"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
    sodipodi:docname="colour.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -29,12 +29,12 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="279.66072"
-     inkscape:cy="90.863219"
-     inkscape:window-width="1600"
-     inkscape:window-height="871"
-     inkscape:window-x="1920"
+     inkscape:zoom="2"
+     inkscape:cx="228"
+     inkscape:cy="-27.75"
+     inkscape:window-width="1920"
+     inkscape:window-height="1003"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
@@ -42,22 +42,20 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-1.3229164,4.8000708)">
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:round"
-       id="rect937-3"
-       width="127"
-       height="3.175"
-       x="1.3229164"
-       y="-4.8000708"
-       ry="1.5875"
-       rx="1.5874999" />
+     transform="translate(4.8234251,4.2709045)">
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1.1765749,1.7290955 H 469.17657"
+       id="path473"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
