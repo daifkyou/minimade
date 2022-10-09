@@ -18,6 +18,7 @@ Makes theoretically infinite servings.
  - Git
  - Python 3 and modules in requirements.txt
  - osifont (https://github.com/hikikomori82/osifont)
+ - librsvg (rsvg-convert)
 
 ### Directions
  1. Clone the repo: `$ git clone https://github.com/awful-coder/minimade.git` then `cd minimade`
