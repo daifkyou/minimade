@@ -25,8 +25,7 @@ Makes theoretically infinite servings.
  2. Install the dependencies (usually with `pip3 install -r requirements.txt`)
  3. Run SCons (build the skin): `scons` (optionally see `scons -h` to explore flags you can use to customize the build)
  4. ~~Install~~ Enjoy the skin
-    1. (The cool way) Symlink the build directory into your skins directory (i.e. plate)
-    (e.g. on my Arch system on ext4 with minimade in my home directory and my osu!, using Katoumegumi's osu! wine guide, directory symlinked to ~/osufolder, this is `$ ln -s $HOME/minimade/build/main ~/osufolder/Skins/`)
+    1. (The cool way) Symlink the build directory into your skins directory
     2. (The "I use FAT32" way) See "The cool way" but mentally replace "symlink" with "copy."
     2. (The prepackaged way) Zip the build directory and rename it to end with an .osk extension. Share with a friend :)
 
