@@ -17,7 +17,7 @@ Makes theoretically infinite servings.
 ### ~~Dependencies~~ Ingredients (install these)
  - Git
  - Python 3 and modules in requirements.txt
- - osifont (https://github.com/hikikomori82/osifont)
+ - osifont (https://github.com/hikikomori82/osifont) **ALSO IF YOURE ACTUALLY USING THIS SKIN FOR SOME REASON USE AN OLD VERSION FROM LIKE BEFORE OCTOBER(?) 2022 UNTIL I GET AROUND TO FIXING IT** (if stuff is broken try going earlier, i built using the february 2021 release)
  - librsvg (rsvg-convert)
 
 ### Directions
