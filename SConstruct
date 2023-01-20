@@ -474,6 +474,9 @@ def default_get_dimensions(font_extents, text_extents, glyph):
     )
 
 
+FONT_OPTIONS = cairo.FontOptions()
+FONT_OPTIONS.set_antialias(cairo.Antialias.GRAY)
+
 def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, font_face='osifont', rgba=(1, 1, 1, 1)):
     """render font glyphs"""
     glyphs = map(lambda g: (str(g), (CHAR_REPLACE[glyph] if (
@@ -486,6 +489,8 @@ def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, fon
                 cairo.FORMAT_ARGB32, 16 * scale, 16 * scale)
             ctx = cairo.Context(surface)
             ctx.scale(scale, scale)
+
+            ctx.set_font_options(FONT_OPTIONS)
 
             ctx.set_source_rgba(1, 1, 1)
             ctx.select_font_face(font_face)
