@@ -91,32 +91,32 @@ def composite(target_surface, source_surface, x=0, y=0):
 
 def compiler(source, target=None, zoom=None, xZoom=None, yZoom=None, width=None, height=None, left=None, top=None, keep_aspect_ratio=True):
     args = [GetOption("compiler")]
-    if(keep_aspect_ratio):
+    if (keep_aspect_ratio):
         args.append("-a")
 
-    if(target != None):
+    if (target != None):
         args.extend(["-o", str(target)])
 
-    if(width != None):
+    if (width != None):
         args.extend(["-w", str(width)])
-    if(height != None):
+    if (height != None):
         args.extend(["-h", str(height)])
-    if(top != None):
+    if (top != None):
         args.extend(["--top", str(top)])
-    if(left != None):
+    if (left != None):
         args.extend(["--left", str(left)])
 
-    if(zoom != None):
+    if (zoom != None):
         args.extend(["-z", str(zoom)])
-    if(xZoom != None):
+    if (xZoom != None):
         args.extend(["-x", str(xZoom)])
-    if(yZoom != None):
+    if (yZoom != None):
         args.extend(["-y", str(yZoom)])
 
     args.append(str(source))
 
     completed = subprocess.run(args, capture_output=True)
-    if(target == None):
+    if (target == None):
         return io.BytesIO(completed.stdout)
 
 
@@ -188,7 +188,7 @@ def render_animation(target, frames):
     for source, repeat in frames:
 
         t = target + str(frame)
-        if(source == None):
+        if (source == None):
             env.Empty(t)
         else:
             render_default(t, source)
@@ -242,7 +242,6 @@ env = Environment(
 env.Append(BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x,
            'Empty': empty, 'Delete': delete, 'CopyImage': copy_image})
 
-
 env.Command(
     '$BUILDDIR/LICENSE',
     'LICENSE',
@@ -250,7 +249,7 @@ env.Command(
 
 env.Command(
     '$BUILDDIR/skin.ini',
-    '$SOURCEDIR/meta/skin.ini',
+    '$SOURCEDIR/skin.ini',
     Copy('$TARGET', '$SOURCE'))
 
 
@@ -319,7 +318,7 @@ def mode_icon(mode):
     render_default('mode-'+mode+'-med', 'graphics/interface/modes/'+mode)
 
     # large icon (flashing in the middle of song select)
-    if(GetOption('flashing')):
+    if (GetOption('flashing')):
         env.SVG1x('mode-' + mode,
                   'graphics/interface/selection/frame/$ASPECTRATIO/flash.svg')
     else:
@@ -477,10 +476,11 @@ def default_get_dimensions(font_extents, text_extents, glyph):
 FONT_OPTIONS = cairo.FontOptions()
 FONT_OPTIONS.set_antialias(cairo.Antialias.GRAY)
 
-def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, font_face='osifont', rgba=(1, 1, 1, 1)):
+
+def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, font_face='osifont', rgba=(1, 1, 1, 1), char_replace=CHAR_REPLACE):
     """render font glyphs"""
-    glyphs = map(lambda g: (str(g), (CHAR_REPLACE[glyph] if (
-        glyph := str(g)) in CHAR_REPLACE else glyph)), glyphs)
+    glyphs = map(lambda g: (str(g), (char_replace[glyph] if (
+        glyph := str(g)) in char_replace else glyph)), glyphs)
 
     def get_render_font_glyph(glyph, scale):
         # cairo text actually sucks im just going to commit this shit i give up
@@ -507,9 +507,9 @@ def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, fon
 
             ctx = cairo.Context(cropped_surface)
 
-            # debugging, pretty useful
-            # ctx.set_source_rgba(1, 0, 0, 0.5)
-            # ctx.paint()
+            # debugging, pretty useful every once in a while
+            """ctx.set_source_rgba(1, 0, 0, 0.3)
+            ctx.paint()"""
 
             ctx.set_source_surface(surface)
             ctx.paint()
@@ -532,15 +532,32 @@ def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, fon
                 action=get_render_font_glyph(glyph, scale * 2))
 
 
+def scoreentry_get_dimensions(font_extents, text_extents, glyph):
+    ascent, descent, font_height, max_x_advance, max_y_advance = font_extents
+
+    return (
+        -text_extents.x_bearing / 2,
+        ascent
+        + descent / 2,  # center vertically, the only reason the descents aren't cropped out entirely is because of commas lol. have fun if you're using any other font
+        text_extents.x_advance  # questionable
+        + (GLYPH_WIDTH_OFFSET[glyph]
+           if glyph in GLYPH_WIDTH_OFFSET else 0) + 0.125,
+        ascent + descent
+    )
+
+
 font('default', range(10), 40)
 font('score', [*range(10), 'comma', 'dot'], 45)
-font('scoreentry', [*range(10), 'comma', 'dot'], 14)
+font('scoreentry', [*range(10), 'comma', 'dot'], 14,
+     scoreentry_get_dimensions, char_replace={'dot': '', 'comma': ''})
+
 if GetOption("units"):
     font('score', ['x', 'percent'], 45, rgba=(0.5, 0.5, 0.5, 0.8))
-    font('scoreentry', ['x', 'percent'], 14, rgba=(0.5, 0.5, 0.5, 0.8))
+    font('scoreentry', ['x', 'percent'], 14,
+         scoreentry_get_dimensions, rgba=(0.5, 0.5, 0.5, 0.8))
 else:
     env.Empty('score-x')
-    env.Delete('score-x@2x') # too lazy to fix
+    env.Delete('score-x@2x')  # too lazy to fix
     env.Empty('score-percent')
     env.Delete('score-percent@2x')
     env.Empty('scoreentry-x')

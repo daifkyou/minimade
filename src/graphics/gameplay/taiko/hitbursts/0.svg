@@ -7,7 +7,7 @@
    viewBox="0 0 2.9378049 39.718983"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="0.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,10 +30,10 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="8"
-     inkscape:cx="30.5"
-     inkscape:cy="10.5625"
+     inkscape:cx="30.6875"
+     inkscape:cy="10.625"
      inkscape:window-width="1920"
-     inkscape:window-height="1003"
+     inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -51,13 +51,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:1.25;font-family:sans-serif;fill:#ff6496;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="4.9320107"
+       x="7.5830116"
        y="12.368226"
        id="text845"><tspan
          sodipodi:role="line"
          id="tspan843"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;fill:#ff6496;fill-opacity:1;stroke-width:0.264583"
-         x="4.9320107"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;text-align:center;text-anchor:middle;fill:#ff6496;fill-opacity:1;stroke-width:0.264583"
+         x="7.5830116"
          y="12.368226">0</tspan></text>
   </g>
 </svg>

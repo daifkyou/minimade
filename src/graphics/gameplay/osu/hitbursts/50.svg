@@ -7,7 +7,7 @@
    viewBox="0 0 7.5615535 5.8523555"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="50.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -29,11 +29,11 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="15.999999"
-     inkscape:cx="40.250003"
-     inkscape:cy="7.8437505"
+     inkscape:zoom="5.6568539"
+     inkscape:cx="52.237517"
+     inkscape:cy="6.8942915"
      inkscape:window-width="1920"
-     inkscape:window-height="1003"
+     inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -54,17 +54,17 @@
      transform="translate(8.6950386,-6.1437684)">
     <g
        id="g1167"
-       transform="translate(-8.3919266,-3.4574632)"
-       style="stroke:none;stroke-opacity:1;stroke-width:0;stroke-dasharray:none;fill:#4da8ff;fill-opacity:1">
+       transform="translate(-7.1032455,-3.4574632)"
+       style="fill:#4da8ff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:1.25;font-family:sans-serif;fill:#4da8ff;fill-opacity:1;stroke:none;stroke-width:0;stroke-opacity:1;stroke-dasharray:none"
+         style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:1.25;font-family:sans-serif;fill:#4da8ff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
          x="-1.6983757"
          y="15.453588"
          id="text845"><tspan
            sodipodi:role="line"
            id="tspan843"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;fill:#4da8ff;fill-opacity:1;stroke-width:0;stroke:none;stroke-opacity:1;stroke-dasharray:none"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;fill:#4da8ff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
            x="-1.6983757"
            y="15.453588">50</tspan></text>
     </g>

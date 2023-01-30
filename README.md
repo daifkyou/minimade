@@ -30,11 +30,13 @@ Makes theoretically infinite servings.
     2. (The prepackaged way) Zip the build directory and rename it to end with an .osk extension. Share with a friend :)
 
 ## Contributing
-Very open to contributions (including suggestions/issues) of any kind but I'm really not that active and I'm not very experienced.
-Especially open to improving non-pythonic/non-scons-ic/sucky build scripts and fixing inefficiencies.
-Improvements to source directory tree would also helpful.
+Very open to contributions (+suggestions/issues) of any kind except who are you and why are you using this.
 
-I would also suggest forking as "minimaid" and replacing things with maid waifus.
+Especially open to improving non-pythonic/non-scons-ic/sucky build scripts and fixing inefficiencies.
+
+I also don't play taiko so feel free to complain in the issues tab.
+
+I also recommend making a fork called "minimaid" and replacing things with maid waifus.
 
 ### Details
 All SVGs are in SD since they can be upscaled.

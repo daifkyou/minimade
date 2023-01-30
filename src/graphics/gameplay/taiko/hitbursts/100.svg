@@ -7,7 +7,7 @@
    viewBox="0 0 11.14273 39.718984"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="100.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -29,11 +29,11 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="72.124892"
-     inkscape:cy="105.88924"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="38.979262"
+     inkscape:cy="55.68466"
      inkscape:window-width="1920"
-     inkscape:window-height="1003"
+     inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -57,14 +57,14 @@
        transform="translate(-25.791173,-6.7200478)">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:1.25;font-family:sans-serif;fill:#32ff96;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="4.9320111"
+         style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#32ff96;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="11.933521"
          y="14.484892"
          id="text845"><tspan
            sodipodi:role="line"
            id="tspan843"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;fill:#32ff96;fill-opacity:1;stroke-width:0.264583"
-           x="4.9320111"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.9375px;font-family:osifont;-inkscape-font-specification:osifont;text-align:center;text-anchor:middle;fill:#32ff96;fill-opacity:1;stroke-width:0.264583"
+           x="11.933521"
            y="14.484892">100</tspan></text>
     </g>
   </g>
