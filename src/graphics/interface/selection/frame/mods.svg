@@ -5,8 +5,8 @@
    height="91"
    viewBox="0 0 77 91"
    id="svg4"
-   sodipodi:docname="selection-mods.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="mods.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -22,15 +22,15 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="-188.5"
-     inkscape:cy="123.5"
+     inkscape:zoom="4"
+     inkscape:cx="-1.625"
+     inkscape:cy="57.5"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4"
+     inkscape:current-layer="g458"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
      inkscape:snap-page="true"
@@ -41,7 +41,9 @@
      fit-margin-bottom="0"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-edge-midpoints="true"
-     inkscape:snap-object-midpoints="true" />
+     inkscape:snap-object-midpoints="true"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <rect
      style="fill:#000000;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round"
      id="rect9407"
@@ -52,17 +54,21 @@
   <g
      id="g7854-3"
      transform="translate(19.523108,8.4413628)">
-    <text
-       xml:space="preserve"
-       style="font-size:30.1884px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.754711"
-       x="-11.381046"
-       y="74.890388"
-       id="text5896-6"><tspan
-         sodipodi:role="line"
-         id="tspan5894-7"
-         x="-11.381046"
-         y="74.890388"
-         style="stroke-width:0.754711">mod</tspan></text>
+    <g
+       id="g458"
+       transform="translate(-12.414721,-8.4410553)">
+      <text
+         xml:space="preserve"
+         style="font-size:30.1884px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.754711"
+         x="31.391613"
+         y="85.331444"
+         id="text5896-6-3-3-3"><tspan
+           sodipodi:role="line"
+           id="tspan5894-7-6-6-6"
+           x="31.391611"
+           y="85.331444"
+           style="text-align:center;text-anchor:middle;stroke-width:0.754711">MOD</tspan></text>
+    </g>
   </g>
   <path
      d="m 64.75,36.584 h -22.5 v 22.5 h -7.5 v -22.5 h -22.5 v -7.5 h 22.5 v -22.5 h 7.5 v 22.5 h 22.5 z"

@@ -7,7 +7,7 @@
    viewBox="0 0 66.016715 13.991958"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="retry.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -29,11 +29,11 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="231.99999"
-     inkscape:cy="-6.2499997"
+     inkscape:zoom="5.6568545"
+     inkscape:cx="74.68815"
+     inkscape:cy="22.273863"
      inkscape:window-width="1920"
-     inkscape:window-height="1009"
+     inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -58,14 +58,14 @@
     <text
        xml:space="preserve"
        style="font-size:12.876px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
-       x="1.6975498"
-       y="7.3831553"
+       x="2.2319534"
+       y="7.4083037"
        id="text5998"><tspan
          sodipodi:role="line"
          id="tspan5996"
          style="fill:#ffffff;fill-opacity:1;stroke-width:0.321902"
-         x="1.6975498"
-         y="7.3831553">Retry</tspan></text>
+         x="2.2319534"
+         y="7.4083037">Retry</tspan></text>
     <g
        id="g7547"
        transform="translate(-13.726301,-19.700435)">

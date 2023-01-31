@@ -7,7 +7,7 @@
    viewBox="0 0 44.979163 44.979164"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="S.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -31,14 +31,16 @@
      inkscape:snap-page="true"
      inkscape:zoom="2"
      inkscape:cx="32.75"
-     inkscape:cy="87.25"
-     inkscape:window-width="1920"
-     inkscape:window-height="1007"
-     inkscape:window-x="0"
+     inkscape:cy="87.75"
+     inkscape:window-width="1600"
+     inkscape:window-height="1036"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox-edge-midpoints="false" />
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2">
     <linearGradient
@@ -56,7 +58,8 @@
      id="layer1"
      transform="translate(2.2470371e-7,-3.9687478)">
     <g
-       id="g830">
+       id="g830"
+       transform="translate(3.9836148)">
       <g
          id="g13161"
          transform="translate(-26.482168,0.70941023)">

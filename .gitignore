@@ -3,3 +3,6 @@
 /.vscode
 
 .sconsign.dblite
+
+
+/.mypy_cache

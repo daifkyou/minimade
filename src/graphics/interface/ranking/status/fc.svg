@@ -7,8 +7,8 @@
    viewBox="0 0 25.400036 19.3866"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="ranking-perfect.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="fc.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -31,19 +31,21 @@
      inkscape:snap-page="true"
      inkscape:zoom="2"
      inkscape:cx="36.75"
-     inkscape:cy="83.75"
-     inkscape:window-width="1920"
-     inkscape:window-height="1007"
-     inkscape:window-x="0"
+     inkscape:cy="84.25"
+     inkscape:window-width="1600"
+     inkscape:window-height="1036"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      inkscape:snap-bbox-edge-midpoints="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     lock-margins="true" />
+     lock-margins="true"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
@@ -54,13 +56,13 @@
     <text
        xml:space="preserve"
        style="font-size:26.2591px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.656481"
-       x="-7.5064445"
+       x="10.027403"
        y="16.779211"
        id="text6655"><tspan
          sodipodi:role="line"
          id="tspan6653"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.656481"
-         x="-7.5064445"
+         style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.656481"
+         x="10.027404"
          y="16.779211">FC</tspan></text>
   </g>
 </svg>

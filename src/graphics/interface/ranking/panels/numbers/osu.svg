@@ -7,7 +7,7 @@
    viewBox="0 0 164.04167 133.61458"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="osu.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,14 +30,14 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="1"
-     inkscape:cx="338.5"
-     inkscape:cy="264"
+     inkscape:cx="111.5"
+     inkscape:cy="148"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg5"
+     inkscape:current-layer="layer3"
      inkscape:bbox-paths="true"
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:snap-object-midpoints="true"
@@ -60,46 +60,68 @@
     <text
        xml:space="preserve"
        style="font-size:13.7583px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
-       x="5.4467006"
+       x="6.3396664"
        y="46.425564"
        id="text6964-0"><tspan
          sodipodi:role="line"
          id="tspan6962-44"
          style="font-size:13.7583px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
-         x="5.4467006"
+         x="6.3396664"
          y="46.425564">300</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:13.7583px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;display:inline;fill:#00ff8b;fill-opacity:1;stroke-width:0.264583"
-       x="6.4639287"
-       y="71.664207"
+       x="8.2475548"
+       y="71.811028"
        id="text6964-8-4"><tspan
          sodipodi:role="line"
          id="tspan6962-4-4"
          style="font-size:13.7583px;fill:#00ff8b;fill-opacity:1;stroke-width:0.264583"
-         x="6.4639287"
-         y="71.664207">100</tspan></text>
+         x="8.2475548"
+         y="71.811028">100</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:13.7583px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;display:inline;fill:#6cc1ff;fill-opacity:1;stroke-width:0.264583"
-       x="11.538119"
-       y="97.196495"
+       x="12.547022"
+       y="97.343315"
        id="text6964-8-8-7"><tspan
          sodipodi:role="line"
          id="tspan6962-4-1-6"
          style="font-size:13.7583px;fill:#6cc1ff;fill-opacity:1;stroke-width:0.264583"
-         x="11.538119"
-         y="97.196495">50</tspan></text>
+         x="12.547022"
+         y="97.343315">50</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:13.7583px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;display:inline;fill:#ff6496;fill-opacity:1;stroke-width:0.264583"
-       x="103.0053"
-       y="97.196495"
+       x="104.01421"
+       y="97.343315"
        id="text852"><tspan
          sodipodi:role="line"
          id="tspan850"
          style="font-size:13.7583px;fill:#ff6496;fill-opacity:1;stroke-width:0.264583"
-         x="103.0053"
-         y="97.196495">0</tspan></text>
+         x="104.01421"
+         y="97.343315">0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:13.7583px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;display:inline;fill:#00ff8b;fill-opacity:1;stroke-width:0.264583"
+       x="8.2475548"
+       y="71.811028"
+       id="text6964-8-4-0"><tspan
+         sodipodi:role="line"
+         id="tspan6962-4-4-9"
+         style="font-size:13.7583px;fill:#00ff8b;fill-opacity:1;stroke-width:0.264583"
+         x="8.2475548"
+         y="71.811028">100</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:13.7583px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;display:inline;fill:#ff6496;fill-opacity:1;stroke-width:0.264583"
+       x="104.01421"
+       y="97.343315"
+       id="text852-3"><tspan
+         sodipodi:role="line"
+         id="tspan850-6"
+         style="font-size:13.7583px;fill:#ff6496;fill-opacity:1;stroke-width:0.264583"
+         x="104.01421"
+         y="97.343315">0</tspan></text>
   </g>
 </svg>

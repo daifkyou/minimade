@@ -6,83 +6,13 @@
    viewBox="0 0 77 91"
    id="svg4"
    sodipodi:docname="options.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs8">
-    <inkscape:path-effect
-       effect="powerclip"
-       id="path-effect3242"
-       is_visible="true"
-       lpeversion="1"
-       inverse="true"
-       flatten="false"
-       hide_clip="false"
-       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
-    <inkscape:path-effect
-       effect="powerclip"
-       id="path-effect8746"
-       is_visible="true"
-       lpeversion="1"
-       inverse="true"
-       flatten="false"
-       hide_clip="false"
-       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
-    <inkscape:path-effect
-       effect="powerclip"
-       id="path-effect8168"
-       is_visible="true"
-       lpeversion="1"
-       inverse="true"
-       flatten="false"
-       hide_clip="false"
-       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath8164">
-      <path
-         style="display:block;fill:#ffffff;fill-opacity:1;stroke-width:2.64567;stroke-linecap:round;stroke-linejoin:round"
-         id="path8166"
-         width="194"
-         height="7"
-         x="283"
-         y="169"
-         ry="3.5"
-         rx="3.5"
-         sodipodi:type="rect"
-         d="m 286.5,169 h 187 c 1.939,0 3.5,1.561 3.5,3.5 0,1.939 -1.561,3.5 -3.5,3.5 h -187 c -1.939,0 -3.5,-1.561 -3.5,-3.5 0,-1.939 1.561,-3.5 3.5,-3.5 z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath8742">
-      <rect
-         style="display:block;fill:#ffffff;fill-opacity:1;stroke-width:2.64567;stroke-linecap:round;stroke-linejoin:round"
-         id="rect8744"
-         width="74"
-         height="74"
-         x="160.00002"
-         y="103"
-         rx="7"
-         clip-path="none"
-         ry="7" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath3238">
-      <rect
-         style="display:block;fill:#ffffff;fill-opacity:0.999569;stroke:#ff0000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect3240"
-         width="241.99994"
-         height="74"
-         x="238"
-         y="103"
-         rx="7"
-         ry="7" />
-    </clipPath>
-  </defs>
+     id="defs8" />
   <sodipodi:namedview
      id="namedview6"
      pagecolor="#505050"
@@ -92,9 +22,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="0.7071068"
-     inkscape:cx="204.35385"
-     inkscape:cy="-147.78531"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="89.749996"
+     inkscape:cy="49.499998"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -114,7 +44,9 @@
      inkscape:snap-intersection-paths="true"
      inkscape:object-paths="true"
      inkscape:snap-smooth-nodes="true"
-     inkscape:object-nodes="true" />
+     inkscape:object-nodes="true"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <rect
      style="fill:#000000;fill-opacity:1;stroke-width:2.64567;stroke-linecap:round;stroke-linejoin:round"
      id="rect3462"
@@ -123,19 +55,24 @@
      x="0"
      y="0" />
   <g
-     id="g7854"
-     transform="translate(-5.7991954,0.226535)">
-    <text
-       xml:space="preserve"
-       style="font-size:30.1884px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.754711"
-       x="17.176477"
-       y="83.046234"
-       id="text5896-6"><tspan
-         sodipodi:role="line"
-         id="tspan5894-7"
-         x="17.176477"
-         y="83.046234"
-         style="stroke-width:0.754711">opt</tspan></text>
+     id="g528"
+     style="display:inline"
+     transform="translate(63.643373,-652.24752)">
+    <g
+       id="g458"
+       transform="translate(7.6314905,649.00047)">
+      <text
+         xml:space="preserve"
+         style="font-size:30.1884px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.754711"
+         x="-33.143375"
+         y="88.578781"
+         id="text5896-6-3-3-3"><tspan
+           sodipodi:role="line"
+           id="tspan5894-7-6-6-6"
+           x="-33.143375"
+           y="88.578781"
+           style="text-align:center;text-anchor:middle;stroke-width:0.754711">OPT</tspan></text>
+    </g>
   </g>
   <path
      d="m 38.505496,42.02148 a 9.1874999,9.1874999 0 0 1 -9.1875,-9.1875 9.1874999,9.1874999 0 0 1 9.1875,-9.1875 9.1874999,9.1874999 0 0 1 9.1875,9.1875 9.1874999,9.1874999 0 0 1 -9.1875,9.1875 m 19.50375,-6.64125 c 0.104999,-0.84 0.18375,-1.68 0.18375,-2.54625 0,-0.86625 -0.07875,-1.7325 -0.18375,-2.625 l 5.538749,-4.27875 c 0.498751,-0.39375 0.630001,-1.1025 0.315,-1.68 l -5.249999,-9.0825 c -0.315,-0.5775 -1.023751,-0.81375 -1.60125,-0.5775 l -6.53625,2.625 c -1.365,-1.02375 -2.7825,-1.91625 -4.43625,-2.5725 l -0.97125,-6.95625 c -0.105,-0.63 -0.65625,-1.1025 -1.312499,-1.1025 H 33.255496 c -0.65625,0 -1.207499,0.4725 -1.3125,1.1025 l -0.97125,6.95625 c -1.65375,0.65625 -3.07125,1.54875 -4.43625,2.5725 l -6.53625,-2.625 c -0.5775,-0.23625 -1.28625,0 -1.60125,0.5775 l -5.25,9.0825 c -0.34125,0.5775 -0.18375,1.28625 0.315,1.68 l 5.53875,4.27875 c -0.105,0.8925 -0.18375,1.75875 -0.18375,2.625 0,0.86625 0.07875,1.70625 0.18375,2.54625 l -5.53875,4.3575 c -0.49875,0.39375 -0.65625,1.1025 -0.315,1.68 l 5.25,9.0825 c 0.315,0.5775 1.02375,0.7875 1.60125,0.5775 l 6.53625,-2.65125 c 1.365,1.05 2.7825,1.9425 4.43625,2.59875 l 0.97125,6.95625 c 0.105001,0.63 0.65625,1.1025 1.3125,1.1025 h 10.500001 c 0.656249,0 1.207499,-0.4725 1.312499,-1.1025 l 0.97125,-6.95625 c 1.65375,-0.6825 3.07125,-1.54875 4.43625,-2.59875 l 6.53625,2.65125 c 0.577499,0.21 1.28625,0 1.60125,-0.5775 l 5.249999,-9.0825 c 0.315001,-0.5775 0.183751,-1.28625 -0.315,-1.68 z"

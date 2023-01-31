@@ -5,8 +5,8 @@
    height="91"
    viewBox="0 0 77 91"
    id="svg4"
-   sodipodi:docname="selection-random.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="random.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -22,9 +22,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="1.3239838"
-     inkscape:cx="319.11267"
-     inkscape:cy="35.876572"
+     inkscape:zoom="7.4895834"
+     inkscape:cx="69.897079"
+     inkscape:cy="67.5605"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -40,7 +40,9 @@
      fit-margin-bottom="0"
      inkscape:snap-bbox-midpoints="true"
      inkscape:object-nodes="false"
-     inkscape:bbox-nodes="true" />
+     inkscape:bbox-nodes="true"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <g
      id="g885"
      transform="scale(1,1.0111111)"
@@ -86,12 +88,12 @@
   <text
      xml:space="preserve"
      style="font-size:30.1884px;line-height:1.25;font-family:osifont;-inkscape-font-specification:osifont;fill:#ffffff;fill-opacity:1;stroke-width:0.754711"
-     x="12.084664"
-     y="83.331444"
-     id="text5896-6-3-3"><tspan
+     x="38.5"
+     y="85.331444"
+     id="text5896-6-3-3-3"><tspan
        sodipodi:role="line"
-       id="tspan5894-7-6-6"
-       x="12.084664"
-       y="83.331444"
-       style="stroke-width:0.754711">rnd</tspan></text>
+       id="tspan5894-7-6-6-6"
+       x="38.5"
+       y="85.331444"
+       style="text-align:center;text-anchor:middle;stroke-width:0.754711">RND</tspan></text>
 </svg>
