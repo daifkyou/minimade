@@ -33,7 +33,7 @@ AddOption('--ranking-panel',
           action='store',
           metavar='MODE',
           default='any',
-          help='The hacky ranking panel type to build (supports "osu", "taiko", and "any" (default) which tries to make the ranking panel work for all modes; choose your main mode if you don\'t mind the ranking panel being wrong for other modes or if you don\'t play other modes.)')
+          help='The hacky ranking panel type to build (supports "standard", "taiko", and "any" (default) which tries to make the ranking panel work for all modes; choose your main mode if you don\'t mind the ranking panel being wrong for other modes or if you don\'t play other modes.)')
 
 AddOption('--flashing',
           dest='flashing',
@@ -310,11 +310,15 @@ render_default('selection-options-over',
 
 # mode icon
 
+mode_icon_target_modename_sentinel = object()
 
-def mode_icon(mode):
+
+def mode_icon(mode, target_modename=mode_icon_target_modename_sentinel):
     """surprisingly long function to build mode icons"""
-    # medium icon (in mode select)
+    if target_modename is mode_icon_target_modename_sentinel:  # f u python
+        target_modename = mode
 
+    # medium icon (in mode select)
     render_default('mode-'+mode+'-med', 'graphics/interface/modes/'+mode)
 
     # large icon (flashing in the middle of song select)
@@ -327,12 +331,12 @@ def mode_icon(mode):
     # small icon (preview on mode button + hacky way to change top border)
     if GetOption('aspect_ratio') == 'any':
         if not GetOption('no_1x'):
-            env.Command('$BUILDDIR/mode-'+mode+'-small.png',
+            env.Command('$BUILDDIR/mode-'+target_modename+'-small.png',
                         '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                         action=lambda target, source, env: compiler(source[0], target[0], zoom=0.5))
 
         if not GetOption('no_2x'):
-            env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
+            env.Command('$BUILDDIR/mode-'+target_modename+'-small@2x.png',
                         '$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                         action=render1x)
     else:
@@ -654,10 +658,10 @@ def lighting():
 
 if not GetOption('no_standard'):  # standard-only elements
     # mode icon
-    mode_icon('osu')
+    mode_icon('standard', 'osu')
 
     # cursor smoke (surprisingly)
-    # render_default('cursor-smoke', 'graphics/gameplay/osu/cursor-smoke')
+    # render_default('cursor-smoke', 'graphics/gameplay/standard/cursor-smoke')
 
     # approach circle
     approachcircle()
@@ -666,28 +670,31 @@ if not GetOption('no_standard'):  # standard-only elements
     lighting()
 
     # circle (surprisingly)
-    render_default('hitcircle', 'graphics/gameplay/osu/circle')
-    render_default('hitcircleoverlay', 'graphics/gameplay/osu/circleoverlay')
+    render_default('hitcircle', 'graphics/gameplay/standard/circle')
+    render_default('hitcircleoverlay',
+                   'graphics/gameplay/standard/circleoverlay')
 
     # slider ball
-    render_default('sliderb', 'graphics/gameplay/osu/slider/ball')
+    render_default('sliderb', 'graphics/gameplay/standard/slider/ball')
 
     # slider tick
-    render_default('sliderscorepoint', 'graphics/gameplay/osu/slider/tick')
+    render_default('sliderscorepoint',
+                   'graphics/gameplay/standard/slider/tick')
 
     # slider follow circle
-    render_default('sliderfollowcircle', 'graphics/gameplay/osu/slider/follow')
+    render_default('sliderfollowcircle',
+                   'graphics/gameplay/standard/slider/follow')
 
     # slider end circle (surprisingly)
-    render_default('sliderendcircle', 'graphics/gameplay/osu/slider/end')
+    render_default('sliderendcircle', 'graphics/gameplay/standard/slider/end')
 
     # slider reverse arrow
-    render_default('reversearrow', 'graphics/gameplay/osu/slider/reverse')
+    render_default('reversearrow', 'graphics/gameplay/standard/slider/reverse')
 
     # spinner (surprinsingly)
     spinner()
     env.Empty('spinner-rpm')
-    render_default('spinner-metre', 'graphics/gameplay/osu/spinner/metre')
+    render_default('spinner-metre', 'graphics/gameplay/standard/spinner/metre')
     env.Empty('spinner-background')
     env.Empty('spinner-clear')
     env.Empty('spinner-spin')
@@ -701,17 +708,17 @@ if not GetOption('no_standard'):  # standard-only elements
     env.Empty('hit50')
     env.Empty('hit0')
 
-    render_default('hit100-0', 'graphics/gameplay/osu/hitbursts/100')
+    render_default('hit100-0', 'graphics/gameplay/standard/hitbursts/100')
     copy_default('hit100k-0', 'hit100-0')
-    render_default('hit50-0', 'graphics/gameplay/osu/hitbursts/50')
-    render_default('hit0-0', 'graphics/gameplay/osu/hitbursts/0')
+    render_default('hit50-0', 'graphics/gameplay/standard/hitbursts/50')
+    render_default('hit0-0', 'graphics/gameplay/standard/hitbursts/0')
 
     # follow points (surprisingly)
-    # render_default('followpoint', 'graphics/gameplay/osu/followpoint.svg') # non-animated followpoints if you are a masochist
+    # render_default('followpoint', 'graphics/gameplay/standard/followpoint.svg') # non-animated followpoints if you are a masochist
 
     render_animation('followpoint-', (  # thanks to stephen clark's video on followpoints (https://youtu.be/OVGzCPsLH7c?t=247)
         (None, 0),
-        ('graphics/gameplay/osu/followpoint', 1),
+        ('graphics/gameplay/standard/followpoint', 1),
         (None, 0)
     ))
 
