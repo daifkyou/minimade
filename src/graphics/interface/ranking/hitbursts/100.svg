@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="142"
+   height="89"
+   viewBox="0 0 37.570828 23.547916"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="100.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="32px"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="94.221979"
+     inkscape:cy="63.816388"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1167"
+     inkscape:snap-bbox-edge-midpoints="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
+  <defs
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter2027"
+       x="-0.009923635"
+       y="-0.017685686"
+       width="1.0198473"
+       height="1.0353714">
+      <feGaussianBlur
+         stdDeviation="0.14999999999999999 0.14999999999999999"
+         result="blur"
+         id="feGaussianBlur2025" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(18.995625,-2.1056091)">
+    <g
+       id="g1167"
+       transform="translate(-23.85912,-4.6033816)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:27.5168px;line-height:1.25;font-family:sans-serif;fill:#32ff96;fill-opacity:1;stroke:none;stroke-width:0.264582;filter:url(#filter2027);image-rendering:optimizeQuality"
+         x="8.0138083"
+         y="29.72892"
+         id="text425"><tspan
+           sodipodi:role="line"
+           id="tspan423"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5168px;font-family:osifont;-inkscape-font-specification:osifont;fill:#32ff96;fill-opacity:1;stroke-width:0.264582"
+           x="8.0138083"
+           y="29.72892">100</tspan></text>
+    </g>
+  </g>
+</svg>

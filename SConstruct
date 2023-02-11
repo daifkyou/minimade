@@ -312,14 +312,14 @@ def mode_icon(mode, target_modename=mode_icon_target_modename_sentinel):
         target_modename=mode
 
     # medium icon (in mode select)
-    render_default('mode-'+mode+'-med', 'graphics/interface/modes/'+mode)
+    render_default('mode-'+target_modename+'-med', 'graphics/interface/modes/'+mode)
 
     # large icon (flashing in the middle of song select)
     if (GetOption('flashing')):
-        env.SVG1x('mode-' + mode,
+        env.SVG1x('mode-' + target_modename,
                   'graphics/interface/selection/frame/$ASPECTRATIO/flash.svg')
     else:
-        env.Empty('mode-' + mode)
+        env.Empty('mode-' + target_modename)
 
     # small icon (preview on mode button + hacky way to change top border)
     if GetOption('aspect_ratio') == 'any':
@@ -343,13 +343,13 @@ def mode_icon(mode, target_modename=mode_icon_target_modename_sentinel):
                     target_surface.get_width() / 2 - source_surface.get_width() / 2,
                     target_surface.get_height() / 2 - source_surface.get_height() / 2).write_to_png(str(target[0]))
 
-            env.Command('$BUILDDIR/mode-'+mode+'-small.png',
+            env.Command('$BUILDDIR/mode-'+target_modename+'-small.png',
                         ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=action)
 
         if not GetOption('no_2x'):
-            env.Command('$BUILDDIR/mode-'+mode+'-small@2x.png',
+            env.Command('$BUILDDIR/mode-'+target_modename+'-small@2x.png',
                         ('$SOURCEDIR/graphics/interface/modes/'+mode+'.svg',
                          '$SOURCEDIR/graphics/interface/selection/frame/$ASPECTRATIO/modebar.svg'),
                         action=lambda target, source, env:
@@ -605,9 +605,9 @@ def spinner():
     global ADDED_SPINNER
     if not ADDED_SPINNER:
         ADDED_SPINNER=True
-        render_default('spinner-circle', 'graphics/spinner/circle')
+        render_default('spinner-circle', 'graphics/gameplay/spinner/circle')
         render_default('spinner-approachcircle',
-                       'graphics/spinner/approachcircle')
+                       'graphics/gameplay/spinner/approachcircle')
 
 
 # approach circle
@@ -618,7 +618,7 @@ def approachcircle():
     global ADDED_APPROACHCIRCLE
     if not ADDED_APPROACHCIRCLE:
         ADDED_APPROACHCIRCLE=True
-        render_default('approachcircle', 'graphics/approachcircle')
+        render_default('approachcircle', 'graphics/gameplay/approachcircle')
 
 
 # lighting
@@ -629,7 +629,7 @@ def lighting():
     global ADDED_LIGHTING
     if not ADDED_LIGHTING:
         ADDED_LIGHTING=True
-        render_default('lighting', 'graphics/lighting')
+        render_default('lighting', 'graphics/gameplay/lighting')
 
 
 if not GetOption('no_standard'):  # standard-only elements
@@ -643,58 +643,56 @@ if not GetOption('no_standard'):  # standard-only elements
     lighting()
 
     # circle (surprisingly)
-    render_default('hitcircle', 'graphics/standard/circle')
+    render_default('hitcircle', 'graphics/gameplay/standard/circle')
     render_default('hitcircleoverlay',
-                   'graphics/standard/circleoverlay')
+                   'graphics/gameplay/standard/circleoverlay')
 
     # slider ball
-    render_default('sliderb', 'graphics/standard/slider/ball')
+    render_default('sliderb', 'graphics/gameplay/standard/slider/ball')
 
     # slider tick
     render_default('sliderscorepoint',
-                   'graphics/standard/slider/tick')
+                   'graphics/gameplay/standard/slider/tick')
 
     # slider follow circle
     render_default('sliderfollowcircle',
-                   'graphics/standard/slider/follow')
+                   'graphics/gameplay/standard/slider/follow')
 
     # slider end circle (surprisingly)
-    render_default('sliderendcircle', 'graphics/standard/slider/end')
+    render_default('sliderendcircle', 'graphics/gameplay/standard/slider/end')
 
     # slider reverse arrow
-    render_default('reversearrow', 'graphics/standard/slider/reverse')
+    render_default('reversearrow', 'graphics/gameplay/standard/slider/reverse')
 
     # spinner (surprinsingly)
     spinner()
     env.Empty('spinner-rpm')
-    render_default('spinner-metre', 'graphics/standard/spinner/metre')
+    render_default('spinner-metre', 'graphics/gameplay/standard/spinner/metre')
     env.Empty('spinner-background')
     env.Empty('spinner-clear')
     env.Empty('spinner-spin')
 
     # hitbursts
-    render_default('hit300', 'graphics/standard/hitbursts/300')
-    copy_default('hit300g', 'hit300')
-    copy_default('hit300k', 'hit300')
-    render_default('hit100', 'graphics/standard/hitbursts/100')
-    copy_default('hit100k', 'hit100')
-    render_default('hit50', 'graphics/standard/hitbursts/50')
-    render_default('hit0', 'graphics/standard/hitbursts/0')
+    render_default('hit300', 'graphics/interface/ranking/hitbursts/300')
+    render_default('hit100', 'graphics/interface/ranking/hitbursts/100')
+    env.Empty('hit100k')
+    render_default('hit50', 'graphics/interface/ranking/hitbursts/50')
+    render_default('hit0', 'graphics/interface/ranking/hitbursts/0')
 
     env.Empty('hit300-0')
-    env.Empty('hit300g-0')
-    env.Empty('hit300k-0')
-    render_default('hit100-0', 'graphics/standard/hitbursts/100')
+    env.Empty('hit300g')
+    env.Empty('hit300k')
+    render_default('hit100-0', 'graphics/gameplay/standard/hitbursts/100')
     copy_default('hit100k-0', 'hit100-0')
-    render_default('hit50-0', 'graphics/standard/hitbursts/50')
-    render_default('hit0-0', 'graphics/standard/hitbursts/0')
+    render_default('hit50-0', 'graphics/gameplay/standard/hitbursts/50')
+    render_default('hit0-0', 'graphics/gameplay/standard/hitbursts/0')
 
     # follow points (surprisingly)
-    # render_default('followpoint', 'graphics/standard/followpoint.svg') # non-animated followpoints if you are a masochist
+    # render_default('followpoint', 'graphics/gameplay/standard/followpoint.svg') # non-animated followpoints if you are a masochist
 
     render_animation('followpoint-', (  # thanks to stephen clark's video on followpoints (https://youtu.be/OVGzCPsLH7c?t=247)
         (None, 0),
-        ('graphics/standard/followpoint', 1),
+        ('graphics/gameplay/standard/followpoint', 1),
         (None, 0)
     ))
 
@@ -714,54 +712,59 @@ if not GetOption('no_taiko'):
 
     # bar left drum thing
     render_default('taiko-bar-left',
-                   'graphics/taiko/bar/drum/background')
+                   'graphics/gameplay/taiko/bar/drum/background')
     render_default('taiko-drum-inner',
-                   'graphics/taiko/bar/drum/inner')
+                   'graphics/gameplay/taiko/bar/drum/inner')
     render_default('taiko-drum-outer',
-                   'graphics/taiko/bar/drum/outer')
+                   'graphics/gameplay/taiko/bar/drum/outer')
 
     # lighting
     lighting()
 
     # bar
-    render_default('taiko-bar-right', 'graphics/taiko/bar/bar.svg')
+    render_default('taiko-bar-right', 'graphics/gameplay/taiko/bar/bar.svg')
     render_default('taiko-bar-right-glow',
-                   'graphics/taiko/bar/glow.svg')
+                   'graphics/gameplay/taiko/bar/glow.svg')
 
     # approach circle
     approachcircle()
     env.Empty('taiko-glow')
 
     # circle (surprisingly)
-    render_default('taikohitcircle', 'graphics/taiko/circle')
+    render_default('taikohitcircle', 'graphics/gameplay/taiko/circle')
     render_default('taikohitcircleoverlay',
-                   'graphics/taiko/circleoverlay')
+                   'graphics/gameplay/taiko/circleoverlay')
 
     copy_default('taikobigcircle', 'taikohitcircle')
     render_default('taikobigcircleoverlay',
-                   'graphics/taiko/bigcircleoverlay')
+                   'graphics/gameplay/taiko/bigcircleoverlay')
 
     # roll
     render_default('taiko-roll-middle',
-                   'graphics/taiko/roll/middle')
+                   'graphics/gameplay/taiko/roll/middle')
     render_default('taiko-roll-end',
-                   'graphics/taiko/roll/end')
+                   'graphics/gameplay/taiko/roll/end')
 
     # spinner warning
-    render_default('spinner-warning', 'graphics/taiko/spinner')
+    render_default('spinner-warning', 'graphics/gameplay/taiko/spinner')
 
     # hitbursts
-    env.Empty('taiko-hit300')
-    env.Empty('taiko-hit300k')
+    render_default('taiko-hit300',
+                   'graphics/interface/ranking/hitbursts/300')
     env.Empty('taiko-hit300g')
-    env.Empty('taiko-hit100')
+    render_default('taiko-hit100',
+                   'graphics/interface/ranking/hitbursts/100')
     env.Empty('taiko-hit100k')
-    env.Empty('taiko-hit0')
+    render_default('taiko-hit0',
+                   'graphics/interface/ranking/hitbursts/0')
 
+
+    env.Empty('taiko-hit300-0')
+    env.Empty('taiko-hit300k')
     render_default('taiko-hit100-0',
-                   'graphics/taiko/hitbursts/100')
+                   'graphics/gameplay/taiko/hitbursts/100')
     copy_default('taiko-hit100k-0', 'taiko-hit100-0')
-    render_default('taiko-hit0-0', 'graphics/taiko/hitbursts/0')
+    render_default('taiko-hit0-0', 'graphics/gameplay/taiko/hitbursts/0')
 
 # editor circle select
 render_default('hitcircleselect', 'graphics/interface/editor/select.svg')
