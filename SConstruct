@@ -28,13 +28,6 @@ AddOption('--aspect-ratio',
           default='any',
           help='The aspect ratio to build for (currently supports "4-3", "16-9", and "any" (default) which disables aspect ratio dependent hacks)')
 
-AddOption('--ranking-panel',
-          dest='ranking_panel',
-          action='store',
-          metavar='MODE',
-          default='any',
-          help='The hacky ranking panel type to build (supports "standard", "taiko", and "any" (default) which tries to make the ranking panel work for all modes; choose your main mode if you don\'t mind the ranking panel being wrong for other modes or if you don\'t play other modes.)')
-
 AddOption('--flashing',
           dest='flashing',
           action='store_true',
@@ -236,8 +229,8 @@ env = Environment(
     NOQUALITY1X=GetOption('no_1x'), NOQUALITY2X=GetOption('no_2x'),
     ASPECTRATIO=GetOption('aspect_ratio'),
     FLASHING=GetOption('flashing'),
-    BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir'),
-    RANKINGPANEL=GetOption('ranking_panel'))
+    BUILDDIR=GetOption('build_dir'), SOURCEDIR=GetOption('source_dir')
+)
 
 env.Append(BUILDERS={'SVG1x': svg1x, 'SVG2x': svg2x,
            'Empty': empty, 'Delete': delete, 'CopyImage': copy_image})
@@ -310,13 +303,13 @@ render_default('selection-options-over',
 
 # mode icon
 
-mode_icon_target_modename_sentinel = object()
+mode_icon_target_modename_sentinel=object()
 
 
 def mode_icon(mode, target_modename=mode_icon_target_modename_sentinel):
     """surprisingly long function to build mode icons"""
     if target_modename is mode_icon_target_modename_sentinel:  # f u python
-        target_modename = mode
+        target_modename=mode
 
     # medium icon (in mode select)
     render_default('mode-'+mode+'-med', 'graphics/interface/modes/'+mode)
@@ -382,8 +375,8 @@ render_default('star', 'graphics/interface/selection/song/star.svg')
 # ranking letters
 def ranking_grade_small(grade):
     """render small grade letters as needed"""
-    target = '$BUILDDIR/ranking-' + grade + '-small'
-    source = '$SOURCEDIR/graphics/interface/ranking/grades/' + grade + '.svg'
+    target='$BUILDDIR/ranking-' + grade + '-small'
+    source='$SOURCEDIR/graphics/interface/ranking/grades/' + grade + '.svg'
 
     if not GetOption('no_1x'):
         env.Command(target + '.png', source, action=lambda target, source, env: compiler(
@@ -420,27 +413,8 @@ if GetOption('client') in ('mcosu', 'any'):
     render_mods('nightmare', 'touchdevice')
 
 
-# ranking panel and stuff
-if GetOption('ranking_panel') == 'any':
-    render_default('ranking-panel',
-                   'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
-else:
-    if not GetOption('no_1x'):
-        env.Command('$BUILDDIR/ranking-panel.png', ['$SOURCEDIR/graphics/interface/ranking/panels/$ASPECTRATIO/panel.svg',
-                    '$SOURCEDIR/graphics/interface/ranking/panels/numbers/'+GetOption('ranking_panel')+'.svg'], lambda target, source, env:
-                        composite(
-                            cairo.ImageSurface.create_from_png(
-                                compiler(source[0])),
-                            cairo.ImageSurface.create_from_png(
-                                compiler(source[1]))).write_to_png(str(target[0])))
-    if not GetOption('no_2x'):
-        env.Command('$BUILDDIR/ranking-panel@2x.png', ['$SOURCEDIR/graphics/interface/ranking/panels/$ASPECTRATIO/panel.svg',
-                    '$SOURCEDIR/graphics/interface/ranking/panels/numbers/'+GetOption('ranking_panel')+'.svg'], lambda target, source, env:
-                        composite(
-                            cairo.ImageSurface.create_from_png(
-                                compiler(source[0], zoom=2)),
-                            cairo.ImageSurface.create_from_png(
-                                compiler(source[1], zoom=2))).write_to_png(str(target[0])))
+render_default('ranking-panel',
+               'graphics/interface/ranking/panels/$ASPECTRATIO/panel')
 render_default('ranking-graph', 'graphics/interface/ranking/panels/graph')
 render_default('pause-replay', 'graphics/interface/ranking/panels/replay')
 render_default('ranking-winner', 'graphics/interface/ranking/status/winner')
@@ -452,20 +426,20 @@ env.Empty('ranking-accuracy')
 
 
 # fonts
-CHAR_REPLACE = {  # special characters in filenames and their corresponding characters
+CHAR_REPLACE={  # special characters in filenames and their corresponding characters
     'comma': ',',
     'dot': '.',
     'percent': '%'
 }
 
 
-GLYPH_WIDTH_OFFSET = {
+GLYPH_WIDTH_OFFSET={
     ',': 0.1
 }
 
 
 def default_get_dimensions(font_extents, text_extents, glyph):
-    ascent, descent, font_height, max_x_advance, max_y_advance = font_extents
+    ascent, descent, font_height, max_x_advance, max_y_advance=font_extents
 
     return (
         -text_extents.x_bearing / 2,
@@ -477,21 +451,21 @@ def default_get_dimensions(font_extents, text_extents, glyph):
     )
 
 
-FONT_OPTIONS = cairo.FontOptions()
+FONT_OPTIONS=cairo.FontOptions()
 FONT_OPTIONS.set_antialias(cairo.Antialias.GRAY)
 
 
 def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, font_face='osifont', rgba=(1, 1, 1, 1), char_replace=CHAR_REPLACE):
     """render font glyphs"""
-    glyphs = map(lambda g: (str(g), (char_replace[glyph] if (
+    glyphs=map(lambda g: (str(g), (char_replace[glyph] if (
         glyph := str(g)) in char_replace else glyph)), glyphs)
 
     def get_render_font_glyph(glyph, scale):
         # cairo text actually sucks im just going to commit this shit i give up
         def render_font_glyph(target, source, env):
-            surface = cairo.ImageSurface(
+            surface=cairo.ImageSurface(
                 cairo.FORMAT_ARGB32, 16 * scale, 16 * scale)
-            ctx = cairo.Context(surface)
+            ctx=cairo.Context(surface)
             ctx.scale(scale, scale)
 
             ctx.set_font_options(FONT_OPTIONS)
@@ -499,21 +473,23 @@ def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, fon
             ctx.set_source_rgba(1, 1, 1)
             ctx.select_font_face(font_face)
             ctx.set_font_size(1)
-            x, y, width, height = get_dimensions(
+            x, y, width, height=get_dimensions(
                 ctx.font_extents(), ctx.text_extents(glyph), glyph)
 
             ctx.move_to(x, y)
             ctx.set_source_rgba(*rgba)
             ctx.show_text(glyph)
 
-            cropped_surface = cairo.ImageSurface(
+            cropped_surface=cairo.ImageSurface(
                 cairo.FORMAT_ARGB32, width := math.ceil(width * scale), height := math.ceil(height * scale))
 
-            ctx = cairo.Context(cropped_surface)
+            ctx=cairo.Context(cropped_surface)
 
+            """
             # debugging, pretty useful every once in a while
-            """ctx.set_source_rgba(1, 0, 0, 0.3)
-            ctx.paint()"""
+            ctx.set_source_rgba(1, 0, 0, 0.3)
+            ctx.paint()
+            """
 
             ctx.set_source_surface(surface)
             ctx.paint()
@@ -537,7 +513,7 @@ def font(font_name, glyphs, scale=20, get_dimensions=default_get_dimensions, fon
 
 
 def scoreentry_get_dimensions(font_extents, text_extents, glyph):
-    ascent, descent, font_height, max_x_advance, max_y_advance = font_extents
+    ascent, descent, font_height, max_x_advance, max_y_advance=font_extents
 
     return (
         -text_extents.x_bearing / 2,
@@ -574,7 +550,7 @@ env.Empty('masking-border')
 
 
 # scorebar (surprisingly)
-ADDED_SCOREBAR = True
+ADDED_SCOREBAR=True
 render_default('scorebar-bg', 'graphics/interface/hud/scorebar/background')
 render_default('scorebar-colour', 'graphics/interface/hud/scorebar/colour')
 
@@ -619,7 +595,7 @@ env.Empty('multi-skipped')
 
 
 # spinner
-ADDED_SPINNER = False
+ADDED_SPINNER=False
 
 
 def spinner():
@@ -628,40 +604,37 @@ def spinner():
     """
     global ADDED_SPINNER
     if not ADDED_SPINNER:
-        ADDED_SPINNER = True
-        render_default('spinner-circle', 'graphics/gameplay/spinner/circle')
+        ADDED_SPINNER=True
+        render_default('spinner-circle', 'graphics/spinner/circle')
         render_default('spinner-approachcircle',
-                       'graphics/gameplay/spinner/approachcircle')
+                       'graphics/spinner/approachcircle')
 
 
 # approach circle
-ADDED_APPROACHCIRCLE = False
+ADDED_APPROACHCIRCLE=False
 
 
 def approachcircle():
     global ADDED_APPROACHCIRCLE
     if not ADDED_APPROACHCIRCLE:
-        ADDED_APPROACHCIRCLE = True
-        render_default('approachcircle', 'graphics/gameplay/approachcircle')
+        ADDED_APPROACHCIRCLE=True
+        render_default('approachcircle', 'graphics/approachcircle')
 
 
 # lighting
-ADDED_LIGHTING = False
+ADDED_LIGHTING=False
 
 
 def lighting():
     global ADDED_LIGHTING
     if not ADDED_LIGHTING:
-        ADDED_LIGHTING = True
-        render_default('lighting', 'graphics/gameplay/lighting')
+        ADDED_LIGHTING=True
+        render_default('lighting', 'graphics/lighting')
 
 
 if not GetOption('no_standard'):  # standard-only elements
     # mode icon
     mode_icon('standard', 'osu')
-
-    # cursor smoke (surprisingly)
-    # render_default('cursor-smoke', 'graphics/gameplay/standard/cursor-smoke')
 
     # approach circle
     approachcircle()
@@ -670,55 +643,58 @@ if not GetOption('no_standard'):  # standard-only elements
     lighting()
 
     # circle (surprisingly)
-    render_default('hitcircle', 'graphics/gameplay/standard/circle')
+    render_default('hitcircle', 'graphics/standard/circle')
     render_default('hitcircleoverlay',
-                   'graphics/gameplay/standard/circleoverlay')
+                   'graphics/standard/circleoverlay')
 
     # slider ball
-    render_default('sliderb', 'graphics/gameplay/standard/slider/ball')
+    render_default('sliderb', 'graphics/standard/slider/ball')
 
     # slider tick
     render_default('sliderscorepoint',
-                   'graphics/gameplay/standard/slider/tick')
+                   'graphics/standard/slider/tick')
 
     # slider follow circle
     render_default('sliderfollowcircle',
-                   'graphics/gameplay/standard/slider/follow')
+                   'graphics/standard/slider/follow')
 
     # slider end circle (surprisingly)
-    render_default('sliderendcircle', 'graphics/gameplay/standard/slider/end')
+    render_default('sliderendcircle', 'graphics/standard/slider/end')
 
     # slider reverse arrow
-    render_default('reversearrow', 'graphics/gameplay/standard/slider/reverse')
+    render_default('reversearrow', 'graphics/standard/slider/reverse')
 
     # spinner (surprinsingly)
     spinner()
     env.Empty('spinner-rpm')
-    render_default('spinner-metre', 'graphics/gameplay/standard/spinner/metre')
+    render_default('spinner-metre', 'graphics/standard/spinner/metre')
     env.Empty('spinner-background')
     env.Empty('spinner-clear')
     env.Empty('spinner-spin')
 
     # hitbursts
-    env.Empty('hit300')
-    env.Empty('hit300k')
-    env.Empty('hit300g')
-    env.Empty('hit100')
-    env.Empty('hit100k')
-    env.Empty('hit50')
-    env.Empty('hit0')
+    render_default('hit300', 'graphics/standard/hitbursts/300')
+    copy_default('hit300g', 'hit300')
+    copy_default('hit300k', 'hit300')
+    render_default('hit100', 'graphics/standard/hitbursts/100')
+    copy_default('hit100k', 'hit100')
+    render_default('hit50', 'graphics/standard/hitbursts/50')
+    render_default('hit0', 'graphics/standard/hitbursts/0')
 
-    render_default('hit100-0', 'graphics/gameplay/standard/hitbursts/100')
+    env.Empty('hit300-0')
+    env.Empty('hit300g-0')
+    env.Empty('hit300k-0')
+    render_default('hit100-0', 'graphics/standard/hitbursts/100')
     copy_default('hit100k-0', 'hit100-0')
-    render_default('hit50-0', 'graphics/gameplay/standard/hitbursts/50')
-    render_default('hit0-0', 'graphics/gameplay/standard/hitbursts/0')
+    render_default('hit50-0', 'graphics/standard/hitbursts/50')
+    render_default('hit0-0', 'graphics/standard/hitbursts/0')
 
     # follow points (surprisingly)
-    # render_default('followpoint', 'graphics/gameplay/standard/followpoint.svg') # non-animated followpoints if you are a masochist
+    # render_default('followpoint', 'graphics/standard/followpoint.svg') # non-animated followpoints if you are a masochist
 
     render_animation('followpoint-', (  # thanks to stephen clark's video on followpoints (https://youtu.be/OVGzCPsLH7c?t=247)
         (None, 0),
-        ('graphics/gameplay/standard/followpoint', 1),
+        ('graphics/standard/followpoint', 1),
         (None, 0)
     ))
 
@@ -738,41 +714,41 @@ if not GetOption('no_taiko'):
 
     # bar left drum thing
     render_default('taiko-bar-left',
-                   'graphics/gameplay/taiko/bar/drum/background')
+                   'graphics/taiko/bar/drum/background')
     render_default('taiko-drum-inner',
-                   'graphics/gameplay/taiko/bar/drum/inner')
+                   'graphics/taiko/bar/drum/inner')
     render_default('taiko-drum-outer',
-                   'graphics/gameplay/taiko/bar/drum/outer')
+                   'graphics/taiko/bar/drum/outer')
 
     # lighting
     lighting()
 
     # bar
-    render_default('taiko-bar-right', 'graphics/gameplay/taiko/bar/bar.svg')
+    render_default('taiko-bar-right', 'graphics/taiko/bar/bar.svg')
     render_default('taiko-bar-right-glow',
-                   'graphics/gameplay/taiko/bar/glow.svg')
+                   'graphics/taiko/bar/glow.svg')
 
     # approach circle
     approachcircle()
     env.Empty('taiko-glow')
 
     # circle (surprisingly)
-    render_default('taikohitcircle', 'graphics/gameplay/taiko/circle')
+    render_default('taikohitcircle', 'graphics/taiko/circle')
     render_default('taikohitcircleoverlay',
-                   'graphics/gameplay/taiko/circleoverlay')
+                   'graphics/taiko/circleoverlay')
 
     copy_default('taikobigcircle', 'taikohitcircle')
     render_default('taikobigcircleoverlay',
-                   'graphics/gameplay/taiko/bigcircleoverlay')
+                   'graphics/taiko/bigcircleoverlay')
 
     # roll
     render_default('taiko-roll-middle',
-                   'graphics/gameplay/taiko/roll/middle')
+                   'graphics/taiko/roll/middle')
     render_default('taiko-roll-end',
-                   'graphics/gameplay/taiko/roll/end')
+                   'graphics/taiko/roll/end')
 
     # spinner warning
-    render_default('spinner-warning', 'graphics/gameplay/taiko/spinner')
+    render_default('spinner-warning', 'graphics/taiko/spinner')
 
     # hitbursts
     env.Empty('taiko-hit300')
@@ -783,9 +759,9 @@ if not GetOption('no_taiko'):
     env.Empty('taiko-hit0')
 
     render_default('taiko-hit100-0',
-                   'graphics/gameplay/taiko/hitbursts/100')
+                   'graphics/taiko/hitbursts/100')
     copy_default('taiko-hit100k-0', 'taiko-hit100-0')
-    render_default('taiko-hit0-0', 'graphics/gameplay/taiko/hitbursts/0')
+    render_default('taiko-hit0-0', 'graphics/taiko/hitbursts/0')
 
 # editor circle select
 render_default('hitcircleselect', 'graphics/interface/editor/select.svg')
