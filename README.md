@@ -1,6 +1,6 @@
 **maybe won't be active after finished release** (infrequent or maybe no updates/maintenance if i don't feel like it)
 # minimade
-*a **consistently** minimal skin*
+*a **consistently** bad skin* (you're welcome)
 
 Most icons are from mdi (https://materialdesignicons.com/).
 Text is in osifont.
